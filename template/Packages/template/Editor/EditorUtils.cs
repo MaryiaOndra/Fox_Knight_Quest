@@ -29,7 +29,7 @@ public class EditorUtils
         }
     }
 
-    [MenuItem("Template/Run Game")]
+    [MenuItem("CubePlatformer/Run Game")]
     public static void RunGame() 
     {
         if (!EditorApplication.isPlaying)

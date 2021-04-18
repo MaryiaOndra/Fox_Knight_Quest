@@ -14,7 +14,6 @@ namespace Template.Core
         {
             Debug.Log(name + ": Init");
             exitAction = _exitAction;
-
         }
 
         public virtual void Show() 
