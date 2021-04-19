@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Template.Core
+namespace CubePlatformer.Core
 {
     public abstract class AppDirector : MonoBehaviour
     {

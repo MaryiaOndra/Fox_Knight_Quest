@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Template.Core
+namespace CubePlatformer.Core
 {
     public abstract class BaseManager : MonoBehaviour
     {

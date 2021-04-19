@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Template.Core
+namespace CubePlatformer.Core
 {
     public abstract class BaseScreen : MonoBehaviour
     {
@@ -12,19 +12,19 @@ namespace Template.Core
 
         public virtual void Init(Action<Type, string> _exitAction) 
         {
-            Debug.Log(name + ": Init");
+            Debug.Log("Init: " + name);
             exitAction = _exitAction;
         }
 
         public virtual void Show() 
         {
-            Debug.Log(name + ": Show");
+            Debug.Log("Show: " + name);
             gameObject.SetActive(true);
         }
 
         public virtual void Hide() 
         {
-            Debug.Log(name + ": Hide");
+            Debug.Log("Hide: " + name);
             gameObject.SetActive(false);
         }
 
