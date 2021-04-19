@@ -31,6 +31,10 @@ namespace CubePlatformer
                 {
                     SetCurrentScreen<PauseScreen>().Show();
                 }
+                else if (_exitCode == GameScreen.Exit_Result)
+                {
+                    SetCurrentScreen<ResultScreen>().Show();
+                }
             }
             else if (_screenType == typeof(PauseScreen))
             {
@@ -49,9 +53,9 @@ namespace CubePlatformer
             }
             else if (_screenType == typeof(ResultScreen))
             {
-                if (_exitCode == ResultScreen.Exit_Game)
+                if (_exitCode == ResultScreen.Exit_NextLvl)
                 {
-                    SceneManager.LoadScene(ScenesIds.Menu);
+                    Debug.Log("LOAD NEXT LEVEL");
                 }
                 else if (_exitCode == ResultScreen.Exit_Replay)
                 {

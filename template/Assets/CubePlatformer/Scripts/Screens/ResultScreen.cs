@@ -10,7 +10,7 @@ namespace CubePlatformer
 {
     public class ResultScreen : BaseScreen
     {
-        public const string Exit_Game = "Exit_Game";
+        public const string Exit_NextLvl = "Exit_NextLvl";
         public const string Exit_Replay = "Exit_Replay";
 
         [SerializeField]
@@ -27,9 +27,9 @@ namespace CubePlatformer
             Exit(Exit_Replay);    
         }
 
-        public void OnGamePressed() 
+        public void OnNextLvlPressed() 
         {
-            Exit(Exit_Game);
+            Exit(Exit_NextLvl);
         }
     }
 }

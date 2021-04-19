@@ -256,8 +256,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6133073754357946776}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: OnRestartPressed
+        m_TargetAssemblyTypeName: CubePlatformer.ResultScreen, Assembly-CSharp
+        m_MethodName: OnNextLvlPressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -914,7 +914,7 @@ PrefabInstance:
     - target: {fileID: 1975739478942758107, guid: 4475544d945fa9c4b846237a5ff48774,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3381376907375964537, guid: 4475544d945fa9c4b846237a5ff48774,
         type: 3}

@@ -208,6 +208,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseScreen
       objectReference: {fileID: 0}
+    - target: {fileID: 2117491447680512846, guid: 9cbd13a30954b9440b37c3c2829c36c1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2946756823449859820, guid: 9cbd13a30954b9440b37c3c2829c36c1,
         type: 3}
       propertyPath: m_RootOrder
@@ -436,6 +441,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 8951810564751259725, guid: 3f0c63379dff222439f62eb99421ba6f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f0c63379dff222439f62eb99421ba6f, type: 3}
