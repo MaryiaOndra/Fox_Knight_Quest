@@ -1,0 +1,38 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace CubePlatformer
+{
+    public class LevelBtn : MonoBehaviour
+    {
+        [SerializeField]
+        TextMeshProUGUI levelText;
+
+        Button levelBtn;
+        int levelIndex;
+
+        public Action<int> LevelPressed { get; private set; }
+
+        void Awake()
+        {
+            levelBtn = GetComponent<Button>();
+        }
+
+        public void Setup(int _levelIndex, LevelState _levelState)
+        {
+            levelIndex = _levelIndex;
+            levelText.text = "LEVEL: " + (_levelIndex + 1);
+
+            levelBtn.interactable = _levelState == LevelState.Unlocked;
+        }
+
+        public void OnBtnPressed()
+        {
+            LevelPressed.Invoke(levelIndex);
+        }
+    }
+}
