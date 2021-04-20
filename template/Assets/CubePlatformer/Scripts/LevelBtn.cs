@@ -15,7 +15,7 @@ namespace CubePlatformer
         Button levelBtn;
         int levelIndex;
 
-        public Action<int> LevelPressed { get; private set; }
+        public Action<int> LevelPressed { get; set; }
 
         void Awake()
         {

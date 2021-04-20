@@ -15,6 +15,9 @@ namespace CubePlatformer
         public void ShowAndStartGame() 
         {
             Show();
+
+            SceneManager.LoadScene(3, LoadSceneMode.Additive);
+
         }
 
         public void OnPause()

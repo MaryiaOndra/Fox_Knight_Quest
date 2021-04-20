@@ -8,11 +8,10 @@ namespace CubePlatformer.Base
 {
     public class CubePlatformerDirector : AppDirector
     {
-        protected override void Awake()
+        void Start()
         {
-            base.Awake();
 
-           // SceneManager.LoadScene("Startup");
+            GameInfo.Instance.Setup();
         }
     }
 }

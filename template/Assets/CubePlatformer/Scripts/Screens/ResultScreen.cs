@@ -19,7 +19,7 @@ namespace CubePlatformer
         public override void Show()
         {
             base.Show();
-            scoreText.text = GameInfo.Instance.Score.ToString();
+            scoreText.text = GameInfo.Instance.Scores.ToString();
         }
 
         public void OnRestartPressed() 
