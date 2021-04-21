@@ -16,7 +16,7 @@ namespace CubePlatformer
         {
             Show();
 
-            SceneManager.LoadScene(3, LoadSceneMode.Additive);
+            //SceneManager.LoadScene(3, LoadSceneMode.Additive);
 
         }
 

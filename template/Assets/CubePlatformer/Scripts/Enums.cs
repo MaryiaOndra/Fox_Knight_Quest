@@ -19,4 +19,12 @@ namespace CubePlatformer
         Level4,
         Level5
     }
+    public enum PlayerState
+    {
+        Idle,
+        Run,
+        Jump,
+        Fall,
+        Win
+    }
 }
