@@ -10,7 +10,6 @@ namespace CubePlatformer.Base
     {
         void Start()
         {
-
             GameInfo.Instance.Setup();
         }
     }

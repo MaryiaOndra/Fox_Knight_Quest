@@ -22,6 +22,7 @@ namespace CubePlatformer
             {
                 if (_exitCode == StartupScreen.Exit_Game)
                 {
+
                     SceneManager.LoadScene(ScenesIds.Game);
                 }
             }
@@ -44,6 +45,8 @@ namespace CubePlatformer
                 }
                 else if (_exitCode == PauseScreen.Exit_Replay) 
                 {
+                    //TODO: make normal game restart
+                    SetCurrentScreen<GameScreen>().UnloadLevel(3);
                     SetCurrentScreen<GameScreen>().ShowAndStartGame();
                 }
                 else if (_exitCode == PauseScreen.Exit_Menu)
@@ -55,10 +58,13 @@ namespace CubePlatformer
             {
                 if (_exitCode == ResultScreen.Exit_NextLvl)
                 {
+                    //TODO: make nex level transition
                     Debug.Log("LOAD NEXT LEVEL");
                 }
                 else if (_exitCode == ResultScreen.Exit_Replay)
                 {
+                    //TODO: make normal game restart
+                    SetCurrentScreen<GameScreen>().UnloadLevel(3);
                     SetCurrentScreen<GameScreen>().ShowAndStartGame();
                 }
             }

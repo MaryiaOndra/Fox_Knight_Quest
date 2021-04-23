@@ -9,18 +9,21 @@ namespace CubePlatformer
     {
         static readonly int INT_STATE = Animator.StringToHash("State");
 
-        protected Rigidbody rBody;
+        //protected Rigidbody rBody;
         protected Animator playerAnimator;
         protected Collider playerCollider;
+        protected CharacterController chController;
 
         public abstract PlayerState PlayerState { get; }
         public Action<PlayerState> NextStateAction { get; set; }
 
-        public void Setup(Rigidbody _rBody, Animator _playerAniimator, Collider _playerCollider) 
+        public void Setup(CharacterController _chController, Animator _playerAniimator, Collider _playerCollider) 
         {
-            rBody = _rBody;
+           // rBody = _rBody;
             playerAnimator = _playerAniimator;
             playerCollider = _playerCollider;
+            chController = _chController;
+
         }
 
         public virtual void Activate() 
@@ -39,30 +42,11 @@ namespace CubePlatformer
             
         }
 
-        protected bool IsGrounded
-        {
-            get 
-            {
-                bool _value = false;
-                float _minDist = 1f;
-                float _distToGround = playerCollider.bounds.extents.y;
-
-                bool _isTouchGround = Physics.Raycast(rBody.position, Vector3.down, _minDist /*+ _distToGround*/);
-
-                if (_isTouchGround)
-                    _value = true;
-                else
-                    _value = false;
-
-                return _value;            
-            }        
-        }
-
         protected float HorizontalValue
         {
             get
             {
-                float _horizontalValue = Input.GetAxis("Horizontal");
+                float _horizontalValue = Input.GetAxisRaw("Horizontal");
                 return _horizontalValue;
             }
         }
@@ -71,7 +55,7 @@ namespace CubePlatformer
         {
             get
             {
-                float _verticalValue = Input.GetAxis("Vertical");
+                float _verticalValue = Input.GetAxisRaw("Vertical");
                 return _verticalValue;
             }
         }
@@ -80,7 +64,7 @@ namespace CubePlatformer
         {
             get
             {
-                float _jumpValue = Input.GetAxis("Jump");
+                float _jumpValue = Input.GetAxisRaw("Jump");
                 return _jumpValue;
             }
         }

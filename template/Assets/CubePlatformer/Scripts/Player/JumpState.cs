@@ -11,52 +11,22 @@ namespace CubePlatformer
         [SerializeField]
         float moveSpeed;
 
-        float deadlineVelocity = -5.0f;
+        float gravityValue = -9.81f;
+        float jumpHeight = 0.1f;
 
         public override PlayerState PlayerState => PlayerState.Jump;
-
         public override void Activate()
         {
             base.Activate();
 
-            //var _velocity = rBody.velocity;
-            //_velocity.y += Vector3.up.y * jumpForce;
-            //rBody.velocity = _velocity;
+            var _direction2 = new Vector3(VerticalValue * -1, JumpValue * jumpForce, HorizontalValue).normalized;
+            chController.Move(_direction2);
         }
 
-        private void FixedUpdate()
+
+        private void Update()
         {
-            var _velocity = rBody.velocity;
-            _velocity.z = Vector3.forward.z * moveSpeed * VerticalValue;
-            rBody.velocity = _velocity;
 
-            if (IsGrounded)
-            {
-                if (_velocity.z == 0)
-                {
-                    NextStateAction.Invoke(PlayerState.Idle);
-                }
-                else
-                {
-                    NextStateAction.Invoke(PlayerState.Run);
-                }
-            }
-            else if (_velocity.y < deadlineVelocity)
-            {
-                NextStateAction.Invoke(PlayerState.Fall);
-            }
-
-            //if (IsGrounded)
-            //{
-            //    if (VerticalValue == 0)
-            //    {
-            //        NextStateAction.Invoke(PlayerState.Idle);
-            //    }
-            //    else
-            //    {
-            //        NextStateAction.Invoke(PlayerState.Run);
-            //    }
-            //}
         }
     }
 }

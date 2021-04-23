@@ -8,22 +8,48 @@ namespace CubePlatformer
     {
         public override PlayerState PlayerState => PlayerState.Idle;
 
-        private void FixedUpdate()
+        [SerializeField]
+        float playerSpeed = 2.0f;
+        [SerializeField]
+        float jumpHeight = 1.0f;
+
+        float gravityValue = -9.81f;
+        Vector3 playerVelocity;
+
+        void Update()
         {
-            if (VerticalValue != 0)
+
+            bool groundedPlayer = chController.isGrounded;
+
+            if (groundedPlayer && playerVelocity.y < 0)
             {
-                NextStateAction.Invoke(PlayerState.Run);
+                playerVelocity.y = 0f;
             }
-            else if (JumpValue != 0)
+
+            Vector3 move = new Vector3(VerticalValue * -1, 0, HorizontalValue).normalized;
+            chController.Move(move * Time.deltaTime * playerSpeed);
+
+            if (move != Vector3.zero)
             {
-                NextStateAction.Invoke(PlayerState.Jump);
+                gameObject.transform.forward = move;
+
             }
-            else
+
+            if (JumpValue != 0f && groundedPlayer)
             {
-                var _velocity = rBody.velocity;
-                _velocity.x = 0;
-                rBody.velocity = _velocity;
+                playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
             }
+
+            playerVelocity.y += gravityValue * Time.deltaTime;
+
+            if (VerticalValue != 0 || HorizontalValue != 0)
+            {
+                float _targetAngle = Mathf.Atan2(move.x, move.z) * Mathf.Rad2Deg;
+                chController.transform.rotation = Quaternion.Euler(0f, _targetAngle, 0f);
+            }
+
+            chController.Move(playerVelocity * Time.deltaTime);
+
         }
     }
 }

@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4000010140368820}
   - component: {fileID: 33000013580865012}
   - component: {fileID: 23000012220716874}
+  - component: {fileID: 829634289439373508}
+  - component: {fileID: 2699760858965780792}
   m_Layer: 0
   m_Name: 5 Side Diamond
   m_TagString: Untagged
@@ -81,3 +83,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &829634289439373508
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000010880751780}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.1983311
+  m_Center: {x: -0.022504508, y: 0.120321125, z: -0.19482045}
+--- !u!114 &2699760858965780792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000010880751780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f217f94ffa3426458368bf027de3c75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

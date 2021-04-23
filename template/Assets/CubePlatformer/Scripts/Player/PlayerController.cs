@@ -11,6 +11,7 @@ namespace CubePlatformer
         Collider playerCollider;
         List<BaseState> states;
         BaseState currentState;
+        CharacterController chController;
 
         private void Awake()
         {
@@ -18,12 +19,13 @@ namespace CubePlatformer
             playerAnimator = GetComponent<Animator>();
             playerCollider = GetComponent<Collider>();
             states = new List<BaseState>(GetComponentsInChildren<BaseState>(true));
+            chController = GetComponent<CharacterController>();
 
-            states.ForEach(_state =>
-            {
-                _state.Setup(rBody, playerAnimator, playerCollider);
-                _state.NextStateAction = OnNextStateRequest;
-            });
+                states.ForEach(_state =>
+                {
+                    _state.Setup(chController, playerAnimator, playerCollider);
+                    _state.NextStateAction = OnNextStateRequest;
+                });
 
             currentState = states.Find(_state => _state.PlayerState == PlayerState.Idle);
             currentState.Activate();
@@ -34,20 +36,6 @@ namespace CubePlatformer
             currentState.Diactivate();
             currentState = states.Find(_s => _s.PlayerState == _state);
             currentState.Activate();
-        }
-
-        void FixedUpdate()
-        {
-            //float _horizontalAxis = Input.GetAxis("Horizontal");
-            //float _verticalAxis = Input.GetAxis("Vertical");
-            //float _jumpAxis = Input.GetAxis("Jump");
-
-
-            //rBody.MovePosition(transform.position + transform.forward * _verticalAxis * Time.fixedDeltaTime * moveSpeed);
-            //rBody.AddForce(transform.up * _jumpAxis * jumpForce);
-            //Quaternion quaternion = Quaternion.Euler(Vector3.up * rotationSpeed * _horizontalAxis *  Time.fixedDeltaTime);
-            //rBody.MoveRotation(rBody.rotation * quaternion);
-            
         }
     }
 }

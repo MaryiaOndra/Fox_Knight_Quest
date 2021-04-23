@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace CubePlatformer.Core
 {
@@ -21,6 +22,8 @@ namespace CubePlatformer.Core
             Debug.Log("Show: " + name);
             gameObject.SetActive(true);
         }
+
+
 
         public virtual void Hide() 
         {
