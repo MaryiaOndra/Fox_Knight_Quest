@@ -27,4 +27,15 @@ namespace CubePlatformer
         Fall,
         Win
     }
+
+    public enum BtnState
+    {
+        MoveForward,
+        MoveRight,
+        MoveLeft,
+        MoveBack,
+        Jump,
+        Attack,
+        None
+    }
 }

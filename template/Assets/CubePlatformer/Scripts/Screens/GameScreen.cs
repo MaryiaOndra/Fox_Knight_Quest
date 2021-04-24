@@ -22,39 +22,35 @@ namespace CubePlatformer
             SceneManager.sceneLoaded -= OnSceneLoaded;
         }
 
-        public void ShowAndStartGame() 
+        public void ShowAndStartGame()
         {
             Show();
             LoadLevel(3);
         }
-               
-        void LoadLevel(int _buildIndex) 
+
+        void LoadLevel(int _buildIndex)
         {
             SceneManager.LoadScene(_buildIndex, LoadSceneMode.Additive);
         }
 
-        public void UnloadLevel(int _buildIndex) 
+        public void UnloadLevel(int _buildIndex)
         {
             SceneManager.UnloadScene(_buildIndex);
         }
 
         void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
-            Debug.Log("OnSceneLoaded: " + scene.name);
-            Debug.Log(mode);
-
             UIController uiContr = GetComponentInChildren<UIController>();
-            Debug.Log("uiContr.Setup();");
-            uiContr.Setup();
+            uiContr.SetupUI();
         }
 
 
-    public void OnPause()
+        public void OnPause()
         {
             Exit(Exit_Pause);
         }
 
-        public void OnResult() 
+        public void OnResult()
         {
             Exit(Exit_Result);
         }

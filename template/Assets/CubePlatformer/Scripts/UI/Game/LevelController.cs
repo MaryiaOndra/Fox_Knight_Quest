@@ -35,5 +35,10 @@ namespace CubePlatformer
             chController.enabled = _plContrState;
            // plController.enabled = _plContrState;
         }
+
+        internal void SaveBtnAction(BtnState _btnAction)
+        {
+            plController.BtnAction = _btnAction;
+        }
     }
 }

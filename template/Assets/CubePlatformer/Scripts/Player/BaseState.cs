@@ -13,17 +13,23 @@ namespace CubePlatformer
         protected Animator playerAnimator;
         protected Collider playerCollider;
         protected CharacterController chController;
+        protected BtnState btnAction = BtnState.None;
+
+        int horizontalValue;
+        int verticalValue;
+        int jumpValue;
+
 
         public abstract PlayerState PlayerState { get; }
         public Action<PlayerState> NextStateAction { get; set; }
 
-        public void Setup(CharacterController _chController, Animator _playerAniimator, Collider _playerCollider) 
+        public void Setup(CharacterController _chController, Animator _playerAniimator, Collider _playerCollider, BtnState _btnAction) 
         {
            // rBody = _rBody;
             playerAnimator = _playerAniimator;
             playerCollider = _playerCollider;
             chController = _chController;
-
+            btnAction = _btnAction;
         }
 
         public virtual void Activate() 
@@ -41,6 +47,12 @@ namespace CubePlatformer
         {
             
         }
+
+        private void AddValuesFromBtn() 
+        {
+        
+        }
+
 
         protected float HorizontalValue
         {

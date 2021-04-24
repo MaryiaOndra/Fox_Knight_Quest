@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,19 +20,22 @@ namespace CubePlatformer
         Button right;
 
         LevelController levelController;
+        ButtonController btnController;
 
-        public void Setup()
+        Action<Action> BtnAction;
+
+        public void SetupUI()
         {
             levelController = FindObjectOfType<LevelController>();
-            Debug.Log("FindObjectOfType<LevelController>();   " + (levelController != null));
-
-            //TODO: Itsnot working - change way of loading level
             levelController.AddUIDependency(screenSlider);
+
+            btnController = FindObjectOfType<ButtonController>();
+            btnController.OnActiveBtn += SendBtnAction;
         }
 
-        public void NewMethod() 
+        public void SendBtnAction(BtnState _btnAction) 
         {
-        
+            levelController.SaveBtnAction(_btnAction);
         }
 
         private void Update()
