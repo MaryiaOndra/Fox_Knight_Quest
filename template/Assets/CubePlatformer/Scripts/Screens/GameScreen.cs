@@ -12,16 +12,6 @@ namespace CubePlatformer
         public const string Exit_Pause = "Exit_Pause";
         public const string Exit_Result = "Exit_Result";
 
-        void OnEnable()
-        {
-            SceneManager.sceneLoaded += OnSceneLoaded;
-        }
-
-        void OnDisable()
-        {
-            SceneManager.sceneLoaded -= OnSceneLoaded;
-        }
-
         public void ShowAndStartGame()
         {
             Show();
@@ -37,13 +27,6 @@ namespace CubePlatformer
         {
             SceneManager.UnloadScene(_buildIndex);
         }
-
-        void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-        {
-            UIController uiContr = GetComponentInChildren<UIController>();
-            uiContr.SetupUI();
-        }
-
 
         public void OnPause()
         {

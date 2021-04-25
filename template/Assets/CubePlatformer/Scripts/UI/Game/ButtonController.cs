@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,19 +9,16 @@ namespace CubePlatformer
 {
     public class ButtonController : MonoBehaviour
     {
-        Button[] buttons;
-
         public Action<BtnState> OnActiveBtn;
 
-        private void Awake()
+        public void OnUp() 
         {
-            buttons = gameObject.GetComponentsInChildren<Button>();
+            OnActiveBtn.Invoke(BtnState.MoveForward);
         }
 
-        public void CatchBtnSignal(int _btnAction)
+        public void OnDown()
         {
-            BtnState _action = (BtnState)_btnAction;
-            OnActiveBtn.Invoke(_action);
+            OnActiveBtn.Invoke(BtnState.MoveBack);
         }
     }
 }

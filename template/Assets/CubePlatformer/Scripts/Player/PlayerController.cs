@@ -13,19 +13,18 @@ namespace CubePlatformer
         BaseState currentState;
         CharacterController chController;
 
-        public BtnState BtnAction { get; set; }
-
+      
         private void Awake()
         {
-            rBody = GetComponent<Rigidbody>();
+           // rBody = GetComponent<Rigidbody>();
             playerAnimator = GetComponent<Animator>();
-            playerCollider = GetComponent<Collider>();
+           // playerCollider = GetComponent<Collider>();
             states = new List<BaseState>(GetComponentsInChildren<BaseState>(true));
             chController = GetComponent<CharacterController>();
 
                 states.ForEach(_state =>
                 {
-                    _state.Setup(chController, playerAnimator, playerCollider, BtnAction);
+                    _state.Setup(chController, playerAnimator);
                     _state.NextStateAction = OnNextStateRequest;
                 });
 

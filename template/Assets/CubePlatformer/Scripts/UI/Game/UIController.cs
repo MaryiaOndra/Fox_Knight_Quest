@@ -8,39 +8,43 @@ namespace CubePlatformer
 {
     public class UIController : MonoBehaviour
     {
-        [SerializeField]
-        Slider screenSlider;
-        [SerializeField]
-        Button up;
-        [SerializeField]
-        Button down;
-        [SerializeField]
-        Button left;
-        [SerializeField]
-        Button right;
+        public Action<bool> OnDraggedSlider;
+        public Action<float> SliderValue;
+        public Action<BtnState> OnActiveBtn;
 
-        LevelController levelController;
-        ButtonController btnController;
+        Slider slider;
 
-        Action<Action> BtnAction;
-
-        public void SetupUI()
+        private void Awake()
         {
-            levelController = FindObjectOfType<LevelController>();
-            levelController.AddUIDependency(screenSlider);
-
-            btnController = FindObjectOfType<ButtonController>();
-            btnController.OnActiveBtn += SendBtnAction;
+            slider = GetComponentInChildren<Slider>();
+            slider.onValueChanged.AddListener(SaveSliderValue);
         }
 
-        public void SendBtnAction(BtnState _btnAction) 
+        public void SliderDragState(bool _state)
         {
-            levelController.SaveBtnAction(_btnAction);
+            OnDraggedSlider.Invoke(_state);
+        }
+        void SaveSliderValue(float _value) 
+        {
+            SliderValue.Invoke(_value);
         }
 
-        private void Update()
-        {
 
+        public void OnUp()
+        {
+            OnActiveBtn.Invoke(BtnState.MoveForward);
+        }
+        public void OnDown()
+        {
+            OnActiveBtn.Invoke(BtnState.MoveBack);
+        }
+        public void OnLeft()
+        {
+            OnActiveBtn.Invoke(BtnState.MoveLeft);
+        }
+        public void OnRight()
+        {
+            OnActiveBtn.Invoke(BtnState.MoveRight);
         }
     }
 }

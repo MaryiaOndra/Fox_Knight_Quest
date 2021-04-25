@@ -15,21 +15,17 @@ namespace CubePlatformer
         protected CharacterController chController;
         protected BtnState btnAction = BtnState.None;
 
-        int horizontalValue;
-        int verticalValue;
-        int jumpValue;
+       public Vector3 PlayerVelosityTestBase { get; set; }
 
 
         public abstract PlayerState PlayerState { get; }
         public Action<PlayerState> NextStateAction { get; set; }
 
-        public void Setup(CharacterController _chController, Animator _playerAniimator, Collider _playerCollider, BtnState _btnAction) 
+        public void Setup(CharacterController _chController, Animator _playerAniimator) 
         {
            // rBody = _rBody;
             playerAnimator = _playerAniimator;
-            playerCollider = _playerCollider;
             chController = _chController;
-            btnAction = _btnAction;
         }
 
         public virtual void Activate() 
