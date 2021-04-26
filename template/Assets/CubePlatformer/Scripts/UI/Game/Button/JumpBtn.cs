@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace CubePlatformer
 {
-    public class BaseButton : MonoBehaviour
+    public class JumpBtn : BaseBtn
     {
-
+        public override BtnState ButtonState => BtnState.Jump;
     }
 }

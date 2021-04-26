@@ -12,11 +12,15 @@ namespace CubePlatformer
         List<BaseState> states;
         BaseState currentState;
         CharacterController chController;
+        UIController uiController;
 
       
         private void Awake()
         {
-           // rBody = GetComponent<Rigidbody>();
+
+            uiController = FindObjectOfType<UIController>();
+            uiController.OnActiveBtn += OnPlayerInput;
+            // rBody = GetComponent<Rigidbody>();
             playerAnimator = GetComponent<Animator>();
            // playerCollider = GetComponent<Collider>();
             states = new List<BaseState>(GetComponentsInChildren<BaseState>(true));
@@ -32,8 +36,39 @@ namespace CubePlatformer
             currentState.Activate();
         }
 
-        public void OnNextStateRequest(PlayerState _state) 
+        void OnPlayerInput(BtnState _btnState) 
         {
+            switch (_btnState)
+            {
+                case BtnState.MoveForward:
+                    currentState.VerticalValue = 1;
+                    break;
+                case BtnState.MoveRight:
+                    currentState.HorizontalValue = 1;
+                    break;
+                case BtnState.MoveLeft:
+                    currentState.HorizontalValue = -1;
+                    break;
+                case BtnState.MoveBack:
+                    currentState.VerticalValue = -1;
+                    break;
+                case BtnState.Jump:
+                    currentState.JumpValue = 1;
+                    break;
+                case BtnState.Attack:
+                    break;
+                case BtnState.None:
+                    currentState.HorizontalValue = 0;
+                    currentState.VerticalValue = 0;
+                    currentState.JumpValue = 0;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        public void OnNextStateRequest(PlayerState _state) 
+        {            
             currentState.Diactivate();
             currentState = states.Find(_s => _s.PlayerState == _state);
             currentState.Activate();

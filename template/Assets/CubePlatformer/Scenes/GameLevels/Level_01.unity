@@ -2856,6 +2856,7 @@ GameObject:
   - component: {fileID: 593170861}
   - component: {fileID: 593170860}
   - component: {fileID: 593170859}
+  - component: {fileID: 593170862}
   m_Layer: 5
   m_Name: Down
   m_TagString: Untagged
@@ -2926,19 +2927,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 593170860}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1065136200}
-        m_TargetAssemblyTypeName: CubePlatformer.UIController, Assembly-CSharp
-        m_MethodName: OnDown
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &593170860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2978,6 +2967,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 593170857}
   m_CullTransparentMesh: 1
+--- !u!114 &593170862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593170857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14ea0daab1341a24698a1a6542f120b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &601300515
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3444,6 +3445,7 @@ GameObject:
   - component: {fileID: 677923172}
   - component: {fileID: 677923171}
   - component: {fileID: 677923170}
+  - component: {fileID: 677923173}
   m_Layer: 5
   m_Name: Right
   m_TagString: Untagged
@@ -3514,19 +3516,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 677923171}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1065136200}
-        m_TargetAssemblyTypeName: CubePlatformer.UIController, Assembly-CSharp
-        m_MethodName: OnRiight
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &677923171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3566,6 +3556,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 677923168}
   m_CullTransparentMesh: 1
+--- !u!114 &677923173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677923168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e171d02397c4bff42b051020cb9aceff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &710974450
 GameObject:
   m_ObjectHideFlags: 0
@@ -7746,6 +7748,7 @@ GameObject:
   - component: {fileID: 1264318537}
   - component: {fileID: 1264318536}
   - component: {fileID: 1264318535}
+  - component: {fileID: 1264318538}
   m_Layer: 5
   m_Name: JumpBtn
   m_TagString: Untagged
@@ -7816,19 +7819,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1264318536}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1938247675}
-        m_TargetAssemblyTypeName: CubePlatformer.BtnController, Assembly-CSharp
-        m_MethodName: CatchBtnSignal
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 4
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1264318536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7868,6 +7859,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1264318533}
   m_CullTransparentMesh: 1
+--- !u!114 &1264318538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264318533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 946d7a10a1c4c3247afcdd03d201c9d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1267654930
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8798,6 +8801,7 @@ GameObject:
   - component: {fileID: 1422218628}
   - component: {fileID: 1422218627}
   - component: {fileID: 1422218626}
+  - component: {fileID: 1422218629}
   m_Layer: 5
   m_Name: Left
   m_TagString: Untagged
@@ -8868,19 +8872,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1422218627}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1065136200}
-        m_TargetAssemblyTypeName: CubePlatformer.UIController, Assembly-CSharp
-        m_MethodName: OnLeft
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1422218627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8920,6 +8912,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1422218624}
   m_CullTransparentMesh: 1
+--- !u!114 &1422218629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422218624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0c4a161e537e164eb0c7bccb1493357, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1424997930
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11320,6 +11324,7 @@ GameObject:
   - component: {fileID: 1998675967}
   - component: {fileID: 1998675966}
   - component: {fileID: 1998675965}
+  - component: {fileID: 1998675968}
   m_Layer: 5
   m_Name: Up
   m_TagString: Untagged
@@ -11390,19 +11395,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1998675966}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1065136200}
-        m_TargetAssemblyTypeName: CubePlatformer.UIController, Assembly-CSharp
-        m_MethodName: OnUp
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1998675966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11442,6 +11435,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1998675963}
   m_CullTransparentMesh: 1
+--- !u!114 &1998675968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998675963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90a3c0dd89113474e8a4b20b1d7a5197, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2012829666
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12470,7 +12475,7 @@ PrefabInstance:
     - target: {fileID: 6036636497332045948, guid: 6c7b7a89afd5d2942aecff5cb0eb370a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.53
+      value: 2.107
       objectReference: {fileID: 0}
     - target: {fileID: 6036636497332045948, guid: 6c7b7a89afd5d2942aecff5cb0eb370a,
         type: 3}

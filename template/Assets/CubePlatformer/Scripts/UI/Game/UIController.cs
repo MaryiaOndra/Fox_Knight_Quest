@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace CubePlatformer
@@ -12,39 +13,35 @@ namespace CubePlatformer
         public Action<float> SliderValue;
         public Action<BtnState> OnActiveBtn;
 
+        List<BaseBtn> btnStates;
         Slider slider;
 
         private void Awake()
         {
             slider = GetComponentInChildren<Slider>();
             slider.onValueChanged.AddListener(SaveSliderValue);
+
+            btnStates = new List<BaseBtn>(GetComponentsInChildren<BaseBtn>(true));
+
+            btnStates.ForEach(_state =>
+            {
+                 _state.BtnAction += SetBtnStateToPlayer;
+            });
         }
 
         public void SliderDragState(bool _state)
         {
             OnDraggedSlider.Invoke(_state);
         }
+
         void SaveSliderValue(float _value) 
         {
             SliderValue.Invoke(_value);
         }
 
-
-        public void OnUp()
+        public void SetBtnStateToPlayer(BtnState _btnState) 
         {
-            OnActiveBtn.Invoke(BtnState.MoveForward);
-        }
-        public void OnDown()
-        {
-            OnActiveBtn.Invoke(BtnState.MoveBack);
-        }
-        public void OnLeft()
-        {
-            OnActiveBtn.Invoke(BtnState.MoveLeft);
-        }
-        public void OnRight()
-        {
-            OnActiveBtn.Invoke(BtnState.MoveRight);
+            OnActiveBtn.Invoke(_btnState);            
         }
     }
 }

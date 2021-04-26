@@ -24,9 +24,9 @@ namespace CubePlatformer
             if (groundedPlayer && playerVelocity.y < 0)
             {
                 playerVelocity.y = 0f;
-            }
+            }            
 
-            Vector3 move = PlayerVelosityTestBase; //new Vector3(VerticalValue * -1, 0, HorizontalValue).normalized;
+            Vector3 move = new Vector3(VerticalValue * -1, 0, HorizontalValue);
             chController.Move(move * Time.deltaTime * playerSpeed);
 
             if (move != Vector3.zero)
@@ -49,6 +49,8 @@ namespace CubePlatformer
             }
 
             chController.Move(playerVelocity * Time.deltaTime);
+
+            Debug.Log(VerticalValue +":  V + H:  "+ HorizontalValue);
 
         }
     }

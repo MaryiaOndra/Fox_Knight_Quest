@@ -13,7 +13,7 @@ namespace CubePlatformer
         protected Animator playerAnimator;
         protected Collider playerCollider;
         protected CharacterController chController;
-        protected BtnState btnAction = BtnState.None;
+
 
        public Vector3 PlayerVelosityTestBase { get; set; }
 
@@ -39,42 +39,37 @@ namespace CubePlatformer
             gameObject.SetActive(false);        
         }
 
-        private void OnCollision(Collision collision)
-        {
-            
-        }
-
-        private void AddValuesFromBtn() 
-        {
-        
-        }
+        public float HorizontalValue { get; set; }
+        public float VerticalValue { get; set; }
+        public float JumpValue { get; set; }
 
 
-        protected float HorizontalValue
-        {
-            get
-            {
-                float _horizontalValue = Input.GetAxisRaw("Horizontal");
-                return _horizontalValue;
-            }
-        }
 
-        protected float VerticalValue
-        {
-            get
-            {
-                float _verticalValue = Input.GetAxisRaw("Vertical");
-                return _verticalValue;
-            }
-        }
+        //protected float HorizontalValue
+        //{
+        //    get
+        //    {
+        //        float _horizontalValue = Input.GetAxisRaw("Horizontal");
+        //        return _horizontalValue;
+        //    }
+        //}
 
-        protected float JumpValue
-        {
-            get
-            {
-                float _jumpValue = Input.GetAxisRaw("Jump");
-                return _jumpValue;
-            }
-        }
+        //protected float VerticalValue
+        //{
+        //    get
+        //    {
+        //        float _verticalValue = Input.GetAxisRaw("Vertical");
+        //        return _verticalValue;
+        //    }
+        //}
+
+        //protected float JumpValue
+        //{
+        //    get
+        //    {
+        //        float _jumpValue = Input.GetAxisRaw("Jump");
+        //        return _jumpValue;
+        //    }
+        //}
     }
 }
