@@ -5,13 +5,16 @@ using UnityEngine;
 
 namespace CubePlatformer
 {
-    public class Truphy : MonoBehaviour
+    public class Coin : MonoBehaviour
     {
+        public Action OnCoinColected;
+
         private void OnTriggerEnter(Collider other)
         {
             if (other.GetComponent<PlayerController>())
             {
                 Destroy(gameObject);
+                OnCoinColected.Invoke();               
             }
         }
     }

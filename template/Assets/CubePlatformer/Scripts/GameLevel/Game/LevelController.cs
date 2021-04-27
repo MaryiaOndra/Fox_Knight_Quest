@@ -14,11 +14,27 @@ namespace CubePlatformer
 
         float platformAngle;
 
+        List<Coin> coins;
+        int totalCount;
+        int count;
+
         private void Awake()
         {
             chController = GetComponentInChildren<CharacterController>();
             uiController = GetComponentInChildren<UIController>();
             playerController = GetComponentInChildren<PlayerController>();
+
+            coins = new List<Coin>(GetComponentsInChildren<Coin>());
+            totalCount = coins.Count;
+            count = totalCount;
+            coins.ForEach(_coin => _coin.OnCoinColected += CheckCoinsAmount);
+            uiController.WriteScoreText(coins.Count, totalCount);
+        }
+
+        void CheckCoinsAmount() 
+        {
+            count -= 1;
+            uiController.WriteScoreText(count , totalCount);
         }
 
         private void OnEnable()

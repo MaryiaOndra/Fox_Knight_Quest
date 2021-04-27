@@ -9,24 +9,31 @@ namespace CubePlatformer
 {
     public class GameScreen : BaseScreen
     {
+        [SerializeField]
+        CubePlatformerController platformerController;
+
+
         public const string Exit_Pause = "Exit_Pause";
         public const string Exit_Result = "Exit_Result";
+
+        EachLevelConfigs levelConfigs;
+        int truphyCount;
 
         public void ShowAndStartGame()
         {
             Show();
-            LoadLevel(3);
+            levelConfigs = GameInfo.Instance.LevelConfig;
+            truphyCount = levelConfigs.CoinsCount;
+
+            if (true)
+            {
+
+            }
+            platformerController.StartGame(levelConfigs);
+
         }
 
-        void LoadLevel(int _buildIndex)
-        {
-            SceneManager.LoadScene(_buildIndex, LoadSceneMode.Additive);
-        }
 
-        public void UnloadLevel(int _buildIndex)
-        {
-            SceneManager.UnloadScene(_buildIndex);
-        }
 
         public void OnPause()
         {

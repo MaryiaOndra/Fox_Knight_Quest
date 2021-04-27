@@ -295,6 +295,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4105794785695248218, guid: 3f0c63379dff222439f62eb99421ba6f,
+        type: 3}
+      propertyPath: platformerController
+      value: 
+      objectReference: {fileID: 1506673913}
     - target: {fileID: 4658427130662288365, guid: 3f0c63379dff222439f62eb99421ba6f,
         type: 3}
       propertyPath: m_fontSize
@@ -563,7 +568,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9240127215975ea469703e5885dc27b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eachLevelConfigs: []
 --- !u!4 &1506673914
 Transform:
   m_ObjectHideFlags: 0

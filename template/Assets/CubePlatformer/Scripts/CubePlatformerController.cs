@@ -10,29 +10,26 @@ namespace CubePlatformer
 {
     public class CubePlatformerController : MonoBehaviour
     {
-        [SerializeField]
-        List<LevelConfigs> eachLevelConfigs;
-
         public Action<int> ColectedAction { get; set; }
         public Action<bool> FinishLevelAction { get; set; }
 
-        public List<LevelConfigs> EachLevelConfigs => eachLevelConfigs;
-
         public void StartGame(EachLevelConfigs _levelConfigs) 
         {
-        
+            if (SceneManager.GetSceneByBuildIndex(_levelConfigs.BuildIndex).isLoaded)
+            {
+                UnloadLevel(_levelConfigs.BuildIndex);
+            }
+
+            LoadLevel(_levelConfigs.BuildIndex);
         }
-    }
+        void LoadLevel(int _buildIndex)
+        {
+            SceneManager.LoadScene(_buildIndex, LoadSceneMode.Additive);
+        }
 
-    [Serializable]
-    public class LevelConfigs
-    {
-        //[SerializeField]
-        //LevelContentId id;
-        //[SerializeField]
-        //int buildIndex;
-
-        //public LevelContentId Id => id;
-        //public int BuildIndex => buildIndex;
+        public void UnloadLevel(int _buildIndex)
+        {
+            SceneManager.UnloadScene(_buildIndex);
+        }
     }
 }

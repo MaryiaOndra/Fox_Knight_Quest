@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -9,13 +10,16 @@ namespace CubePlatformer
 {
     public class UIController : MonoBehaviour
     {
-        public Action<bool> OnDraggedSlider;
-        public Action<float> SliderValue;
-        public Action<BtnState> OnActiveBtn;
+        [SerializeField]
+        TMP_Text scoreTxt;
 
         List<BaseBtn> btnStates;
         Slider slider;
         KeyboardBtns keyboardBtns;
+
+        public Action<bool> OnDraggedSlider;
+        public Action<float> SliderValue;
+        public Action<BtnState> OnActiveBtn;
 
         private void Awake()
         {
@@ -31,6 +35,11 @@ namespace CubePlatformer
             {
                  _state.BtnAction += SetBtnStateToPlayer;
             });
+        }
+
+        public void WriteScoreText(int _count, int _totalCount) 
+        {
+            scoreTxt.text = "COINS: " + _count + '/' +_totalCount;
         }
 
         public void SliderDragState(bool _state)

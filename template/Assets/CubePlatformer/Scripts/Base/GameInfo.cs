@@ -71,17 +71,17 @@ namespace CubePlatformer.Base
     public class EachLevelConfigs 
     {
         [SerializeField]
-        int trophyCount;
+        int coinsCount;
         [SerializeField]
         LevelContentId id;
         [SerializeField]
         int buildIndex;
 
-        bool finishTruphy;
+        bool isAllCoins;
 
-        public int TrophyCount => trophyCount;
+        public int CoinsCount => coinsCount;
         public LevelContentId Id => id;
         public int BuildIndex => buildIndex;
-        public bool FinishTruphy => finishTruphy;
+        public bool FinishTruphy => isAllCoins;
     }
 }

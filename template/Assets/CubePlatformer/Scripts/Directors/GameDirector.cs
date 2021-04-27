@@ -46,7 +46,7 @@ namespace CubePlatformer
                 else if (_exitCode == PauseScreen.Exit_Replay) 
                 {
                     //TODO: make normal game restart
-                    SetCurrentScreen<GameScreen>().UnloadLevel(3);
+                    //SetCurrentScreen<GameScreen>().UnloadLevel(3);
                     SetCurrentScreen<GameScreen>().ShowAndStartGame();
                 }
                 else if (_exitCode == PauseScreen.Exit_Menu)
@@ -64,7 +64,7 @@ namespace CubePlatformer
                 else if (_exitCode == ResultScreen.Exit_Replay)
                 {
                     //TODO: make normal game restart
-                    SetCurrentScreen<GameScreen>().UnloadLevel(3);
+                    //SetCurrentScreen<GameScreen>().UnloadLevel(3);
                     SetCurrentScreen<GameScreen>().ShowAndStartGame();
                 }
             }
