@@ -10,11 +10,15 @@ namespace CubePlatformer
     {
         CharacterController chController;
         UIController uiController;
+        PlayerController playerController;
+
+        float platformAngle;
 
         private void Awake()
         {
             chController = GetComponentInChildren<CharacterController>();
             uiController = GetComponentInChildren<UIController>();
+            playerController = GetComponentInChildren<PlayerController>();
         }
 
         private void OnEnable()
@@ -37,6 +41,10 @@ namespace CubePlatformer
         public void ChangePlatformAngle(float _sliderValue)
         {
             transform.rotation = Quaternion.Euler(0, _sliderValue * 360, 0);
+            platformAngle = transform.rotation.eulerAngles.y;
+           
+            playerController.PlatformAngle = platformAngle;
+            uiController.OnActiveBtn(BtnState.Slider);
         }
     }
 }

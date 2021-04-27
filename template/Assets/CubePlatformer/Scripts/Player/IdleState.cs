@@ -18,7 +18,7 @@ namespace CubePlatformer
 
         void Update()
         {
-
+  
             bool groundedPlayer = chController.isGrounded;
 
             if (groundedPlayer && playerVelocity.y < 0)
@@ -26,7 +26,7 @@ namespace CubePlatformer
                 playerVelocity.y = 0f;
             }            
 
-            Vector3 move = new Vector3(VerticalValue * -1, 0, HorizontalValue);
+            Vector3 move = new Vector3(VerticalValue * -1, 0, HorizontalValue).normalized;
             chController.Move(move * Time.deltaTime * playerSpeed);
 
             if (move != Vector3.zero)
@@ -45,13 +45,11 @@ namespace CubePlatformer
             if (VerticalValue != 0 || HorizontalValue != 0)
             {
                 float _targetAngle = Mathf.Atan2(move.x, move.z) * Mathf.Rad2Deg;
+
                 chController.transform.rotation = Quaternion.Euler(0f, _targetAngle, 0f);
             }
 
             chController.Move(playerVelocity * Time.deltaTime);
-
-            Debug.Log(VerticalValue +":  V + H:  "+ HorizontalValue);
-
         }
     }
 }

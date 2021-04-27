@@ -25,7 +25,8 @@ namespace CubePlatformer
         Run,
         Jump,
         Fall,
-        Win
+        Win,
+        Die
     }
 
     public enum BtnState
@@ -36,6 +37,7 @@ namespace CubePlatformer
         MoveBack,
         Jump,
         Attack,
+        Slider,
         None
     }
 }

@@ -23,5 +23,7 @@ namespace CubePlatformer
             BtnAction.Invoke(BtnState.None);
             Debug.Log("OnPointerUp");
         }
+
+        
     }
 }

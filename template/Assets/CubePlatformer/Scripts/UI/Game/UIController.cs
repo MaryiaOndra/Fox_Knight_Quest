@@ -15,11 +15,15 @@ namespace CubePlatformer
 
         List<BaseBtn> btnStates;
         Slider slider;
+        KeyboardBtns keyboardBtns;
 
         private void Awake()
         {
             slider = GetComponentInChildren<Slider>();
             slider.onValueChanged.AddListener(SaveSliderValue);
+
+            keyboardBtns = GetComponentInChildren<KeyboardBtns>();
+            keyboardBtns.OnKeyboardInput += SetBtnStateToPlayer;
 
             btnStates = new List<BaseBtn>(GetComponentsInChildren<BaseBtn>(true));
 

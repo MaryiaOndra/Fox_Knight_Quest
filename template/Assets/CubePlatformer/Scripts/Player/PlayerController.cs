@@ -6,23 +6,21 @@ namespace CubePlatformer
 {
     public class PlayerController : MonoBehaviour
     {
-        Rigidbody rBody;
         Animator playerAnimator;
-        Collider playerCollider;
         List<BaseState> states;
         BaseState currentState;
         CharacterController chController;
-        UIController uiController;
+        UIController canvasController;
 
+        public float PlatformAngle{get;set;}
       
         private void Awake()
         {
+            canvasController = FindObjectOfType<UIController>();
+            canvasController.OnActiveBtn += OnPlayerInput;
 
-            uiController = FindObjectOfType<UIController>();
-            uiController.OnActiveBtn += OnPlayerInput;
-            // rBody = GetComponent<Rigidbody>();
             playerAnimator = GetComponent<Animator>();
-           // playerCollider = GetComponent<Collider>();
+
             states = new List<BaseState>(GetComponentsInChildren<BaseState>(true));
             chController = GetComponent<CharacterController>();
 
@@ -62,7 +60,8 @@ namespace CubePlatformer
                     currentState.VerticalValue = 0;
                     currentState.JumpValue = 0;
                     break;
-                default:
+                case BtnState.Slider:
+                    currentState.PlatformAngle = PlatformAngle;
                     break;
             }
         }
@@ -72,6 +71,11 @@ namespace CubePlatformer
             currentState.Diactivate();
             currentState = states.Find(_s => _s.PlayerState == _state);
             currentState.Activate();
+        }
+
+        private void OnTriggerEnter(Collider _trigger)
+        {
+            currentState.OnTrigger(_trigger);
         }
     }
 }
