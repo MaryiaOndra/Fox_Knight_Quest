@@ -25,6 +25,7 @@ namespace CubePlatformer
             }
 
             prevYPos = _yPos;
+
         }
     }
 }

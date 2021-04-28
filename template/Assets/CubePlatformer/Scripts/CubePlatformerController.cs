@@ -20,6 +20,7 @@ namespace CubePlatformer
                 UnloadLevel(_levelConfigs.BuildIndex);
             }
 
+            Debug.Log("Layer" + _levelConfigs.BuildIndex);
             LoadLevel(_levelConfigs.BuildIndex);
         }
         void LoadLevel(int _buildIndex)

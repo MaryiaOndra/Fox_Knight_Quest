@@ -9,8 +9,9 @@ namespace CubePlatformer
         Animator playerAnimator;
         List<BaseState> states;
         BaseState currentState;
-        CharacterController chController;
         UIController canvasController;
+        Rigidbody rigidbody;
+        Collider collider;
 
         public float PlatformAngle{get;set;}
       
@@ -20,13 +21,14 @@ namespace CubePlatformer
             canvasController.OnActiveBtn += OnPlayerInput;
 
             playerAnimator = GetComponent<Animator>();
+            rigidbody = GetComponent<Rigidbody>();
+            collider = GetComponent<Collider>();
 
             states = new List<BaseState>(GetComponentsInChildren<BaseState>(true));
-            chController = GetComponent<CharacterController>();
 
                 states.ForEach(_state =>
                 {
-                    _state.Setup(chController, playerAnimator);
+                    _state.Setup(collider, playerAnimator, rigidbody);
                     _state.NextStateAction = OnNextStateRequest;
                 });
 
@@ -36,6 +38,7 @@ namespace CubePlatformer
 
         void OnPlayerInput(BtnState _btnState) 
         {
+            Debug.Log(_btnState);
             switch (_btnState)
             {
                 case BtnState.MoveForward:
