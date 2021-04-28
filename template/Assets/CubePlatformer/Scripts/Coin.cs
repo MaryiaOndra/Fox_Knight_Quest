@@ -11,11 +11,8 @@ namespace CubePlatformer
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.GetComponent<PlayerController>())
-            {
-                Destroy(gameObject);
-                OnCoinColected.Invoke();               
-            }
+            OnCoinColected.Invoke();
+            Destroy(gameObject);
         }
     }
 }

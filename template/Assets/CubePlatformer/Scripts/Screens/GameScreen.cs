@@ -21,19 +21,13 @@ namespace CubePlatformer
 
         public void ShowAndStartGame()
         {
-            Show();
+
             levelConfigs = GameInfo.Instance.LevelConfig;
             truphyCount = levelConfigs.CoinsCount;
 
-            if (true)
-            {
-
-            }
             platformerController.StartGame(levelConfigs);
-
+            Show();
         }
-
-
 
         public void OnPause()
         {
@@ -43,6 +37,53 @@ namespace CubePlatformer
         public void OnResult()
         {
             Exit(Exit_Result);
+        }
+
+        CharacterController chController;
+        UIController uiController;
+        PlayerController playerController;
+
+        float platformAngle;
+
+        List<Coin> coins;
+        int totalCount;
+        int count = 0;
+
+        private void Awake()
+        {
+            chController = FindObjectOfType<CharacterController>();
+            uiController = FindObjectOfType<UIController>();
+            playerController = FindObjectOfType<PlayerController>();
+
+            coins = new List<Coin>(FindObjectsOfType<Coin>());
+            totalCount = coins.Count;
+            Debug.Log("Coins:   " + coins.Count);
+            uiController.WriteScoreText(coins.Count, totalCount);
+
+        }
+
+        void CheckCoinsAmount()
+        {
+            count += 1;
+            uiController.WriteScoreText(count, totalCount);
+        }
+
+        private void OnEnable()
+        {
+
+            coins.ForEach(_coin => _coin.OnCoinColected += CheckCoinsAmount);
+
+        }
+
+        private void OnDisable()
+        {
+
+        }
+
+        public void ChangeState(bool _state)
+        {
+            bool _plContrState = _state == true ? false : true;
+            chController.enabled = _plContrState;
         }
     }
 }

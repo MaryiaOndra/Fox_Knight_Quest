@@ -14,18 +14,12 @@ namespace CubePlatformer
         TMP_Text scoreTxt;
 
         List<BaseBtn> btnStates;
-        Slider slider;
         KeyboardBtns keyboardBtns;
 
-        public Action<bool> OnDraggedSlider;
-        public Action<float> SliderValue;
         public Action<BtnState> OnActiveBtn;
 
         private void Awake()
         {
-            slider = GetComponentInChildren<Slider>();
-            slider.onValueChanged.AddListener(SaveSliderValue);
-
             keyboardBtns = GetComponentInChildren<KeyboardBtns>();
             keyboardBtns.OnKeyboardInput += SetBtnStateToPlayer;
 
@@ -40,16 +34,6 @@ namespace CubePlatformer
         public void WriteScoreText(int _count, int _totalCount) 
         {
             scoreTxt.text = "COINS: " + _count + '/' +_totalCount;
-        }
-
-        public void SliderDragState(bool _state)
-        {
-            OnDraggedSlider.Invoke(_state);
-        }
-
-        void SaveSliderValue(float _value) 
-        {
-            SliderValue.Invoke(_value);
         }
 
         public void SetBtnStateToPlayer(BtnState _btnState) 
