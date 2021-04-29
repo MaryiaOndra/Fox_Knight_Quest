@@ -13,14 +13,17 @@ namespace CubePlatformer
 
         public void OnBackPressed() 
         {
+            SoundMgr.Instance.PlayBtnSound();
             Exit(Exit_Back);
         }
         public void OnReplyPressed() 
         {
+            SoundMgr.Instance.PlayBtnSound();
             Exit(Exit_Replay);
         }
         public void OnMenuPressed() 
         {
+            SoundMgr.Instance.PlayBtnSound();
             Exit(Exit_Menu);
         }
     }

@@ -40,24 +40,27 @@ namespace CubePlatformer
             }
 
             levelGrid.ShowLevels(GameInfo.Instance.EachLevelConfigs, _levelsStates);
+
+            SoundMgr.Instance.PlayMusic();
         }
 
         void OnLevelSelected(int _levelIndex)
         {
             GameInfo.Instance.LevelIndex = _levelIndex;
             Exit(Exit_Game);
+            SoundMgr.Instance.PlayBtnSound();
         }
 
         public void OnSettingsPressed() 
         {
-            Debug.Log(name + "OnSettingsPressed");
             Exit(Exit_Settings);
+            SoundMgr.Instance.PlayBtnSound();
         }
 
         public void OnGamePressed()
         {
-            Debug.Log(name + "OnGamePressed");
             Exit(Exit_Game);
+            SoundMgr.Instance.PlayBtnSound();
         }
     }
 }

@@ -14,20 +14,20 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  m_FogMode: 3
-  m_FogDensity: 0.01
+  m_Fog: 1
+  m_FogColor: {r: 0.6132076, g: 0.6132076, b: 0.6132076, a: 1}
+  m_FogMode: 2
+  m_FogDensity: 0
   m_LinearFogStart: 0
-  m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.8207547, g: 0.8207547, b: 0.8207547, a: 1}
+  m_LinearFogEnd: 50
+  m_AmbientSkyColor: {r: 0, g: 0.018627167, b: 1, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 0}
-  m_HaloStrength: 0.5
+  m_HaloStrength: 0.456
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000004, guid: 4394910c2e1341649a4aaf812a418b3b,
+  m_LightingDataAsset: {fileID: 112000000, guid: 9c0d0560fa3f4d94db9c108f0adb2cf8,
     type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
@@ -16521,13 +16521,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1466109254}
-  m_LocalRotation: {x: 0.24618411, y: -0.28971636, z: 0.07738543, w: 0.92166656}
-  m_LocalPosition: {x: 15.98, y: 12.85, z: -12.88}
+  m_LocalRotation: {x: 0.25340727, y: -0.009792307, z: 0.0025653103, w: 0.96730673}
+  m_LocalPosition: {x: 5.3, y: 9.83, z: -13.11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2001281181}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 29.91, y: -34.9, z: 0}
+  m_LocalEulerAnglesHint: {x: 29.36, y: -1.16, z: 0}
 --- !u!114 &1466109256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16567,7 +16567,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.47668213, g: 0.6728571, b: 0.9811321, a: 0}
+  m_BackGroundColor: {r: 0.103773594, g: 0.103773594, b: 0.103773594, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -23798,6 +23798,11 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 1466109258}
+    - target: {fileID: 6036636497990401109, guid: 6c7b7a89afd5d2942aecff5cb0eb370a,
+        type: 3}
+      propertyPath: playerSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7932568706167645166, guid: 6c7b7a89afd5d2942aecff5cb0eb370a,
         type: 3}
       propertyPath: m_IsActive

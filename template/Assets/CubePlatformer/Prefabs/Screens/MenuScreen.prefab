@@ -999,6 +999,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 5069155931679520271}
+--- !u!81 &2221679495336721373
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8910116084138260360}
+  m_Enabled: 1
 --- !u!1 &7779599860884548385
 GameObject:
   m_ObjectHideFlags: 0
@@ -1516,15 +1524,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4475544d945fa9c4b846237a5ff48774, type: 3}
---- !u!224 &7401306519250813496 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 466846970819723627, guid: 4475544d945fa9c4b846237a5ff48774,
-    type: 3}
-  m_PrefabInstance: {fileID: 6974998062856340307}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8910116084138260360 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1975739478942758107, guid: 4475544d945fa9c4b846237a5ff48774,
+    type: 3}
+  m_PrefabInstance: {fileID: 6974998062856340307}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &7401306519250813496 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 466846970819723627, guid: 4475544d945fa9c4b846237a5ff48774,
     type: 3}
   m_PrefabInstance: {fileID: 6974998062856340307}
   m_PrefabAsset: {fileID: 0}

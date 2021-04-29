@@ -9,10 +9,17 @@ namespace CubePlatformer
     {
         public Action OnCoinColected;
 
+        AudioSource audioSource;
+
+        private void Awake()
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
+
         private void OnTriggerEnter(Collider other)
         {
-            //OnCoinColected.Invoke();
-            Destroy(gameObject);
+            SoundMgr.Instance.PlaySound(audioSource.clip);
+            Destroy(gameObject, audioSource.clip.length);           
         }
     }
 }

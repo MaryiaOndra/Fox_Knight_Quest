@@ -12,6 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe8ed23620fe26145b0033371ceef252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!81 &395727673241545181
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117491447680512846}
+  m_Enabled: 1
 --- !u!1 &880737935871106473
 GameObject:
   m_ObjectHideFlags: 0

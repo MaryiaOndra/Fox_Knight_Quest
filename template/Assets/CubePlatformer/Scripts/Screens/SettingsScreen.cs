@@ -1,7 +1,5 @@
 using CubePlatformer.Core;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+
 
 namespace CubePlatformer
 {
@@ -12,6 +10,16 @@ namespace CubePlatformer
         public void OnBackPressed()
         {
             Exit(Exit_Back);
+        }
+
+        public void OnMusicToggle(bool _value) 
+        {
+            SoundMgr.Instance.MuteMusic(!_value);
+        }
+
+        public void OnSoundToggle(bool _value) 
+        {
+            SoundMgr.Instance.MudeSound(!_value);
         }
     }
 }

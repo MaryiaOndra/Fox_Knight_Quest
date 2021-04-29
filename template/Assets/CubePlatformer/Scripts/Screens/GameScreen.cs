@@ -49,8 +49,10 @@ namespace CubePlatformer
         int totalCount;
         int count = 0;
 
-        private void Awake()
+        public override void Show()
         {
+            base.Show();
+
             chController = FindObjectOfType<CharacterController>();
             uiController = FindObjectOfType<UIController>();
             playerController = FindObjectOfType<PlayerController>();
@@ -59,7 +61,7 @@ namespace CubePlatformer
             coins.ForEach(_coin => _coin.OnCoinColected += CheckCoinsAmount);
             totalCount = coins.Count;
             Debug.Log("Coins:   " + coins.Count);
-            uiController.WriteScoreText(coins.Count, totalCount);
+            uiController.WriteScoreText(coins.Count, totalCount); 
         }
 
         void CheckCoinsAmount()

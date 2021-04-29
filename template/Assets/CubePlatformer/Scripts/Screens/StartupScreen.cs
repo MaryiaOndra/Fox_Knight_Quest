@@ -9,8 +9,16 @@ namespace CubePlatformer
     {
         public const string Exit_Game = "Exit_Game";
 
+        public override void Show()
+        {
+            base.Show();
+
+            SoundMgr.Instance.PlayMusic();
+        }
+
         public void OnGamePressed()
         {
+            SoundMgr.Instance.PlayBtnSound();
             Exit(Exit_Game);
         }
     }

@@ -13,13 +13,11 @@ namespace CubePlatformer.Core
 
         public virtual void Init(Action<Type, string> _exitAction) 
         {
-            Debug.Log("Init: " + name);
             exitAction = _exitAction;
         }
 
         public virtual void Show() 
         {
-            Debug.Log("Show: " + name);
             gameObject.SetActive(true);
         }
 
@@ -27,7 +25,6 @@ namespace CubePlatformer.Core
 
         public virtual void Hide() 
         {
-            Debug.Log("Hide: " + name);
             gameObject.SetActive(false);
         }
 
