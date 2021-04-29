@@ -1,0 +1,3426 @@
+fileFormatVersion: 2
+guid: 18cffe93c36d94652bf663f22d6627aa
+ModelImporter:
+  serializedVersion: 26
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: doller_rig10:cc_doller
+  - first:
+      1: 100002
+    second: doller_rig10:doller_rig
+  - first:
+      1: 100004
+    second: doller_rig10:joint1
+  - first:
+      1: 100006
+    second: doller_rig10:joint2
+  - first:
+      1: 100008
+    second: doller_rig10:joint3
+  - first:
+      1: 100010
+    second: doller_rig11:cc_doller
+  - first:
+      1: 100012
+    second: doller_rig11:doller_rig
+  - first:
+      1: 100014
+    second: doller_rig11:joint1
+  - first:
+      1: 100016
+    second: doller_rig11:joint2
+  - first:
+      1: 100018
+    second: doller_rig11:joint3
+  - first:
+      1: 100020
+    second: doller_rig12:cc_doller
+  - first:
+      1: 100022
+    second: doller_rig12:doller_rig
+  - first:
+      1: 100024
+    second: doller_rig12:joint1
+  - first:
+      1: 100026
+    second: doller_rig12:joint2
+  - first:
+      1: 100028
+    second: doller_rig12:joint3
+  - first:
+      1: 100030
+    second: doller_rig13:cc_doller
+  - first:
+      1: 100032
+    second: doller_rig13:doller_rig
+  - first:
+      1: 100034
+    second: doller_rig13:joint1
+  - first:
+      1: 100036
+    second: doller_rig13:joint2
+  - first:
+      1: 100038
+    second: doller_rig13:joint3
+  - first:
+      1: 100040
+    second: doller_rig14:cc_doller
+  - first:
+      1: 100042
+    second: doller_rig14:doller_rig
+  - first:
+      1: 100044
+    second: doller_rig14:joint1
+  - first:
+      1: 100046
+    second: doller_rig14:joint2
+  - first:
+      1: 100048
+    second: doller_rig14:joint3
+  - first:
+      1: 100050
+    second: doller_rig15:cc_doller
+  - first:
+      1: 100052
+    second: doller_rig15:doller_rig
+  - first:
+      1: 100054
+    second: doller_rig15:joint1
+  - first:
+      1: 100056
+    second: doller_rig15:joint2
+  - first:
+      1: 100058
+    second: doller_rig15:joint3
+  - first:
+      1: 100060
+    second: doller_rig16:cc_doller
+  - first:
+      1: 100062
+    second: doller_rig16:doller_rig
+  - first:
+      1: 100064
+    second: doller_rig16:joint1
+  - first:
+      1: 100066
+    second: doller_rig16:joint2
+  - first:
+      1: 100068
+    second: doller_rig16:joint3
+  - first:
+      1: 100070
+    second: doller_rig17:cc_doller
+  - first:
+      1: 100072
+    second: doller_rig17:doller_rig
+  - first:
+      1: 100074
+    second: doller_rig17:joint1
+  - first:
+      1: 100076
+    second: doller_rig17:joint2
+  - first:
+      1: 100078
+    second: doller_rig17:joint3
+  - first:
+      1: 100080
+    second: doller_rig18:cc_doller
+  - first:
+      1: 100082
+    second: doller_rig18:doller_rig
+  - first:
+      1: 100084
+    second: doller_rig18:joint1
+  - first:
+      1: 100086
+    second: doller_rig18:joint2
+  - first:
+      1: 100088
+    second: doller_rig18:joint3
+  - first:
+      1: 100090
+    second: doller_rig19:cc_doller
+  - first:
+      1: 100092
+    second: doller_rig19:doller_rig
+  - first:
+      1: 100094
+    second: doller_rig19:joint1
+  - first:
+      1: 100096
+    second: doller_rig19:joint2
+  - first:
+      1: 100098
+    second: doller_rig19:joint3
+  - first:
+      1: 100100
+    second: doller_rig1:cc_doller
+  - first:
+      1: 100102
+    second: doller_rig1:doller_rig
+  - first:
+      1: 100104
+    second: doller_rig1:joint1
+  - first:
+      1: 100106
+    second: doller_rig1:joint2
+  - first:
+      1: 100108
+    second: doller_rig1:joint3
+  - first:
+      1: 100110
+    second: doller_rig20:cc_doller
+  - first:
+      1: 100112
+    second: doller_rig20:doller_rig
+  - first:
+      1: 100114
+    second: doller_rig20:joint1
+  - first:
+      1: 100116
+    second: doller_rig20:joint2
+  - first:
+      1: 100118
+    second: doller_rig20:joint3
+  - first:
+      1: 100120
+    second: doller_rig21:cc_doller
+  - first:
+      1: 100122
+    second: doller_rig21:doller_rig
+  - first:
+      1: 100124
+    second: doller_rig21:joint1
+  - first:
+      1: 100126
+    second: doller_rig21:joint2
+  - first:
+      1: 100128
+    second: doller_rig21:joint3
+  - first:
+      1: 100130
+    second: doller_rig22:cc_doller
+  - first:
+      1: 100132
+    second: doller_rig22:doller_rig
+  - first:
+      1: 100134
+    second: doller_rig22:joint1
+  - first:
+      1: 100136
+    second: doller_rig22:joint2
+  - first:
+      1: 100138
+    second: doller_rig22:joint3
+  - first:
+      1: 100140
+    second: doller_rig23:cc_doller
+  - first:
+      1: 100142
+    second: doller_rig23:doller_rig
+  - first:
+      1: 100144
+    second: doller_rig23:joint1
+  - first:
+      1: 100146
+    second: doller_rig23:joint2
+  - first:
+      1: 100148
+    second: doller_rig23:joint3
+  - first:
+      1: 100150
+    second: doller_rig24:cc_doller
+  - first:
+      1: 100152
+    second: doller_rig24:doller_rig
+  - first:
+      1: 100154
+    second: doller_rig24:joint1
+  - first:
+      1: 100156
+    second: doller_rig24:joint2
+  - first:
+      1: 100158
+    second: doller_rig24:joint3
+  - first:
+      1: 100160
+    second: doller_rig24:nurbsCircle1
+  - first:
+      1: 100162
+    second: doller_rig24:nurbsCircle2
+  - first:
+      1: 100164
+    second: doller_rig24:nurbsCircle3
+  - first:
+      1: 100166
+    second: doller_rig24:nurbsCircle4
+  - first:
+      1: 100168
+    second: doller_rig25:cc_doller
+  - first:
+      1: 100170
+    second: doller_rig25:doller_rig
+  - first:
+      1: 100172
+    second: doller_rig25:joint1
+  - first:
+      1: 100174
+    second: doller_rig25:joint2
+  - first:
+      1: 100176
+    second: doller_rig25:joint3
+  - first:
+      1: 100178
+    second: doller_rig26:cc_doller
+  - first:
+      1: 100180
+    second: doller_rig26:doller_rig
+  - first:
+      1: 100182
+    second: doller_rig26:joint1
+  - first:
+      1: 100184
+    second: doller_rig26:joint2
+  - first:
+      1: 100186
+    second: doller_rig26:joint3
+  - first:
+      1: 100188
+    second: doller_rig27:cc_doller
+  - first:
+      1: 100190
+    second: doller_rig27:doller_rig
+  - first:
+      1: 100192
+    second: doller_rig27:joint1
+  - first:
+      1: 100194
+    second: doller_rig27:joint2
+  - first:
+      1: 100196
+    second: doller_rig27:joint3
+  - first:
+      1: 100198
+    second: doller_rig28:cc_doller
+  - first:
+      1: 100200
+    second: doller_rig28:doller_rig
+  - first:
+      1: 100202
+    second: doller_rig28:joint1
+  - first:
+      1: 100204
+    second: doller_rig28:joint2
+  - first:
+      1: 100206
+    second: doller_rig28:joint3
+  - first:
+      1: 100208
+    second: doller_rig29:cc_doller
+  - first:
+      1: 100210
+    second: doller_rig29:doller_rig
+  - first:
+      1: 100212
+    second: doller_rig29:joint1
+  - first:
+      1: 100214
+    second: doller_rig29:joint2
+  - first:
+      1: 100216
+    second: doller_rig29:joint3
+  - first:
+      1: 100218
+    second: doller_rig2:cc_doller
+  - first:
+      1: 100220
+    second: doller_rig2:doller_rig
+  - first:
+      1: 100222
+    second: doller_rig2:joint1
+  - first:
+      1: 100224
+    second: doller_rig2:joint2
+  - first:
+      1: 100226
+    second: doller_rig2:joint3
+  - first:
+      1: 100228
+    second: doller_rig30:cc_doller
+  - first:
+      1: 100230
+    second: doller_rig30:doller_rig
+  - first:
+      1: 100232
+    second: doller_rig30:joint1
+  - first:
+      1: 100234
+    second: doller_rig30:joint2
+  - first:
+      1: 100236
+    second: doller_rig30:joint3
+  - first:
+      1: 100238
+    second: doller_rig31:cc_doller
+  - first:
+      1: 100240
+    second: doller_rig31:doller_rig
+  - first:
+      1: 100242
+    second: doller_rig31:joint1
+  - first:
+      1: 100244
+    second: doller_rig31:joint2
+  - first:
+      1: 100246
+    second: doller_rig31:joint3
+  - first:
+      1: 100248
+    second: doller_rig32:cc_doller
+  - first:
+      1: 100250
+    second: doller_rig32:doller_rig
+  - first:
+      1: 100252
+    second: doller_rig32:joint1
+  - first:
+      1: 100254
+    second: doller_rig32:joint2
+  - first:
+      1: 100256
+    second: doller_rig32:joint3
+  - first:
+      1: 100258
+    second: doller_rig33:cc_doller
+  - first:
+      1: 100260
+    second: doller_rig33:doller_rig
+  - first:
+      1: 100262
+    second: doller_rig33:joint1
+  - first:
+      1: 100264
+    second: doller_rig33:joint2
+  - first:
+      1: 100266
+    second: doller_rig33:joint3
+  - first:
+      1: 100268
+    second: doller_rig34:cc_doller
+  - first:
+      1: 100270
+    second: doller_rig34:doller_rig
+  - first:
+      1: 100272
+    second: doller_rig34:joint1
+  - first:
+      1: 100274
+    second: doller_rig34:joint2
+  - first:
+      1: 100276
+    second: doller_rig34:joint3
+  - first:
+      1: 100278
+    second: doller_rig35:cc_doller
+  - first:
+      1: 100280
+    second: doller_rig35:doller_rig
+  - first:
+      1: 100282
+    second: doller_rig35:joint1
+  - first:
+      1: 100284
+    second: doller_rig35:joint2
+  - first:
+      1: 100286
+    second: doller_rig35:joint3
+  - first:
+      1: 100288
+    second: doller_rig36:cc_doller
+  - first:
+      1: 100290
+    second: doller_rig36:doller_rig
+  - first:
+      1: 100292
+    second: doller_rig36:joint1
+  - first:
+      1: 100294
+    second: doller_rig36:joint2
+  - first:
+      1: 100296
+    second: doller_rig36:joint3
+  - first:
+      1: 100298
+    second: doller_rig37:cc_doller
+  - first:
+      1: 100300
+    second: doller_rig37:doller_rig
+  - first:
+      1: 100302
+    second: doller_rig37:joint1
+  - first:
+      1: 100304
+    second: doller_rig37:joint2
+  - first:
+      1: 100306
+    second: doller_rig37:joint3
+  - first:
+      1: 100308
+    second: doller_rig38:cc_doller
+  - first:
+      1: 100310
+    second: doller_rig38:doller_rig
+  - first:
+      1: 100312
+    second: doller_rig38:joint1
+  - first:
+      1: 100314
+    second: doller_rig38:joint2
+  - first:
+      1: 100316
+    second: doller_rig38:joint3
+  - first:
+      1: 100318
+    second: doller_rig39:cc_doller
+  - first:
+      1: 100320
+    second: doller_rig39:doller_rig
+  - first:
+      1: 100322
+    second: doller_rig39:joint1
+  - first:
+      1: 100324
+    second: doller_rig39:joint2
+  - first:
+      1: 100326
+    second: doller_rig39:joint3
+  - first:
+      1: 100328
+    second: doller_rig39:nurbsCircle1
+  - first:
+      1: 100330
+    second: doller_rig39:nurbsCircle2
+  - first:
+      1: 100332
+    second: doller_rig39:nurbsCircle3
+  - first:
+      1: 100334
+    second: doller_rig39:nurbsCircle4
+  - first:
+      1: 100336
+    second: doller_rig3:cc_doller
+  - first:
+      1: 100338
+    second: doller_rig3:doller_rig
+  - first:
+      1: 100340
+    second: doller_rig3:joint1
+  - first:
+      1: 100342
+    second: doller_rig3:joint2
+  - first:
+      1: 100344
+    second: doller_rig3:joint3
+  - first:
+      1: 100346
+    second: doller_rig40:cc_doller
+  - first:
+      1: 100348
+    second: doller_rig40:doller_rig
+  - first:
+      1: 100350
+    second: doller_rig40:joint1
+  - first:
+      1: 100352
+    second: doller_rig40:joint2
+  - first:
+      1: 100354
+    second: doller_rig40:joint3
+  - first:
+      1: 100356
+    second: doller_rig41:cc_doller
+  - first:
+      1: 100358
+    second: doller_rig41:doller_rig
+  - first:
+      1: 100360
+    second: doller_rig41:joint1
+  - first:
+      1: 100362
+    second: doller_rig41:joint2
+  - first:
+      1: 100364
+    second: doller_rig41:joint3
+  - first:
+      1: 100366
+    second: doller_rig42:cc_doller
+  - first:
+      1: 100368
+    second: doller_rig42:doller_rig
+  - first:
+      1: 100370
+    second: doller_rig42:joint1
+  - first:
+      1: 100372
+    second: doller_rig42:joint2
+  - first:
+      1: 100374
+    second: doller_rig42:joint3
+  - first:
+      1: 100376
+    second: doller_rig43:cc_doller
+  - first:
+      1: 100378
+    second: doller_rig43:doller_rig
+  - first:
+      1: 100380
+    second: doller_rig43:joint1
+  - first:
+      1: 100382
+    second: doller_rig43:joint2
+  - first:
+      1: 100384
+    second: doller_rig43:joint3
+  - first:
+      1: 100386
+    second: doller_rig44:cc_doller
+  - first:
+      1: 100388
+    second: doller_rig44:doller_rig
+  - first:
+      1: 100390
+    second: doller_rig44:joint1
+  - first:
+      1: 100392
+    second: doller_rig44:joint2
+  - first:
+      1: 100394
+    second: doller_rig44:joint3
+  - first:
+      1: 100396
+    second: doller_rig45:cc_doller
+  - first:
+      1: 100398
+    second: doller_rig45:doller_rig
+  - first:
+      1: 100400
+    second: doller_rig45:joint1
+  - first:
+      1: 100402
+    second: doller_rig45:joint2
+  - first:
+      1: 100404
+    second: doller_rig45:joint3
+  - first:
+      1: 100406
+    second: doller_rig46:cc_doller
+  - first:
+      1: 100408
+    second: doller_rig46:doller_rig
+  - first:
+      1: 100410
+    second: doller_rig46:joint1
+  - first:
+      1: 100412
+    second: doller_rig46:joint2
+  - first:
+      1: 100414
+    second: doller_rig46:joint3
+  - first:
+      1: 100416
+    second: doller_rig47:cc_doller
+  - first:
+      1: 100418
+    second: doller_rig47:doller_rig
+  - first:
+      1: 100420
+    second: doller_rig47:joint1
+  - first:
+      1: 100422
+    second: doller_rig47:joint2
+  - first:
+      1: 100424
+    second: doller_rig47:joint3
+  - first:
+      1: 100426
+    second: doller_rig48:cc_doller
+  - first:
+      1: 100428
+    second: doller_rig48:doller_rig
+  - first:
+      1: 100430
+    second: doller_rig48:joint1
+  - first:
+      1: 100432
+    second: doller_rig48:joint2
+  - first:
+      1: 100434
+    second: doller_rig48:joint3
+  - first:
+      1: 100436
+    second: doller_rig49:cc_doller
+  - first:
+      1: 100438
+    second: doller_rig49:doller_rig
+  - first:
+      1: 100440
+    second: doller_rig49:joint1
+  - first:
+      1: 100442
+    second: doller_rig49:joint2
+  - first:
+      1: 100444
+    second: doller_rig49:joint3
+  - first:
+      1: 100446
+    second: doller_rig4:cc_doller
+  - first:
+      1: 100448
+    second: doller_rig4:doller_rig
+  - first:
+      1: 100450
+    second: doller_rig4:joint1
+  - first:
+      1: 100452
+    second: doller_rig4:joint2
+  - first:
+      1: 100454
+    second: doller_rig4:joint3
+  - first:
+      1: 100456
+    second: doller_rig5:cc_doller
+  - first:
+      1: 100458
+    second: doller_rig5:doller_rig
+  - first:
+      1: 100460
+    second: doller_rig5:joint1
+  - first:
+      1: 100462
+    second: doller_rig5:joint2
+  - first:
+      1: 100464
+    second: doller_rig5:joint3
+  - first:
+      1: 100466
+    second: doller_rig6:cc_doller
+  - first:
+      1: 100468
+    second: doller_rig6:doller_rig
+  - first:
+      1: 100470
+    second: doller_rig6:joint1
+  - first:
+      1: 100472
+    second: doller_rig6:joint2
+  - first:
+      1: 100474
+    second: doller_rig6:joint3
+  - first:
+      1: 100476
+    second: doller_rig7:cc_doller
+  - first:
+      1: 100478
+    second: doller_rig7:doller_rig
+  - first:
+      1: 100480
+    second: doller_rig7:joint1
+  - first:
+      1: 100482
+    second: doller_rig7:joint2
+  - first:
+      1: 100484
+    second: doller_rig7:joint3
+  - first:
+      1: 100486
+    second: doller_rig8:cc_doller
+  - first:
+      1: 100488
+    second: doller_rig8:doller_rig
+  - first:
+      1: 100490
+    second: doller_rig8:joint1
+  - first:
+      1: 100492
+    second: doller_rig8:joint2
+  - first:
+      1: 100494
+    second: doller_rig8:joint3
+  - first:
+      1: 100496
+    second: doller_rig9:cc_doller
+  - first:
+      1: 100498
+    second: doller_rig9:doller_rig
+  - first:
+      1: 100500
+    second: doller_rig9:joint1
+  - first:
+      1: 100502
+    second: doller_rig9:joint2
+  - first:
+      1: 100504
+    second: doller_rig9:joint3
+  - first:
+      1: 100506
+    second: doller_rig:cc_doller
+  - first:
+      1: 100508
+    second: doller_rig:doller_rig
+  - first:
+      1: 100510
+    second: doller_rig:joint1
+  - first:
+      1: 100512
+    second: doller_rig:joint2
+  - first:
+      1: 100514
+    second: doller_rig:joint3
+  - first:
+      1: 100516
+    second: glass
+  - first:
+      1: 100518
+    second: group1
+  - first:
+      1: 100520
+    second: //RootNode
+  - first:
+      1: 100522
+    second: piggybank_rig:Ankle_L
+  - first:
+      1: 100524
+    second: piggybank_rig:Ankle_R
+  - first:
+      1: 100526
+    second: piggybank_rig:Blend_shape1:pCube1
+  - first:
+      1: 100528
+    second: piggybank_rig:Blend_shape1:pCylinder1
+  - first:
+      1: 100530
+    second: piggybank_rig:Blend_shape1:pCylinder10
+  - first:
+      1: 100532
+    second: piggybank_rig:Blend_shape1:pCylinder11
+  - first:
+      1: 100534
+    second: piggybank_rig:Blend_shape1:pCylinder14
+  - first:
+      1: 100536
+    second: piggybank_rig:Blend_shape1:pCylinder18
+  - first:
+      1: 100538
+    second: piggybank_rig:Blend_shape1:pCylinder2
+  - first:
+      1: 100540
+    second: piggybank_rig:Blend_shape1:pCylinder20
+  - first:
+      1: 100542
+    second: piggybank_rig:Blend_shape1:pCylinder22
+  - first:
+      1: 100544
+    second: piggybank_rig:Blend_shape1:pCylinder23
+  - first:
+      1: 100546
+    second: piggybank_rig:Blend_shape1:pCylinder24
+  - first:
+      1: 100548
+    second: piggybank_rig:Blend_shape1:pCylinder25
+  - first:
+      1: 100550
+    second: piggybank_rig:Blend_shape1:pCylinder26
+  - first:
+      1: 100552
+    second: piggybank_rig:Blend_shape1:pCylinder27
+  - first:
+      1: 100554
+    second: piggybank_rig:Blend_shape1:pCylinder28
+  - first:
+      1: 100556
+    second: piggybank_rig:Blend_shape1:pCylinder29
+  - first:
+      1: 100558
+    second: piggybank_rig:Blend_shape1:pCylinder3
+  - first:
+      1: 100560
+    second: piggybank_rig:Blend_shape1:pCylinder30
+  - first:
+      1: 100562
+    second: piggybank_rig:Blend_shape1:pCylinder31
+  - first:
+      1: 100564
+    second: piggybank_rig:Blend_shape1:pCylinder32
+  - first:
+      1: 100566
+    second: piggybank_rig:Blend_shape1:pCylinder33
+  - first:
+      1: 100568
+    second: piggybank_rig:Blend_shape1:pCylinder34
+  - first:
+      1: 100570
+    second: piggybank_rig:Blend_shape1:pCylinder4
+  - first:
+      1: 100572
+    second: piggybank_rig:Blend_shape1:pCylinder6
+  - first:
+      1: 100574
+    second: piggybank_rig:Blend_shape1:pCylinder7
+  - first:
+      1: 100576
+    second: piggybank_rig:Blend_shape1:pCylinder9
+  - first:
+      1: 100578
+    second: piggybank_rig:Blend_shape1:pPlane3
+  - first:
+      1: 100580
+    second: piggybank_rig:Blend_shape1:pPlane4
+  - first:
+      1: 100582
+    second: piggybank_rig:Blend_shape1:pPlane5
+  - first:
+      1: 100584
+    second: piggybank_rig:Blend_shape:pCylinder1
+  - first:
+      1: 100586
+    second: piggybank_rig:Blend_shape:pSphere1
+  - first:
+      1: 100588
+    second: piggybank_rig:Blend_shape:pSphere2
+  - first:
+      1: 100590
+    second: piggybank_rig:body_mesh
+  - first:
+      1: 100592
+    second: piggybank_rig:Chest_M
+  - first:
+      1: 100594
+    second: piggybank_rig:DeformationSystem
+  - first:
+      1: 100596
+    second: piggybank_rig:Elbow_L
+  - first:
+      1: 100598
+    second: piggybank_rig:Elbow_R
+  - first:
+      1: 100600
+    second: piggybank_rig:Eye_L
+  - first:
+      1: 100602
+    second: piggybank_rig:Eye_R
+  - first:
+      1: 100604
+    second: piggybank_rig:EyeEnd_L
+  - first:
+      1: 100606
+    second: piggybank_rig:EyeEnd_R
+  - first:
+      1: 100608
+    second: piggybank_rig:FitSkeleton
+  - first:
+      1: 100610
+    second: piggybank_rig:Geometry
+  - first:
+      1: 100612
+    second: piggybank_rig:Group
+  - first:
+      1: 100614
+    second: piggybank_rig:Head_M
+  - first:
+      1: 100616
+    second: piggybank_rig:HeadEnd_M
+  - first:
+      1: 100618
+    second: piggybank_rig:Hip_L
+  - first:
+      1: 100620
+    second: piggybank_rig:Hip_R
+  - first:
+      1: 100622
+    second: piggybank_rig:Jaw_M
+  - first:
+      1: 100624
+    second: piggybank_rig:JawEnd_M
+  - first:
+      1: 100626
+    second: piggybank_rig:jnt_ear_L
+  - first:
+      1: 100628
+    second: piggybank_rig:jnt_ear_R
+  - first:
+      1: 100630
+    second: piggybank_rig:jnt_nose
+  - first:
+      1: 100632
+    second: piggybank_rig:Knee_L
+  - first:
+      1: 100634
+    second: piggybank_rig:Knee_R
+  - first:
+      1: 100636
+    second: piggybank_rig:Main
+  - first:
+      1: 100638
+    second: piggybank_rig:model
+  - first:
+      1: 100640
+    second: piggybank_rig:Neck_M
+  - first:
+      1: 100642
+    second: piggybank_rig:Root_M
+  - first:
+      1: 100644
+    second: piggybank_rig:Scapula_L
+  - first:
+      1: 100646
+    second: piggybank_rig:Scapula_R
+  - first:
+      1: 100648
+    second: piggybank_rig:Shoulder_L
+  - first:
+      1: 100650
+    second: piggybank_rig:Shoulder_R
+  - first:
+      1: 100652
+    second: piggybank_rig:ShoulderPart1_L
+  - first:
+      1: 100654
+    second: piggybank_rig:ShoulderPart1_R
+  - first:
+      1: 100656
+    second: piggybank_rig:ShoulderPart2_L
+  - first:
+      1: 100658
+    second: piggybank_rig:ShoulderPart2_R
+  - first:
+      1: 100660
+    second: piggybank_rig:Spine1_M
+  - first:
+      1: 100662
+    second: piggybank_rig:Toes_L
+  - first:
+      1: 100664
+    second: piggybank_rig:Toes_R
+  - first:
+      1: 100666
+    second: piggybank_rig:ToesEnd_L
+  - first:
+      1: 100668
+    second: piggybank_rig:ToesEnd_R
+  - first:
+      4: 400000
+    second: doller_rig10:cc_doller
+  - first:
+      4: 400002
+    second: doller_rig10:doller_rig
+  - first:
+      4: 400004
+    second: doller_rig10:joint1
+  - first:
+      4: 400006
+    second: doller_rig10:joint2
+  - first:
+      4: 400008
+    second: doller_rig10:joint3
+  - first:
+      4: 400010
+    second: doller_rig11:cc_doller
+  - first:
+      4: 400012
+    second: doller_rig11:doller_rig
+  - first:
+      4: 400014
+    second: doller_rig11:joint1
+  - first:
+      4: 400016
+    second: doller_rig11:joint2
+  - first:
+      4: 400018
+    second: doller_rig11:joint3
+  - first:
+      4: 400020
+    second: doller_rig12:cc_doller
+  - first:
+      4: 400022
+    second: doller_rig12:doller_rig
+  - first:
+      4: 400024
+    second: doller_rig12:joint1
+  - first:
+      4: 400026
+    second: doller_rig12:joint2
+  - first:
+      4: 400028
+    second: doller_rig12:joint3
+  - first:
+      4: 400030
+    second: doller_rig13:cc_doller
+  - first:
+      4: 400032
+    second: doller_rig13:doller_rig
+  - first:
+      4: 400034
+    second: doller_rig13:joint1
+  - first:
+      4: 400036
+    second: doller_rig13:joint2
+  - first:
+      4: 400038
+    second: doller_rig13:joint3
+  - first:
+      4: 400040
+    second: doller_rig14:cc_doller
+  - first:
+      4: 400042
+    second: doller_rig14:doller_rig
+  - first:
+      4: 400044
+    second: doller_rig14:joint1
+  - first:
+      4: 400046
+    second: doller_rig14:joint2
+  - first:
+      4: 400048
+    second: doller_rig14:joint3
+  - first:
+      4: 400050
+    second: doller_rig15:cc_doller
+  - first:
+      4: 400052
+    second: doller_rig15:doller_rig
+  - first:
+      4: 400054
+    second: doller_rig15:joint1
+  - first:
+      4: 400056
+    second: doller_rig15:joint2
+  - first:
+      4: 400058
+    second: doller_rig15:joint3
+  - first:
+      4: 400060
+    second: doller_rig16:cc_doller
+  - first:
+      4: 400062
+    second: doller_rig16:doller_rig
+  - first:
+      4: 400064
+    second: doller_rig16:joint1
+  - first:
+      4: 400066
+    second: doller_rig16:joint2
+  - first:
+      4: 400068
+    second: doller_rig16:joint3
+  - first:
+      4: 400070
+    second: doller_rig17:cc_doller
+  - first:
+      4: 400072
+    second: doller_rig17:doller_rig
+  - first:
+      4: 400074
+    second: doller_rig17:joint1
+  - first:
+      4: 400076
+    second: doller_rig17:joint2
+  - first:
+      4: 400078
+    second: doller_rig17:joint3
+  - first:
+      4: 400080
+    second: doller_rig18:cc_doller
+  - first:
+      4: 400082
+    second: doller_rig18:doller_rig
+  - first:
+      4: 400084
+    second: doller_rig18:joint1
+  - first:
+      4: 400086
+    second: doller_rig18:joint2
+  - first:
+      4: 400088
+    second: doller_rig18:joint3
+  - first:
+      4: 400090
+    second: doller_rig19:cc_doller
+  - first:
+      4: 400092
+    second: doller_rig19:doller_rig
+  - first:
+      4: 400094
+    second: doller_rig19:joint1
+  - first:
+      4: 400096
+    second: doller_rig19:joint2
+  - first:
+      4: 400098
+    second: doller_rig19:joint3
+  - first:
+      4: 400100
+    second: doller_rig1:cc_doller
+  - first:
+      4: 400102
+    second: doller_rig1:doller_rig
+  - first:
+      4: 400104
+    second: doller_rig1:joint1
+  - first:
+      4: 400106
+    second: doller_rig1:joint2
+  - first:
+      4: 400108
+    second: doller_rig1:joint3
+  - first:
+      4: 400110
+    second: doller_rig20:cc_doller
+  - first:
+      4: 400112
+    second: doller_rig20:doller_rig
+  - first:
+      4: 400114
+    second: doller_rig20:joint1
+  - first:
+      4: 400116
+    second: doller_rig20:joint2
+  - first:
+      4: 400118
+    second: doller_rig20:joint3
+  - first:
+      4: 400120
+    second: doller_rig21:cc_doller
+  - first:
+      4: 400122
+    second: doller_rig21:doller_rig
+  - first:
+      4: 400124
+    second: doller_rig21:joint1
+  - first:
+      4: 400126
+    second: doller_rig21:joint2
+  - first:
+      4: 400128
+    second: doller_rig21:joint3
+  - first:
+      4: 400130
+    second: doller_rig22:cc_doller
+  - first:
+      4: 400132
+    second: doller_rig22:doller_rig
+  - first:
+      4: 400134
+    second: doller_rig22:joint1
+  - first:
+      4: 400136
+    second: doller_rig22:joint2
+  - first:
+      4: 400138
+    second: doller_rig22:joint3
+  - first:
+      4: 400140
+    second: doller_rig23:cc_doller
+  - first:
+      4: 400142
+    second: doller_rig23:doller_rig
+  - first:
+      4: 400144
+    second: doller_rig23:joint1
+  - first:
+      4: 400146
+    second: doller_rig23:joint2
+  - first:
+      4: 400148
+    second: doller_rig23:joint3
+  - first:
+      4: 400150
+    second: doller_rig24:cc_doller
+  - first:
+      4: 400152
+    second: doller_rig24:doller_rig
+  - first:
+      4: 400154
+    second: doller_rig24:joint1
+  - first:
+      4: 400156
+    second: doller_rig24:joint2
+  - first:
+      4: 400158
+    second: doller_rig24:joint3
+  - first:
+      4: 400160
+    second: doller_rig24:nurbsCircle1
+  - first:
+      4: 400162
+    second: doller_rig24:nurbsCircle2
+  - first:
+      4: 400164
+    second: doller_rig24:nurbsCircle3
+  - first:
+      4: 400166
+    second: doller_rig24:nurbsCircle4
+  - first:
+      4: 400168
+    second: doller_rig25:cc_doller
+  - first:
+      4: 400170
+    second: doller_rig25:doller_rig
+  - first:
+      4: 400172
+    second: doller_rig25:joint1
+  - first:
+      4: 400174
+    second: doller_rig25:joint2
+  - first:
+      4: 400176
+    second: doller_rig25:joint3
+  - first:
+      4: 400178
+    second: doller_rig26:cc_doller
+  - first:
+      4: 400180
+    second: doller_rig26:doller_rig
+  - first:
+      4: 400182
+    second: doller_rig26:joint1
+  - first:
+      4: 400184
+    second: doller_rig26:joint2
+  - first:
+      4: 400186
+    second: doller_rig26:joint3
+  - first:
+      4: 400188
+    second: doller_rig27:cc_doller
+  - first:
+      4: 400190
+    second: doller_rig27:doller_rig
+  - first:
+      4: 400192
+    second: doller_rig27:joint1
+  - first:
+      4: 400194
+    second: doller_rig27:joint2
+  - first:
+      4: 400196
+    second: doller_rig27:joint3
+  - first:
+      4: 400198
+    second: doller_rig28:cc_doller
+  - first:
+      4: 400200
+    second: doller_rig28:doller_rig
+  - first:
+      4: 400202
+    second: doller_rig28:joint1
+  - first:
+      4: 400204
+    second: doller_rig28:joint2
+  - first:
+      4: 400206
+    second: doller_rig28:joint3
+  - first:
+      4: 400208
+    second: doller_rig29:cc_doller
+  - first:
+      4: 400210
+    second: doller_rig29:doller_rig
+  - first:
+      4: 400212
+    second: doller_rig29:joint1
+  - first:
+      4: 400214
+    second: doller_rig29:joint2
+  - first:
+      4: 400216
+    second: doller_rig29:joint3
+  - first:
+      4: 400218
+    second: doller_rig2:cc_doller
+  - first:
+      4: 400220
+    second: doller_rig2:doller_rig
+  - first:
+      4: 400222
+    second: doller_rig2:joint1
+  - first:
+      4: 400224
+    second: doller_rig2:joint2
+  - first:
+      4: 400226
+    second: doller_rig2:joint3
+  - first:
+      4: 400228
+    second: doller_rig30:cc_doller
+  - first:
+      4: 400230
+    second: doller_rig30:doller_rig
+  - first:
+      4: 400232
+    second: doller_rig30:joint1
+  - first:
+      4: 400234
+    second: doller_rig30:joint2
+  - first:
+      4: 400236
+    second: doller_rig30:joint3
+  - first:
+      4: 400238
+    second: doller_rig31:cc_doller
+  - first:
+      4: 400240
+    second: doller_rig31:doller_rig
+  - first:
+      4: 400242
+    second: doller_rig31:joint1
+  - first:
+      4: 400244
+    second: doller_rig31:joint2
+  - first:
+      4: 400246
+    second: doller_rig31:joint3
+  - first:
+      4: 400248
+    second: doller_rig32:cc_doller
+  - first:
+      4: 400250
+    second: doller_rig32:doller_rig
+  - first:
+      4: 400252
+    second: doller_rig32:joint1
+  - first:
+      4: 400254
+    second: doller_rig32:joint2
+  - first:
+      4: 400256
+    second: doller_rig32:joint3
+  - first:
+      4: 400258
+    second: doller_rig33:cc_doller
+  - first:
+      4: 400260
+    second: doller_rig33:doller_rig
+  - first:
+      4: 400262
+    second: doller_rig33:joint1
+  - first:
+      4: 400264
+    second: doller_rig33:joint2
+  - first:
+      4: 400266
+    second: doller_rig33:joint3
+  - first:
+      4: 400268
+    second: doller_rig34:cc_doller
+  - first:
+      4: 400270
+    second: doller_rig34:doller_rig
+  - first:
+      4: 400272
+    second: doller_rig34:joint1
+  - first:
+      4: 400274
+    second: doller_rig34:joint2
+  - first:
+      4: 400276
+    second: doller_rig34:joint3
+  - first:
+      4: 400278
+    second: doller_rig35:cc_doller
+  - first:
+      4: 400280
+    second: doller_rig35:doller_rig
+  - first:
+      4: 400282
+    second: doller_rig35:joint1
+  - first:
+      4: 400284
+    second: doller_rig35:joint2
+  - first:
+      4: 400286
+    second: doller_rig35:joint3
+  - first:
+      4: 400288
+    second: doller_rig36:cc_doller
+  - first:
+      4: 400290
+    second: doller_rig36:doller_rig
+  - first:
+      4: 400292
+    second: doller_rig36:joint1
+  - first:
+      4: 400294
+    second: doller_rig36:joint2
+  - first:
+      4: 400296
+    second: doller_rig36:joint3
+  - first:
+      4: 400298
+    second: doller_rig37:cc_doller
+  - first:
+      4: 400300
+    second: doller_rig37:doller_rig
+  - first:
+      4: 400302
+    second: doller_rig37:joint1
+  - first:
+      4: 400304
+    second: doller_rig37:joint2
+  - first:
+      4: 400306
+    second: doller_rig37:joint3
+  - first:
+      4: 400308
+    second: doller_rig38:cc_doller
+  - first:
+      4: 400310
+    second: doller_rig38:doller_rig
+  - first:
+      4: 400312
+    second: doller_rig38:joint1
+  - first:
+      4: 400314
+    second: doller_rig38:joint2
+  - first:
+      4: 400316
+    second: doller_rig38:joint3
+  - first:
+      4: 400318
+    second: doller_rig39:cc_doller
+  - first:
+      4: 400320
+    second: doller_rig39:doller_rig
+  - first:
+      4: 400322
+    second: doller_rig39:joint1
+  - first:
+      4: 400324
+    second: doller_rig39:joint2
+  - first:
+      4: 400326
+    second: doller_rig39:joint3
+  - first:
+      4: 400328
+    second: doller_rig39:nurbsCircle1
+  - first:
+      4: 400330
+    second: doller_rig39:nurbsCircle2
+  - first:
+      4: 400332
+    second: doller_rig39:nurbsCircle3
+  - first:
+      4: 400334
+    second: doller_rig39:nurbsCircle4
+  - first:
+      4: 400336
+    second: doller_rig3:cc_doller
+  - first:
+      4: 400338
+    second: doller_rig3:doller_rig
+  - first:
+      4: 400340
+    second: doller_rig3:joint1
+  - first:
+      4: 400342
+    second: doller_rig3:joint2
+  - first:
+      4: 400344
+    second: doller_rig3:joint3
+  - first:
+      4: 400346
+    second: doller_rig40:cc_doller
+  - first:
+      4: 400348
+    second: doller_rig40:doller_rig
+  - first:
+      4: 400350
+    second: doller_rig40:joint1
+  - first:
+      4: 400352
+    second: doller_rig40:joint2
+  - first:
+      4: 400354
+    second: doller_rig40:joint3
+  - first:
+      4: 400356
+    second: doller_rig41:cc_doller
+  - first:
+      4: 400358
+    second: doller_rig41:doller_rig
+  - first:
+      4: 400360
+    second: doller_rig41:joint1
+  - first:
+      4: 400362
+    second: doller_rig41:joint2
+  - first:
+      4: 400364
+    second: doller_rig41:joint3
+  - first:
+      4: 400366
+    second: doller_rig42:cc_doller
+  - first:
+      4: 400368
+    second: doller_rig42:doller_rig
+  - first:
+      4: 400370
+    second: doller_rig42:joint1
+  - first:
+      4: 400372
+    second: doller_rig42:joint2
+  - first:
+      4: 400374
+    second: doller_rig42:joint3
+  - first:
+      4: 400376
+    second: doller_rig43:cc_doller
+  - first:
+      4: 400378
+    second: doller_rig43:doller_rig
+  - first:
+      4: 400380
+    second: doller_rig43:joint1
+  - first:
+      4: 400382
+    second: doller_rig43:joint2
+  - first:
+      4: 400384
+    second: doller_rig43:joint3
+  - first:
+      4: 400386
+    second: doller_rig44:cc_doller
+  - first:
+      4: 400388
+    second: doller_rig44:doller_rig
+  - first:
+      4: 400390
+    second: doller_rig44:joint1
+  - first:
+      4: 400392
+    second: doller_rig44:joint2
+  - first:
+      4: 400394
+    second: doller_rig44:joint3
+  - first:
+      4: 400396
+    second: doller_rig45:cc_doller
+  - first:
+      4: 400398
+    second: doller_rig45:doller_rig
+  - first:
+      4: 400400
+    second: doller_rig45:joint1
+  - first:
+      4: 400402
+    second: doller_rig45:joint2
+  - first:
+      4: 400404
+    second: doller_rig45:joint3
+  - first:
+      4: 400406
+    second: doller_rig46:cc_doller
+  - first:
+      4: 400408
+    second: doller_rig46:doller_rig
+  - first:
+      4: 400410
+    second: doller_rig46:joint1
+  - first:
+      4: 400412
+    second: doller_rig46:joint2
+  - first:
+      4: 400414
+    second: doller_rig46:joint3
+  - first:
+      4: 400416
+    second: doller_rig47:cc_doller
+  - first:
+      4: 400418
+    second: doller_rig47:doller_rig
+  - first:
+      4: 400420
+    second: doller_rig47:joint1
+  - first:
+      4: 400422
+    second: doller_rig47:joint2
+  - first:
+      4: 400424
+    second: doller_rig47:joint3
+  - first:
+      4: 400426
+    second: doller_rig48:cc_doller
+  - first:
+      4: 400428
+    second: doller_rig48:doller_rig
+  - first:
+      4: 400430
+    second: doller_rig48:joint1
+  - first:
+      4: 400432
+    second: doller_rig48:joint2
+  - first:
+      4: 400434
+    second: doller_rig48:joint3
+  - first:
+      4: 400436
+    second: doller_rig49:cc_doller
+  - first:
+      4: 400438
+    second: doller_rig49:doller_rig
+  - first:
+      4: 400440
+    second: doller_rig49:joint1
+  - first:
+      4: 400442
+    second: doller_rig49:joint2
+  - first:
+      4: 400444
+    second: doller_rig49:joint3
+  - first:
+      4: 400446
+    second: doller_rig4:cc_doller
+  - first:
+      4: 400448
+    second: doller_rig4:doller_rig
+  - first:
+      4: 400450
+    second: doller_rig4:joint1
+  - first:
+      4: 400452
+    second: doller_rig4:joint2
+  - first:
+      4: 400454
+    second: doller_rig4:joint3
+  - first:
+      4: 400456
+    second: doller_rig5:cc_doller
+  - first:
+      4: 400458
+    second: doller_rig5:doller_rig
+  - first:
+      4: 400460
+    second: doller_rig5:joint1
+  - first:
+      4: 400462
+    second: doller_rig5:joint2
+  - first:
+      4: 400464
+    second: doller_rig5:joint3
+  - first:
+      4: 400466
+    second: doller_rig6:cc_doller
+  - first:
+      4: 400468
+    second: doller_rig6:doller_rig
+  - first:
+      4: 400470
+    second: doller_rig6:joint1
+  - first:
+      4: 400472
+    second: doller_rig6:joint2
+  - first:
+      4: 400474
+    second: doller_rig6:joint3
+  - first:
+      4: 400476
+    second: doller_rig7:cc_doller
+  - first:
+      4: 400478
+    second: doller_rig7:doller_rig
+  - first:
+      4: 400480
+    second: doller_rig7:joint1
+  - first:
+      4: 400482
+    second: doller_rig7:joint2
+  - first:
+      4: 400484
+    second: doller_rig7:joint3
+  - first:
+      4: 400486
+    second: doller_rig8:cc_doller
+  - first:
+      4: 400488
+    second: doller_rig8:doller_rig
+  - first:
+      4: 400490
+    second: doller_rig8:joint1
+  - first:
+      4: 400492
+    second: doller_rig8:joint2
+  - first:
+      4: 400494
+    second: doller_rig8:joint3
+  - first:
+      4: 400496
+    second: doller_rig9:cc_doller
+  - first:
+      4: 400498
+    second: doller_rig9:doller_rig
+  - first:
+      4: 400500
+    second: doller_rig9:joint1
+  - first:
+      4: 400502
+    second: doller_rig9:joint2
+  - first:
+      4: 400504
+    second: doller_rig9:joint3
+  - first:
+      4: 400506
+    second: doller_rig:cc_doller
+  - first:
+      4: 400508
+    second: doller_rig:doller_rig
+  - first:
+      4: 400510
+    second: doller_rig:joint1
+  - first:
+      4: 400512
+    second: doller_rig:joint2
+  - first:
+      4: 400514
+    second: doller_rig:joint3
+  - first:
+      4: 400516
+    second: glass
+  - first:
+      4: 400518
+    second: group1
+  - first:
+      4: 400520
+    second: //RootNode
+  - first:
+      4: 400522
+    second: piggybank_rig:Ankle_L
+  - first:
+      4: 400524
+    second: piggybank_rig:Ankle_R
+  - first:
+      4: 400526
+    second: piggybank_rig:Blend_shape1:pCube1
+  - first:
+      4: 400528
+    second: piggybank_rig:Blend_shape1:pCylinder1
+  - first:
+      4: 400530
+    second: piggybank_rig:Blend_shape1:pCylinder10
+  - first:
+      4: 400532
+    second: piggybank_rig:Blend_shape1:pCylinder11
+  - first:
+      4: 400534
+    second: piggybank_rig:Blend_shape1:pCylinder14
+  - first:
+      4: 400536
+    second: piggybank_rig:Blend_shape1:pCylinder18
+  - first:
+      4: 400538
+    second: piggybank_rig:Blend_shape1:pCylinder2
+  - first:
+      4: 400540
+    second: piggybank_rig:Blend_shape1:pCylinder20
+  - first:
+      4: 400542
+    second: piggybank_rig:Blend_shape1:pCylinder22
+  - first:
+      4: 400544
+    second: piggybank_rig:Blend_shape1:pCylinder23
+  - first:
+      4: 400546
+    second: piggybank_rig:Blend_shape1:pCylinder24
+  - first:
+      4: 400548
+    second: piggybank_rig:Blend_shape1:pCylinder25
+  - first:
+      4: 400550
+    second: piggybank_rig:Blend_shape1:pCylinder26
+  - first:
+      4: 400552
+    second: piggybank_rig:Blend_shape1:pCylinder27
+  - first:
+      4: 400554
+    second: piggybank_rig:Blend_shape1:pCylinder28
+  - first:
+      4: 400556
+    second: piggybank_rig:Blend_shape1:pCylinder29
+  - first:
+      4: 400558
+    second: piggybank_rig:Blend_shape1:pCylinder3
+  - first:
+      4: 400560
+    second: piggybank_rig:Blend_shape1:pCylinder30
+  - first:
+      4: 400562
+    second: piggybank_rig:Blend_shape1:pCylinder31
+  - first:
+      4: 400564
+    second: piggybank_rig:Blend_shape1:pCylinder32
+  - first:
+      4: 400566
+    second: piggybank_rig:Blend_shape1:pCylinder33
+  - first:
+      4: 400568
+    second: piggybank_rig:Blend_shape1:pCylinder34
+  - first:
+      4: 400570
+    second: piggybank_rig:Blend_shape1:pCylinder4
+  - first:
+      4: 400572
+    second: piggybank_rig:Blend_shape1:pCylinder6
+  - first:
+      4: 400574
+    second: piggybank_rig:Blend_shape1:pCylinder7
+  - first:
+      4: 400576
+    second: piggybank_rig:Blend_shape1:pCylinder9
+  - first:
+      4: 400578
+    second: piggybank_rig:Blend_shape1:pPlane3
+  - first:
+      4: 400580
+    second: piggybank_rig:Blend_shape1:pPlane4
+  - first:
+      4: 400582
+    second: piggybank_rig:Blend_shape1:pPlane5
+  - first:
+      4: 400584
+    second: piggybank_rig:Blend_shape:pCylinder1
+  - first:
+      4: 400586
+    second: piggybank_rig:Blend_shape:pSphere1
+  - first:
+      4: 400588
+    second: piggybank_rig:Blend_shape:pSphere2
+  - first:
+      4: 400590
+    second: piggybank_rig:body_mesh
+  - first:
+      4: 400592
+    second: piggybank_rig:Chest_M
+  - first:
+      4: 400594
+    second: piggybank_rig:DeformationSystem
+  - first:
+      4: 400596
+    second: piggybank_rig:Elbow_L
+  - first:
+      4: 400598
+    second: piggybank_rig:Elbow_R
+  - first:
+      4: 400600
+    second: piggybank_rig:Eye_L
+  - first:
+      4: 400602
+    second: piggybank_rig:Eye_R
+  - first:
+      4: 400604
+    second: piggybank_rig:EyeEnd_L
+  - first:
+      4: 400606
+    second: piggybank_rig:EyeEnd_R
+  - first:
+      4: 400608
+    second: piggybank_rig:FitSkeleton
+  - first:
+      4: 400610
+    second: piggybank_rig:Geometry
+  - first:
+      4: 400612
+    second: piggybank_rig:Group
+  - first:
+      4: 400614
+    second: piggybank_rig:Head_M
+  - first:
+      4: 400616
+    second: piggybank_rig:HeadEnd_M
+  - first:
+      4: 400618
+    second: piggybank_rig:Hip_L
+  - first:
+      4: 400620
+    second: piggybank_rig:Hip_R
+  - first:
+      4: 400622
+    second: piggybank_rig:Jaw_M
+  - first:
+      4: 400624
+    second: piggybank_rig:JawEnd_M
+  - first:
+      4: 400626
+    second: piggybank_rig:jnt_ear_L
+  - first:
+      4: 400628
+    second: piggybank_rig:jnt_ear_R
+  - first:
+      4: 400630
+    second: piggybank_rig:jnt_nose
+  - first:
+      4: 400632
+    second: piggybank_rig:Knee_L
+  - first:
+      4: 400634
+    second: piggybank_rig:Knee_R
+  - first:
+      4: 400636
+    second: piggybank_rig:Main
+  - first:
+      4: 400638
+    second: piggybank_rig:model
+  - first:
+      4: 400640
+    second: piggybank_rig:Neck_M
+  - first:
+      4: 400642
+    second: piggybank_rig:Root_M
+  - first:
+      4: 400644
+    second: piggybank_rig:Scapula_L
+  - first:
+      4: 400646
+    second: piggybank_rig:Scapula_R
+  - first:
+      4: 400648
+    second: piggybank_rig:Shoulder_L
+  - first:
+      4: 400650
+    second: piggybank_rig:Shoulder_R
+  - first:
+      4: 400652
+    second: piggybank_rig:ShoulderPart1_L
+  - first:
+      4: 400654
+    second: piggybank_rig:ShoulderPart1_R
+  - first:
+      4: 400656
+    second: piggybank_rig:ShoulderPart2_L
+  - first:
+      4: 400658
+    second: piggybank_rig:ShoulderPart2_R
+  - first:
+      4: 400660
+    second: piggybank_rig:Spine1_M
+  - first:
+      4: 400662
+    second: piggybank_rig:Toes_L
+  - first:
+      4: 400664
+    second: piggybank_rig:Toes_R
+  - first:
+      4: 400666
+    second: piggybank_rig:ToesEnd_L
+  - first:
+      4: 400668
+    second: piggybank_rig:ToesEnd_R
+  - first:
+      23: 2300000
+    second: piggybank_rig:Blend_shape1:pCube1
+  - first:
+      23: 2300002
+    second: piggybank_rig:Blend_shape1:pCylinder1
+  - first:
+      23: 2300004
+    second: piggybank_rig:Blend_shape1:pCylinder10
+  - first:
+      23: 2300006
+    second: piggybank_rig:Blend_shape1:pCylinder11
+  - first:
+      23: 2300008
+    second: piggybank_rig:Blend_shape1:pCylinder14
+  - first:
+      23: 2300010
+    second: piggybank_rig:Blend_shape1:pCylinder18
+  - first:
+      23: 2300012
+    second: piggybank_rig:Blend_shape1:pCylinder2
+  - first:
+      23: 2300014
+    second: piggybank_rig:Blend_shape1:pCylinder20
+  - first:
+      23: 2300016
+    second: piggybank_rig:Blend_shape1:pCylinder22
+  - first:
+      23: 2300018
+    second: piggybank_rig:Blend_shape1:pCylinder23
+  - first:
+      23: 2300020
+    second: piggybank_rig:Blend_shape1:pCylinder24
+  - first:
+      23: 2300022
+    second: piggybank_rig:Blend_shape1:pCylinder25
+  - first:
+      23: 2300024
+    second: piggybank_rig:Blend_shape1:pCylinder26
+  - first:
+      23: 2300026
+    second: piggybank_rig:Blend_shape1:pCylinder27
+  - first:
+      23: 2300028
+    second: piggybank_rig:Blend_shape1:pCylinder28
+  - first:
+      23: 2300030
+    second: piggybank_rig:Blend_shape1:pCylinder29
+  - first:
+      23: 2300032
+    second: piggybank_rig:Blend_shape1:pCylinder3
+  - first:
+      23: 2300034
+    second: piggybank_rig:Blend_shape1:pCylinder30
+  - first:
+      23: 2300036
+    second: piggybank_rig:Blend_shape1:pCylinder31
+  - first:
+      23: 2300038
+    second: piggybank_rig:Blend_shape1:pCylinder32
+  - first:
+      23: 2300040
+    second: piggybank_rig:Blend_shape1:pCylinder33
+  - first:
+      23: 2300042
+    second: piggybank_rig:Blend_shape1:pCylinder34
+  - first:
+      23: 2300044
+    second: piggybank_rig:Blend_shape1:pCylinder4
+  - first:
+      23: 2300046
+    second: piggybank_rig:Blend_shape1:pCylinder6
+  - first:
+      23: 2300048
+    second: piggybank_rig:Blend_shape1:pCylinder7
+  - first:
+      23: 2300050
+    second: piggybank_rig:Blend_shape1:pCylinder9
+  - first:
+      23: 2300052
+    second: piggybank_rig:Blend_shape1:pPlane3
+  - first:
+      23: 2300054
+    second: piggybank_rig:Blend_shape1:pPlane4
+  - first:
+      23: 2300056
+    second: piggybank_rig:Blend_shape1:pPlane5
+  - first:
+      23: 2300058
+    second: piggybank_rig:Blend_shape:pCylinder1
+  - first:
+      33: 3300000
+    second: piggybank_rig:Blend_shape1:pCube1
+  - first:
+      33: 3300002
+    second: piggybank_rig:Blend_shape1:pCylinder1
+  - first:
+      33: 3300004
+    second: piggybank_rig:Blend_shape1:pCylinder10
+  - first:
+      33: 3300006
+    second: piggybank_rig:Blend_shape1:pCylinder11
+  - first:
+      33: 3300008
+    second: piggybank_rig:Blend_shape1:pCylinder14
+  - first:
+      33: 3300010
+    second: piggybank_rig:Blend_shape1:pCylinder18
+  - first:
+      33: 3300012
+    second: piggybank_rig:Blend_shape1:pCylinder2
+  - first:
+      33: 3300014
+    second: piggybank_rig:Blend_shape1:pCylinder20
+  - first:
+      33: 3300016
+    second: piggybank_rig:Blend_shape1:pCylinder22
+  - first:
+      33: 3300018
+    second: piggybank_rig:Blend_shape1:pCylinder23
+  - first:
+      33: 3300020
+    second: piggybank_rig:Blend_shape1:pCylinder24
+  - first:
+      33: 3300022
+    second: piggybank_rig:Blend_shape1:pCylinder25
+  - first:
+      33: 3300024
+    second: piggybank_rig:Blend_shape1:pCylinder26
+  - first:
+      33: 3300026
+    second: piggybank_rig:Blend_shape1:pCylinder27
+  - first:
+      33: 3300028
+    second: piggybank_rig:Blend_shape1:pCylinder28
+  - first:
+      33: 3300030
+    second: piggybank_rig:Blend_shape1:pCylinder29
+  - first:
+      33: 3300032
+    second: piggybank_rig:Blend_shape1:pCylinder3
+  - first:
+      33: 3300034
+    second: piggybank_rig:Blend_shape1:pCylinder30
+  - first:
+      33: 3300036
+    second: piggybank_rig:Blend_shape1:pCylinder31
+  - first:
+      33: 3300038
+    second: piggybank_rig:Blend_shape1:pCylinder32
+  - first:
+      33: 3300040
+    second: piggybank_rig:Blend_shape1:pCylinder33
+  - first:
+      33: 3300042
+    second: piggybank_rig:Blend_shape1:pCylinder34
+  - first:
+      33: 3300044
+    second: piggybank_rig:Blend_shape1:pCylinder4
+  - first:
+      33: 3300046
+    second: piggybank_rig:Blend_shape1:pCylinder6
+  - first:
+      33: 3300048
+    second: piggybank_rig:Blend_shape1:pCylinder7
+  - first:
+      33: 3300050
+    second: piggybank_rig:Blend_shape1:pCylinder9
+  - first:
+      33: 3300052
+    second: piggybank_rig:Blend_shape1:pPlane3
+  - first:
+      33: 3300054
+    second: piggybank_rig:Blend_shape1:pPlane4
+  - first:
+      33: 3300056
+    second: piggybank_rig:Blend_shape1:pPlane5
+  - first:
+      33: 3300058
+    second: piggybank_rig:Blend_shape:pCylinder1
+  - first:
+      43: 4300000
+    second: piggybank_rig:Blend_shape1:pCylinder4
+  - first:
+      43: 4300002
+    second: piggybank_rig:Blend_shape1:pCylinder3
+  - first:
+      43: 4300004
+    second: piggybank_rig:Blend_shape1:pCylinder2
+  - first:
+      43: 4300006
+    second: piggybank_rig:Blend_shape1:pCylinder1
+  - first:
+      43: 4300008
+    second: piggybank_rig:Blend_shape1:pPlane5
+  - first:
+      43: 4300010
+    second: piggybank_rig:Blend_shape1:pPlane4
+  - first:
+      43: 4300012
+    second: piggybank_rig:Blend_shape1:pPlane3
+  - first:
+      43: 4300014
+    second: piggybank_rig:Blend_shape:pSphere2
+  - first:
+      43: 4300016
+    second: piggybank_rig:Blend_shape:pSphere1
+  - first:
+      43: 4300018
+    second: piggybank_rig:Blend_shape:pCylinder1
+  - first:
+      43: 4300020
+    second: piggybank_rig:body_mesh
+  - first:
+      43: 4300022
+    second: piggybank_rig:Blend_shape1:pCube1
+  - first:
+      43: 4300024
+    second: piggybank_rig:Blend_shape1:pCylinder14
+  - first:
+      43: 4300026
+    second: piggybank_rig:Blend_shape1:pCylinder26
+  - first:
+      43: 4300028
+    second: piggybank_rig:Blend_shape1:pCylinder32
+  - first:
+      43: 4300030
+    second: piggybank_rig:Blend_shape1:pCylinder25
+  - first:
+      43: 4300032
+    second: piggybank_rig:Blend_shape1:pCylinder20
+  - first:
+      43: 4300034
+    second: piggybank_rig:Blend_shape1:pCylinder28
+  - first:
+      43: 4300036
+    second: piggybank_rig:Blend_shape1:pCylinder22
+  - first:
+      43: 4300038
+    second: piggybank_rig:Blend_shape1:pCylinder24
+  - first:
+      43: 4300040
+    second: piggybank_rig:Blend_shape1:pCylinder30
+  - first:
+      43: 4300042
+    second: piggybank_rig:Blend_shape1:pCylinder29
+  - first:
+      43: 4300044
+    second: piggybank_rig:Blend_shape1:pCylinder27
+  - first:
+      43: 4300046
+    second: piggybank_rig:Blend_shape1:pCylinder31
+  - first:
+      43: 4300048
+    second: piggybank_rig:Blend_shape1:pCylinder7
+  - first:
+      43: 4300050
+    second: piggybank_rig:Blend_shape1:pCylinder6
+  - first:
+      43: 4300052
+    second: piggybank_rig:Blend_shape1:pCylinder18
+  - first:
+      43: 4300054
+    second: piggybank_rig:Blend_shape1:pCylinder34
+  - first:
+      43: 4300056
+    second: piggybank_rig:Blend_shape1:pCylinder9
+  - first:
+      43: 4300058
+    second: piggybank_rig:Blend_shape1:pCylinder11
+  - first:
+      43: 4300060
+    second: piggybank_rig:Blend_shape1:pCylinder10
+  - first:
+      43: 4300062
+    second: piggybank_rig:Blend_shape1:pCylinder23
+  - first:
+      43: 4300064
+    second: piggybank_rig:Blend_shape1:pCylinder33
+  - first:
+      43: 4300066
+    second: glass
+  - first:
+      43: 4300068
+    second: doller_rig:doller_rig
+  - first:
+      43: 4300070
+    second: doller_rig1:doller_rig
+  - first:
+      43: 4300072
+    second: doller_rig2:doller_rig
+  - first:
+      43: 4300074
+    second: doller_rig3:doller_rig
+  - first:
+      43: 4300076
+    second: doller_rig4:doller_rig
+  - first:
+      43: 4300078
+    second: doller_rig5:doller_rig
+  - first:
+      43: 4300080
+    second: doller_rig6:doller_rig
+  - first:
+      43: 4300082
+    second: doller_rig7:doller_rig
+  - first:
+      43: 4300084
+    second: doller_rig8:doller_rig
+  - first:
+      43: 4300086
+    second: doller_rig9:doller_rig
+  - first:
+      43: 4300088
+    second: doller_rig10:doller_rig
+  - first:
+      43: 4300090
+    second: doller_rig11:doller_rig
+  - first:
+      43: 4300092
+    second: doller_rig12:doller_rig
+  - first:
+      43: 4300094
+    second: doller_rig13:doller_rig
+  - first:
+      43: 4300096
+    second: doller_rig14:doller_rig
+  - first:
+      43: 4300098
+    second: doller_rig15:doller_rig
+  - first:
+      43: 4300100
+    second: doller_rig16:doller_rig
+  - first:
+      43: 4300102
+    second: doller_rig17:doller_rig
+  - first:
+      43: 4300104
+    second: doller_rig18:doller_rig
+  - first:
+      43: 4300106
+    second: doller_rig19:doller_rig
+  - first:
+      43: 4300108
+    second: doller_rig20:doller_rig
+  - first:
+      43: 4300110
+    second: doller_rig21:doller_rig
+  - first:
+      43: 4300112
+    second: doller_rig22:doller_rig
+  - first:
+      43: 4300114
+    second: doller_rig23:doller_rig
+  - first:
+      43: 4300116
+    second: doller_rig24:doller_rig
+  - first:
+      43: 4300118
+    second: doller_rig25:doller_rig
+  - first:
+      43: 4300120
+    second: doller_rig26:doller_rig
+  - first:
+      43: 4300122
+    second: doller_rig27:doller_rig
+  - first:
+      43: 4300124
+    second: doller_rig28:doller_rig
+  - first:
+      43: 4300126
+    second: doller_rig29:doller_rig
+  - first:
+      43: 4300128
+    second: doller_rig30:doller_rig
+  - first:
+      43: 4300130
+    second: doller_rig31:doller_rig
+  - first:
+      43: 4300132
+    second: doller_rig32:doller_rig
+  - first:
+      43: 4300134
+    second: doller_rig33:doller_rig
+  - first:
+      43: 4300136
+    second: doller_rig34:doller_rig
+  - first:
+      43: 4300138
+    second: doller_rig35:doller_rig
+  - first:
+      43: 4300140
+    second: doller_rig36:doller_rig
+  - first:
+      43: 4300142
+    second: doller_rig37:doller_rig
+  - first:
+      43: 4300144
+    second: doller_rig38:doller_rig
+  - first:
+      43: 4300146
+    second: doller_rig39:doller_rig
+  - first:
+      43: 4300148
+    second: doller_rig40:doller_rig
+  - first:
+      43: 4300150
+    second: doller_rig41:doller_rig
+  - first:
+      43: 4300152
+    second: doller_rig42:doller_rig
+  - first:
+      43: 4300154
+    second: doller_rig43:doller_rig
+  - first:
+      43: 4300156
+    second: doller_rig44:doller_rig
+  - first:
+      43: 4300158
+    second: doller_rig45:doller_rig
+  - first:
+      43: 4300160
+    second: doller_rig46:doller_rig
+  - first:
+      43: 4300162
+    second: doller_rig47:doller_rig
+  - first:
+      43: 4300164
+    second: doller_rig48:doller_rig
+  - first:
+      43: 4300166
+    second: doller_rig49:doller_rig
+  - first:
+      74: 7400000
+    second: PiggyBank
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: doller_rig10:doller_rig
+  - first:
+      137: 13700002
+    second: doller_rig11:doller_rig
+  - first:
+      137: 13700004
+    second: doller_rig12:doller_rig
+  - first:
+      137: 13700006
+    second: doller_rig13:doller_rig
+  - first:
+      137: 13700008
+    second: doller_rig14:doller_rig
+  - first:
+      137: 13700010
+    second: doller_rig15:doller_rig
+  - first:
+      137: 13700012
+    second: doller_rig16:doller_rig
+  - first:
+      137: 13700014
+    second: doller_rig17:doller_rig
+  - first:
+      137: 13700016
+    second: doller_rig18:doller_rig
+  - first:
+      137: 13700018
+    second: doller_rig19:doller_rig
+  - first:
+      137: 13700020
+    second: doller_rig1:doller_rig
+  - first:
+      137: 13700022
+    second: doller_rig20:doller_rig
+  - first:
+      137: 13700024
+    second: doller_rig21:doller_rig
+  - first:
+      137: 13700026
+    second: doller_rig22:doller_rig
+  - first:
+      137: 13700028
+    second: doller_rig23:doller_rig
+  - first:
+      137: 13700030
+    second: doller_rig24:doller_rig
+  - first:
+      137: 13700032
+    second: doller_rig25:doller_rig
+  - first:
+      137: 13700034
+    second: doller_rig26:doller_rig
+  - first:
+      137: 13700036
+    second: doller_rig27:doller_rig
+  - first:
+      137: 13700038
+    second: doller_rig28:doller_rig
+  - first:
+      137: 13700040
+    second: doller_rig29:doller_rig
+  - first:
+      137: 13700042
+    second: doller_rig2:doller_rig
+  - first:
+      137: 13700044
+    second: doller_rig30:doller_rig
+  - first:
+      137: 13700046
+    second: doller_rig31:doller_rig
+  - first:
+      137: 13700048
+    second: doller_rig32:doller_rig
+  - first:
+      137: 13700050
+    second: doller_rig33:doller_rig
+  - first:
+      137: 13700052
+    second: doller_rig34:doller_rig
+  - first:
+      137: 13700054
+    second: doller_rig35:doller_rig
+  - first:
+      137: 13700056
+    second: doller_rig36:doller_rig
+  - first:
+      137: 13700058
+    second: doller_rig37:doller_rig
+  - first:
+      137: 13700060
+    second: doller_rig38:doller_rig
+  - first:
+      137: 13700062
+    second: doller_rig39:doller_rig
+  - first:
+      137: 13700064
+    second: doller_rig3:doller_rig
+  - first:
+      137: 13700066
+    second: doller_rig40:doller_rig
+  - first:
+      137: 13700068
+    second: doller_rig41:doller_rig
+  - first:
+      137: 13700070
+    second: doller_rig42:doller_rig
+  - first:
+      137: 13700072
+    second: doller_rig43:doller_rig
+  - first:
+      137: 13700074
+    second: doller_rig44:doller_rig
+  - first:
+      137: 13700076
+    second: doller_rig45:doller_rig
+  - first:
+      137: 13700078
+    second: doller_rig46:doller_rig
+  - first:
+      137: 13700080
+    second: doller_rig47:doller_rig
+  - first:
+      137: 13700082
+    second: doller_rig48:doller_rig
+  - first:
+      137: 13700084
+    second: doller_rig49:doller_rig
+  - first:
+      137: 13700086
+    second: doller_rig4:doller_rig
+  - first:
+      137: 13700088
+    second: doller_rig5:doller_rig
+  - first:
+      137: 13700090
+    second: doller_rig6:doller_rig
+  - first:
+      137: 13700092
+    second: doller_rig7:doller_rig
+  - first:
+      137: 13700094
+    second: doller_rig8:doller_rig
+  - first:
+      137: 13700096
+    second: doller_rig9:doller_rig
+  - first:
+      137: 13700098
+    second: doller_rig:doller_rig
+  - first:
+      137: 13700100
+    second: glass
+  - first:
+      137: 13700102
+    second: piggybank_rig:Blend_shape:pSphere1
+  - first:
+      137: 13700104
+    second: piggybank_rig:Blend_shape:pSphere2
+  - first:
+      137: 13700106
+    second: piggybank_rig:body_mesh
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert3
+    second: {fileID: 2100000, guid: 60752d21cef3f4de396ebf28fac6821d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert4
+    second: {fileID: 2100000, guid: f9fcb5afa87e8449a96cd802d3dcc404, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: piggybank_rig_lambert2
+    second: {fileID: 2100000, guid: f9fcb5afa87e8449a96cd802d3dcc404, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: PiggyBank
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 1
+      lastFrame: 251
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0
+        functionName: playSound
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask:
+      - path: 
+        weight: 1
+      - path: doller_rig1:cc_doller
+        weight: 1
+      - path: doller_rig1:cc_doller/doller_rig1:joint1
+        weight: 1
+      - path: doller_rig1:cc_doller/doller_rig1:joint1/doller_rig1:joint2
+        weight: 1
+      - path: doller_rig1:cc_doller/doller_rig1:joint1/doller_rig1:joint2/doller_rig1:joint3
+        weight: 1
+      - path: doller_rig1:doller_rig
+        weight: 1
+      - path: doller_rig2:cc_doller
+        weight: 1
+      - path: doller_rig2:cc_doller/doller_rig2:joint1
+        weight: 1
+      - path: doller_rig2:cc_doller/doller_rig2:joint1/doller_rig2:joint2
+        weight: 1
+      - path: doller_rig2:cc_doller/doller_rig2:joint1/doller_rig2:joint2/doller_rig2:joint3
+        weight: 1
+      - path: doller_rig2:doller_rig
+        weight: 1
+      - path: doller_rig3:cc_doller
+        weight: 1
+      - path: doller_rig3:cc_doller/doller_rig3:joint1
+        weight: 1
+      - path: doller_rig3:cc_doller/doller_rig3:joint1/doller_rig3:joint2
+        weight: 1
+      - path: doller_rig3:cc_doller/doller_rig3:joint1/doller_rig3:joint2/doller_rig3:joint3
+        weight: 1
+      - path: doller_rig3:doller_rig
+        weight: 1
+      - path: doller_rig4:cc_doller
+        weight: 1
+      - path: doller_rig4:cc_doller/doller_rig4:joint1
+        weight: 1
+      - path: doller_rig4:cc_doller/doller_rig4:joint1/doller_rig4:joint2
+        weight: 1
+      - path: doller_rig4:cc_doller/doller_rig4:joint1/doller_rig4:joint2/doller_rig4:joint3
+        weight: 1
+      - path: doller_rig4:doller_rig
+        weight: 1
+      - path: doller_rig5:cc_doller
+        weight: 1
+      - path: doller_rig5:cc_doller/doller_rig5:joint1
+        weight: 1
+      - path: doller_rig5:cc_doller/doller_rig5:joint1/doller_rig5:joint2
+        weight: 1
+      - path: doller_rig5:cc_doller/doller_rig5:joint1/doller_rig5:joint2/doller_rig5:joint3
+        weight: 1
+      - path: doller_rig5:doller_rig
+        weight: 1
+      - path: doller_rig6:cc_doller
+        weight: 1
+      - path: doller_rig6:cc_doller/doller_rig6:joint1
+        weight: 1
+      - path: doller_rig6:cc_doller/doller_rig6:joint1/doller_rig6:joint2
+        weight: 1
+      - path: doller_rig6:cc_doller/doller_rig6:joint1/doller_rig6:joint2/doller_rig6:joint3
+        weight: 1
+      - path: doller_rig6:doller_rig
+        weight: 1
+      - path: doller_rig7:cc_doller
+        weight: 1
+      - path: doller_rig7:cc_doller/doller_rig7:joint1
+        weight: 1
+      - path: doller_rig7:cc_doller/doller_rig7:joint1/doller_rig7:joint2
+        weight: 1
+      - path: doller_rig7:cc_doller/doller_rig7:joint1/doller_rig7:joint2/doller_rig7:joint3
+        weight: 1
+      - path: doller_rig7:doller_rig
+        weight: 1
+      - path: doller_rig8:cc_doller
+        weight: 1
+      - path: doller_rig8:cc_doller/doller_rig8:joint1
+        weight: 1
+      - path: doller_rig8:cc_doller/doller_rig8:joint1/doller_rig8:joint2
+        weight: 1
+      - path: doller_rig8:cc_doller/doller_rig8:joint1/doller_rig8:joint2/doller_rig8:joint3
+        weight: 1
+      - path: doller_rig8:doller_rig
+        weight: 1
+      - path: doller_rig9:cc_doller
+        weight: 1
+      - path: doller_rig9:cc_doller/doller_rig9:joint1
+        weight: 1
+      - path: doller_rig9:cc_doller/doller_rig9:joint1/doller_rig9:joint2
+        weight: 1
+      - path: doller_rig9:cc_doller/doller_rig9:joint1/doller_rig9:joint2/doller_rig9:joint3
+        weight: 1
+      - path: doller_rig9:doller_rig
+        weight: 1
+      - path: doller_rig10:cc_doller
+        weight: 1
+      - path: doller_rig10:cc_doller/doller_rig10:joint1
+        weight: 1
+      - path: doller_rig10:cc_doller/doller_rig10:joint1/doller_rig10:joint2
+        weight: 1
+      - path: doller_rig10:cc_doller/doller_rig10:joint1/doller_rig10:joint2/doller_rig10:joint3
+        weight: 1
+      - path: doller_rig10:doller_rig
+        weight: 1
+      - path: doller_rig11:cc_doller
+        weight: 1
+      - path: doller_rig11:cc_doller/doller_rig11:joint1
+        weight: 1
+      - path: doller_rig11:cc_doller/doller_rig11:joint1/doller_rig11:joint2
+        weight: 1
+      - path: doller_rig11:cc_doller/doller_rig11:joint1/doller_rig11:joint2/doller_rig11:joint3
+        weight: 1
+      - path: doller_rig11:doller_rig
+        weight: 1
+      - path: doller_rig12:cc_doller
+        weight: 1
+      - path: doller_rig12:cc_doller/doller_rig12:joint1
+        weight: 1
+      - path: doller_rig12:cc_doller/doller_rig12:joint1/doller_rig12:joint2
+        weight: 1
+      - path: doller_rig12:cc_doller/doller_rig12:joint1/doller_rig12:joint2/doller_rig12:joint3
+        weight: 1
+      - path: doller_rig12:doller_rig
+        weight: 1
+      - path: doller_rig13:cc_doller
+        weight: 1
+      - path: doller_rig13:cc_doller/doller_rig13:joint1
+        weight: 1
+      - path: doller_rig13:cc_doller/doller_rig13:joint1/doller_rig13:joint2
+        weight: 1
+      - path: doller_rig13:cc_doller/doller_rig13:joint1/doller_rig13:joint2/doller_rig13:joint3
+        weight: 1
+      - path: doller_rig13:doller_rig
+        weight: 1
+      - path: doller_rig14:cc_doller
+        weight: 1
+      - path: doller_rig14:cc_doller/doller_rig14:joint1
+        weight: 1
+      - path: doller_rig14:cc_doller/doller_rig14:joint1/doller_rig14:joint2
+        weight: 1
+      - path: doller_rig14:cc_doller/doller_rig14:joint1/doller_rig14:joint2/doller_rig14:joint3
+        weight: 1
+      - path: doller_rig14:doller_rig
+        weight: 1
+      - path: doller_rig15:cc_doller
+        weight: 1
+      - path: doller_rig15:cc_doller/doller_rig15:joint1
+        weight: 1
+      - path: doller_rig15:cc_doller/doller_rig15:joint1/doller_rig15:joint2
+        weight: 1
+      - path: doller_rig15:cc_doller/doller_rig15:joint1/doller_rig15:joint2/doller_rig15:joint3
+        weight: 1
+      - path: doller_rig15:doller_rig
+        weight: 1
+      - path: doller_rig16:cc_doller
+        weight: 1
+      - path: doller_rig16:cc_doller/doller_rig16:joint1
+        weight: 1
+      - path: doller_rig16:cc_doller/doller_rig16:joint1/doller_rig16:joint2
+        weight: 1
+      - path: doller_rig16:cc_doller/doller_rig16:joint1/doller_rig16:joint2/doller_rig16:joint3
+        weight: 1
+      - path: doller_rig16:doller_rig
+        weight: 1
+      - path: doller_rig17:cc_doller
+        weight: 1
+      - path: doller_rig17:cc_doller/doller_rig17:joint1
+        weight: 1
+      - path: doller_rig17:cc_doller/doller_rig17:joint1/doller_rig17:joint2
+        weight: 1
+      - path: doller_rig17:cc_doller/doller_rig17:joint1/doller_rig17:joint2/doller_rig17:joint3
+        weight: 1
+      - path: doller_rig17:doller_rig
+        weight: 1
+      - path: doller_rig18:cc_doller
+        weight: 1
+      - path: doller_rig18:cc_doller/doller_rig18:joint1
+        weight: 1
+      - path: doller_rig18:cc_doller/doller_rig18:joint1/doller_rig18:joint2
+        weight: 1
+      - path: doller_rig18:cc_doller/doller_rig18:joint1/doller_rig18:joint2/doller_rig18:joint3
+        weight: 1
+      - path: doller_rig18:doller_rig
+        weight: 1
+      - path: doller_rig19:cc_doller
+        weight: 1
+      - path: doller_rig19:cc_doller/doller_rig19:joint1
+        weight: 1
+      - path: doller_rig19:cc_doller/doller_rig19:joint1/doller_rig19:joint2
+        weight: 1
+      - path: doller_rig19:cc_doller/doller_rig19:joint1/doller_rig19:joint2/doller_rig19:joint3
+        weight: 1
+      - path: doller_rig19:doller_rig
+        weight: 1
+      - path: doller_rig20:cc_doller
+        weight: 1
+      - path: doller_rig20:cc_doller/doller_rig20:joint1
+        weight: 1
+      - path: doller_rig20:cc_doller/doller_rig20:joint1/doller_rig20:joint2
+        weight: 1
+      - path: doller_rig20:cc_doller/doller_rig20:joint1/doller_rig20:joint2/doller_rig20:joint3
+        weight: 1
+      - path: doller_rig20:doller_rig
+        weight: 1
+      - path: doller_rig21:cc_doller
+        weight: 1
+      - path: doller_rig21:cc_doller/doller_rig21:joint1
+        weight: 1
+      - path: doller_rig21:cc_doller/doller_rig21:joint1/doller_rig21:joint2
+        weight: 1
+      - path: doller_rig21:cc_doller/doller_rig21:joint1/doller_rig21:joint2/doller_rig21:joint3
+        weight: 1
+      - path: doller_rig21:doller_rig
+        weight: 1
+      - path: doller_rig22:cc_doller
+        weight: 1
+      - path: doller_rig22:cc_doller/doller_rig22:joint1
+        weight: 1
+      - path: doller_rig22:cc_doller/doller_rig22:joint1/doller_rig22:joint2
+        weight: 1
+      - path: doller_rig22:cc_doller/doller_rig22:joint1/doller_rig22:joint2/doller_rig22:joint3
+        weight: 1
+      - path: doller_rig22:doller_rig
+        weight: 1
+      - path: doller_rig23:cc_doller
+        weight: 1
+      - path: doller_rig23:cc_doller/doller_rig23:joint1
+        weight: 1
+      - path: doller_rig23:cc_doller/doller_rig23:joint1/doller_rig23:joint2
+        weight: 1
+      - path: doller_rig23:cc_doller/doller_rig23:joint1/doller_rig23:joint2/doller_rig23:joint3
+        weight: 1
+      - path: doller_rig23:doller_rig
+        weight: 1
+      - path: doller_rig24:cc_doller
+        weight: 1
+      - path: doller_rig24:cc_doller/doller_rig24:joint1
+        weight: 1
+      - path: doller_rig24:cc_doller/doller_rig24:joint1/doller_rig24:joint2
+        weight: 1
+      - path: doller_rig24:cc_doller/doller_rig24:joint1/doller_rig24:joint2/doller_rig24:joint3
+        weight: 1
+      - path: doller_rig24:cc_doller/doller_rig24:nurbsCircle4
+        weight: 1
+      - path: doller_rig24:cc_doller/doller_rig24:nurbsCircle4/doller_rig24:nurbsCircle1
+        weight: 1
+      - path: doller_rig24:cc_doller/doller_rig24:nurbsCircle4/doller_rig24:nurbsCircle1/doller_rig24:nurbsCircle2
+        weight: 1
+      - path: doller_rig24:cc_doller/doller_rig24:nurbsCircle4/doller_rig24:nurbsCircle1/doller_rig24:nurbsCircle2/doller_rig24:nurbsCircle3
+        weight: 1
+      - path: doller_rig24:doller_rig
+        weight: 1
+      - path: doller_rig25:cc_doller
+        weight: 1
+      - path: doller_rig25:cc_doller/doller_rig25:joint1
+        weight: 1
+      - path: doller_rig25:cc_doller/doller_rig25:joint1/doller_rig25:joint2
+        weight: 1
+      - path: doller_rig25:cc_doller/doller_rig25:joint1/doller_rig25:joint2/doller_rig25:joint3
+        weight: 1
+      - path: doller_rig25:doller_rig
+        weight: 1
+      - path: doller_rig26:cc_doller
+        weight: 1
+      - path: doller_rig26:cc_doller/doller_rig26:joint1
+        weight: 1
+      - path: doller_rig26:cc_doller/doller_rig26:joint1/doller_rig26:joint2
+        weight: 1
+      - path: doller_rig26:cc_doller/doller_rig26:joint1/doller_rig26:joint2/doller_rig26:joint3
+        weight: 1
+      - path: doller_rig26:doller_rig
+        weight: 1
+      - path: doller_rig27:cc_doller
+        weight: 1
+      - path: doller_rig27:cc_doller/doller_rig27:joint1
+        weight: 1
+      - path: doller_rig27:cc_doller/doller_rig27:joint1/doller_rig27:joint2
+        weight: 1
+      - path: doller_rig27:cc_doller/doller_rig27:joint1/doller_rig27:joint2/doller_rig27:joint3
+        weight: 1
+      - path: doller_rig27:doller_rig
+        weight: 1
+      - path: doller_rig28:cc_doller
+        weight: 1
+      - path: doller_rig28:cc_doller/doller_rig28:joint1
+        weight: 1
+      - path: doller_rig28:cc_doller/doller_rig28:joint1/doller_rig28:joint2
+        weight: 1
+      - path: doller_rig28:cc_doller/doller_rig28:joint1/doller_rig28:joint2/doller_rig28:joint3
+        weight: 1
+      - path: doller_rig28:doller_rig
+        weight: 1
+      - path: doller_rig29:cc_doller
+        weight: 1
+      - path: doller_rig29:cc_doller/doller_rig29:joint1
+        weight: 1
+      - path: doller_rig29:cc_doller/doller_rig29:joint1/doller_rig29:joint2
+        weight: 1
+      - path: doller_rig29:cc_doller/doller_rig29:joint1/doller_rig29:joint2/doller_rig29:joint3
+        weight: 1
+      - path: doller_rig29:doller_rig
+        weight: 1
+      - path: doller_rig30:cc_doller
+        weight: 1
+      - path: doller_rig30:cc_doller/doller_rig30:joint1
+        weight: 1
+      - path: doller_rig30:cc_doller/doller_rig30:joint1/doller_rig30:joint2
+        weight: 1
+      - path: doller_rig30:cc_doller/doller_rig30:joint1/doller_rig30:joint2/doller_rig30:joint3
+        weight: 1
+      - path: doller_rig30:doller_rig
+        weight: 1
+      - path: doller_rig31:cc_doller
+        weight: 1
+      - path: doller_rig31:cc_doller/doller_rig31:joint1
+        weight: 1
+      - path: doller_rig31:cc_doller/doller_rig31:joint1/doller_rig31:joint2
+        weight: 1
+      - path: doller_rig31:cc_doller/doller_rig31:joint1/doller_rig31:joint2/doller_rig31:joint3
+        weight: 1
+      - path: doller_rig31:doller_rig
+        weight: 1
+      - path: doller_rig32:cc_doller
+        weight: 1
+      - path: doller_rig32:cc_doller/doller_rig32:joint1
+        weight: 1
+      - path: doller_rig32:cc_doller/doller_rig32:joint1/doller_rig32:joint2
+        weight: 1
+      - path: doller_rig32:cc_doller/doller_rig32:joint1/doller_rig32:joint2/doller_rig32:joint3
+        weight: 1
+      - path: doller_rig32:doller_rig
+        weight: 1
+      - path: doller_rig33:cc_doller
+        weight: 1
+      - path: doller_rig33:cc_doller/doller_rig33:joint1
+        weight: 1
+      - path: doller_rig33:cc_doller/doller_rig33:joint1/doller_rig33:joint2
+        weight: 1
+      - path: doller_rig33:cc_doller/doller_rig33:joint1/doller_rig33:joint2/doller_rig33:joint3
+        weight: 1
+      - path: doller_rig33:doller_rig
+        weight: 1
+      - path: doller_rig34:cc_doller
+        weight: 1
+      - path: doller_rig34:cc_doller/doller_rig34:joint1
+        weight: 1
+      - path: doller_rig34:cc_doller/doller_rig34:joint1/doller_rig34:joint2
+        weight: 1
+      - path: doller_rig34:cc_doller/doller_rig34:joint1/doller_rig34:joint2/doller_rig34:joint3
+        weight: 1
+      - path: doller_rig34:doller_rig
+        weight: 1
+      - path: doller_rig35:cc_doller
+        weight: 1
+      - path: doller_rig35:cc_doller/doller_rig35:joint1
+        weight: 1
+      - path: doller_rig35:cc_doller/doller_rig35:joint1/doller_rig35:joint2
+        weight: 1
+      - path: doller_rig35:cc_doller/doller_rig35:joint1/doller_rig35:joint2/doller_rig35:joint3
+        weight: 1
+      - path: doller_rig35:doller_rig
+        weight: 1
+      - path: doller_rig36:cc_doller
+        weight: 1
+      - path: doller_rig36:cc_doller/doller_rig36:joint1
+        weight: 1
+      - path: doller_rig36:cc_doller/doller_rig36:joint1/doller_rig36:joint2
+        weight: 1
+      - path: doller_rig36:cc_doller/doller_rig36:joint1/doller_rig36:joint2/doller_rig36:joint3
+        weight: 1
+      - path: doller_rig36:doller_rig
+        weight: 1
+      - path: doller_rig37:cc_doller
+        weight: 1
+      - path: doller_rig37:cc_doller/doller_rig37:joint1
+        weight: 1
+      - path: doller_rig37:cc_doller/doller_rig37:joint1/doller_rig37:joint2
+        weight: 1
+      - path: doller_rig37:cc_doller/doller_rig37:joint1/doller_rig37:joint2/doller_rig37:joint3
+        weight: 1
+      - path: doller_rig37:doller_rig
+        weight: 1
+      - path: doller_rig38:cc_doller
+        weight: 1
+      - path: doller_rig38:cc_doller/doller_rig38:joint1
+        weight: 1
+      - path: doller_rig38:cc_doller/doller_rig38:joint1/doller_rig38:joint2
+        weight: 1
+      - path: doller_rig38:cc_doller/doller_rig38:joint1/doller_rig38:joint2/doller_rig38:joint3
+        weight: 1
+      - path: doller_rig38:doller_rig
+        weight: 1
+      - path: doller_rig39:cc_doller
+        weight: 1
+      - path: doller_rig39:cc_doller/doller_rig39:joint1
+        weight: 1
+      - path: doller_rig39:cc_doller/doller_rig39:joint1/doller_rig39:joint2
+        weight: 1
+      - path: doller_rig39:cc_doller/doller_rig39:joint1/doller_rig39:joint2/doller_rig39:joint3
+        weight: 1
+      - path: doller_rig39:cc_doller/doller_rig39:nurbsCircle4
+        weight: 1
+      - path: doller_rig39:cc_doller/doller_rig39:nurbsCircle4/doller_rig39:nurbsCircle1
+        weight: 1
+      - path: doller_rig39:cc_doller/doller_rig39:nurbsCircle4/doller_rig39:nurbsCircle1/doller_rig39:nurbsCircle2
+        weight: 1
+      - path: doller_rig39:cc_doller/doller_rig39:nurbsCircle4/doller_rig39:nurbsCircle1/doller_rig39:nurbsCircle2/doller_rig39:nurbsCircle3
+        weight: 1
+      - path: doller_rig39:doller_rig
+        weight: 1
+      - path: doller_rig40:cc_doller
+        weight: 1
+      - path: doller_rig40:cc_doller/doller_rig40:joint1
+        weight: 1
+      - path: doller_rig40:cc_doller/doller_rig40:joint1/doller_rig40:joint2
+        weight: 1
+      - path: doller_rig40:cc_doller/doller_rig40:joint1/doller_rig40:joint2/doller_rig40:joint3
+        weight: 1
+      - path: doller_rig40:doller_rig
+        weight: 1
+      - path: doller_rig41:cc_doller
+        weight: 1
+      - path: doller_rig41:cc_doller/doller_rig41:joint1
+        weight: 1
+      - path: doller_rig41:cc_doller/doller_rig41:joint1/doller_rig41:joint2
+        weight: 1
+      - path: doller_rig41:cc_doller/doller_rig41:joint1/doller_rig41:joint2/doller_rig41:joint3
+        weight: 1
+      - path: doller_rig41:doller_rig
+        weight: 1
+      - path: doller_rig42:cc_doller
+        weight: 1
+      - path: doller_rig42:cc_doller/doller_rig42:joint1
+        weight: 1
+      - path: doller_rig42:cc_doller/doller_rig42:joint1/doller_rig42:joint2
+        weight: 1
+      - path: doller_rig42:cc_doller/doller_rig42:joint1/doller_rig42:joint2/doller_rig42:joint3
+        weight: 1
+      - path: doller_rig42:doller_rig
+        weight: 1
+      - path: doller_rig43:cc_doller
+        weight: 1
+      - path: doller_rig43:cc_doller/doller_rig43:joint1
+        weight: 1
+      - path: doller_rig43:cc_doller/doller_rig43:joint1/doller_rig43:joint2
+        weight: 1
+      - path: doller_rig43:cc_doller/doller_rig43:joint1/doller_rig43:joint2/doller_rig43:joint3
+        weight: 1
+      - path: doller_rig43:doller_rig
+        weight: 1
+      - path: doller_rig44:cc_doller
+        weight: 1
+      - path: doller_rig44:cc_doller/doller_rig44:joint1
+        weight: 1
+      - path: doller_rig44:cc_doller/doller_rig44:joint1/doller_rig44:joint2
+        weight: 1
+      - path: doller_rig44:cc_doller/doller_rig44:joint1/doller_rig44:joint2/doller_rig44:joint3
+        weight: 1
+      - path: doller_rig44:doller_rig
+        weight: 1
+      - path: doller_rig45:cc_doller
+        weight: 1
+      - path: doller_rig45:cc_doller/doller_rig45:joint1
+        weight: 1
+      - path: doller_rig45:cc_doller/doller_rig45:joint1/doller_rig45:joint2
+        weight: 1
+      - path: doller_rig45:cc_doller/doller_rig45:joint1/doller_rig45:joint2/doller_rig45:joint3
+        weight: 1
+      - path: doller_rig45:doller_rig
+        weight: 1
+      - path: doller_rig46:cc_doller
+        weight: 1
+      - path: doller_rig46:cc_doller/doller_rig46:joint1
+        weight: 1
+      - path: doller_rig46:cc_doller/doller_rig46:joint1/doller_rig46:joint2
+        weight: 1
+      - path: doller_rig46:cc_doller/doller_rig46:joint1/doller_rig46:joint2/doller_rig46:joint3
+        weight: 1
+      - path: doller_rig46:doller_rig
+        weight: 1
+      - path: doller_rig47:cc_doller
+        weight: 1
+      - path: doller_rig47:cc_doller/doller_rig47:joint1
+        weight: 1
+      - path: doller_rig47:cc_doller/doller_rig47:joint1/doller_rig47:joint2
+        weight: 1
+      - path: doller_rig47:cc_doller/doller_rig47:joint1/doller_rig47:joint2/doller_rig47:joint3
+        weight: 1
+      - path: doller_rig47:doller_rig
+        weight: 1
+      - path: doller_rig48:cc_doller
+        weight: 1
+      - path: doller_rig48:cc_doller/doller_rig48:joint1
+        weight: 1
+      - path: doller_rig48:cc_doller/doller_rig48:joint1/doller_rig48:joint2
+        weight: 1
+      - path: doller_rig48:cc_doller/doller_rig48:joint1/doller_rig48:joint2/doller_rig48:joint3
+        weight: 1
+      - path: doller_rig48:doller_rig
+        weight: 1
+      - path: doller_rig49:cc_doller
+        weight: 1
+      - path: doller_rig49:cc_doller/doller_rig49:joint1
+        weight: 1
+      - path: doller_rig49:cc_doller/doller_rig49:joint1/doller_rig49:joint2
+        weight: 1
+      - path: doller_rig49:cc_doller/doller_rig49:joint1/doller_rig49:joint2/doller_rig49:joint3
+        weight: 1
+      - path: doller_rig49:doller_rig
+        weight: 1
+      - path: doller_rig:cc_doller
+        weight: 1
+      - path: doller_rig:cc_doller/doller_rig:joint1
+        weight: 1
+      - path: doller_rig:cc_doller/doller_rig:joint1/doller_rig:joint2
+        weight: 1
+      - path: doller_rig:cc_doller/doller_rig:joint1/doller_rig:joint2/doller_rig:joint3
+        weight: 1
+      - path: doller_rig:doller_rig
+        weight: 1
+      - path: glass
+        weight: 1
+      - path: piggybank_rig:Group
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Geometry
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/group1
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/group1/piggybank_rig:Blend_shape1:pCylinder6
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/group1/piggybank_rig:Blend_shape1:pCylinder7
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/group1/piggybank_rig:Blend_shape1:pCylinder9
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/group1/piggybank_rig:Blend_shape1:pCylinder10
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/group1/piggybank_rig:Blend_shape1:pCylinder11
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/group1/piggybank_rig:Blend_shape1:pCylinder14
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/group1/piggybank_rig:Blend_shape1:pCylinder18
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/group1/piggybank_rig:Blend_shape1:pCylinder20
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/group1/piggybank_rig:Blend_shape1:pCylinder22
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/group1/piggybank_rig:Blend_shape1:pCylinder23
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/group1/piggybank_rig:Blend_shape1:pCylinder24
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/group1/piggybank_rig:Blend_shape1:pCylinder25
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/group1/piggybank_rig:Blend_shape1:pCylinder26
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/group1/piggybank_rig:Blend_shape1:pCylinder27
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/group1/piggybank_rig:Blend_shape1:pCylinder28
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/group1/piggybank_rig:Blend_shape1:pCylinder29
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/group1/piggybank_rig:Blend_shape1:pCylinder30
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/group1/piggybank_rig:Blend_shape1:pCylinder31
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/group1/piggybank_rig:Blend_shape1:pCylinder32
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/group1/piggybank_rig:Blend_shape1:pCylinder33
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/group1/piggybank_rig:Blend_shape1:pCylinder34
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/piggybank_rig:Blend_shape1:pCube1
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/piggybank_rig:Hip_L
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/piggybank_rig:Hip_L/piggybank_rig:Knee_L
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/piggybank_rig:Hip_L/piggybank_rig:Knee_L/piggybank_rig:Ankle_L
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/piggybank_rig:Hip_L/piggybank_rig:Knee_L/piggybank_rig:Ankle_L/piggybank_rig:Toes_L
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/piggybank_rig:Hip_L/piggybank_rig:Knee_L/piggybank_rig:Ankle_L/piggybank_rig:Toes_L/piggybank_rig:ToesEnd_L
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/piggybank_rig:Hip_R
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/piggybank_rig:Hip_R/piggybank_rig:Knee_R
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/piggybank_rig:Hip_R/piggybank_rig:Knee_R/piggybank_rig:Ankle_R
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/piggybank_rig:Hip_R/piggybank_rig:Knee_R/piggybank_rig:Ankle_R/piggybank_rig:Toes_R
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/piggybank_rig:Hip_R/piggybank_rig:Knee_R/piggybank_rig:Ankle_R/piggybank_rig:Toes_R/piggybank_rig:ToesEnd_R
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/piggybank_rig:Spine1_M
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/piggybank_rig:Spine1_M/piggybank_rig:Chest_M
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/piggybank_rig:Spine1_M/piggybank_rig:Chest_M/piggybank_rig:Neck_M
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/piggybank_rig:Spine1_M/piggybank_rig:Chest_M/piggybank_rig:Neck_M/piggybank_rig:Head_M
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/piggybank_rig:Spine1_M/piggybank_rig:Chest_M/piggybank_rig:Neck_M/piggybank_rig:Head_M/piggybank_rig:Eye_L
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/piggybank_rig:Spine1_M/piggybank_rig:Chest_M/piggybank_rig:Neck_M/piggybank_rig:Head_M/piggybank_rig:Eye_L/piggybank_rig:EyeEnd_L
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/piggybank_rig:Spine1_M/piggybank_rig:Chest_M/piggybank_rig:Neck_M/piggybank_rig:Head_M/piggybank_rig:Eye_R
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/piggybank_rig:Spine1_M/piggybank_rig:Chest_M/piggybank_rig:Neck_M/piggybank_rig:Head_M/piggybank_rig:Eye_R/piggybank_rig:EyeEnd_R
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/piggybank_rig:Spine1_M/piggybank_rig:Chest_M/piggybank_rig:Neck_M/piggybank_rig:Head_M/piggybank_rig:HeadEnd_M
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/piggybank_rig:Spine1_M/piggybank_rig:Chest_M/piggybank_rig:Neck_M/piggybank_rig:Head_M/piggybank_rig:Jaw_M
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/piggybank_rig:Spine1_M/piggybank_rig:Chest_M/piggybank_rig:Neck_M/piggybank_rig:Head_M/piggybank_rig:Jaw_M/piggybank_rig:JawEnd_M
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/piggybank_rig:Spine1_M/piggybank_rig:Chest_M/piggybank_rig:Scapula_L
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/piggybank_rig:Spine1_M/piggybank_rig:Chest_M/piggybank_rig:Scapula_L/piggybank_rig:Shoulder_L
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/piggybank_rig:Spine1_M/piggybank_rig:Chest_M/piggybank_rig:Scapula_L/piggybank_rig:Shoulder_L/piggybank_rig:ShoulderPart1_L
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/piggybank_rig:Spine1_M/piggybank_rig:Chest_M/piggybank_rig:Scapula_L/piggybank_rig:Shoulder_L/piggybank_rig:ShoulderPart1_L/piggybank_rig:ShoulderPart2_L
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/piggybank_rig:Spine1_M/piggybank_rig:Chest_M/piggybank_rig:Scapula_L/piggybank_rig:Shoulder_L/piggybank_rig:ShoulderPart1_L/piggybank_rig:ShoulderPart2_L/piggybank_rig:Elbow_L
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/piggybank_rig:Spine1_M/piggybank_rig:Chest_M/piggybank_rig:Scapula_R
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/piggybank_rig:Spine1_M/piggybank_rig:Chest_M/piggybank_rig:Scapula_R/piggybank_rig:Shoulder_R
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/piggybank_rig:Spine1_M/piggybank_rig:Chest_M/piggybank_rig:Scapula_R/piggybank_rig:Shoulder_R/piggybank_rig:ShoulderPart1_R
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/piggybank_rig:Spine1_M/piggybank_rig:Chest_M/piggybank_rig:Scapula_R/piggybank_rig:Shoulder_R/piggybank_rig:ShoulderPart1_R/piggybank_rig:ShoulderPart2_R
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:DeformationSystem/piggybank_rig:Root_M/piggybank_rig:Spine1_M/piggybank_rig:Chest_M/piggybank_rig:Scapula_R/piggybank_rig:Shoulder_R/piggybank_rig:ShoulderPart1_R/piggybank_rig:ShoulderPart2_R/piggybank_rig:Elbow_R
+        weight: 1
+      - path: piggybank_rig:Group/piggybank_rig:Main/piggybank_rig:FitSkeleton
+        weight: 1
+      - path: piggybank_rig:jnt_ear_L
+        weight: 1
+      - path: piggybank_rig:jnt_ear_R
+        weight: 1
+      - path: piggybank_rig:jnt_nose
+        weight: 1
+      - path: piggybank_rig:model
+        weight: 1
+      - path: piggybank_rig:model/piggybank_rig:Blend_shape1:pCylinder1
+        weight: 1
+      - path: piggybank_rig:model/piggybank_rig:Blend_shape1:pCylinder2
+        weight: 1
+      - path: piggybank_rig:model/piggybank_rig:Blend_shape1:pCylinder3
+        weight: 1
+      - path: piggybank_rig:model/piggybank_rig:Blend_shape1:pCylinder4
+        weight: 1
+      - path: piggybank_rig:model/piggybank_rig:Blend_shape1:pPlane3
+        weight: 1
+      - path: piggybank_rig:model/piggybank_rig:Blend_shape1:pPlane4
+        weight: 1
+      - path: piggybank_rig:model/piggybank_rig:Blend_shape1:pPlane5
+        weight: 1
+      - path: piggybank_rig:model/piggybank_rig:Blend_shape:pCylinder1
+        weight: 1
+      - path: piggybank_rig:model/piggybank_rig:Blend_shape:pSphere1
+        weight: 1
+      - path: piggybank_rig:model/piggybank_rig:Blend_shape:pSphere2
+        weight: 1
+      - path: piggybank_rig:model/piggybank_rig:body_mesh
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: piggy
+  assetBundleVariant: 

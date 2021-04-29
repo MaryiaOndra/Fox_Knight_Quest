@@ -11,7 +11,7 @@ namespace CubePlatformer
 
         private void OnTriggerEnter(Collider other)
         {
-            OnCoinColected.Invoke();
+            //OnCoinColected.Invoke();
             Destroy(gameObject);
         }
     }

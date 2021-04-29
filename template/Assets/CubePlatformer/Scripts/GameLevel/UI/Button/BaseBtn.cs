@@ -15,15 +15,11 @@ namespace CubePlatformer
         public void OnPointerDown(PointerEventData eventData)
         {
             BtnAction.Invoke(ButtonState);
-            Debug.Log("OnPointerDown");
         }
 
         public void OnPointerUp(PointerEventData eventData)
         {
             BtnAction.Invoke(BtnState.None);
-            Debug.Log("OnPointerUp");
-        }
-
-        
+        }        
     }
 }

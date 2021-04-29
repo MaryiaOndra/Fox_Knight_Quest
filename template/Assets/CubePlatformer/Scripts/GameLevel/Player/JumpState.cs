@@ -28,7 +28,7 @@ namespace CubePlatformer
             //float _targetAngle = Mathf.Atan2(m_Input.x, m_Input.z) * Mathf.Rad2Deg;
             //rigidbody.rotation = Quaternion.Euler(0f, _targetAngle, 0f);
 
-            if (OnGrounded)
+            if (floorTrigger.IsGrounded)
             {
                 if (VerticalValue != 0 || HorizontalValue != 0)
                 {

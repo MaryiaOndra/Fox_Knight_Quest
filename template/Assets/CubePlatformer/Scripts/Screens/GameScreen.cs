@@ -54,30 +54,18 @@ namespace CubePlatformer
             chController = FindObjectOfType<CharacterController>();
             uiController = FindObjectOfType<UIController>();
             playerController = FindObjectOfType<PlayerController>();
-
             coins = new List<Coin>(FindObjectsOfType<Coin>());
+
+            coins.ForEach(_coin => _coin.OnCoinColected += CheckCoinsAmount);
             totalCount = coins.Count;
             Debug.Log("Coins:   " + coins.Count);
             uiController.WriteScoreText(coins.Count, totalCount);
-
         }
 
         void CheckCoinsAmount()
         {
             count += 1;
             uiController.WriteScoreText(count, totalCount);
-        }
-
-        private void OnEnable()
-        {
-
-            coins.ForEach(_coin => _coin.OnCoinColected += CheckCoinsAmount);
-
-        }
-
-        private void OnDisable()
-        {
-
         }
 
         public void ChangeState(bool _state)

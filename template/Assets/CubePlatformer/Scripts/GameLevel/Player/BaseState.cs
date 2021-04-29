@@ -13,6 +13,7 @@ namespace CubePlatformer
         protected Collider playerCollider;
         protected Collider collider;
         protected Rigidbody rigidbody;
+        protected FloorTrigger floorTrigger;
 
         public abstract PlayerState PlayerState { get; }
         public Action<PlayerState> NextStateAction { get; set; }
@@ -33,11 +34,12 @@ namespace CubePlatformer
             }
         }
 
-        public void Setup(Collider _collider, Animator _playerAniimator, Rigidbody _rigidbody) 
+        public void Setup(Collider _collider, Animator _playerAniimator, Rigidbody _rigidbody, FloorTrigger _floorTrigger) 
         {
             playerAnimator = _playerAniimator;
             collider = _collider;
             rigidbody = _rigidbody;
+            floorTrigger = _floorTrigger;
         }
 
         public virtual void Activate() 

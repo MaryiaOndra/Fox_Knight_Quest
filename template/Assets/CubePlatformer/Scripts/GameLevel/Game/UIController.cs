@@ -20,10 +20,10 @@ namespace CubePlatformer
 
         private void Awake()
         {
-            keyboardBtns = GetComponentInChildren<KeyboardBtns>();
+            keyboardBtns = FindObjectOfType<KeyboardBtns>();
             keyboardBtns.OnKeyboardInput += SetBtnStateToPlayer;
 
-            btnStates = new List<BaseBtn>(GetComponentsInChildren<BaseBtn>(true));
+            btnStates = new List<BaseBtn>(FindObjectsOfType<BaseBtn>(true));
 
             btnStates.ForEach(_state =>
             {

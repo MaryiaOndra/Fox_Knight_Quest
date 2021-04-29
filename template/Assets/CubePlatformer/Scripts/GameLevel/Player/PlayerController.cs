@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,9 @@ namespace CubePlatformer
 {
     public class PlayerController : MonoBehaviour
     {
+        [SerializeField]
+        FloorTrigger floorTrigger;
+
         Animator playerAnimator;
         List<BaseState> states;
         BaseState currentState;
@@ -14,6 +18,7 @@ namespace CubePlatformer
         Collider collider;
 
         public float PlatformAngle{get;set;}
+        Action LoseAction;
       
         private void Awake()
         {
@@ -28,7 +33,7 @@ namespace CubePlatformer
 
                 states.ForEach(_state =>
                 {
-                    _state.Setup(collider, playerAnimator, rigidbody);
+                    _state.Setup(collider, playerAnimator, rigidbody, floorTrigger);
                     _state.NextStateAction = OnNextStateRequest;
                 });
 
@@ -38,7 +43,6 @@ namespace CubePlatformer
 
         void OnPlayerInput(BtnState _btnState) 
         {
-            Debug.Log(_btnState);
             switch (_btnState)
             {
                 case BtnState.MoveForward:
@@ -76,9 +80,10 @@ namespace CubePlatformer
             currentState.Activate();
         }
 
-        private void OnTriggerEnter(Collider _trigger)
+        public void OnObstacleTriggered() 
         {
-            currentState.OnTrigger(_trigger);
+            currentState.NextStateAction.Invoke(PlayerState.Die);
+            LoseAction.Invoke();
         }
     }
 }

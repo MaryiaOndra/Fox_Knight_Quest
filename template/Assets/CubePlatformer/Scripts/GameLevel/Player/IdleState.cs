@@ -18,6 +18,12 @@ namespace CubePlatformer
             {
                 NextStateAction.Invoke(PlayerState.Jump);
             }
+            else
+            {
+                var _velocity = rigidbody.velocity;
+                _velocity = Vector3.zero;
+                rigidbody.velocity = _velocity;
+            }
         }
     }
 }
