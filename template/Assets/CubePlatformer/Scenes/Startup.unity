@@ -517,21 +517,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eachLevelConfigs:
-  - coinsCount: 0
-    id: 0
-    buildIndex: 3
-  - coinsCount: 0
-    id: 1
-    buildIndex: 4
-  - coinsCount: 0
-    id: 2
-    buildIndex: 5
-  - coinsCount: 0
-    id: 3
-    buildIndex: 6
-  - coinsCount: 0
-    id: 4
-    buildIndex: 7
+  - id: 0
+    levelName: Level_01
+  - id: 1
+    levelName: Level_02
+  - id: 2
+    levelName: Level_03
+  - id: 3
+    levelName: 
+  - id: 4
+    levelName: 
 --- !u!1 &1791481541
 GameObject:
   m_ObjectHideFlags: 0

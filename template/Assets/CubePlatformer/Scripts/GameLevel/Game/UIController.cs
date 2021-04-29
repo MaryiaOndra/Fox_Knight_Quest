@@ -31,9 +31,9 @@ namespace CubePlatformer
             });
         }
 
-        public void WriteScoreText(int _count, int _totalCount) 
+        public void WriteScoreText(int _count) 
         {
-            scoreTxt.text = "COINS: " + _count + '/' +_totalCount;
+            scoreTxt.text = "COINS:___" + _count;
         }
 
         public void SetBtnStateToPlayer(BtnState _btnState) 

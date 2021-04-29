@@ -12,22 +12,45 @@ namespace CubePlatformer
         [SerializeField]
         CubePlatformerController platformerController;
 
-
         public const string Exit_Pause = "Exit_Pause";
         public const string Exit_Result = "Exit_Result";
 
+        Level gameLevel;
+
         EachLevelConfigs levelConfigs;
-        int truphyCount;
+        int totalCount;
+        int count = 0;
+        List<Coin> coins;
+        UIController uIController;
+        PlayerController playerContr;
+
+        private void OnEnable()
+        {
+            uIController = FindObjectOfType<UIController>();
+        }
 
         public void ShowAndStartGame()
         {
-
-            levelConfigs = GameInfo.Instance.LevelConfig;
-            truphyCount = levelConfigs.CoinsCount;
-
-            platformerController.StartGame(levelConfigs);
             Show();
+            levelConfigs = GameInfo.Instance.LevelConfig;
+            platformerController.StartGame(levelConfigs);
+            platformerController.FinishLevelAction += LoadDataFromLevel;
         }
+
+        void LoadDataFromLevel() 
+        {
+            gameLevel = FindObjectOfType<Level>();
+            CountCoinsInLevel(gameLevel.Coins);
+        }
+
+        //public void Setup(List<Coin> _coins, UIController _uIController, PlayerController _playerContr) 
+        //{
+        //    coins = _coins;
+        //    uIController = _uIController;
+        //    playerContr = _playerContr;
+
+        //    CountCoinsInLevel(_coins);
+        //}
 
         public void OnPause()
         {
@@ -39,41 +62,16 @@ namespace CubePlatformer
             Exit(Exit_Result);
         }
 
-        CharacterController chController;
-        UIController uiController;
-        PlayerController playerController;
-
-        float platformAngle;
-
-        List<Coin> coins;
-        int totalCount;
-        int count = 0;
-
-        public override void Show()
+        void CountCoinsInLevel(List<Coin> _coins) 
         {
-            base.Show();
-
-            chController = FindObjectOfType<CharacterController>();
-            uiController = FindObjectOfType<UIController>();
-            playerController = FindObjectOfType<PlayerController>();
-            coins = new List<Coin>(FindObjectsOfType<Coin>());
-
-            coins.ForEach(_coin => _coin.OnCoinColected += CheckCoinsAmount);
-            totalCount = coins.Count;
-            Debug.Log("Coins:   " + coins.Count);
-            uiController.WriteScoreText(coins.Count, totalCount); 
+            _coins.ForEach(_coin => _coin.OnCoinColected += CheckCoinsAmount);
+            uIController.WriteScoreText(_coins.Count);
         }
 
         void CheckCoinsAmount()
         {
             count += 1;
-            uiController.WriteScoreText(count, totalCount);
-        }
-
-        public void ChangeState(bool _state)
-        {
-            bool _plContrState = _state == true ? false : true;
-            chController.enabled = _plContrState;
+            uIController.WriteScoreText(count);
         }
     }
 }
