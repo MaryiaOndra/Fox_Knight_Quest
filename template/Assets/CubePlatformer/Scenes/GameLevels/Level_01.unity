@@ -17419,7 +17419,7 @@ Camera:
   far clip plane: 100
   field of view: 60
   orthographic: 1
-  orthographic size: 2.8981373
+  orthographic size: 2.8959124
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -25202,7 +25202,7 @@ PrefabInstance:
     - target: {fileID: 6036636496756558398, guid: 6c7b7a89afd5d2942aecff5cb0eb370a,
         type: 3}
       propertyPath: jumpForce
-      value: 10
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 6036636497332045948, guid: 6c7b7a89afd5d2942aecff5cb0eb370a,
         type: 3}
@@ -25217,7 +25217,7 @@ PrefabInstance:
     - target: {fileID: 6036636497332045948, guid: 6c7b7a89afd5d2942aecff5cb0eb370a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.89
+      value: 0.887
       objectReference: {fileID: 0}
     - target: {fileID: 6036636497332045948, guid: 6c7b7a89afd5d2942aecff5cb0eb370a,
         type: 3}
@@ -25274,6 +25274,11 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 1466109258}
+    - target: {fileID: 6036636497990401109, guid: 6c7b7a89afd5d2942aecff5cb0eb370a,
+        type: 3}
+      propertyPath: cameraTr
+      value: 
+      objectReference: {fileID: 2001281181}
     - target: {fileID: 6036636497990401109, guid: 6c7b7a89afd5d2942aecff5cb0eb370a,
         type: 3}
       propertyPath: playerSpeed

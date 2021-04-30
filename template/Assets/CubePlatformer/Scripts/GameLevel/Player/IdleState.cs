@@ -24,10 +24,10 @@ namespace CubePlatformer
             }
             else
             {
-                //var _velocity = rigidbody.velocity;
-                //_velocity.x = 0;
-                //_velocity.z = 0;
-                rigidbody.velocity = Vector3.zero;
+                var _velocity = rigidbody.velocity;
+                _velocity.x = 0;
+                _velocity.z = 0;
+                rigidbody.velocity = _velocity;
             }
         }
     }

@@ -7,9 +7,9 @@ namespace CubePlatformer
     public class JumpState : BaseState
     {
         [SerializeField]
-        float jumpForce = 3.0f;
+        float jumpForce = 200f;
         [SerializeField]
-        float playerSpeed = 2.0f;
+        float playerSpeed = 10f;
 
         public override void Activate()
         {
@@ -29,11 +29,9 @@ namespace CubePlatformer
             vertAxes = Input.GetAxis("Vertical");
             jumpAxes = Input.GetAxis("Jump");
 
-            //Vector3 m_Input = new Vector3(VerticalValue * -1, rigidbody.position.y, HorizontalValue);
+            Vector3 _direction = new Vector3(horAxes, jumpAxes, vertAxes);
 
-            //rigidbody.MovePosition(transform.position + m_Input * Time.fixedDeltaTime * playerSpeed);
-            //float _targetAngle = Mathf.Atan2(m_Input.x, m_Input.z) * Mathf.Rad2Deg;
-            //rigidbody.rotation = Quaternion.Euler(0f, _targetAngle, 0f);
+            rigidbody.MovePosition(transform.position + Time.deltaTime * playerSpeed * transform.TransformDirection(_direction.normalized));
 
             if (OnGrounded)
             {
