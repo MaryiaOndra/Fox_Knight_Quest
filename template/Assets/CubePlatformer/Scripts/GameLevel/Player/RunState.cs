@@ -13,26 +13,44 @@ namespace CubePlatformer
 
         public override PlayerState PlayerState => PlayerState.Run;
 
+        Vector3 movementX;
+        Vector3 movementZ;
+        Vector3 movement;
 
-        private void FixedUpdate()
+        float horAxes;
+        float vertAxes;
+        float jumpAxes; 
+
+        private void Update()
         {
+           horAxes = Input.GetAxis("Horizontal");
+            vertAxes = Input.GetAxis("Vertical");
+            jumpAxes = Input.GetAxis("Jump");
 
-            Vector3 _movementX = camera.transform.right * HorizontalValue;
-            Vector3 _movementZ = camera.transform.forward * VerticalValue;
-            Vector3 _movement = _movementX + _movementZ;
+            movementX = camera.transform.right * horAxes;
+            movementZ = camera.transform.forward * vertAxes;
+            movement = movementX + movementZ;
 
-            rigidbody.MovePosition(transform.position + _movement * Time.fixedDeltaTime * playerSpeed);
+            Debug.Log("HorizontalV:" + horAxes + "VerticalV: " + vertAxes);
+            // rigidbody.MovePosition(transform.position + movement * Time.fixedDeltaTime * playerSpeed );
+            rigidbody.MovePosition(transform.position + Time.deltaTime * playerSpeed * transform.TransformDirection(movement.normalized));
 
-            if (floorTrigger.IsGrounded)
+            CheckState();
+
+        }
+
+        void CheckState() 
+        {
+            if (OnGrounded)
             {
-                if (JumpValue > 0)
+                if (jumpAxes > 0)
                 {
                     NextStateAction.Invoke(PlayerState.Jump);
                 }
-                //else if(VerticalValue == 0 && HorizontalValue == 0)
-                //{
-                //    NextStateAction.Invoke(PlayerState.Idle);
-                //}
+                else if (horAxes == 0 && vertAxes == 0)
+                {
+                    NextStateAction.Invoke(PlayerState.Idle);
+                }
             }
         }
     }

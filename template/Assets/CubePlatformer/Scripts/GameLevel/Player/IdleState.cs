@@ -8,21 +8,26 @@ namespace CubePlatformer
     {
         public override PlayerState PlayerState => PlayerState.Idle;
 
-        void FixedUpdate()
+        void Update()
         {
-            if (VerticalValue != 0 || HorizontalValue != 0)
+            float _horAxes = Input.GetAxis("Horizontal");
+            float _vertAxes = Input.GetAxis("Vertical");
+            float _jumpAxes = Input.GetAxis("Jump");
+
+            if (_vertAxes != 0 || _horAxes != 0)
             {
                 NextStateAction.Invoke(PlayerState.Run);
             }
-            else if (JumpValue != 0)
+            else if (_jumpAxes > 0)
             {
                 NextStateAction.Invoke(PlayerState.Jump);
             }
             else
             {
-                var _velocity = rigidbody.velocity;
-                _velocity = Vector3.zero;
-                rigidbody.velocity = _velocity;
+                //var _velocity = rigidbody.velocity;
+                //_velocity.x = 0;
+                //_velocity.z = 0;
+                rigidbody.velocity = Vector3.zero;
             }
         }
     }

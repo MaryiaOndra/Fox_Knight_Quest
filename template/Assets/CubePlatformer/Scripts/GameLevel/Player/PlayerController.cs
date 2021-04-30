@@ -7,10 +7,7 @@ namespace CubePlatformer
 {
     public class PlayerController : MonoBehaviour
     {
-        [SerializeField]
-        FloorTrigger floorTrigger;
-
-        Animator playerAnimator;
+          Animator playerAnimator;
         List<BaseState> states;
         BaseState currentState;
         UIController canvasController;
@@ -22,8 +19,8 @@ namespace CubePlatformer
       
         private void Awake()
         {
-            canvasController = FindObjectOfType<UIController>();
-            canvasController.OnActiveBtn += OnPlayerInput;
+            //canvasController = FindObjectOfType<UIController>();
+            //canvasController.OnActiveBtn += OnPlayerInput;
 
             playerAnimator = GetComponent<Animator>();
             rigidbody = GetComponent<Rigidbody>();
@@ -33,7 +30,7 @@ namespace CubePlatformer
 
                 states.ForEach(_state =>
                 {
-                    _state.Setup(collider, playerAnimator, rigidbody, floorTrigger);
+                    _state.Setup(collider, playerAnimator, rigidbody);
                     _state.NextStateAction = OnNextStateRequest;
                 });
 

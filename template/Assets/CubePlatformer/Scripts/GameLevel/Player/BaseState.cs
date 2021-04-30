@@ -8,12 +8,13 @@ namespace CubePlatformer
     public abstract class BaseState : MonoBehaviour
     {
         static readonly int INT_STATE = Animator.StringToHash("State");
-        
+
         protected Animator playerAnimator;
         protected Collider playerCollider;
         protected Collider collider;
         protected Rigidbody rigidbody;
         protected FloorTrigger floorTrigger;
+
 
         public abstract PlayerState PlayerState { get; }
         public Action<PlayerState> NextStateAction { get; set; }
@@ -22,29 +23,66 @@ namespace CubePlatformer
         public float VerticalValue { get; set; }
         public float JumpValue { get; set; }
 
-        public bool OnGrounded 
+        //protected float HorizontalV
+        //{
+        //    get 
+        //    {
+        //        float _value = Input.GetAxis("Horizontal");
+        //        return _value;
+        //    }
+        //}
+        
+        //protected float VerticalV
+        //{
+        //    get 
+        //    {
+        //        float _value = Input.GetAxis("Vertical");
+        //        return _value;
+        //    }
+        //}
+        
+        //protected float JumpV
+        //{
+        //    get 
+        //    {
+        //        float _value = Input.GetAxis("Jump");
+        //        return _value;
+        //    }
+        //}
+
+        protected bool OnGrounded 
         {
             get 
             {
                 var _value = false;
-                float _distToGround = 0.5f;
-                _value = Physics.Raycast(transform.position, -Vector3.up, _distToGround);
-                Debug.DrawRay(transform.position, -Vector3.up, Color.red ,(_distToGround + 0.1f));
+                float _distToGround = 0.5f;                   
+
+                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down) * _distToGround, Color.blue);
+                RaycastHit _hit;
+                if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out _hit, _distToGround))
+                {
+                    _value = true;
+                }
+                else
+                {
+                    _value = false;
+                }
+
                 return _value;            
             }
         }
 
-        public void Setup(Collider _collider, Animator _playerAniimator, Rigidbody _rigidbody, FloorTrigger _floorTrigger) 
+        public void Setup(Collider _collider, Animator _playerAniimator, Rigidbody _rigidbody) 
         {
             playerAnimator = _playerAniimator;
             collider = _collider;
             rigidbody = _rigidbody;
-            floorTrigger = _floorTrigger;
         }
 
         public virtual void Activate() 
         {
             gameObject.SetActive(true);
+            Debug.Log(gameObject.name);
             playerAnimator.SetInteger(INT_STATE, (int)PlayerState);
         }
 

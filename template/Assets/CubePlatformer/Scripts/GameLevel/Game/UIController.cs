@@ -13,22 +13,22 @@ namespace CubePlatformer
         [SerializeField]
         TMP_Text scoreTxt;
 
-        List<BaseBtn> btnStates;
-        KeyboardBtns keyboardBtns;
+        //List<BaseBtn> btnStates;
+        //KeyboardBtns keyboardBtns;
 
         public Action<BtnState> OnActiveBtn;
 
         private void Awake()
         {
-            keyboardBtns = FindObjectOfType<KeyboardBtns>();
-            keyboardBtns.OnKeyboardInput += SetBtnStateToPlayer;
+            //keyboardBtns = FindObjectOfType<KeyboardBtns>();
+            //keyboardBtns.OnKeyboardInput += SetBtnStateToPlayer;
 
-            btnStates = new List<BaseBtn>(FindObjectsOfType<BaseBtn>(true));
+            //btnStates = new List<BaseBtn>(FindObjectsOfType<BaseBtn>(true));
 
-            btnStates.ForEach(_state =>
-            {
-                 _state.BtnAction += SetBtnStateToPlayer;
-            });
+            //btnStates.ForEach(_state =>
+            //{
+            //     _state.BtnAction += SetBtnStateToPlayer;
+            //});
         }
 
         public void WriteScoreText(int _count) 
@@ -36,9 +36,9 @@ namespace CubePlatformer
             scoreTxt.text = "COINS:___" + _count;
         }
 
-        public void SetBtnStateToPlayer(BtnState _btnState) 
-        {
-            OnActiveBtn.Invoke(_btnState);            
-        }
+        //public void SetBtnStateToPlayer(BtnState _btnState) 
+        //{
+        //    OnActiveBtn.Invoke(_btnState);            
+        //}
     }
 }
