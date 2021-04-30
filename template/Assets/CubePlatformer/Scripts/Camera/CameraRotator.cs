@@ -8,6 +8,9 @@ namespace CubePlatformer
     public class CameraRotator : MonoBehaviour
     {
         [SerializeField]
+        Transform targetTr;
+
+        [SerializeField]
         float speed;
 
         TouchPanel touchPanel;
@@ -23,6 +26,8 @@ namespace CubePlatformer
 
         void Update()
         {
+            transform.position = targetTr.position;
+
             float _yPos = touchPanel.DragDelta;
 
             if (_yPos != prevYPos)

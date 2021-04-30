@@ -16564,13 +16564,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1466109254}
-  m_LocalRotation: {x: 0.25340727, y: -0.009792307, z: 0.0025653103, w: 0.96730673}
-  m_LocalPosition: {x: 5.3, y: 9.83, z: -13.11}
+  m_LocalRotation: {x: 0.24699897, y: 0, z: 0, w: 0.96901584}
+  m_LocalPosition: {x: -0.23, y: 8.4, z: -14.88}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2001281181}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 29.36, y: -1.16, z: 0}
+  m_LocalEulerAnglesHint: {x: 28.6, y: 0, z: 0}
 --- !u!114 &1466109256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16599,7 +16599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56e26b47e71ac4f48931b694e17cb81b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 7.32
+  width: 5.15
 --- !u!20 &1466109258
 Camera:
   m_ObjectHideFlags: 0
@@ -16627,7 +16627,7 @@ Camera:
   far clip plane: 100
   field of view: 60
   orthographic: 1
-  orthographic size: 4.119294
+  orthographic size: 2.8959124
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -22505,6 +22505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e18d3d670b5c9ca4788716afdb170870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetTr: {fileID: 6036636497363404184}
   speed: 0.3
 --- !u!4 &2001281181
 Transform:
@@ -22513,14 +22514,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2001281179}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.0034905854, z: 0, w: 0.9999939}
   m_LocalPosition: {x: -2.01, y: 0.89, z: 7.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1466109255}
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -0.4, z: 0}
 --- !u!1001 &2008307310
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23853,3 +23854,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c7b7a89afd5d2942aecff5cb0eb370a, type: 3}
+--- !u!4 &6036636497363404184 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6036636497332045948, guid: 6c7b7a89afd5d2942aecff5cb0eb370a,
+    type: 3}
+  m_PrefabInstance: {fileID: 6036636497363404183}
+  m_PrefabAsset: {fileID: 0}

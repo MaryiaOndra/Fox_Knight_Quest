@@ -43,15 +43,6 @@ namespace CubePlatformer
             CountCoinsInLevel(gameLevel.Coins);
         }
 
-        //public void Setup(List<Coin> _coins, UIController _uIController, PlayerController _playerContr) 
-        //{
-        //    coins = _coins;
-        //    uIController = _uIController;
-        //    playerContr = _playerContr;
-
-        //    CountCoinsInLevel(_coins);
-        //}
-
         public void OnPause()
         {
             Exit(Exit_Pause);
