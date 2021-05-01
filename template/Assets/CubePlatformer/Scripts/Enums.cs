@@ -21,12 +21,13 @@ namespace CubePlatformer
     }
     public enum PlayerState
     {
-        Idle,
-        Run,
-        Jump,
-        Fall,
-        Win,
-        Die
+        Idle = 0,
+        Run = 1,
+        JumpNoNeedYet = 2,
+        Fall = 3,
+        Win = 4,
+        Attack = 5,
+        Die = 6
     }
 
     public enum BtnState

@@ -10,65 +10,40 @@ namespace CubePlatformer
         Transform cameraTr;
         [SerializeField]
         float playerSpeed = 2.0f;
-
-        public override PlayerState PlayerState => PlayerState.Run;
-
-        Vector3 camR;
-        Vector3 camF;
-        Vector3 movement;     
-        
-        Vector3 cameraRight;
-        Vector3 cameraLeft;
-
+        [SerializeField]
         float rotationSpeed = 500f;
 
-        float horAxes;
-        float vertAxes;
-        float jumpAxes; 
-
+        public override PlayerState PlayerState => PlayerState.Run;
+         
         private void FixedUpdate()
         {
-            //TODO: make from in Vector patameter;
-           horAxes = Input.GetAxis("Horizontal");
-            vertAxes = Input.GetAxis("Vertical");
-            jumpAxes = Input.GetAxis("Jump");
+            Vector3 _camR = cameraTr.right;
+            Vector3 _camF = cameraTr.forward;
+            _camF.y = 0;
+            _camR.y = 0;
+            _camF = _camF.normalized;
+            _camR = _camR.normalized;
 
-            camR = cameraTr.right;
-            camF = cameraTr.forward;
-            camF.y = 0;
-            camR.y = 0;
-            camF = camF.normalized;
-            camR = camR.normalized;
-
-            Vector3 _direction = camF * vertAxes + camR * horAxes;
-            //rigidbody.MovePosition(transform.position + movement * Time.fixedDeltaTime * playerSpeed );
-
-            //Vector3 _direction = new Vector3(horAxes, 0f, vertAxes).normalized;
-
-
+            Vector3 _direction = (_camF * Direction.z + _camR * Direction.x).normalized;
             rigidbody.MovePosition(rigidbody.position + Time.deltaTime * playerSpeed * _direction);
-
-            Quaternion _toRotation = Quaternion.LookRotation(_direction/*, rigidbody.transform.up*/);
+            Quaternion _toRotation = Quaternion.LookRotation(_direction);
             rigidbody.rotation = Quaternion.RotateTowards(rigidbody.rotation, _toRotation, Time.fixedDeltaTime * rotationSpeed);
-
-           // rigidbody.rotation = _toRotation;
         }
 
         private void Update()
         {
-                if (OnGrounded)
+            if (OnGrounded)
+            {
+                if (Direction.x == 0 && Direction.z == 0)
                 {
-                    if (jumpAxes > 0)
-                    {
-                        NextStateAction.Invoke(PlayerState.Jump);
-                    }
-                    else if (horAxes == 0 && vertAxes == 0)
-                    {
-                        NextStateAction.Invoke(PlayerState.Idle);
-                    }
+                    NextStateAction.Invoke(PlayerState.Idle);
                 }
-            
-        }
+            }
+            else if (rigidbody.velocity.y < -3f)
+            {
 
+                NextStateAction.Invoke(PlayerState.Fall);
+            }            
+        }
     }
 }

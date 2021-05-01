@@ -38,38 +38,6 @@ namespace CubePlatformer
             currentState.Activate();
         }
 
-        void OnPlayerInput(BtnState _btnState) 
-        {
-            switch (_btnState)
-            {
-                case BtnState.MoveForward:
-                    currentState.VerticalValue = 1;
-                    break;
-                case BtnState.MoveRight:
-                    currentState.HorizontalValue = 1;
-                    break;
-                case BtnState.MoveLeft:
-                    currentState.HorizontalValue = -1;
-                    break;
-                case BtnState.MoveBack:
-                    currentState.VerticalValue = -1;
-                    break;
-                case BtnState.Jump:
-                    currentState.JumpValue = 1;
-                    break;
-                case BtnState.Attack:
-                    break;
-                case BtnState.None:
-                    currentState.HorizontalValue = 0;
-                    currentState.VerticalValue = 0;
-                    currentState.JumpValue = 0;
-                    break;
-                case BtnState.Slider:
-                    currentState.PlatformAngle = PlatformAngle;
-                    break;
-            }
-        }
-
         public void OnNextStateRequest(PlayerState _state) 
         {            
             currentState.Diactivate();
@@ -82,5 +50,37 @@ namespace CubePlatformer
             currentState.NextStateAction.Invoke(PlayerState.Die);
             LoseAction.Invoke();
         }
+
+        //void OnPlayerInput(BtnState _btnState) 
+        //{
+        //    switch (_btnState)
+        //    {
+        //        case BtnState.MoveForward:
+        //            currentState.VerticalValue = 1;
+        //            break;
+        //        case BtnState.MoveRight:
+        //            currentState.HorizontalValue = 1;
+        //            break;
+        //        case BtnState.MoveLeft:
+        //            currentState.HorizontalValue = -1;
+        //            break;
+        //        case BtnState.MoveBack:
+        //            currentState.VerticalValue = -1;
+        //            break;
+        //        case BtnState.Jump:
+        //            currentState.JumpValue = 1;
+        //            break;
+        //        case BtnState.Attack:
+        //            break;
+        //        case BtnState.None:
+        //            currentState.HorizontalValue = 0;
+        //            currentState.VerticalValue = 0;
+        //            currentState.JumpValue = 0;
+        //            break;
+        //        case BtnState.Slider:
+        //            currentState.PlatformAngle = PlatformAngle;
+        //            break;
+        //    }
+        //}
     }
 }

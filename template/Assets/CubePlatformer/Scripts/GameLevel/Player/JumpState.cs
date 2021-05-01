@@ -6,45 +6,47 @@ namespace CubePlatformer
 {
     public class JumpState : BaseState
     {
-        [SerializeField]
-        float jumpForce = 200f;
-        [SerializeField]
-        float playerSpeed = 10f;
+        //TODO: add code if it need
 
-        public override void Activate()
-        {
-            base.Activate();    
-            rigidbody.AddForce(Vector3.up * jumpForce);
-        }
+        public override PlayerState PlayerState => PlayerState.JumpNoNeedYet;
 
-        public override PlayerState PlayerState => PlayerState.Jump;
+        //[SerializeField]
+        //float jumpForce = 200f;
+        //[SerializeField]
+        //float playerSpeed = 10f;
 
-        float horAxes;
-        float vertAxes;
-        float jumpAxes;
+        //public override void Activate()
+        //{
+        //    base.Activate();    
+        //    rigidbody.AddForce(Vector3.up * jumpForce);
+        //}
 
-        private void Update()
-        {
-            horAxes = Input.GetAxis("Horizontal");
-            vertAxes = Input.GetAxis("Vertical");
-            jumpAxes = Input.GetAxis("Jump");
+        //float horAxes;
+        //float vertAxes;
+        //float jumpAxes;
 
-            Vector3 _direction = new Vector3(horAxes, jumpAxes, vertAxes);
+        //private void Update()
+        //{
+        //    horAxes = Input.GetAxis("Horizontal");
+        //    vertAxes = Input.GetAxis("Vertical");
+        //    jumpAxes = Input.GetAxis("Jump");
 
-            rigidbody.MovePosition(transform.position + Time.deltaTime * playerSpeed * transform.TransformDirection(_direction.normalized));
+        //    Vector3 _direction = new Vector3(horAxes, jumpAxes, vertAxes);
 
-            if (OnGrounded)
-            {
-                if (vertAxes > 0 || horAxes > 0)
-                {
-                    NextStateAction.Invoke(PlayerState.Run);
-                }
-                else 
-                {
-                    NextStateAction.Invoke(PlayerState.Idle);        
-                }
+        //    rigidbody.MovePosition(transform.position + Time.deltaTime * playerSpeed * transform.TransformDirection(_direction.normalized));
 
-            }   
-        }
+        //    if (OnGrounded)
+        //    {
+        //        if (vertAxes > 0 || horAxes > 0)
+        //        {
+        //            NextStateAction.Invoke(PlayerState.Run);
+        //        }
+        //        else 
+        //        {
+        //            NextStateAction.Invoke(PlayerState.Idle);        
+        //        }
+
+        //    }   
+        //}
     }
 }
