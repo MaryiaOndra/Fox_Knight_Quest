@@ -13,26 +13,61 @@ namespace CubePlatformer
     {
         public const string Exit_NextLvl = "Exit_NextLvl";
         public const string Exit_Replay = "Exit_Replay";
+        public const string WinLabel = "VICTORY!";
+        public const string LoseLabel = "DEFEAT!";
 
+        [SerializeField]
+        TextMeshProUGUI resultLabel;
         [SerializeField]
         TextMeshProUGUI scoreText;
         [SerializeField]
-        Button NextLvlBtn;
+        Button NextLvlBtn;        
+        [SerializeField]
+        Button ReplayBtn;
+
+        int actualScore;
+        int expectedScore;
+
+        private void OnEnable()
+        {
+            NextLvlBtn.gameObject.SetActive(false);
+            ReplayBtn.gameObject.SetActive(false);
+        }
 
         public override void Show()
         {
             base.Show();
             Time.timeScale = 0;
 
-            int _actualScore = GameInfo.Instance.LevelResultInfo.Scores;
-            int _expectedScore = GameInfo.Instance.LevelConfig.CoinsAmount;
-            ActivateNextLvlBtn(_actualScore, _expectedScore);
+            actualScore = GameInfo.Instance.LevelResultInfo.Scores;
+            expectedScore = GameInfo.Instance.LevelConfig.CoinsAmount;
+
+            WriteScore(actualScore, expectedScore);
+            CheckWinState(actualScore, expectedScore);
+        }
+
+        void WriteScore(int _actualScore, int _expectedScore) 
+        {
             scoreText.text = _actualScore + " / " + _expectedScore;
         }
 
-        void ActivateNextLvlBtn(int _actualScore, int _expectedScore)
+        void CheckWinState(int _actualScore, int _expectedScore)
         {
-            NextLvlBtn.interactable = _actualScore == _expectedScore ? true : false;
+            bool _isWon = _actualScore == _expectedScore ? true : false;
+
+            if (_isWon)
+            {
+                NextLvlBtn.gameObject.SetActive(_isWon);
+                ReplayBtn.gameObject.SetActive(!_isWon);
+                resultLabel.text = WinLabel;
+
+            }
+            else 
+            {
+                NextLvlBtn.gameObject.SetActive(_isWon);
+                ReplayBtn.gameObject.SetActive(!_isWon);
+                resultLabel.text = LoseLabel;
+            }
         }
 
         public void OnRestartPressed()

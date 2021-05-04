@@ -17274,7 +17274,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56e26b47e71ac4f48931b694e17cb81b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 6
 --- !u!20 &1466109258
 Camera:
   m_ObjectHideFlags: 0
@@ -17302,7 +17301,7 @@ Camera:
   far clip plane: 100
   field of view: 60
   orthographic: 1
-  orthographic size: 3.3738785
+  orthographic size: 3.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -25197,5 +25196,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8016005782466146540, guid: 758d63ceb00459e49bac796a7257e966,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b07ea1c9b75de50498f8d9bb1aae4122, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 758d63ceb00459e49bac796a7257e966, type: 3}

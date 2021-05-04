@@ -41,7 +41,7 @@ namespace CubePlatformer
             currentState = states.Find(_state => _state.PlayerState == PlayerState.Idle);
             currentState.Activate();
         }
-
+          
         public void OnNextStateRequest(PlayerState _state) 
         {            
             currentState.Diactivate();

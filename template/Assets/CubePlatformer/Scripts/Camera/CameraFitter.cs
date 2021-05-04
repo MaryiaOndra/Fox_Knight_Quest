@@ -8,8 +8,7 @@ namespace CubePlatformer
     [ExecuteAlways]
     public class CameraFitter : MonoBehaviour
     {
-        [SerializeField]
-        float width;
+        const int CAMERA_WIDTH = 7;
 
         Camera fitCamera;
 
@@ -20,7 +19,7 @@ namespace CubePlatformer
 
         void Update()
         {
-            fitCamera.orthographicSize = (float)Screen.height / Screen.width * width;
+            fitCamera.orthographicSize = (float)Screen.height / Screen.width * CAMERA_WIDTH;
         }
     }
 }

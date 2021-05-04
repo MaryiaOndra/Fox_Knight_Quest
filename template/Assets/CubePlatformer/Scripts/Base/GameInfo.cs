@@ -22,21 +22,18 @@ namespace CubePlatformer.Base
             if (GetLevelState(0) == LevelState.Locked)
             {
                 AppPrefs.DeleteAll();
-                //PlayerPrefs.DeleteAll();
                 SetLevelState(0, LevelState.Unlocked);                            
 ;           }
         }
 
         public LevelState GetLevelState(int _levelIndex)
         {
-           // int _levelIntState = PlayerPrefs.GetInt(PrefsKeys.Level_ + _levelIndex);
             int _levelIntState = AppPrefs.GetInt(PrefsKeys.Level_ + _levelIndex);
             return (LevelState)_levelIntState;
         }
 
         public void SetLevelState(int _levelIndex, LevelState _levelState) 
         {
-            //PlayerPrefs.SetInt(PrefsKeys.Level_ + _levelIndex, (int)_levelState);
             AppPrefs.SetInt(PrefsKeys.Level_ + _levelIndex, (int)_levelState);
         }
 

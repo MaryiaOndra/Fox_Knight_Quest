@@ -30,6 +30,15 @@ namespace CubePlatformer
         Die = 6
     }
 
+    public enum EnemyState 
+    {
+        Idle = 0,
+        Walk = 1,
+        Attack = 2,
+        Die = 3,
+        Win = 4
+    }
+
     public enum BtnState
     {
         MoveForward,
