@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82de6051f3880284a875e060dfbecfb8, type: 3}
+  m_Name: My Levels Configs
+  m_EditorClassIdentifier: 
+  eachLevelConfigs:
+  - id: 0
+    levelName: Level_01
+    coinsAmount: 3
+  - id: 1
+    levelName: Level_02
+    coinsAmount: 5
+  - id: 2
+    levelName: Level_03
+    coinsAmount: 7
+  - id: 3
+    levelName: Level_04
+    coinsAmount: 8
+  - id: 4
+    levelName: Level_05
+    coinsAmount: 10

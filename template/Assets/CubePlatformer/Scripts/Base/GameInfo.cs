@@ -10,10 +10,10 @@ namespace CubePlatformer.Base
     public class GameInfo : BaseManager<GameInfo>
     {
         [SerializeField]
-        List<EachLevelConfigs> eachLevelConfigs;
-        public List<EachLevelConfigs> EachLevelConfigs => eachLevelConfigs;
+        LevelsConfigs levelsConfigs;
 
         public int LevelIndex { get; set; }
+        public List<EachLevelConfigs> EachLevelConfigs => levelsConfigs.EachLevelConfigs;
         public EachLevelConfigs LevelConfig => EachLevelConfigs[LevelIndex];
         public LevelResultInfo LevelResultInfo { get; private set; }
 
@@ -53,7 +53,7 @@ namespace CubePlatformer.Base
             if (LevelConfig.CoinsAmount == _collectedCoins)
             {
                 int _nexlLevelIndex = LevelIndex + 1;
-                if (_nexlLevelIndex < eachLevelConfigs.Count 
+                if (_nexlLevelIndex < levelsConfigs.EachLevelConfigs.Count
                     && GetLevelState(_nexlLevelIndex) == LevelState.Locked)
                 {
                     SetLevelState(_nexlLevelIndex, LevelState.NeedUnlock);
@@ -75,18 +75,5 @@ namespace CubePlatformer.Base
         public int Scores { get; set; }
     }
 
-    [Serializable]
-    public class EachLevelConfigs 
-    {
-        [SerializeField]
-        LevelContentId id;
-        [SerializeField]
-        string levelName;
-        [SerializeField]
-        int coinsAmount;
 
-        public LevelContentId Id => id;
-        public string LevelName => levelName;
-        public int CoinsAmount => coinsAmount;
-    }
 }
