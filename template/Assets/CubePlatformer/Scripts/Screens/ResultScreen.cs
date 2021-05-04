@@ -5,6 +5,7 @@ using CubePlatformer.Core;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace CubePlatformer
 {
@@ -15,20 +16,35 @@ namespace CubePlatformer
 
         [SerializeField]
         TextMeshProUGUI scoreText;
+        [SerializeField]
+        Button NextLvlBtn;
 
         public override void Show()
         {
             base.Show();
-            scoreText.text = GameInfo.Instance.Scores.ToString();
+            Time.timeScale = 0;
+
+            int _actualScore = GameInfo.Instance.LevelResultInfo.Scores;
+            int _expectedScore = GameInfo.Instance.LevelConfig.CoinsAmount;
+            ActivateNextLvlBtn(_actualScore, _expectedScore);
+            scoreText.text = _actualScore + " / " + _expectedScore;
         }
 
-        public void OnRestartPressed() 
+        void ActivateNextLvlBtn(int _actualScore, int _expectedScore)
         {
-            Exit(Exit_Replay);    
+            NextLvlBtn.interactable = _actualScore == _expectedScore ? true : false;
         }
 
-        public void OnNextLvlPressed() 
+        public void OnRestartPressed()
         {
+            Time.timeScale = 1;
+            Exit(Exit_Replay);
+        }
+
+        public void OnNextLvlPressed()
+        {
+            Time.timeScale = 1;
+            GameInfo.Instance.LevelIndex += 1;
             Exit(Exit_NextLvl);
         }
     }

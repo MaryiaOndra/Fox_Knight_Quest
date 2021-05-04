@@ -519,14 +519,19 @@ MonoBehaviour:
   eachLevelConfigs:
   - id: 0
     levelName: Level_01
+    coinsAmount: 3
   - id: 1
     levelName: Level_02
+    coinsAmount: 5
   - id: 2
     levelName: Level_03
+    coinsAmount: 7
   - id: 3
-    levelName: 
+    levelName: Level_04
+    coinsAmount: 8
   - id: 4
-    levelName: 
+    levelName: Level_05
+    coinsAmount: 10
 --- !u!1 &1791481541
 GameObject:
   m_ObjectHideFlags: 0

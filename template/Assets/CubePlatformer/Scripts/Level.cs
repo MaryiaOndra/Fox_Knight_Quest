@@ -6,13 +6,16 @@ namespace CubePlatformer
 {
     public class Level : MonoBehaviour
     {
-        public PlayerController PlayerContr { get; private set; }
+        public PlayerController PlayerCtrl { get; private set; }
         public List<Coin> Coins { get; private set; }
       
-        private void OnEnable()
+        private void Awake()
         {
-            PlayerContr = FindObjectOfType<PlayerController>();
+            PlayerCtrl = FindObjectOfType<PlayerController>();
             Coins = new List<Coin>(FindObjectsOfType<Coin>());
+
+            GameScreen _gameScreen = FindObjectOfType<GameScreen>();
+            _gameScreen.AddLevelData(this);            
         }
     }
 }

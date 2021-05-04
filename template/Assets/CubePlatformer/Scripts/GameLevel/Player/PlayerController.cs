@@ -7,24 +7,28 @@ namespace CubePlatformer
 {
     public class PlayerController : MonoBehaviour
     {
-          Animator playerAnimator;
+        public const int MAX_HEALTH = 3;
+        int actualHealth;
+
+        Animator playerAnimator;
         List<BaseState> states;
         BaseState currentState;
-        UIController canvasController;
+        StatesPanel statesPanel;
         Rigidbody rigidbody;
         Collider collider;
 
         public float PlatformAngle{get;set;}
-        Action LoseAction;
+        public Action PlayerDeathAction;
       
         private void Awake()
         {
-            //canvasController = FindObjectOfType<UIController>();
-            //canvasController.OnActiveBtn += OnPlayerInput;
+            actualHealth = MAX_HEALTH;
 
             playerAnimator = GetComponent<Animator>();
             rigidbody = GetComponent<Rigidbody>();
             collider = GetComponent<Collider>();
+            statesPanel = FindObjectOfType<StatesPanel>();
+            statesPanel.ShowHealth(actualHealth);
 
             states = new List<BaseState>(GetComponentsInChildren<BaseState>(true));
 
@@ -48,39 +52,15 @@ namespace CubePlatformer
         public void OnObstacleTriggered() 
         {
             currentState.NextStateAction.Invoke(PlayerState.Die);
-            LoseAction.Invoke();
+            PlayerDeathAction.Invoke();
         }
 
-        //void OnPlayerInput(BtnState _btnState) 
-        //{
-        //    switch (_btnState)
-        //    {
-        //        case BtnState.MoveForward:
-        //            currentState.VerticalValue = 1;
-        //            break;
-        //        case BtnState.MoveRight:
-        //            currentState.HorizontalValue = 1;
-        //            break;
-        //        case BtnState.MoveLeft:
-        //            currentState.HorizontalValue = -1;
-        //            break;
-        //        case BtnState.MoveBack:
-        //            currentState.VerticalValue = -1;
-        //            break;
-        //        case BtnState.Jump:
-        //            currentState.JumpValue = 1;
-        //            break;
-        //        case BtnState.Attack:
-        //            break;
-        //        case BtnState.None:
-        //            currentState.HorizontalValue = 0;
-        //            currentState.VerticalValue = 0;
-        //            currentState.JumpValue = 0;
-        //            break;
-        //        case BtnState.Slider:
-        //            currentState.PlatformAngle = PlatformAngle;
-        //            break;
-        //    }
-        //}
+        private void OnTriggerEnter(Collider _trigger)
+        {
+            if (_trigger.GetComponent<DeathLine>())
+            {
+                PlayerDeathAction.Invoke();
+            }
+        }
     }
 }

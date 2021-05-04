@@ -18,8 +18,10 @@ namespace CubePlatformer
 
         private void OnTriggerEnter(Collider other)
         {
-            SoundMgr.Instance.PlaySound(audioSource.clip);
-            Destroy(gameObject, audioSource.clip.length);           
+            OnCoinColected.Invoke();
+            audioSource.PlayOneShot(audioSource.clip);
+            gameObject.SetActive(false);
+           // Destroy(gameObject, audioSource.clip.length);           
         }
     }
 }

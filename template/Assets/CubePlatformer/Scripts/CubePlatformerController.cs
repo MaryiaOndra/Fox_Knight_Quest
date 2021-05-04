@@ -10,33 +10,39 @@ namespace CubePlatformer
 {
     public class CubePlatformerController : MonoBehaviour
     {
-        public Action FinishLevelAction { get; set; }
+        public Action StartLevelAction { get; set; }
 
         public void StartGame(EachLevelConfigs _levelConfigs) 
         {
             if (SceneManager.GetSceneByName(_levelConfigs.LevelName).isLoaded)
             {
-                SceneManager.UnloadSceneAsync(_levelConfigs.LevelName);
+                UnloadLevel(_levelConfigs.LevelName);
             }
                         
-            LoadLevel(_levelConfigs.LevelName);
-
-            SceneManager.sceneLoaded += SceneManager_sceneLoaded;
+            LoadLevel(_levelConfigs.LevelName);           
         }
 
-        private void SceneManager_sceneLoaded(Scene arg0, LoadSceneMode arg1)
+        public void LoadNextLevel(EachLevelConfigs _prevLevelConfigs, EachLevelConfigs _nextLevelConfigs ) 
         {
-            FinishLevelAction.Invoke();
+            UnloadLevel(_prevLevelConfigs.LevelName);
+            LoadLevel(_nextLevelConfigs.LevelName);
         }
+
+        //private void SceneManager_sceneLoaded(Scene _scene, LoadSceneMode arg1)
+        //{
+        //    StartLevelAction.Invoke();
+        //}
 
         void LoadLevel(string _levelName)
         {
+            //SceneManager.sceneLoaded += SceneManager_sceneLoaded;
             SceneManager.LoadScene(_levelName, LoadSceneMode.Additive);
         }
 
         public void UnloadLevel(string _levelName)
         {
-            SceneManager.UnloadScene(_levelName);
+            //SceneManager.sceneLoaded -= SceneManager_sceneLoaded;
+            SceneManager.UnloadSceneAsync(_levelName);
         }
     }
 }

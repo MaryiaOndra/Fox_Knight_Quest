@@ -19,7 +19,7 @@ namespace CubePlatformer
 
         public void OnSoundToggle(bool _value) 
         {
-            SoundMgr.Instance.MudeSound(!_value);
+            SoundMgr.Instance.MuteSound(!_value);
         }
     }
 }

@@ -226,6 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 5715479710667760460}
+  NextLvlBtn: {fileID: 8478324605664424824}
 --- !u!1 &4214861530007560758
 GameObject:
   m_ObjectHideFlags: 0

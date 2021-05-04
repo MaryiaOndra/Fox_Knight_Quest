@@ -58,13 +58,14 @@ namespace CubePlatformer
             {
                 if (_exitCode == ResultScreen.Exit_NextLvl)
                 {
-                    //TODO: make nex level transition
-                    Debug.Log("LOAD NEXT LEVEL");
+                    SetCurrentScreen<GameScreen>().LoadNextGameLevel();
+                   // SetCurrentScreen<GameScreen>().ShowAndStartGame();
+                    //SetCurrentScreen<GameScreen>().LoadNextGameLevel();
                 }
                 else if (_exitCode == ResultScreen.Exit_Replay)
                 {
                     //TODO: make normal game restart
-                    //SetCurrentScreen<GameScreen>().UnloadLevel(3);
+
                     SetCurrentScreen<GameScreen>().ShowAndStartGame();
                 }
             }

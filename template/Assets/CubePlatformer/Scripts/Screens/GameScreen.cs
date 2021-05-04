@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using CubePlatformer.Base;
 using CubePlatformer.Core;
@@ -11,36 +12,49 @@ namespace CubePlatformer
     {
         [SerializeField]
         CubePlatformerController platformerController;
+        [SerializeField]
+        StatesPanel statesPanel;
 
         public const string Exit_Pause = "Exit_Pause";
         public const string Exit_Result = "Exit_Result";
 
         Level gameLevel;
-
         EachLevelConfigs levelConfigs;
-        int totalCount;
-        int count = 0;
         List<Coin> coins;
-        UIController uIController;
         PlayerController playerContr;
+
+        int coinsCount = 0;
+
+        public Action CoinsAction;
 
         private void OnEnable()
         {
-            uIController = FindObjectOfType<UIController>();
+            CoinsAction += CheckCoinsAmount;
+        }
+        private void OnDisable()
+        {
+            CoinsAction -= CheckCoinsAmount;
         }
 
         public void ShowAndStartGame()
         {
             Show();
+
             levelConfigs = GameInfo.Instance.LevelConfig;
             platformerController.StartGame(levelConfigs);
-            platformerController.FinishLevelAction += LoadDataFromLevel;
+            GameInfo.Instance.ResetLevelResult();
+            coinsCount = 0;
+            statesPanel.ShowScores(coinsCount);
         }
 
-        void LoadDataFromLevel() 
+        public void AddLevelData(Level _level) 
         {
-            gameLevel = FindObjectOfType<Level>();
-            CountCoinsInLevel(gameLevel.Coins);
+            gameLevel = _level;
+            playerContr = _level.PlayerCtrl;
+            coins = _level.Coins;
+
+            playerContr.PlayerDeathAction = OnResult;
+            coins.ForEach(_coin => _coin.OnCoinColected = CheckCoinsAmount);
         }
 
         public void OnPause()
@@ -50,19 +64,33 @@ namespace CubePlatformer
 
         public void OnResult()
         {
-            Exit(Exit_Result);
-        }
-
-        void CountCoinsInLevel(List<Coin> _coins) 
-        {
-            _coins.ForEach(_coin => _coin.OnCoinColected += CheckCoinsAmount);
-            uIController.WriteScoreText(_coins.Count);
+            GameInfo.Instance.RegisterResult(coinsCount);
+            Exit(Exit_Result);          
         }
 
         void CheckCoinsAmount()
         {
-            count += 1;
-            uIController.WriteScoreText(count);
+            coinsCount += 1;
+            statesPanel.ShowScores(coinsCount);
+
+            if (coinsCount == levelConfigs.CoinsAmount)
+            {                   
+                OnResult();               
+            }
+        }
+
+        public void LoadNextGameLevel()
+        {
+            Show();
+
+            GameInfo.Instance.ResetLevelResult();
+            coinsCount = 0;
+            statesPanel.ShowScores(coinsCount);
+
+            EachLevelConfigs _nextLevelConfigs = GameInfo.Instance.LevelConfig;
+            platformerController.LoadNextLevel(levelConfigs, _nextLevelConfigs);
+
+            levelConfigs = _nextLevelConfigs;
         }
     }
 }

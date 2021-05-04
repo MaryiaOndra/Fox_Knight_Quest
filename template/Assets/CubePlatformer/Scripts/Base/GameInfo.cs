@@ -37,18 +37,20 @@ namespace CubePlatformer.Base
             PlayerPrefs.SetInt(PrefsKeys.Level_ + _levelIndex, (int)_levelState);
         }
 
-        public int Scores
-        {
-            get => PlayerPrefs.GetInt(PrefsKeys.Scores);
-            set => PlayerPrefs.SetInt(PrefsKeys.Scores, value);
-        }
+        public int Scores { get;set; }
+        //public int Scores
+        //{
+        //    get => PlayerPrefs.GetInt(PrefsKeys.Scores);
+        //    set => PlayerPrefs.SetInt(PrefsKeys.Scores, value);
+        //}
 
-        public void RegisterResult(int _truphyRemaining, bool _isFinalTruffy) 
+        public void RegisterResult(int _collectedCoins) 
         {
-            LevelResultInfo = new LevelResultInfo();
-            Scores += _truphyRemaining;
+           // LevelResultInfo = new LevelResultInfo();
+            //Scores = _collectedCoins;
+            LevelResultInfo.Scores = _collectedCoins;
 
-            if (_isFinalTruffy)
+            if (LevelConfig.CoinsAmount == _collectedCoins)
             {
                 int _nexlLevelIndex = LevelIndex + 1;
                 if (_nexlLevelIndex < eachLevelConfigs.Count 
@@ -59,6 +61,12 @@ namespace CubePlatformer.Base
             }
 
             PlayerPrefs.Save();
+        }
+
+        public void ResetLevelResult() 
+        {
+            LevelResultInfo = new LevelResultInfo();
+            LevelResultInfo.Scores = 0;
         }
     }
 
@@ -74,11 +82,11 @@ namespace CubePlatformer.Base
         LevelContentId id;
         [SerializeField]
         string levelName;
-
-        bool isAllCoins;
+        [SerializeField]
+        int coinsAmount;
 
         public LevelContentId Id => id;
         public string LevelName => levelName;
-        public bool FinishTruphy => isAllCoins;
+        public int CoinsAmount => coinsAmount;
     }
 }

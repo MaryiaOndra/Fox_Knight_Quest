@@ -9,6 +9,11 @@ namespace CubePlatformer
     public class SoundMgr : BaseManager<SoundMgr>
     {
         const float MUTE_VOLUME = -80f;
+        const string MUSIC_PARAM_NAME = "MusicVolume";
+        const string SOUND_PARAM_NAME = "SoundsVolume";
+
+        float maxSoundVolume;
+        float maxMusicVolume;
 
         [SerializeField]
         AudioMixer mixer;
@@ -22,6 +27,12 @@ namespace CubePlatformer
         AudioSource musicSource;
         [SerializeField]
         AudioSource soundSource;
+
+        private void OnEnable()
+        {
+            mixer.GetFloat(SOUND_PARAM_NAME, out maxSoundVolume);
+            mixer.GetFloat(MUSIC_PARAM_NAME, out maxMusicVolume);           
+        }
 
         public void PlayMusic() 
         {
@@ -41,12 +52,12 @@ namespace CubePlatformer
 
         public void MuteMusic(bool _value) 
         {
-            mixer.SetFloat("MusicVolume", _value ? MUTE_VOLUME : 0);
+            mixer.SetFloat(MUSIC_PARAM_NAME, _value ? MUTE_VOLUME : maxMusicVolume);
         }
 
-        public void MudeSound(bool _value) 
+        public void MuteSound(bool _value) 
         {
-            mixer.SetFloat("SoundsVolume", _value ? MUTE_VOLUME : 0);
+            mixer.SetFloat(SOUND_PARAM_NAME, _value ? MUTE_VOLUME : maxSoundVolume);
         }
     }
 }

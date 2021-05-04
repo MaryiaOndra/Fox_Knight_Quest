@@ -36,9 +36,8 @@ namespace CubePlatformer
             get
             {
                 var _value = false;
-                float _distToGround = 0.5f;
-
-                if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), _distToGround))
+                float _distToGround = 0.1f;
+                if (Physics.Raycast(rigidbody.transform.position, Vector3.down, _distToGround))
                     _value = true;
                 else
                     _value = false;
@@ -64,15 +63,6 @@ namespace CubePlatformer
         public virtual void Diactivate()
         {
             gameObject.SetActive(false);
-        }
-
-        public void OnTrigger(Collider _trigger)
-        {
-            if (_trigger.GetComponent<DeathLine>())
-            {
-                Debug.Log("GameOver: call result screen");
-                NextStateAction.Invoke(PlayerState.Die);
-            }
         }
     }
 }
