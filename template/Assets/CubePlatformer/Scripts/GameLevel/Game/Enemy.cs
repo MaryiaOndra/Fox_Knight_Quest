@@ -9,25 +9,19 @@ namespace CubePlatformer
     {
         static readonly int INT_STATE = Animator.StringToHash("State");
 
+        //TODO: add to scriptable object
         [SerializeField]
         int maxHealth;
         [SerializeField]
-        int attackPower;
+        int attackPower = 1;
+        [SerializeField]
+        float attackDelay = 1f;
 
         int enemyHealth;
         Animator enemyAnimator;
+        float timePassed = 0;
 
-        Action<int> AttackAction;
-
-        private void OnEnable()
-        {
-            AttackAction += Attack;
-        }
-
-        private void OnDisable()
-        {
-            AttackAction -= Attack;
-        }
+        public Action<int> AttackAction;
 
         void Awake()
         {
@@ -35,9 +29,10 @@ namespace CubePlatformer
             enemyHealth = maxHealth;            
         }
 
-        public void Attack(int _attackPower) 
+        void Attack(int _attackPower) 
         {
             enemyAnimator.SetInteger(INT_STATE, (int)EnemyState.Attack);
+            AttackAction.Invoke(_attackPower);
         }
 
         public void TakeDamage(int _damage) 
@@ -45,13 +40,32 @@ namespace CubePlatformer
             enemyHealth -= _damage;
         }
 
-        private void OnTriggerEnter(Collider _collision)
+        
+
+        private void OnTriggerStay(Collider _collision)
         {
             if (_collision.gameObject.GetComponent<PlayerController>())
             {
-                Debug.Log("Enemy Attack!");
                 transform.LookAt(_collision.transform, Vector3.up);
-                AttackAction.Invoke(attackPower);
+
+                enemyAnimator.SetInteger(INT_STATE, (int)EnemyState.IdleBattle);
+                                
+                timePassed += Time.deltaTime;
+
+                if (timePassed > attackDelay)
+                {
+                    Attack(attackPower);
+                    timePassed = 0;
+                }         
+
+            }
+        }
+
+        private void OnTriggerExit(Collider _collision)
+        {
+            if (_collision.gameObject.GetComponent<PlayerController>())
+            {
+                enemyAnimator.SetInteger(INT_STATE, (int)EnemyState.Idle);
             }
         }
     }

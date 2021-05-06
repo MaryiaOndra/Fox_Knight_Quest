@@ -28,20 +28,13 @@ namespace CubePlatformer
             LoadLevel(_nextLevelConfigs.LevelName);
         }
 
-        //private void SceneManager_sceneLoaded(Scene _scene, LoadSceneMode arg1)
-        //{
-        //    StartLevelAction.Invoke();
-        //}
-
         void LoadLevel(string _levelName)
         {
-            //SceneManager.sceneLoaded += SceneManager_sceneLoaded;
             SceneManager.LoadScene(_levelName, LoadSceneMode.Additive);
         }
 
         public void UnloadLevel(string _levelName)
         {
-            //SceneManager.sceneLoaded -= SceneManager_sceneLoaded;
             SceneManager.UnloadSceneAsync(_levelName);
         }
     }

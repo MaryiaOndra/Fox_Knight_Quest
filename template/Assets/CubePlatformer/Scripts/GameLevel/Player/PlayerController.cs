@@ -15,18 +15,17 @@ namespace CubePlatformer
         BaseState currentState;
         StatesPanel statesPanel;
         Rigidbody rigidbody;
-        Collider collider;
 
         public float PlatformAngle{get;set;}
         public Action PlayerDeathAction;
-      
+
         private void Awake()
         {
             actualHealth = MAX_HEALTH;
 
             playerAnimator = GetComponent<Animator>();
             rigidbody = GetComponent<Rigidbody>();
-            collider = GetComponent<Collider>();
+
             statesPanel = FindObjectOfType<StatesPanel>();
             statesPanel.ShowHealth(actualHealth);
 
@@ -34,7 +33,7 @@ namespace CubePlatformer
 
                 states.ForEach(_state =>
                 {
-                    _state.Setup(collider, playerAnimator, rigidbody);
+                    _state.Setup( playerAnimator, rigidbody);
                     _state.NextStateAction = OnNextStateRequest;
                 });
 
@@ -52,14 +51,36 @@ namespace CubePlatformer
         public void OnObstacleTriggered() 
         {
             currentState.NextStateAction.Invoke(PlayerState.Die);
-            PlayerDeathAction.Invoke();
+            //PlayerDeathAction.Invoke();
+        }
+
+        public void Attacked(int _attackPower) 
+        {
+            if (currentState.PlayerState != PlayerState.Defend)
+            {
+                currentState.NextStateAction.Invoke(PlayerState.Attacked);
+                actualHealth -= _attackPower;
+                statesPanel.ShowHealth(actualHealth);
+            }
+
+            CheckHeath(actualHealth);
+        }
+
+        void CheckHeath(int _actualHealth) 
+        {
+            if (_actualHealth <= 0)
+            {
+                currentState.NextStateAction.Invoke(PlayerState.Die);
+                //PlayerDeathAction.Invoke();
+            }
         }
 
         private void OnTriggerEnter(Collider _trigger)
         {
             if (_trigger.GetComponent<DeathLine>())
             {
-                PlayerDeathAction.Invoke();
+                currentState.NextStateAction.Invoke(PlayerState.Die);
+                //PlayerDeathAction.Invoke();
             }
         }
     }

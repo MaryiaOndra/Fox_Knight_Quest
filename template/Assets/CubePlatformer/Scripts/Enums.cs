@@ -27,16 +27,20 @@ namespace CubePlatformer
         Fall = 3,
         Win = 4,
         Attack = 5,
-        Die = 6
+        Die = 6,
+        Attacked = 7,
+        Defend = 8
     }
 
     public enum EnemyState 
     {
         Idle = 0,
         Walk = 1,
-        Attack = 2,
-        Die = 3,
-        Win = 4
+        IdleBattle = 2,
+        Attack = 3,
+        GetHit = 4,
+        Die,
+        Win
     }
 
     public enum BtnState

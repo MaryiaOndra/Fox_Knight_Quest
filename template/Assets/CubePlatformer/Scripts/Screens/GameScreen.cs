@@ -18,14 +18,14 @@ namespace CubePlatformer
         public const string Exit_Pause = "Exit_Pause";
         public const string Exit_Result = "Exit_Result";
 
-        Level gameLevel;
         EachLevelConfigs levelConfigs;
-        List<Coin> coins;
+
         PlayerController playerContr;
 
         int coinsCount = 0;
 
         public Action CoinsAction;
+
 
         private void OnEnable()
         {
@@ -49,12 +49,11 @@ namespace CubePlatformer
 
         public void AddLevelData(Level _level) 
         {
-            gameLevel = _level;
             playerContr = _level.PlayerCtrl;
-            coins = _level.Coins;
 
             playerContr.PlayerDeathAction = OnResult;
-            coins.ForEach(_coin => _coin.OnCoinColected = CheckCoinsAmount);
+            _level.Coins.ForEach(_coin => _coin.OnCoinColected = CheckCoinsAmount);
+            _level.Enemies.ForEach(_enemy => _enemy.AttackAction += playerContr.Attacked);
         }
 
         public void OnPause()

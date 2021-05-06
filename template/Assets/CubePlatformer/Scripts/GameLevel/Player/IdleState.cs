@@ -14,6 +14,14 @@ namespace CubePlatformer
             {
                 NextStateAction.Invoke(PlayerState.Run);
             }
+            else if (Input.GetMouseButtonDown(0))
+            {
+                NextStateAction.Invoke(PlayerState.Attack);
+            }
+            else if (Input.GetMouseButton(1))
+            {
+                NextStateAction.Invoke(PlayerState.Defend);
+            }
             else
             {
                 rigidbody.velocity = Vector3.zero;

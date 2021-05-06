@@ -8,17 +8,19 @@ namespace CubePlatformer
     public abstract class BaseState : MonoBehaviour
     {
         static readonly int INT_STATE = Animator.StringToHash("State");
+        static readonly int STATE_DIE = Animator.StringToHash("Die");
+        static readonly int STATE_ATTACK = Animator.StringToHash("Attack01");
+        static readonly int STATE_DEFEND = Animator.StringToHash("Defend");
 
         protected Animator playerAnimator;
         protected Collider playerCollider;
         protected Collider collider;
         protected Rigidbody rigidbody;
-        protected FloorTrigger floorTrigger;
 
 
         public abstract PlayerState PlayerState { get; }
         public Action<PlayerState> NextStateAction { get; set; }
-
+        //public Action DeathStateAction;
         protected Vector3 Direction
         {
             get
@@ -46,10 +48,9 @@ namespace CubePlatformer
             }
         }
 
-        public void Setup(Collider _collider, Animator _playerAniimator, Rigidbody _rigidbody)
+        public void Setup(Animator _playerAniimator, Rigidbody _rigidbody)
         {
             playerAnimator = _playerAniimator;
-            collider = _collider;
             rigidbody = _rigidbody;
         }
 
@@ -63,6 +64,42 @@ namespace CubePlatformer
         public virtual void Diactivate()
         {
             gameObject.SetActive(false);
+        }
+
+        //public void OnDied() 
+        //{
+        //    FindObjectOfType<PlayerController>().PlayerDeathAction.Invoke();
+        //}
+
+        private void OnEnable()
+        {
+            var _playerListeners = playerAnimator.GetBehaviours<PlayerListener>();
+            Debug.Log("_playerListeners.Length" + _playerListeners.Length);
+            foreach (var _listener in _playerListeners)
+            {
+                _listener.stateExitAction += OnAnimExit;
+                _listener.stateEnterAction += OnAnimEnter;
+            }
+        }
+
+        private void OnAnimEnter(AnimatorStateInfo _info)
+        {
+            if (_info.shortNameHash == STATE_ATTACK)
+            {
+                NextStateAction.Invoke(PlayerState.Idle);
+            }
+        }
+
+        private void OnAnimExit(AnimatorStateInfo _info)
+        {
+            if (_info.shortNameHash == STATE_DIE)
+            {
+                FindObjectOfType<PlayerController>().PlayerDeathAction.Invoke();
+            }
+            else if (_info.shortNameHash == STATE_ATTACK)
+            {
+                NextStateAction.Invoke(PlayerState.Idle);
+            }
         }
     }
 }

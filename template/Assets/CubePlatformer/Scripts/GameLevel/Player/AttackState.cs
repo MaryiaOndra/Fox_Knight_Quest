@@ -4,8 +4,9 @@ using UnityEngine;
 
 namespace CubePlatformer
 {
-    public class DieState : BaseState
+    public class AttackState : BaseState
     {
-        public override PlayerState PlayerState => PlayerState.Die;
+        public override PlayerState PlayerState => PlayerState.Attack;
+
     }
 }
