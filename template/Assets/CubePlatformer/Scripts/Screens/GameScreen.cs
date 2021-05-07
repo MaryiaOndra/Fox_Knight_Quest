@@ -24,16 +24,11 @@ namespace CubePlatformer
 
         int coinsCount = 0;
 
-        public Action CoinsAction;
-
+        public Action<Coin> CoinsAction;
 
         private void OnEnable()
         {
-            CoinsAction += CheckCoinsAmount;
-        }
-        private void OnDisable()
-        {
-            CoinsAction -= CheckCoinsAmount;
+            CoinsAction = CheckCoinsAmount;
         }
 
         public void ShowAndStartGame()
@@ -67,8 +62,10 @@ namespace CubePlatformer
             Exit(Exit_Result);          
         }
 
-        void CheckCoinsAmount()
+        void CheckCoinsAmount(Coin _coin)
         {
+            SoundMgr.Instance.PlaySound(_coin.CoinClip);
+
             coinsCount += 1;
             statesPanel.ShowScores(coinsCount);
 

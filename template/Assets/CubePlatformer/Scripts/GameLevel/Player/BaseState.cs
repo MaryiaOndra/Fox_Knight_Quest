@@ -7,7 +7,7 @@ namespace CubePlatformer
 {
     public abstract class BaseState : MonoBehaviour
     {
-        static readonly int INT_STATE = Animator.StringToHash("State");
+        protected static readonly int INT_STATE = Animator.StringToHash("State");
         static readonly int STATE_DIE = Animator.StringToHash("Die");
         static readonly int STATE_ATTACK = Animator.StringToHash("Attack01");
         static readonly int STATE_DEFEND = Animator.StringToHash("Defend");
@@ -16,7 +16,7 @@ namespace CubePlatformer
         protected Collider playerCollider;
         protected Collider collider;
         protected Rigidbody rigidbody;
-
+        PlayerListener[] playerListeners;
 
         public abstract PlayerState PlayerState { get; }
         public Action<PlayerState> NextStateAction { get; set; }
@@ -25,8 +25,8 @@ namespace CubePlatformer
         {
             get
             {
-                float _horAxes = Input.GetAxis("Horizontal");
-                float _vertAxes = Input.GetAxis("Vertical");
+                float _horAxes = VirtualInputManager.Instance.MoveHorizontal;
+                float _vertAxes = VirtualInputManager.Instance.MoveVertical;
 
                 var _dir = new Vector3(_horAxes, 0f, _vertAxes);
                 return _dir;
@@ -58,7 +58,6 @@ namespace CubePlatformer
         {
             gameObject.SetActive(true);
             Debug.Log(gameObject.name);
-            playerAnimator.SetInteger(INT_STATE, (int)PlayerState);
         }
 
         public virtual void Diactivate()
@@ -66,27 +65,13 @@ namespace CubePlatformer
             gameObject.SetActive(false);
         }
 
-        //public void OnDied() 
-        //{
-        //    FindObjectOfType<PlayerController>().PlayerDeathAction.Invoke();
-        //}
-
         private void OnEnable()
         {
-            var _playerListeners = playerAnimator.GetBehaviours<PlayerListener>();
-            Debug.Log("_playerListeners.Length" + _playerListeners.Length);
-            foreach (var _listener in _playerListeners)
+            playerListeners = playerAnimator.GetBehaviours<PlayerListener>();
+            foreach (var _listener in playerListeners)
             {
-                _listener.stateExitAction += OnAnimExit;
-                _listener.stateEnterAction += OnAnimEnter;
-            }
-        }
-
-        private void OnAnimEnter(AnimatorStateInfo _info)
-        {
-            if (_info.shortNameHash == STATE_ATTACK)
-            {
-                NextStateAction.Invoke(PlayerState.Idle);
+                _listener.stateExitAction = OnAnimExit;
+                //_listener.stateEnterAction = OnAnimEnter;
             }
         }
 
@@ -98,7 +83,10 @@ namespace CubePlatformer
             }
             else if (_info.shortNameHash == STATE_ATTACK)
             {
-                NextStateAction.Invoke(PlayerState.Idle);
+                if (!VirtualInputManager.Instance.Attack)
+                {
+                    NextStateAction.Invoke(PlayerState.Idle);
+                }                
             }
         }
     }

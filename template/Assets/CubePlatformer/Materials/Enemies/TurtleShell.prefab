@@ -809,6 +809,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6135312505911670214}
   - component: {fileID: 6081891491251067800}
+  - component: {fileID: 6139631729475581296}
+  - component: {fileID: 6139631729475581298}
+  - component: {fileID: 6139631729475581297}
   m_Layer: 0
   m_Name: TurtleShell
   m_TagString: Untagged
@@ -823,7 +826,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6139212786548842492}
-  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 40.96369, y: 58.589634, z: -82.34343}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -842,7 +845,7 @@ Animator:
   m_GameObject: {fileID: 6139212786548842492}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 56dd4edec19a3b04195448769c085dfc, type: 3}
-  m_Controller: {fileID: 9100000, guid: 1b58d63f942126347865fbdde70e67c5, type: 2}
+  m_Controller: {fileID: 9100000, guid: b07ea1c9b75de50498f8d9bb1aae4122, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -851,6 +854,47 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6139631729475581296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6139212786548842492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 339cd1afc91919a4e8d4c6d76dacc0c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
+  attackPower: 1
+  attackDelay: 1
+--- !u!135 &6139631729475581298
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6139212786548842492}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.6236487
+  m_Center: {x: 0, y: 0.1236487, z: 0}
+--- !u!135 &6139631729475581297
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6139212786548842492}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.3711022
+  m_Center: {x: 0, y: 0, z: 0.38}
 --- !u!1 &6139347841831759572
 GameObject:
   m_ObjectHideFlags: 0

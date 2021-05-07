@@ -51,7 +51,6 @@ namespace CubePlatformer
         public void OnObstacleTriggered() 
         {
             currentState.NextStateAction.Invoke(PlayerState.Die);
-            //PlayerDeathAction.Invoke();
         }
 
         public void Attacked(int _attackPower) 
@@ -71,7 +70,6 @@ namespace CubePlatformer
             if (_actualHealth <= 0)
             {
                 currentState.NextStateAction.Invoke(PlayerState.Die);
-                //PlayerDeathAction.Invoke();
             }
         }
 

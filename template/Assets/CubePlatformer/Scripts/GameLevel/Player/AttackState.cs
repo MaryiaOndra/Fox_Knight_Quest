@@ -8,5 +8,11 @@ namespace CubePlatformer
     {
         public override PlayerState PlayerState => PlayerState.Attack;
 
+        public override void Activate()
+        {
+            base.Activate();
+
+            playerAnimator.SetInteger(INT_STATE, (int)PlayerState.Attack);
+        }
     }
 }

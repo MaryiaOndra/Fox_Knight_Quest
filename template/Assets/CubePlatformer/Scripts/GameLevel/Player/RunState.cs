@@ -14,7 +14,14 @@ namespace CubePlatformer
         float rotationSpeed = 500f;
 
         public override PlayerState PlayerState => PlayerState.Run;
-         
+
+        public override void Activate()
+        {
+            base.Activate();
+
+            playerAnimator.SetInteger(INT_STATE, (int)PlayerState.Run);
+        }
+
         private void FixedUpdate()
         {
             Vector3 _camR = cameraTr.right;

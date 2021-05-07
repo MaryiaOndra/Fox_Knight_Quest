@@ -8,9 +8,16 @@ namespace CubePlatformer
     {
         public override PlayerState PlayerState => PlayerState.Defend;
 
+        public override void Activate()
+        {
+            base.Activate();
+
+            playerAnimator.SetInteger(INT_STATE, (int)PlayerState.Defend);
+        }
+
         private void Update()
         {
-            if (Input.GetMouseButtonUp(1))
+            if (!VirtualInputManager.Instance.Defence)
             {
                 NextStateAction.Invoke(PlayerState.Idle);
             }

@@ -39,8 +39,8 @@ namespace CubePlatformer
         IdleBattle = 2,
         Attack = 3,
         GetHit = 4,
-        Die,
-        Win
+        Die = 5,
+        Win = 6
     }
 
     public enum BtnState

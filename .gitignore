@@ -37,3 +37,5 @@ sysinfo.txt
 *.log
 template/Logs/AssetImportWorker0-prev.log
 template/Logs/shadercompiler-UnityShaderCompiler.exe0.log
+*.log
+template/Logs/shadercompiler-UnityShaderCompiler.exe0.log

@@ -7,10 +7,11 @@ namespace CubePlatformer
     public class AttackedState : BaseState
     {
         public override PlayerState PlayerState => PlayerState.Attacked;
-
-        private void Update()
+        public override void Activate()
         {
-            NextStateAction.Invoke(PlayerState.Idle);   
+            base.Activate();
+
+            playerAnimator.SetInteger(INT_STATE, (int)PlayerState.Attacked);
         }
     }
 }
