@@ -17,7 +17,7 @@ namespace CubePlatformer
 
         private void Update()
         {
-            if (!VirtualInputManager.Instance.Defence)
+            if (!VirtualInputManager.Instance.Defend)
             {
                 NextStateAction.Invoke(PlayerState.Idle);
             }

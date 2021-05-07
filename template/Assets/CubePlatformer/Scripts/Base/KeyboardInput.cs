@@ -12,7 +12,7 @@ namespace CubePlatformer
             VirtualInputManager.Instance.MoveHorizontal = Input.GetAxis("Horizontal");
 
             VirtualInputManager.Instance.Attack = Input.GetKeyDown(KeyCode.F) ? true : false;
-            VirtualInputManager.Instance.Defence = Input.GetKey(KeyCode.C) ? true : false;
+            VirtualInputManager.Instance.Defend = Input.GetKey(KeyCode.C) ? true : false;
         }
     }
 }

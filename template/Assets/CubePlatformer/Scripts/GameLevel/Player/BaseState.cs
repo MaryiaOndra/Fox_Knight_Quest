@@ -86,7 +86,7 @@ namespace CubePlatformer
                 if (!VirtualInputManager.Instance.Attack)
                 {
                     NextStateAction.Invoke(PlayerState.Idle);
-                }                
+                }
             }
         }
     }

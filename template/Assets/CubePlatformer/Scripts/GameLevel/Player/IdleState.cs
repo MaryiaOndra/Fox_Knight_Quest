@@ -25,7 +25,7 @@ namespace CubePlatformer
             {
                 NextStateAction.Invoke(PlayerState.Attack);
             }
-            else if (VirtualInputManager.Instance.Defence)
+            else if (VirtualInputManager.Instance.Defend)
             {
                 NextStateAction.Invoke(PlayerState.Defend);
             }

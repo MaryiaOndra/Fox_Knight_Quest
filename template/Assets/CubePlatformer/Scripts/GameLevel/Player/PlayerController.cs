@@ -77,8 +77,7 @@ namespace CubePlatformer
         {
             if (_trigger.GetComponent<DeathLine>())
             {
-                currentState.NextStateAction.Invoke(PlayerState.Die);
-                //PlayerDeathAction.Invoke();
+                currentState.NextStateAction.Invoke(PlayerState.Die);                
             }
         }
     }

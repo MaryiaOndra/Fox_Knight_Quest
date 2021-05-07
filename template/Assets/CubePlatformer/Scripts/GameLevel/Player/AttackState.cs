@@ -14,5 +14,13 @@ namespace CubePlatformer
 
             playerAnimator.SetInteger(INT_STATE, (int)PlayerState.Attack);
         }
+
+        private void Update()
+        {
+            if (!VirtualInputManager.Instance.Attack)
+            {
+                NextStateAction.Invoke(PlayerState.Idle);
+            }
+        }
     }
 }
