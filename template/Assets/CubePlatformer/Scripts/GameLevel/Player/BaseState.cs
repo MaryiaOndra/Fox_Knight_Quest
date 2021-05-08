@@ -9,9 +9,7 @@ namespace CubePlatformer
     {
         protected static readonly int INT_STATE = Animator.StringToHash("State");
         protected static readonly int ATTACK02 = Animator.StringToHash("Attack02");
-        static readonly int STATE_DIE = Animator.StringToHash("Die");
-        static readonly int STATE_ATTACK = Animator.StringToHash("Attack01");
-        static readonly int STATE_DEFEND = Animator.StringToHash("Defend");
+
 
         protected Animator playerAnimator;
         protected Collider playerCollider;
