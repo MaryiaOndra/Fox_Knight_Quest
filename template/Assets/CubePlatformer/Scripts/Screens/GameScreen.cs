@@ -48,7 +48,7 @@ namespace CubePlatformer
 
             playerContr.PlayerDeathAction = OnResult;
             _level.Coins.ForEach(_coin => _coin.OnCoinColected = CheckCoinsAmount);
-            _level.Enemies.ForEach(_enemy => _enemy.AttackAction += playerContr.Attacked);
+            _level.Enemies.ForEach(_enemy => _enemy.AttackAction = playerContr.Attacked);
         }
 
         public void OnPause()

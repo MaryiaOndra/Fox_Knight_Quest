@@ -19,6 +19,16 @@ namespace CubePlatformer
         public float PlatformAngle{get;set;}
         public Action PlayerDeathAction;
 
+        private void OnEnable()
+        {
+            PlayerDeathAction = currentState.DeathStateAction;
+        }
+
+        private void OnDisable()
+        {
+            
+        }
+
         private void Awake()
         {
             actualHealth = MAX_HEALTH;
@@ -48,11 +58,6 @@ namespace CubePlatformer
             currentState.Activate();
         }
 
-        public void OnObstacleTriggered() 
-        {
-            currentState.NextStateAction.Invoke(PlayerState.Die);
-        }
-
         public void Attacked(int _attackPower) 
         {
             if (currentState.PlayerState != PlayerState.Defend)
@@ -77,7 +82,7 @@ namespace CubePlatformer
         {
             if (_trigger.GetComponent<DeathLine>())
             {
-                currentState.NextStateAction.Invoke(PlayerState.Die);                
+                currentState.NextStateAction.Invoke(PlayerState.Die);
             }
         }
     }

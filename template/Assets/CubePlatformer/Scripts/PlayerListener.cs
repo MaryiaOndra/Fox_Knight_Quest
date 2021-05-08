@@ -5,12 +5,16 @@ using UnityEngine;
 
 namespace CubePlatformer
 {
-    public class PlayerListener : StateMachineListener
+    public class PlayerListener : StateMachineBehaviour
     {
+        public Action DieAction;
+
+        // public Action<AnimatorStateInfo> stateEnterAction;
+
         // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
         //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         //{
-        //    
+        //    stateEnterAction.Invoke(stateInfo);
         //}
 
         // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -20,10 +24,10 @@ namespace CubePlatformer
         //}
 
         //OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-        //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-        //{
-        //    
-        //}
+        override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+        {
+            DieAction.Invoke();
+        }
 
         // OnStateMove is called right after Animator.OnAnimatorMove()
         //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

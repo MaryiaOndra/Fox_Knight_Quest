@@ -21,7 +21,7 @@ namespace CubePlatformer
 
         public abstract PlayerState PlayerState { get; }
         public Action<PlayerState> NextStateAction { get; set; }
-        //public Action DeathStateAction;
+        public Action DeathStateAction;
         protected Vector3 Direction
         {
             get
@@ -67,33 +67,22 @@ namespace CubePlatformer
             gameObject.SetActive(false);
         }
 
-        private void OnEnable()
-        {
-            playerListeners = playerAnimator.GetBehaviours<PlayerListener>();
-            foreach (var _listener in playerListeners)
-            {
-                _listener.stateExitAction = OnAnimExit;
-                //_listener.stateEnterAction = OnAnimEnter;
-            }
-        }
+        //private void OnEnable()
+        //{
+        //    playerListeners = playerAnimator.GetBehaviours<PlayerListener>();
+        //    foreach (var _listener in playerListeners)
+        //    {
+        //        _listener.stateExitAction = OnAnimExit;
+        //        //_listener.stateEnterAction = OnAnimEnter;
+        //    }
+        //}
 
-        private void OnAnimExit(AnimatorStateInfo _info)
-        {
-            if (_info.shortNameHash == STATE_DIE)
-            {
-                FindObjectOfType<PlayerController>().PlayerDeathAction.Invoke();
-            }
-            //else if (_info.shortNameHash == STATE_ATTACK)
-            //{
-                //if (!VirtualInputManager.Instance.Attack)
-                //{
-                //    NextStateAction.Invoke(PlayerState.Idle);
-                //}
-                //else
-                //{
-                //    playerAnimator.SetBool(ATTACK02, true);
-                //}
-            //}
-        }
+        //private void OnAnimExit(AnimatorStateInfo _info)
+        //{
+        //    if (_info.shortNameHash == STATE_DIE)
+        //    {
+        //        FindObjectOfType<PlayerController>().PlayerDeathAction.Invoke();
+        //    }
+        //}
     }
 }
