@@ -9,13 +9,8 @@ namespace CubePlatformer
     {
         static readonly int INT_STATE = Animator.StringToHash("State");
 
-        //TODO: add to scriptable object
         [SerializeField]
-        int maxHealth;
-        [SerializeField]
-        int attackPower = 1;
-        [SerializeField]
-        float attackDelay = 1f;
+        EnemyConfig slimeConfig;
 
         int enemyHealth;
         Animator enemyAnimator;
@@ -26,7 +21,7 @@ namespace CubePlatformer
         void Awake()
         {
             enemyAnimator = GetComponent<Animator>();
-            enemyHealth = maxHealth;            
+            enemyHealth = slimeConfig.MaxHealth;            
         }
 
         void Attack(int _attackPower) 
@@ -39,7 +34,6 @@ namespace CubePlatformer
         {
             enemyHealth -= _damage;
         }
-
         
 
         private void OnTriggerStay(Collider _collision)
@@ -52,12 +46,11 @@ namespace CubePlatformer
                                 
                 timePassed += Time.deltaTime;
 
-                if (timePassed > attackDelay)
+                if (timePassed > slimeConfig.AttackDelay)
                 {
-                    Attack(attackPower);
+                    Attack(slimeConfig.AttackPower);
                     timePassed = 0;
                 }         
-
             }
         }
 
