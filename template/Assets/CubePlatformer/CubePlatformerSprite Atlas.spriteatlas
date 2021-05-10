@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: CubePlatformerSprite Atlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: b7a9cfe3391dcdd4383924f263070efc, type: 3}
+    totalSpriteSurfaceArea: 2148159
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: -1867627130855255743, guid: e7924a90edd6d234a9a6ea945074fd35, type: 3}
+  - {fileID: -3006930762906281676, guid: a3380e71a4af66b40986a9cc9b6b25f8, type: 3}
+  - {fileID: -2413806693520163455, guid: 5dba9984abba3404285b72df76215b44, type: 3}
+  - {fileID: 7482667652216324306, guid: 055e6a26d45f0644cbdb590159370375, type: 3}
+  - {fileID: 21300000, guid: 397c5f8b14e10ff4c80fa8b09c3ce45e, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - heart_pngegg_0
+  - coin_pngegg_0
+  - Circle
+  - Square
+  - sky-clouds-background
+  m_RenderDataMap: {}
+  m_Tag: CubePlatformerSprite Atlas
+  m_IsVariant: 0

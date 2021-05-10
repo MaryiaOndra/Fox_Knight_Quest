@@ -10,14 +10,10 @@ namespace CubePlatformer
         [SerializeField]
         LevelContentId levelID;
 
-        [SerializeField]
-        AudioClip clip;
-
         [TextArea(minLines: 2, maxLines: 5)]
         [SerializeField]
         string frase;
 
         public string Frase => frase;
-        public AudioClip Clip => clip;
     }
 }

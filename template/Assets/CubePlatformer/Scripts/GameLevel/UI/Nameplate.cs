@@ -17,19 +17,19 @@ namespace CubePlatformer
         AudioSource audioSource;
         bool firstTime = true;
 
-         public Action<string> ActivateNameplate;
+        public Action<string> ActivateNameplate;
 
-        private void Awake()
+        void Awake()
         {
             audioSource = GetComponent<AudioSource>();
         }
 
-        private void OnTriggerEnter(Collider other)
+        void OnTriggerEnter(Collider other)
         {
             if (firstTime)
             {
                 exlamation.SetActive(false);
-                audioSource.PlayOneShot(nameplateConfigs.Clip);
+                audioSource.PlayOneShot(audioSource.clip);
                 ActivateNameplate.Invoke(nameplateConfigs.Frase);
                 firstTime = false;
             }

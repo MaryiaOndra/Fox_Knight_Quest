@@ -110,8 +110,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.160277, y: 1.1743264, z: 1.3925595}
-  m_Center: {x: -0.18611097, y: 0.91283625, z: 0.66127944}
+  m_Size: {x: 2.160277, y: 1.1743265, z: 1.9211507}
+  m_Center: {x: -0.18611097, y: 0.91283625, z: 0.925575}
 --- !u!114 &1339477348358325671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e52acf4859523504ba7ccc7fe2c73d43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameplateConfigs: {fileID: 11400000, guid: b6790d1216d6d414da579af2bcebe6fa, type: 2}
+  nameplateConfigs: {fileID: 11400000, guid: 983a28b64ed29804c98337c0a8ac529d, type: 2}
   exlamation: {fileID: 8078252984511184379}
 --- !u!82 &2347186127953615236
 AudioSource:
@@ -137,8 +137,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -866006655283747824, guid: 353d904069a5bed4f9782be4cc5df7d4,
     type: 2}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: dca3084cb66e8824bab682c584bec504, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -147,7 +147,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 2.3981981
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0

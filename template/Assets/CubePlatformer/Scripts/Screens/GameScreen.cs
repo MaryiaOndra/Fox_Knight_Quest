@@ -10,18 +10,15 @@ namespace CubePlatformer
 {
     public class GameScreen : BaseScreen
     {
-        [SerializeField]
-        CubePlatformerController platformerController;
-        [SerializeField]
-        StatesPanel statesPanel;
-        [SerializeField]
-        NotesPanel notesPanel;
-
         public const string Exit_Pause = "Exit_Pause";
         public const string Exit_Result = "Exit_Result";
 
+        CubePlatformerController platformerController;
+        StatesPanel statesPanel;
+        NotesPanel notesPanel;
         EachLevelConfigs levelConfigs;
         PlayerController playerContr;
+        Portal portal;
 
         int coinsCount = 0;
 
@@ -30,6 +27,10 @@ namespace CubePlatformer
 
         private void OnEnable()
         {
+            statesPanel = FindObjectOfType<StatesPanel>();
+            notesPanel = FindObjectOfType<NotesPanel>();
+            platformerController = FindObjectOfType<CubePlatformerController>();
+
             CoinsAction = CheckCoinsAmount;
             NotesAction = notesPanel.ShowPanel;
         }
@@ -49,7 +50,10 @@ namespace CubePlatformer
         {
             playerContr = _level.PlayerCtrl;
 
+            portal = _level.Portal;
+            portal.PortalAction = OnResult;
             playerContr.PlayerDeathAction = OnResult;
+
             _level.Coins.ForEach(_coin => _coin.OnCoinColected = CheckCoinsAmount);
             _level.Enemies.ForEach(_enemy => _enemy.AttackAction = playerContr.Attacked);
         }
@@ -73,8 +77,8 @@ namespace CubePlatformer
             statesPanel.ShowScores(coinsCount);
 
             if (coinsCount == levelConfigs.CoinsAmount)
-            {                   
-                OnResult();               
+            {
+                portal.ActivatePortal();               
             }
         }
 

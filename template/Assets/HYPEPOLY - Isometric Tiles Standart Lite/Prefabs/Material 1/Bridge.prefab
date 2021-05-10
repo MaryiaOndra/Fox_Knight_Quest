@@ -12,14 +12,12 @@ GameObject:
   - component: {fileID: 7486435473119814888}
   - component: {fileID: 6944957023945526721}
   - component: {fileID: 8945858857620067139}
-  - component: {fileID: 2117045281}
-  - component: {fileID: 2117045282}
   m_Layer: 0
   m_Name: Bridge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 64
   m_IsActive: 1
 --- !u!4 &4704876884808328126
 Transform:
@@ -97,34 +95,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.0858898, y: 1.1588981, z: 2.094412}
   m_Center: {x: -0.014141381, y: 0.5106667, z: 0.14195728}
---- !u!95 &2117045281
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 921331904203003257}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 14aead4dcfed47c428d29faa98fdb004, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2117045282
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 921331904203003257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a50bea603c7956841b79aac55a681599, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
