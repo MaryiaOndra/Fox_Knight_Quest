@@ -9,15 +9,26 @@ namespace CubePlatformer
         public PlayerController PlayerCtrl { get; private set; }
         public List<Coin> Coins { get; private set; }
         public List<Enemy> Enemies { get; private set; }
-      
+
+        GameScreen gameScreen;
+        List<Nameplate> nameplates;
+
         private void Awake()
         {
-            PlayerCtrl = FindObjectOfType<PlayerController>();
-            Coins = new List<Coin>(FindObjectsOfType<Coin>());
-            Enemies = new List<Enemy>(FindObjectsOfType<Enemy>());
+            PlayerCtrl = FindObjectOfType<PlayerController>(true);
+            Coins = new List<Coin>(FindObjectsOfType<Coin>(true));
+            Enemies = new List<Enemy>(FindObjectsOfType<Enemy>(true));
+            nameplates = new List<Nameplate>(FindObjectsOfType<Nameplate>(true));
+            nameplates.ForEach(_nameplate => _nameplate.ActivateNameplate = ShowPanelOnGameScreen);
 
-            GameScreen _gameScreen = FindObjectOfType<GameScreen>();
-            _gameScreen.AddLevelData(this);            
+            gameScreen = FindObjectOfType<GameScreen>();
+            gameScreen.AddLevelData(this);            
+        }
+
+
+        void ShowPanelOnGameScreen(string _nameplateFrase) 
+        {
+            gameScreen.NotesAction.Invoke(_nameplateFrase);        
         }
     }
 }

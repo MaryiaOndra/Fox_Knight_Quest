@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -8,34 +9,30 @@ namespace CubePlatformer
     [RequireComponent(typeof(AudioSource))]
     public class Nameplate : MonoBehaviour
     {
-        protected static readonly int IS_ENTER = Animator.StringToHash("IsEnter");
-        //const string FRASE = "You should collect 3 coins to finish this level!";
-
         [SerializeField]
         NameplatesConfigs nameplateConfigs;
-
         [SerializeField]
-        TMP_Text text;
+        GameObject exlamation;
 
-        Animator animator;
         AudioSource audioSource;
+        bool firstTime = true;
+
+         public Action<string> ActivateNameplate;
 
         private void Awake()
         {
-            animator = GetComponentInChildren<Animator>();
             audioSource = GetComponent<AudioSource>();
-            text.text = nameplateConfigs.Frase;
         }
 
         private void OnTriggerEnter(Collider other)
         {
-            animator.SetBool(IS_ENTER, true);
-            audioSource.PlayOneShot(nameplateConfigs.Clip);
-        }
-
-        private void OnTriggerExit(Collider other)
-        {
-            animator.SetBool(IS_ENTER, false);
+            if (firstTime)
+            {
+                exlamation.SetActive(false);
+                audioSource.PlayOneShot(nameplateConfigs.Clip);
+                ActivateNameplate.Invoke(nameplateConfigs.Frase);
+                firstTime = false;
+            }
         }
     }
 }

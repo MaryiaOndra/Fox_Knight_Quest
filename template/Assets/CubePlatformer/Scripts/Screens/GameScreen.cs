@@ -14,21 +14,24 @@ namespace CubePlatformer
         CubePlatformerController platformerController;
         [SerializeField]
         StatesPanel statesPanel;
+        [SerializeField]
+        NotesPanel notesPanel;
 
         public const string Exit_Pause = "Exit_Pause";
         public const string Exit_Result = "Exit_Result";
 
         EachLevelConfigs levelConfigs;
-
         PlayerController playerContr;
 
         int coinsCount = 0;
 
         public Action<Coin> CoinsAction;
+        public Action<string> NotesAction;
 
         private void OnEnable()
         {
             CoinsAction = CheckCoinsAmount;
+            NotesAction = notesPanel.ShowPanel;
         }
 
         public void ShowAndStartGame()
