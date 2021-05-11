@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6236a9c95b3a11944b7f7dd01b0806e2, type: 3}
   m_Name: Level_01_Finish
   m_EditorClassIdentifier: 
-  levelID: 0
-  frase: Collect 3 coins to open the portal!
+  levelID: 1
+  frase: 'To open the portal collect: '

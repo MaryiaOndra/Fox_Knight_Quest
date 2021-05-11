@@ -19,8 +19,11 @@ EditorBuildSettings:
     guid: a3b4282500246754abd0f63f418d9b5a
   - enabled: 1
     path: Assets/CubePlatformer/Scenes/GameLevels/Level_02.unity
-    guid: 6d4850c6d0d634e49ba71aff4bb3b08c
-  - enabled: 1
+    guid: a52efbff7453ffe4fa7a171db960c462
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
     path: Assets/CubePlatformer/Scenes/GameLevels/Level_03.unity
     guid: da4c3e891e365c749a16902e3786cb8e
   - enabled: 0

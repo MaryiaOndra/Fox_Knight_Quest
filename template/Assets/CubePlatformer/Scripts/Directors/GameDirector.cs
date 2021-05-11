@@ -66,7 +66,7 @@ namespace CubePlatformer
             {
                 if (_exitCode == VictoryScreen.Exit_NextLvl)
                 {
-                    SetCurrentScreen<GameScreen>().ShowAndStartGame();
+                    SetCurrentScreen<GameScreen>().LoadNextGameLevel();
                 }
             }
             else if (_screenType == typeof(SettingsScreen))

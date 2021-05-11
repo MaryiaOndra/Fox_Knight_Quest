@@ -223,10 +223,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48139072583420944a6331728ab5deab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resultLabel: {fileID: 5398139243674051059}
-  scoreText: {fileID: 0}
-  NextLvlBtn: {fileID: 0}
-  ReplayBtn: {fileID: 2211405839517584929}
 --- !u!1 &4214861530007560758
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,7 +510,7 @@ PrefabInstance:
     - target: {fileID: 1975739478942758107, guid: 4475544d945fa9c4b846237a5ff48774,
         type: 3}
       propertyPath: m_Name
-      value: LoseScreen
+      value: LooseScreen
       objectReference: {fileID: 0}
     - target: {fileID: 1975739478942758107, guid: 4475544d945fa9c4b846237a5ff48774,
         type: 3}

@@ -19,9 +19,28 @@ namespace CubePlatformer
 
         public Action<string> ActivateNameplate;
 
+
+        protected virtual void InvokeNameplate(string _frase) 
+        {
+            ActivateNameplate.Invoke(_frase);
+        }
+
         void Awake()
         {
             audioSource = GetComponent<AudioSource>();
+        }
+
+        protected virtual void OnMouseDown()
+        {
+            if (firstTime)
+            {
+                exlamation.SetActive(false);
+                firstTime = false;
+            }
+
+            audioSource.PlayOneShot(audioSource.clip);
+
+            InvokeNameplate(nameplateConfigs.Frase);
         }
 
         //void OnTriggerEnter(Collider other)
@@ -35,16 +54,7 @@ namespace CubePlatformer
         //    }
         //}
 
-        private void OnMouseDown()
-        {
-            if (firstTime)
-            {
-                exlamation.SetActive(false);
-                firstTime = false;
-            }
 
-            audioSource.PlayOneShot(audioSource.clip);
-            ActivateNameplate.Invoke(nameplateConfigs.Frase);
-        }
+
     }
 }
