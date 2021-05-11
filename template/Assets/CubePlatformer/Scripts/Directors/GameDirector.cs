@@ -22,7 +22,6 @@ namespace CubePlatformer
             {
                 if (_exitCode == StartupScreen.Exit_Game)
                 {
-
                     SceneManager.LoadScene(ScenesIds.Game);
                 }
             }
@@ -32,9 +31,13 @@ namespace CubePlatformer
                 {
                     SetCurrentScreen<PauseScreen>().Show();
                 }
-                else if (_exitCode == GameScreen.Exit_Result)
+                else if (_exitCode == GameScreen.Exit_Loose)
                 {
-                    SetCurrentScreen<ResultScreen>().Show();
+                    SetCurrentScreen<LooseScreen>().Show();
+                }
+                else if (_exitCode == GameScreen.Exit_NextLvl)
+                {
+                    SetCurrentScreen<VictoryScreen>().Show();
                 }
             }
             else if (_screenType == typeof(PauseScreen))
@@ -45,27 +48,24 @@ namespace CubePlatformer
                 }
                 else if (_exitCode == PauseScreen.Exit_Replay) 
                 {
-                    //TODO: make normal game restart
-                    //SetCurrentScreen<GameScreen>().UnloadLevel(3);
-                    SetCurrentScreen<GameScreen>().ShowAndStartGame();
+                    SetCurrentScreen<GameScreen>().RestartGame();
                 }
                 else if (_exitCode == PauseScreen.Exit_Menu)
                 {
                     SceneManager.LoadScene(ScenesIds.Menu);
                 }
             }
-            else if (_screenType == typeof(ResultScreen))
+            else if (_screenType == typeof(LooseScreen))
             {
-                if (_exitCode == ResultScreen.Exit_NextLvl)
+                if (_exitCode == LooseScreen.Exit_Replay)
                 {
-                    SetCurrentScreen<GameScreen>().LoadNextGameLevel();
-                   // SetCurrentScreen<GameScreen>().ShowAndStartGame();
-                    //SetCurrentScreen<GameScreen>().LoadNextGameLevel();
+                    SetCurrentScreen<GameScreen>().RestartGame();
                 }
-                else if (_exitCode == ResultScreen.Exit_Replay)
+            }
+            else if (_screenType == typeof(VictoryScreen))
+            {
+                if (_exitCode == VictoryScreen.Exit_NextLvl)
                 {
-                    //TODO: make normal game restart
-
                     SetCurrentScreen<GameScreen>().ShowAndStartGame();
                 }
             }

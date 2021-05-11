@@ -11,11 +11,15 @@ namespace CubePlatformer
 
         public void OnDrag(PointerEventData eventData)
         {
-            DragDelta = eventData.delta.x;
+            if (Input.GetMouseButton(1))
+            {
+                DragDelta = eventData.delta.x;
+            }
         }
 
         public void OnEndDrag(PointerEventData eventData)
         {
+
             DragDelta = 0;
         }
     }

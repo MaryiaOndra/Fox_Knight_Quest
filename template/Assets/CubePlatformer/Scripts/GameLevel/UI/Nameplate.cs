@@ -24,15 +24,27 @@ namespace CubePlatformer
             audioSource = GetComponent<AudioSource>();
         }
 
-        void OnTriggerEnter(Collider other)
+        //void OnTriggerEnter(Collider other)
+        //{
+        //    if (firstTime)
+        //    {
+        //        exlamation.SetActive(false);
+        //        audioSource.PlayOneShot(audioSource.clip);
+        //        ActivateNameplate.Invoke(nameplateConfigs.Frase);
+        //        firstTime = false;
+        //    }
+        //}
+
+        private void OnMouseDown()
         {
             if (firstTime)
             {
                 exlamation.SetActive(false);
-                audioSource.PlayOneShot(audioSource.clip);
-                ActivateNameplate.Invoke(nameplateConfigs.Frase);
                 firstTime = false;
             }
+
+            audioSource.PlayOneShot(audioSource.clip);
+            ActivateNameplate.Invoke(nameplateConfigs.Frase);
         }
     }
 }

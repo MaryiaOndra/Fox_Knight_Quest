@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Level_01_Finish
   m_EditorClassIdentifier: 
   levelID: 0
-  frase: Jump through the portal to go to the next level!
+  frase: Collect 3 coins to open the portal!

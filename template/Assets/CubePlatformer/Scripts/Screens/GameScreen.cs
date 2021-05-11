@@ -11,9 +11,9 @@ namespace CubePlatformer
     public class GameScreen : BaseScreen
     {
         public const string Exit_Pause = "Exit_Pause";
-        public const string Exit_Result = "Exit_Result";
+        public const string Exit_Loose = "Exit_Loose";
+        public const string Exit_NextLvl = "Exit_NextLvl";
 
-        CubePlatformerController platformerController;
         StatesPanel statesPanel;
         NotesPanel notesPanel;
         EachLevelConfigs levelConfigs;
@@ -29,7 +29,6 @@ namespace CubePlatformer
         {
             statesPanel = FindObjectOfType<StatesPanel>();
             notesPanel = FindObjectOfType<NotesPanel>();
-            platformerController = FindObjectOfType<CubePlatformerController>();
 
             CoinsAction = CheckCoinsAmount;
             NotesAction = notesPanel.ShowPanel;
@@ -38,9 +37,21 @@ namespace CubePlatformer
         public void ShowAndStartGame()
         {
             Show();
-
             levelConfigs = GameInfo.Instance.LevelConfig;
-            platformerController.StartGame(levelConfigs);
+            LoadLevel(levelConfigs.LevelName);
+
+            //GameInfo.Instance.ResetLevelResult();
+            //coinsCount = 0;
+            statesPanel.ShowScores(coinsCount);
+        }
+
+        public void RestartGame() 
+        {
+            Show();
+
+            UnloadLevel(levelConfigs.LevelName);
+            LoadLevel(levelConfigs.LevelName);
+
             GameInfo.Instance.ResetLevelResult();
             coinsCount = 0;
             statesPanel.ShowScores(coinsCount);
@@ -51,22 +62,27 @@ namespace CubePlatformer
             playerContr = _level.PlayerCtrl;
 
             portal = _level.Portal;
-            portal.PortalAction = OnResult;
-            playerContr.PlayerDeathAction = OnResult;
+            portal.IsPortalAction = PortalPassing;
+            playerContr.PlayerDeathAction = OnLoose;
 
             _level.Coins.ForEach(_coin => _coin.OnCoinColected = CheckCoinsAmount);
             _level.Enemies.ForEach(_enemy => _enemy.AttackAction = playerContr.Attacked);
         }
 
-        public void OnPause()
+        void OnPause()
         {
             Exit(Exit_Pause);
         }
 
-        public void OnResult()
+        void OnLoose()
+        {
+            Exit(Exit_Loose);          
+        }
+
+        void PortalPassing() 
         {
             GameInfo.Instance.RegisterResult(coinsCount);
-            Exit(Exit_Result);          
+            Exit(Exit_NextLvl);
         }
 
         void CheckCoinsAmount(Coin _coin)
@@ -91,9 +107,27 @@ namespace CubePlatformer
             statesPanel.ShowScores(coinsCount);
 
             EachLevelConfigs _nextLevelConfigs = GameInfo.Instance.LevelConfig;
-            platformerController.LoadNextLevel(levelConfigs, _nextLevelConfigs);
+
+            UnloadLevel(levelConfigs.LevelName);
+            LoadLevel(_nextLevelConfigs.LevelName);
 
             levelConfigs = _nextLevelConfigs;
+        }
+
+        public void LoadNextLevel(EachLevelConfigs _prevLevelConfigs, EachLevelConfigs _nextLevelConfigs)
+        {
+            UnloadLevel(_prevLevelConfigs.LevelName);
+            LoadLevel(_nextLevelConfigs.LevelName);
+        }
+
+        void LoadLevel(string _levelName)
+        {
+            SceneManager.LoadScene(_levelName, LoadSceneMode.Additive);
+        }
+
+        public void UnloadLevel(string _levelName)
+        {
+            SceneManager.UnloadSceneAsync(_levelName);
         }
     }
 }

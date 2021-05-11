@@ -13,6 +13,4 @@ MonoBehaviour:
   m_Name: Level_01_Condition
   m_EditorClassIdentifier: 
   levelID: 0
-  orderOnLevel: 0
-  frase: You should collect 3 coins to finish this level!
-  clip: {fileID: 8300000, guid: 563884892133af446bdb373e00a7a764, type: 3}
+  frase: You should collect 3 coins to open the portal !

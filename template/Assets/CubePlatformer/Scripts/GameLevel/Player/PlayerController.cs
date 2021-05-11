@@ -24,11 +24,6 @@ namespace CubePlatformer
             PlayerDeathAction = currentState.DeathStateAction;
         }
 
-        private void OnDisable()
-        {
-            
-        }
-
         private void Awake()
         {
             actualHealth = MAX_HEALTH;
@@ -82,7 +77,9 @@ namespace CubePlatformer
         {
             if (_trigger.GetComponent<DeathLine>())
             {
-                currentState.NextStateAction.Invoke(PlayerState.Die);
+                PlayerDeathAction.Invoke();
+
+              //  currentState.NextStateAction.Invoke(PlayerState.Die);
             }
         }
     }

@@ -15,11 +15,12 @@ namespace CubePlatformer
         protected Collider playerCollider;
         protected Collider collider;
         protected Rigidbody rigidbody;
-        PlayerListener[] playerListeners;
+        //PlayerListener[] playerListeners;
 
         public abstract PlayerState PlayerState { get; }
         public Action<PlayerState> NextStateAction { get; set; }
         public Action DeathStateAction;
+
         protected Vector3 Direction
         {
             get

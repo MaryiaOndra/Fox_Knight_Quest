@@ -37,17 +37,17 @@ namespace CubePlatformer.Base
             AppPrefs.SetInt(PrefsKeys.Level_ + _levelIndex, (int)_levelState);
         }
 
-        public int Scores { get;set; }
-        //public int Scores
-        //{
-        //    get => PlayerPrefs.GetInt(PrefsKeys.Scores);
-        //    set => PlayerPrefs.SetInt(PrefsKeys.Scores, value);
-        //}
+       // public int Scores { get;set; }
+        public int Scores
+        {
+            get => PlayerPrefs.GetInt(PrefsKeys.Scores);
+            set => PlayerPrefs.SetInt(PrefsKeys.Scores, value);
+        }
 
         public void RegisterResult(int _collectedCoins) 
         {
-           // LevelResultInfo = new LevelResultInfo();
-            //Scores = _collectedCoins;
+            LevelResultInfo = new LevelResultInfo();
+            Scores = _collectedCoins;
             LevelResultInfo.Scores = _collectedCoins;
 
             if (LevelConfig.CoinsAmount == _collectedCoins)

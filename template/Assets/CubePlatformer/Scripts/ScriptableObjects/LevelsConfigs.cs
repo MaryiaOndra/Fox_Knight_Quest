@@ -28,5 +28,6 @@ namespace CubePlatformer
         public LevelContentId Id => id;
         public string LevelName => levelName;
         public int CoinsAmount => coinsAmount;
+        public bool IsGoingThoughPortal { get; set; }
     }
 }

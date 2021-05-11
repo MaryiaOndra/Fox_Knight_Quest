@@ -1,3 +1,4 @@
+using CubePlatformer.Base;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,22 +8,22 @@ namespace CubePlatformer
 {
     public class Portal : MonoBehaviour
     {
-        [SerializeField]
-        GameObject portalNameplate;
+        //[SerializeField]
+        //GameObject portalNameplate;
 
-        public Action PortalAction;
+        public Action IsPortalAction;
 
         void OnTriggerExit(Collider other)
         {
-            PortalAction.Invoke();
+            IsPortalAction.Invoke();
         }
 
         public void ActivatePortal() 
         {
             gameObject.SetActive(true);
             
-            if (portalNameplate != null)
-                portalNameplate.SetActive(true);
+            //if (portalNameplate != null)
+            //    portalNameplate.SetActive(true);
         }
     }
 }

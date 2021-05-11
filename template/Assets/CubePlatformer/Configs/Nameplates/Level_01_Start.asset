@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: Level_01_Start
   m_EditorClassIdentifier: 
   levelID: 0
-  clip: {fileID: 8300000, guid: 563884892133af446bdb373e00a7a764, type: 3}
-  frase: 'Use "WSAD" to control a character; to rotate: hold the left mouse button
+  frase: 'Use "WSAD" to control a character; to rotate: hold the right mouse button
     and drag.'
