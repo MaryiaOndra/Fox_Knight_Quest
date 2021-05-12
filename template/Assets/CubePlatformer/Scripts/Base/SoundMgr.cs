@@ -52,11 +52,13 @@ namespace CubePlatformer
 
         public void MuteMusic(bool _value) 
         {
+            Debug.Log("MuteMusic");
             mixer.SetFloat(MUSIC_PARAM_NAME, _value ? MUTE_VOLUME : maxMusicVolume);
         }
 
         public void MuteSound(bool _value) 
         {
+            Debug.Log("MuteSound");
             mixer.SetFloat(SOUND_PARAM_NAME, _value ? MUTE_VOLUME : maxSoundVolume);
         }
     }

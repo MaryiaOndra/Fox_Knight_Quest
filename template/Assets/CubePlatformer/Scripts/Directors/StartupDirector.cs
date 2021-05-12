@@ -13,14 +13,14 @@ namespace CubePlatformer
         {
             base.Start();
 
-            SetCurrentScreen<StartupScreen>().Show();
+            SetCurrentScreen<StartupMenuScreen>().Show();
         }
 
         protected override void OnScreenExit(Type _screenType, string _exitCode)
         {
-            if (_screenType == typeof(StartupScreen))
+            if (_screenType == typeof(StartupMenuScreen))
             {
-                if (_exitCode == StartupScreen.Exit_Game)
+                if (_exitCode == StartupMenuScreen.Exit_Game)
                 {
                     SceneManager.LoadScene(ScenesIds.Game);
                 }

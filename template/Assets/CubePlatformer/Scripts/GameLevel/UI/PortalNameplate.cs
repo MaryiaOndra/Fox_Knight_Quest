@@ -9,6 +9,7 @@ namespace CubePlatformer
     {
         protected override void InvokeNameplate(string _frase)
         {
+            Debug.Log(GameInfo.Instance.LevelConfig.LevelName +   "GameInfo.Instance.LevelConfig.CoinsAmount " + GameInfo.Instance.LevelConfig.CoinsAmount);
             _frase += GameInfo.Instance.LevelConfig.CoinsAmount + " coin";
 
             base.InvokeNameplate(_frase);

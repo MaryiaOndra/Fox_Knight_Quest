@@ -11,9 +11,6 @@ namespace CubePlatformer
     public class LevelGrid : MonoBehaviour
     {
         [SerializeField]
-        Scrollbar scrollbar;
-
-        [SerializeField]
         GameObject levelBtnPrefab;
 
         List<RectTransform> buttons = new List<RectTransform>();
@@ -36,12 +33,6 @@ namespace CubePlatformer
         void OnLevelSelected(int _levelIndex) 
         {
             LevelSelected.Invoke(_levelIndex);
-        }
-
-
-        public void OnScrolled(Vector2 _value) 
-        {
-            Debug.Log("scrollbar.value" + scrollbar.value);
         }
     }
 }

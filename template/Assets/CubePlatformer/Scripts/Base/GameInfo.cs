@@ -74,6 +74,4 @@ namespace CubePlatformer.Base
     {
         public int Scores { get; set; }
     }
-
-
 }

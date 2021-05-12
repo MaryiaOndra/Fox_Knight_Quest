@@ -13,22 +13,43 @@ namespace CubePlatformer
         {
             base.Start();
 
-            SetCurrentScreen<MenuScreen>().Show();
+            SetCurrentScreen<StartupMenuScreen>().Show();
         }
 
         protected override void OnScreenExit(Type _screenType, string _exitCode)
         {
-            if (_screenType == typeof(MenuScreen))
+            if (_screenType == typeof(StartupMenuScreen))
             {
-                if (_exitCode == MenuScreen.Exit_Game)
+                if (_exitCode == StartupMenuScreen.Exit_Game)
+                {
                     SceneManager.LoadScene(ScenesIds.Game);
-                else if (_exitCode == MenuScreen.Exit_Settings)
+                }
+                else if (_exitCode == StartupMenuScreen.Exit_Levels)
+                {
+                    SetCurrentScreen<LevelsScreen>().Show();
+                }             
+                else if (_exitCode == StartupMenuScreen.Exit_Settings)
+                {
                     SetCurrentScreen<SettingsScreen>().Show();
+                }
             }
+           else if (_screenType == typeof(LevelsScreen))
+           {
+                if (_exitCode == LevelsScreen.Exit_Menu)
+                {
+                    ToBackScreen();
+                }
+                else if (_exitCode == LevelsScreen.Exit_Settings) 
+                {
+                    SetCurrentScreen<SettingsScreen>().Show();
+                }                    
+           }
             else if (_screenType == typeof(SettingsScreen)) 
             {
-                if (_exitCode == SettingsScreen.Exit_Back)
+                if (_exitCode == SettingsScreen.Exit_Back) 
+                {
                     ToBackScreen();
+                }
             }
         }
     }

@@ -353,7 +353,7 @@ PrefabInstance:
     - target: {fileID: 8910116084138260360, guid: dca5ca9ae3add2548923efee045f5a75,
         type: 3}
       propertyPath: m_Name
-      value: StartupScreen
+      value: StartupMenuScreen
       objectReference: {fileID: 0}
     - target: {fileID: 8910116084138260360, guid: dca5ca9ae3add2548923efee045f5a75,
         type: 3}
@@ -564,7 +564,7 @@ PrefabInstance:
     - target: {fileID: 8910116084138260360, guid: acbb003cba8fd2248b1d9a33873db2a4,
         type: 3}
       propertyPath: m_Name
-      value: MenuScreen
+      value: LevelsScreen
       objectReference: {fileID: 0}
     - target: {fileID: 8910116084138260360, guid: acbb003cba8fd2248b1d9a33873db2a4,
         type: 3}
