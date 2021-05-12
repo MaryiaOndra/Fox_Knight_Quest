@@ -25,7 +25,7 @@ namespace CubePlatformer
         public void Setup(int _levelIndex, LevelState _levelState)
         {
             levelIndex = _levelIndex;
-            levelText.text = "LEVEL: " + (_levelIndex + 1);
+            levelText.text = (_levelIndex + 1).ToString();
 
             levelBtn.interactable = _levelState == LevelState.Unlocked;
         }

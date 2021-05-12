@@ -17,7 +17,10 @@ namespace CubePlatformer
         Level2,
         Level3,
         Level4,
-        Level5
+        Level5,
+        Level6,
+        Level7,
+        Level8
     }
     public enum PlayerState
     {

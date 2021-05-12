@@ -28,3 +28,12 @@ MonoBehaviour:
   - id: 4
     levelName: Level_05
     coinsAmount: 10
+  - id: 5
+    levelName: Level_06
+    coinsAmount: 12
+  - id: 6
+    levelName: Level_07
+    coinsAmount: 13
+  - id: 7
+    levelName: Level_08
+    coinsAmount: 15

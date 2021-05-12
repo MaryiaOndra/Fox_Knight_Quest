@@ -350,10 +350,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7351620173561903052, guid: dca5ca9ae3add2548923efee045f5a75,
+        type: 3}
+      propertyPath: levelGrid
+      value: 
+      objectReference: {fileID: 2930647078830700817}
     - target: {fileID: 8910116084138260360, guid: dca5ca9ae3add2548923efee045f5a75,
         type: 3}
       propertyPath: m_Name
-      value: StartupMenuScreen
+      value: MenuScreen
       objectReference: {fileID: 0}
     - target: {fileID: 8910116084138260360, guid: dca5ca9ae3add2548923efee045f5a75,
         type: 3}
@@ -591,3 +596,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2930647078830700814}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2930647078830700817 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2918158735193438525, guid: acbb003cba8fd2248b1d9a33873db2a4,
+    type: 3}
+  m_PrefabInstance: {fileID: 2930647078830700814}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a7ba8eb24a7c2045bac8759eb46af26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

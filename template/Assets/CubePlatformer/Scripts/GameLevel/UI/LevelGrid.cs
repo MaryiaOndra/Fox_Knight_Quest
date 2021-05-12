@@ -17,17 +17,19 @@ namespace CubePlatformer
         public Action<int> LevelSelected { get; set; }
 
         public void ShowLevels(List<EachLevelConfigs> _levelConfigs, List<LevelState> _levelsStates) 
-        {            
-            for (int i = 0; i < _levelConfigs.Count; i++)
+        {
+            if (!gameObject.GetComponentInChildren<LevelBtn>()) 
             {
-                var _btnObj = Instantiate(levelBtnPrefab, transform, false);
-                buttons.Add(_btnObj.GetComponent<RectTransform>());               
+                for (int i = 0; i < _levelConfigs.Count; i++)
+                {
+                    var _btnObj = Instantiate(levelBtnPrefab, transform, false);
+                    buttons.Add(_btnObj.GetComponent<RectTransform>());
 
-                var _levelBtn = _btnObj.GetComponent<LevelBtn>();
-                _levelBtn.Setup(i, _levelsStates[i]);
-                _levelBtn.LevelPressed += OnLevelSelected;
-                
-            }
+                    var _levelBtn = _btnObj.GetComponent<LevelBtn>();
+                    _levelBtn.Setup(i, _levelsStates[i]);
+                    _levelBtn.LevelPressed += OnLevelSelected;
+                }
+            }             
         }
 
         void OnLevelSelected(int _levelIndex) 

@@ -356,31 +356,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3248063022999382949, guid: 3922b361c5c3660499ae3fae25e6a7ad,
-        type: 3}
-      propertyPath: btnSoundClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 616cf7f5cffb52e4caa0df9070ee4067, type: 3}
     - target: {fileID: 3248063022999382951, guid: 3922b361c5c3660499ae3fae25e6a7ad,
         type: 3}
       propertyPath: m_Name
       value: SoundMngr
       objectReference: {fileID: 0}
-    - target: {fileID: 3248063023018455011, guid: 3922b361c5c3660499ae3fae25e6a7ad,
-        type: 3}
-      propertyPath: m_Volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3248063023388137923, guid: 3922b361c5c3660499ae3fae25e6a7ad,
-        type: 3}
-      propertyPath: m_Volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3248063023388137923, guid: 3922b361c5c3660499ae3fae25e6a7ad,
-        type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 616cf7f5cffb52e4caa0df9070ee4067, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3922b361c5c3660499ae3fae25e6a7ad, type: 3}
 --- !u!1001 &4047465241653203459

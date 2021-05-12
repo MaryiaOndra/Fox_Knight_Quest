@@ -13,40 +13,44 @@ namespace CubePlatformer
         {
             base.Start();
 
-            SetCurrentScreen<StartupMenuScreen>().Show();
+            SetCurrentScreen<MenuScreen>().Show();
         }
 
         protected override void OnScreenExit(Type _screenType, string _exitCode)
         {
-            if (_screenType == typeof(StartupMenuScreen))
+            if (_screenType == typeof(MenuScreen))
             {
-                if (_exitCode == StartupMenuScreen.Exit_Game)
+                if (_exitCode == MenuScreen.Exit_Game)
                 {
                     SceneManager.LoadScene(ScenesIds.Game);
                 }
-                else if (_exitCode == StartupMenuScreen.Exit_Levels)
+                else if (_exitCode == MenuScreen.Exit_Levels)
                 {
                     SetCurrentScreen<LevelsScreen>().Show();
-                }             
-                else if (_exitCode == StartupMenuScreen.Exit_Settings)
+                }
+                else if (_exitCode == MenuScreen.Exit_Settings)
                 {
                     SetCurrentScreen<SettingsScreen>().Show();
                 }
             }
-           else if (_screenType == typeof(LevelsScreen))
-           {
+            else if (_screenType == typeof(LevelsScreen))
+            {
                 if (_exitCode == LevelsScreen.Exit_Menu)
                 {
                     ToBackScreen();
                 }
-                else if (_exitCode == LevelsScreen.Exit_Settings) 
+                else if (_exitCode == LevelsScreen.Exit_Settings)
                 {
                     SetCurrentScreen<SettingsScreen>().Show();
-                }                    
-           }
-            else if (_screenType == typeof(SettingsScreen)) 
+                }
+                else if (_exitCode == LevelsScreen.Exit_Game)
+                {
+                    SceneManager.LoadScene(ScenesIds.Game);
+                }
+            }
+            else if (_screenType == typeof(SettingsScreen))
             {
-                if (_exitCode == SettingsScreen.Exit_Back) 
+                if (_exitCode == SettingsScreen.Exit_Back)
                 {
                     ToBackScreen();
                 }

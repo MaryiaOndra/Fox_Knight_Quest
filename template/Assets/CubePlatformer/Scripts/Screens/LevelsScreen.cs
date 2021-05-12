@@ -21,7 +21,7 @@ namespace CubePlatformer
         {
             base.Show();
 
-            levelGrid.LevelSelected += OnLevelSelected;
+            levelGrid.LevelSelected = OnLevelSelected;
 
             var _levelsStates = new List<LevelState>();
 

@@ -37,11 +37,13 @@ namespace CubePlatformer
         public void ShowAndStartGame()
         {
             Show();
+
             levelConfigs = GameInfo.Instance.LevelConfig;
             LoadLevel(levelConfigs.LevelName);
 
             //GameInfo.Instance.ResetLevelResult();
             //coinsCount = 0;
+
             statesPanel.ShowScores(coinsCount);
         }
 

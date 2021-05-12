@@ -18,17 +18,17 @@ namespace CubePlatformer
 
         protected override void OnScreenExit(Type _screenType, string _exitCode)
         {
-            if (_screenType == typeof(StartupMenuScreen))
+            if (_screenType == typeof(MenuScreen))
             {
-                if (_exitCode == StartupMenuScreen.Exit_Game)
+                if (_exitCode == MenuScreen.Exit_Game)
                 {
                     SceneManager.LoadScene(ScenesIds.Game);
                 }
-                else if (_exitCode == StartupMenuScreen.Exit_Levels)
+                else if (_exitCode == MenuScreen.Exit_Levels)
                 {
                     SetCurrentScreen<LevelsScreen>().Show();
                 }
-                else if (_exitCode == StartupMenuScreen.Exit_Settings)
+                else if (_exitCode == MenuScreen.Exit_Settings)
                 {
                     SetCurrentScreen<SettingsScreen>().Show();
                 }
