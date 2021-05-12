@@ -37,6 +37,7 @@ namespace CubePlatformer
         public void ShowAndStartGame()
         {
             Show();
+            Time.timeScale = 1;
 
             levelConfigs = GameInfo.Instance.LevelConfig;
             LoadLevel(levelConfigs.LevelName);
@@ -50,6 +51,8 @@ namespace CubePlatformer
         public void RestartGame() 
         {
             Show();
+            Time.timeScale = 1;
+
 
             UnloadLevel(levelConfigs.LevelName);
             LoadLevel(levelConfigs.LevelName);
@@ -103,6 +106,8 @@ namespace CubePlatformer
         public void LoadNextGameLevel()
         {
             Show();
+            Time.timeScale = 1;
+
 
             GameInfo.Instance.ResetLevelResult();
             coinsCount = 0;

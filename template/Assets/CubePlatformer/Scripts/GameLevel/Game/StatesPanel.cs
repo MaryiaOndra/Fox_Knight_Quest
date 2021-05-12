@@ -17,7 +17,7 @@ namespace CubePlatformer
 
         public void ShowScores(int _score) 
         {
-            scoreTxt.text = _score.ToString();
+            scoreTxt.text = "x "+ _score.ToString();
         }
         public void ShowHealth(int _health) 
         {

@@ -62,6 +62,10 @@ namespace CubePlatformer
                 {
                     SceneManager.LoadScene(ScenesIds.Menu);
                 }
+                else if (_exitCode == PauseScreen.Exit_Settings)
+                {
+                    SetCurrentScreen<SettingsScreen>().Show();
+                }
             }
             else if (_screenType == typeof(LooseScreen))
             {
