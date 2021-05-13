@@ -20,7 +20,7 @@ namespace CubePlatformer
             bridgeAnimator.SetInteger(INT_STATE, (int)moveState);
         }
 
-        private void OnTriggerStay(Collider _collision)
+        private void OnTriggerEnter(Collider _collision)
         {
             if (_collision.gameObject.GetComponent<PlayerController>())
             {
@@ -40,7 +40,7 @@ namespace CubePlatformer
     enum MoveStates 
     {
         None = 0,
-        Up = 1,
+        Down = 1,
         Left = 2,
         Right = 3,
         DoubleLeft = 4,

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1454300751793700994}
   - component: {fileID: 3865414322413683322}
   - component: {fileID: 8158051964867198078}
-  - component: {fileID: 9199391299120186698}
   m_Layer: 0
   m_Name: LittleStone 1
   m_TagString: Untagged
@@ -56,6 +55,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -80,16 +80,4 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &9199391299120186698
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5162643447224984242}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.23253071, y: 0.28132507, z: 0.29506093}
-  m_Center: {x: 0.008347809, y: 0.008555888, z: 0.0136276465}
+  m_AdditionalVertexStreams: {fileID: 0}
