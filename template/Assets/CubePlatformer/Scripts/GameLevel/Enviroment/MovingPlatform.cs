@@ -6,7 +6,21 @@ namespace CubePlatformer
 {
     public class MovingPlatform : MonoBehaviour
     {
-        private void OnCollisionEnter(Collision _collision)
+        static readonly int INT_STATE = Animator.StringToHash("MoveState");
+
+        [SerializeField]
+        MoveStates moveState;
+
+        Animator bridgeAnimator;
+
+        private void Awake()
+        {
+            bridgeAnimator = GetComponent<Animator>();
+
+            bridgeAnimator.SetInteger(INT_STATE, (int)moveState);
+        }
+
+        private void OnTriggerStay(Collider _collision)
         {
             if (_collision.gameObject.GetComponent<PlayerController>())
             {
@@ -14,12 +28,22 @@ namespace CubePlatformer
             }
         }
 
-        private void OnCollisionExit(Collision _collision)
+        private void OnTriggerExit(Collider _collision)
         {
             if (_collision.gameObject.GetComponent<PlayerController>())
             {
                 _collision.gameObject.transform.SetParent(null);
             }
         }
+    }
+
+    enum MoveStates 
+    {
+        None = 0,
+        Up = 1,
+        Left = 2,
+        Right = 3,
+        DoubleLeft = 4,
+        DoubleRight = 5   
     }
 }

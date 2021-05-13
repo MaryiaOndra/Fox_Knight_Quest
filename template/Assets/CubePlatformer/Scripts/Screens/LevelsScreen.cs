@@ -17,10 +17,8 @@ namespace CubePlatformer
         public const string Exit_Game = "Exit_Game";
         public const string Exit_Menu = "Exit_Menu";
 
-        public override void Show()
+        private void Awake()
         {
-            base.Show();
-
             levelGrid.LevelSelected = OnLevelSelected;
 
             var _levelsStates = new List<LevelState>();
@@ -41,6 +39,11 @@ namespace CubePlatformer
             }
 
             levelGrid.ShowLevels(GameInfo.Instance.EachLevelConfigs, _levelsStates);
+        }
+
+        public override void Show()
+        {
+            base.Show();
 
             SoundMgr.Instance.PlayMusic();
         }
