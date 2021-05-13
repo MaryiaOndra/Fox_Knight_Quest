@@ -23,6 +23,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/CubePlatformer/Scenes/GameLevels/Level_03.unity
     guid: 8c848aed1c42d1547b256af75ece702b
+  - enabled: 1
+    path: Assets/CubePlatformer/Scenes/GameLevels/Level_04.unity
+    guid: 8254aa2a220b17149be47cf8b192593d
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000

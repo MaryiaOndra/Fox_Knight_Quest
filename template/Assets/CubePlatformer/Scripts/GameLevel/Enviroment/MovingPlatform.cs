@@ -44,6 +44,8 @@ namespace CubePlatformer
         Left = 2,
         Right = 3,
         DoubleLeft = 4,
-        DoubleRight = 5   
+        DoubleRight = 5,
+        DoubleForward = 6,
+        DoubleBack = 7
     }
 }

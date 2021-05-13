@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2680988854872784752}
   - component: {fileID: 8621748952130875136}
   m_Layer: 0
-  m_Name: Coin (1)
+  m_Name: Coin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,7 +98,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: f787771956b7e1a448611c5121174477, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
