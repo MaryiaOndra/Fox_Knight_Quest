@@ -7,10 +7,16 @@ namespace CubePlatformer
 {
     public class PortalNameplate : Nameplate
     {
-        protected override void InvokeNameplate(string _frase)
+        const string UNIT_COIN = " coins";
+
+        int CoinsAmount 
         {
-            Debug.Log(GameInfo.Instance.LevelConfig.LevelName +   "GameInfo.Instance.LevelConfig.CoinsAmount " + GameInfo.Instance.LevelConfig.CoinsAmount);
-            _frase += GameInfo.Instance.LevelConfig.CoinsAmount + " coin";
+            get => GameInfo.Instance.LevelConfig.CoinsAmount;
+        }
+
+        protected override void InvokeNameplate(string _frase)
+        {          
+            _frase += CoinsAmount + UNIT_COIN;
 
             base.InvokeNameplate(_frase);
         }

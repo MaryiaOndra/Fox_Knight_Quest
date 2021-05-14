@@ -25,8 +25,9 @@ namespace CubePlatformer
             nameplates.ForEach(_nameplate => _nameplate.ActivateNameplate = ShowPanelOnGameScreen);
 
             gameScreen = FindObjectOfType<GameScreen>();
-            gameScreen.AddLevelData(this);            
+            gameScreen.AddLevelData(this);
         }
+
 
         void ShowPanelOnGameScreen(string _nameplateFrase) 
         {
