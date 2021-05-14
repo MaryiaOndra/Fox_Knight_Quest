@@ -9,14 +9,10 @@ namespace CubePlatformer
     {
         const string UNIT_COIN = " coins";
 
-        int CoinsAmount 
-        {
-            get => GameInfo.Instance.LevelConfig.CoinsAmount;
-        }
-
         protected override void InvokeNameplate(string _frase)
-        {          
-            _frase += CoinsAmount + UNIT_COIN;
+        {    
+            int _coinsAmount = GameInfo.Instance.LevelConfig.CoinsAmount;
+            _frase += _coinsAmount + UNIT_COIN;
 
             base.InvokeNameplate(_frase);
         }

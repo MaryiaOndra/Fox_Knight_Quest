@@ -38,7 +38,7 @@ namespace CubePlatformer
         {
             Show();
             Time.timeScale = 1;
-
+            
             levelConfigs = GameInfo.Instance.LevelConfig;
             LoadLevel(levelConfigs.LevelName);
 

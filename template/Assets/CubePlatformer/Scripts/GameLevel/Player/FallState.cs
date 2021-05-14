@@ -16,7 +16,6 @@ namespace CubePlatformer
             }
             else
             {
-
             }
         }
     }

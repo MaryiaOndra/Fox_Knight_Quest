@@ -19,9 +19,9 @@ namespace CubePlatformer.Base
 
         public void Setup() 
         {
+            AppPrefs.DeleteAll();
             if (GetLevelState(0) == LevelState.Locked)
             {
-                AppPrefs.DeleteAll();
                 SetLevelState(0, LevelState.Unlocked);                            
 ;           }
         }

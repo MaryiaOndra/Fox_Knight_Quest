@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0.6132076, g: 0.6132076, b: 0.6132076, a: 1}
   m_FogMode: 2
   m_FogDensity: 0
@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 0}
+  m_Sun: {fileID: 399117612}
   m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
@@ -97,9 +97,9 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 9c0d0560fa3f4d94db9c108f0adb2cf8,
+  m_LightingDataAsset: {fileID: 112000000, guid: 2ca5473d284e9db459bf6fb63560978d,
     type: 2}
-  m_LightingSettings: {fileID: 4890085278179872738, guid: fa49ffe030770f843ac00ef197505ee3,
+  m_LightingSettings: {fileID: 4890085278179872738, guid: cef70fb5af38b7b489425f6af86e934c,
     type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -136,6 +136,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LittleStone 2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3243639268205712116, guid: 947f5531ee1fa7344947a3a6ef091db5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6148581375343352464, guid: 947f5531ee1fa7344947a3a6ef091db5,
         type: 3}
@@ -632,6 +637,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 284290291270002030, guid: e77e44f6234bf34469e022632c99062f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4363384306529681093, guid: e77e44f6234bf34469e022632c99062f,
         type: 3}
       propertyPath: m_RootOrder
@@ -881,6 +891,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fence (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 284290291270002030, guid: e77e44f6234bf34469e022632c99062f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4363384306529681093, guid: e77e44f6234bf34469e022632c99062f,
         type: 3}
@@ -1277,6 +1292,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LittleStone 1 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5162643447224984242, guid: 1d1bf56b45e7c364494b81fb3f55c57c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d1bf56b45e7c364494b81fb3f55c57c, type: 3}
@@ -2258,6 +2278,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8832597558497538277, guid: 8e7851253433b764ab1c98fab53b7ede,
         type: 3}
+      propertyPath: m_Color.b
+      value: 0.50614095
+      objectReference: {fileID: 0}
+    - target: {fileID: 8832597558497538277, guid: 8e7851253433b764ab1c98fab53b7ede,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.78549004
+      objectReference: {fileID: 0}
+    - target: {fileID: 8832597558497538277, guid: 8e7851253433b764ab1c98fab53b7ede,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.8867924
+      objectReference: {fileID: 0}
+    - target: {fileID: 8832597558497538277, guid: 8e7851253433b764ab1c98fab53b7ede,
+        type: 3}
       propertyPath: m_Intensity
       value: 1
       objectReference: {fileID: 0}
@@ -2318,6 +2353,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e7851253433b764ab1c98fab53b7ede, type: 3}
+--- !u!108 &399117612 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 8832597558497538277, guid: 8e7851253433b764ab1c98fab53b7ede,
+    type: 3}
+  m_PrefabInstance: {fileID: 399117611}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &409321284
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3628,6 +3669,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DoublePlatform (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3160155954391856261, guid: be03f0584ec801a46914190c2b1143c3,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be03f0584ec801a46914190c2b1143c3, type: 3}
@@ -6474,6 +6520,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 284290291270002030, guid: e77e44f6234bf34469e022632c99062f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4363384306529681093, guid: e77e44f6234bf34469e022632c99062f,
         type: 3}
       propertyPath: m_RootOrder
@@ -6928,6 +6979,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fence (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 284290291270002030, guid: e77e44f6234bf34469e022632c99062f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4363384306529681093, guid: e77e44f6234bf34469e022632c99062f,
         type: 3}
@@ -7770,6 +7826,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LittleStone 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3243639268205712116, guid: 947f5531ee1fa7344947a3a6ef091db5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6148581375343352464, guid: 947f5531ee1fa7344947a3a6ef091db5,
         type: 3}
@@ -10046,6 +10107,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BigStone 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8540302878977628445, guid: 732d7ec0007cad446bea6c7d9ec74ffd,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 8680660289773115111, guid: 732d7ec0007cad446bea6c7d9ec74ffd,
         type: 3}
       propertyPath: m_RootOrder
@@ -10120,6 +10186,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fence (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 284290291270002030, guid: e77e44f6234bf34469e022632c99062f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4363384306529681093, guid: e77e44f6234bf34469e022632c99062f,
         type: 3}
@@ -10923,7 +10994,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1761476026
 Transform:
@@ -11502,6 +11573,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fence (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 284290291270002030, guid: e77e44f6234bf34469e022632c99062f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4363384306529681093, guid: e77e44f6234bf34469e022632c99062f,
         type: 3}
@@ -13023,6 +13099,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LittleStone 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5162643447224984242, guid: 1d1bf56b45e7c364494b81fb3f55c57c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d1bf56b45e7c364494b81fb3f55c57c, type: 3}
 --- !u!4 &2135674191 stripped
@@ -13144,6 +13225,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DoublePlatform
+      objectReference: {fileID: 0}
+    - target: {fileID: 3160155954391856261, guid: be03f0584ec801a46914190c2b1143c3,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be03f0584ec801a46914190c2b1143c3, type: 3}

@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 0}
+  m_Sun: {fileID: 1732727318}
   m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
@@ -97,9 +97,9 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 9c0d0560fa3f4d94db9c108f0adb2cf8,
+  m_LightingDataAsset: {fileID: 112000000, guid: acc278759ad90a74b973c36456c5c29d,
     type: 2}
-  m_LightingSettings: {fileID: 4890085278179872738, guid: fa49ffe030770f843ac00ef197505ee3,
+  m_LightingSettings: {fileID: 4890085278179872738, guid: cef70fb5af38b7b489425f6af86e934c,
     type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -10805,6 +10805,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Directional Light
       objectReference: {fileID: 0}
+    - target: {fileID: 8832597558497538277, guid: 8e7851253433b764ab1c98fab53b7ede,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.3499911
+      objectReference: {fileID: 0}
+    - target: {fileID: 8832597558497538277, guid: 8e7851253433b764ab1c98fab53b7ede,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.54315805
+      objectReference: {fileID: 0}
+    - target: {fileID: 8832597558497538277, guid: 8e7851253433b764ab1c98fab53b7ede,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.6132076
+      objectReference: {fileID: 0}
+    - target: {fileID: 8832597558497538277, guid: 8e7851253433b764ab1c98fab53b7ede,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8832597558497538277, guid: 8e7851253433b764ab1c98fab53b7ede,
+        type: 3}
+      propertyPath: m_ShadowAngle
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8832597558497538277, guid: 8e7851253433b764ab1c98fab53b7ede,
+        type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8832597558497538278, guid: 8e7851253433b764ab1c98fab53b7ede,
         type: 3}
       propertyPath: m_RootOrder
@@ -10862,6 +10892,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e7851253433b764ab1c98fab53b7ede, type: 3}
+--- !u!108 &1732727318 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 8832597558497538277, guid: 8e7851253433b764ab1c98fab53b7ede,
+    type: 3}
+  m_PrefabInstance: {fileID: 1732727317}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1733613437
 PrefabInstance:
   m_ObjectHideFlags: 0
