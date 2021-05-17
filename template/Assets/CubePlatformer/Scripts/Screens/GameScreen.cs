@@ -20,6 +20,8 @@ namespace CubePlatformer
         PlayerController playerContr;
         Portal portal;
 
+        Level _level;
+
         int coinsCount = 0;
 
         public Action<Coin> CoinsAction;
@@ -32,6 +34,8 @@ namespace CubePlatformer
 
             CoinsAction = CheckCoinsAmount;
             NotesAction = notesPanel.ShowPanel;
+
+
         }
 
         public void ShowAndStartGame()
@@ -60,18 +64,6 @@ namespace CubePlatformer
             GameInfo.Instance.ResetLevelResult();
             coinsCount = 0;
             statesPanel.ShowScores(coinsCount);
-        }
-
-        public void AddLevelData(Level _level) 
-        {
-            playerContr = _level.PlayerCtrl;
-
-            portal = _level.Portal;
-            portal.IsPortalAction = PortalPassing;
-            playerContr.PlayerDeathAction = OnLoose;
-
-            _level.Coins.ForEach(_coin => _coin.OnCoinColected = CheckCoinsAmount);
-            _level.Enemies.ForEach(_enemy => _enemy.AttackAction = playerContr.Attacked);
         }
 
         void OnPause()
@@ -121,20 +113,37 @@ namespace CubePlatformer
             levelConfigs = _nextLevelConfigs;
         }
 
-        public void LoadNextLevel(EachLevelConfigs _prevLevelConfigs, EachLevelConfigs _nextLevelConfigs)
-        {
-            UnloadLevel(_prevLevelConfigs.LevelName);
-            LoadLevel(_nextLevelConfigs.LevelName);
-        }
+        //public void LoadNextLevel(EachLevelConfigs _prevLevelConfigs, EachLevelConfigs _nextLevelConfigs)
+        //{
+        //    UnloadLevel(_prevLevelConfigs.LevelName);
+        //    LoadLevel(_nextLevelConfigs.LevelName);
+        //}
 
         void LoadLevel(string _levelName)
         {
             SceneManager.LoadScene(_levelName, LoadSceneMode.Additive);
+            SceneManager.sceneLoaded += AfterSceneLoaded;
         }
 
         public void UnloadLevel(string _levelName)
         {
-            SceneManager.UnloadSceneAsync(_levelName);
+            SceneManager.UnloadSceneAsync(levelConfigs.LevelName);
+            SceneManager.sceneLoaded -= AfterSceneLoaded;
+        }
+
+        void AfterSceneLoaded(Scene _scene, LoadSceneMode _loadSceneMode)
+        {
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName(_scene.name));
+
+            _level = FindObjectOfType<Level>();                 
+            playerContr = _level.PlayerCtrl;
+            portal = _level.Portal;
+
+            portal.IsPortalAction = PortalPassing;
+            playerContr.PlayerDeathAction = OnLoose;
+
+            _level.Coins.ForEach(_coin => _coin.OnCoinColected = CheckCoinsAmount);
+            _level.Enemies.ForEach(_enemy => _enemy.AttackAction = playerContr.Attacked);
         }
     }
 }

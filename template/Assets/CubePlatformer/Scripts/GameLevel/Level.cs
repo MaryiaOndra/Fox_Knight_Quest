@@ -20,12 +20,10 @@ namespace CubePlatformer
             PlayerCtrl = FindObjectOfType<PlayerController>(true);
             Coins = new List<Coin>(FindObjectsOfType<Coin>(true));
             Enemies = new List<Enemy>(FindObjectsOfType<Enemy>(true));
-
             nameplates = new List<Nameplate>(FindObjectsOfType<Nameplate>(true));
-            nameplates.ForEach(_nameplate => _nameplate.ActivateNameplate = ShowPanelOnGameScreen);
 
+            nameplates.ForEach(_nameplate => _nameplate.ActivateNameplate = ShowPanelOnGameScreen);
             gameScreen = FindObjectOfType<GameScreen>();
-            gameScreen.AddLevelData(this);
         }
 
 

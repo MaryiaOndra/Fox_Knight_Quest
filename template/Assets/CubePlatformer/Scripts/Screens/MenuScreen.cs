@@ -9,10 +9,6 @@ namespace CubePlatformer
 {
     public class MenuScreen : BaseScreen
     {
-        [SerializeField]
-        LevelGrid levelGrid;
-        [SerializeField]
-        Button startButton;
 
         public const string Exit_Game = "Exit_Game";
         public const string Exit_Levels = "Exit_Levels";

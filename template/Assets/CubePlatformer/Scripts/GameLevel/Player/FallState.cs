@@ -10,13 +10,13 @@ namespace CubePlatformer
 
         void Update()
         {
+            rigidbody.velocity += Physics.gravity * Time.deltaTime;
+
             if (OnGrounded)
             {
                 NextStateAction.Invoke(PlayerState.Idle);
             }
-            else
-            {
-            }
+
         }
     }
 }

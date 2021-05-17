@@ -7,9 +7,6 @@ namespace CubePlatformer
     [CreateAssetMenu(fileName = "My Nameplate Configs", menuName = "CubePlatformer/Cteate Nameplate Config")]
     public class NameplatesConfigs : ScriptableObject
     {
-        [SerializeField]
-        LevelContentId levelID;
-
         [TextArea(minLines: 2, maxLines: 5)]
         [SerializeField]
         string frase;
