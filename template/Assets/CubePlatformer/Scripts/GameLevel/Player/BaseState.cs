@@ -13,7 +13,7 @@ namespace CubePlatformer
 
         protected Animator playerAnimator;
         protected Collider playerCollider;
-        protected Collider collider;
+        //protected Collider collider;
         protected Rigidbody rigidbody;
         //PlayerListener[] playerListeners;
 
@@ -57,7 +57,6 @@ namespace CubePlatformer
         public virtual void Activate()
         {
             gameObject.SetActive(true);
-            Debug.Log(gameObject.name);
             playerAnimator.SetInteger(INT_STATE, (int)PlayerState);
         }
 

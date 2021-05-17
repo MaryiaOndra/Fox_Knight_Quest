@@ -3253,6 +3253,11 @@ PrefabInstance:
       propertyPath: rotationSpeed
       value: 700
       objectReference: {fileID: 0}
+    - target: {fileID: 4022869924540001336, guid: 5478c7759c8e77d43a515831524eefae,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6613996809399452504, guid: 5478c7759c8e77d43a515831524eefae,
         type: 3}
       propertyPath: m_Name
@@ -4206,7 +4211,7 @@ PrefabInstance:
     - target: {fileID: 6613996809399689016, guid: 5478c7759c8e77d43a515831524eefae,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 5.25
       objectReference: {fileID: 0}
     - target: {fileID: 6613996809399689016, guid: 5478c7759c8e77d43a515831524eefae,
         type: 3}

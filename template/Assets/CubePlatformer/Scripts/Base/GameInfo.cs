@@ -36,7 +36,6 @@ namespace CubePlatformer.Base
             AppPrefs.SetInt(PrefsKeys.Level_ + _levelIndex, (int)_levelState);
         }
 
-       // public int Scores { get;set; }
         public int Scores
         {
             get => PlayerPrefs.GetInt(PrefsKeys.Scores);

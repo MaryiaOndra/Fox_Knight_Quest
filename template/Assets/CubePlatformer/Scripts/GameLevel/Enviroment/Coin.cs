@@ -9,8 +9,6 @@ namespace CubePlatformer
     {
         public Action<Coin> OnCoinColected;
 
-        AudioSource audioSource;
-
         public AudioClip CoinClip { get; private set; }
 
         private void Awake()
@@ -20,8 +18,13 @@ namespace CubePlatformer
 
         private void OnTriggerEnter(Collider other)
         {
-            gameObject.SetActive(false);
+           // gameObject.SetActive(false);
             OnCoinColected.Invoke(this);
+        }
+
+        public void Deactivate() 
+        {
+            gameObject.SetActive(false);
         }
     }
 }

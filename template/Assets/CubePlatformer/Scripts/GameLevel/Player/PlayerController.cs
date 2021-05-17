@@ -42,7 +42,7 @@ namespace CubePlatformer
                     _state.NextStateAction = OnNextStateRequest;
                 });
 
-            currentState = states.Find(_state => _state.PlayerState == PlayerState.Idle);
+            currentState = states.Find(_state => _state.PlayerState == PlayerState.Fall);
             currentState.Activate();
         }
           
