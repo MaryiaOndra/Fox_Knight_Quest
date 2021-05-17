@@ -39,7 +39,6 @@ namespace CubePlatformer
             }
 
             audioSource.PlayOneShot(audioSource.clip);
-
             InvokeNameplate(nameplateConfigs.Frase);
         }
 
@@ -53,8 +52,6 @@ namespace CubePlatformer
         //        firstTime = false;
         //    }
         //}
-
-
 
     }
 }

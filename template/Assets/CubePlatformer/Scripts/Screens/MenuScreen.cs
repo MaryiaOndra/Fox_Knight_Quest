@@ -14,17 +14,10 @@ namespace CubePlatformer
         public const string Exit_Levels = "Exit_Levels";
         public const string Exit_Settings = "Exit_Settings";
 
-
-        public override void Show()
-        {
-            base.Show();
-
-            SoundMgr.Instance.PlayMusic();
-        }
-
         public void OnGamePressed()
         {
             SoundMgr.Instance.PlayBtnSound();
+
             Exit(Exit_Game);
         }
 
