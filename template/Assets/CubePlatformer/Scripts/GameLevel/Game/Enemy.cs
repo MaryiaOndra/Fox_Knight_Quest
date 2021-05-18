@@ -14,24 +14,31 @@ namespace CubePlatformer
         [SerializeField]
         EnemyConfig slimeConfig;
 
-        int enemyHealth;
+        [SerializeField]
+        AudioClip attack;
+
+        AudioSource audioSource;
         Animator enemyAnimator;
-        float timePassed = 0;
+        float timePassed;
+        int enemyHealth;
         bool IsDead = false;
 
         public Action<int> AttackAction;
 
+
         void Awake()
         {
             enemyAnimator = GetComponent<Animator>();
+            audioSource = GetComponent<AudioSource>();
             enemyHealth = slimeConfig.MaxHealth;
             enemyAnimator.SetInteger(INT_STATE, (int)EnemyState.Idle);
         }
 
         void Attack(int _attackPower) 
         {
-            enemyAnimator.SetTrigger(ATTACK);
             AttackAction.Invoke(_attackPower);
+            enemyAnimator.SetTrigger(ATTACK);
+            audioSource.PlayOneShot(attack);
         }
 
         public void TakeDamage(int _damage) 

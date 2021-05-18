@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace CubePlatformer
 {
-    public class GetHit : BaseState
+    public class PlayerSounds : MonoBehaviour
     {
-        public override PlayerState PlayerState => PlayerState.Attacked;
+
     }
 }

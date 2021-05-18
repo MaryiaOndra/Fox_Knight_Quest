@@ -11,7 +11,9 @@ namespace CubePlatformer
         const int DAMAGE = 1;
 
         [SerializeField]
-        AudioClip attackClip;
+        AudioClip emptyAttack;     
+        [SerializeField]
+        AudioClip monsterAttack;
 
         AttackTrigger sword;
         Collider swordCollider;
@@ -24,6 +26,7 @@ namespace CubePlatformer
 
         void Attack(int _damage) 
         {
+            playerAudioSource.PlayOneShot(monsterAttack);
             GetComponentInParent<PlayerController>().PlayerAttack.Invoke(_damage);
         }
 
@@ -31,7 +34,7 @@ namespace CubePlatformer
         {
             base.Activate();
 
-            playerAudioSource.PlayOneShot(attackClip);
+            //playerAudioSource.PlayOneShot(emptyAttack);
         }
 
         private void Update()

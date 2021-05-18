@@ -8,14 +8,11 @@ namespace CubePlatformer
     public abstract class BaseState : MonoBehaviour
     {
         protected static readonly int INT_STATE = Animator.StringToHash("State");
-        protected static readonly int ATTACK02 = Animator.StringToHash("Attack02");
-
+        protected static readonly int GET_HIT = Animator.StringToHash("GetHit");
 
         protected Animator playerAnimator;
         protected Collider playerCollider;
-        //protected Collider collider;
         protected Rigidbody playerRB;
-        //PlayerListener[] playerListeners;
         protected AudioSource playerAudioSource;
         AttackListener attackListener;
 
@@ -24,6 +21,11 @@ namespace CubePlatformer
         public Action DeathStateAction;
         public Action<int> AttackStateAction;
 
+
+        public void GetHit() 
+        {
+            playerAnimator.SetTrigger(GET_HIT);
+        }
 
         protected Vector3 Direction
         {
@@ -73,6 +75,7 @@ namespace CubePlatformer
 
         public virtual void Activate()
         {
+            Debug.Log(PlayerState);
             gameObject.SetActive(true);
             playerAnimator.SetInteger(INT_STATE, (int)PlayerState);
         }
@@ -81,23 +84,5 @@ namespace CubePlatformer
         {
             gameObject.SetActive(false);
         }
-
-        //private void OnEnable()
-        //{
-        //    playerListeners = playerAnimator.GetBehaviours<PlayerListener>();
-        //    foreach (var _listener in playerListeners)
-        //    {
-        //        _listener.stateExitAction = OnAnimExit;
-        //        //_listener.stateEnterAction = OnAnimEnter;
-        //    }
-        //}
-
-        //private void OnAnimExit(AnimatorStateInfo _info)
-        //{
-        //    if (_info.shortNameHash == STATE_DIE)
-        //    {
-        //        FindObjectOfType<PlayerController>().PlayerDeathAction.Invoke();
-        //    }
-        //}
     }
 }

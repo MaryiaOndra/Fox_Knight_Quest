@@ -6,13 +6,17 @@ namespace CubePlatformer
 {
     public class PlayerController : MonoBehaviour
     {
-        public const int MAX_HEALTH = 3;
+        [SerializeField]
+        AudioClip getHit;
+
+        public const int MAX_HEALTH = 5;
         int actualHealth;
 
         List<BaseState> states;
         BaseState currentState;
         StatesPanel statesPanel;
         Collider swordCollider;
+        AudioSource audioSource;
 
         public float PlatformAngle{get;set;}
         public Action PlayerDeathAction;
@@ -30,7 +34,7 @@ namespace CubePlatformer
 
             Animator _playerAnimator = GetComponent<Animator>();
             Rigidbody _rigidbody = GetComponent<Rigidbody>();
-            AudioSource _audioSource = GetComponent<AudioSource>();
+            audioSource = GetComponent<AudioSource>();
 
             statesPanel = FindObjectOfType<StatesPanel>();
             statesPanel.ShowHealth(actualHealth);
@@ -39,7 +43,7 @@ namespace CubePlatformer
 
                 states.ForEach(_state =>
                 {
-                    _state.Setup( _playerAnimator, _rigidbody, _audioSource);
+                    _state.Setup( _playerAnimator, _rigidbody, audioSource);
                     _state.NextStateAction = OnNextStateRequest;
                 });
 
@@ -56,9 +60,10 @@ namespace CubePlatformer
 
         public void GetHit(int _damage) 
         {
-            if (currentState.PlayerState != PlayerState.Defend)
+            if (currentState.PlayerState == PlayerState.Idle)
             {
-                currentState.NextStateAction.Invoke(PlayerState.Attacked);
+                audioSource.PlayOneShot(getHit);
+                currentState.GetHit();
                 actualHealth -= _damage;
                 statesPanel.ShowHealth(actualHealth);
             }
@@ -78,7 +83,7 @@ namespace CubePlatformer
         {
             if (_trigger.GetComponent<DeathLine>())
             {
-                PlayerDeathAction.Invoke();
+               PlayerDeathAction.Invoke();
             }
         }
     }

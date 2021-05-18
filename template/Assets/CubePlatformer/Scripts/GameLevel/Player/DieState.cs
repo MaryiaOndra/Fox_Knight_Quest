@@ -11,15 +11,12 @@ namespace CubePlatformer
         public override void Activate()
         {
             base.Activate();
-
-            playerAnimator.GetBehaviour<PlayerListener>().DieAction = PlayerDeath;
+            playerAnimator.GetBehaviour<DeadListener>().DieAction = PlayerDeath;
         }
 
         void PlayerDeath() 
         {
             GetComponentInParent<PlayerController>().PlayerDeathAction.Invoke();
-
-            //DeathStateAction.Invoke();
         }
     }
 }

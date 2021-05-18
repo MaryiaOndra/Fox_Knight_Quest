@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace CubePlatformer
 {
-    public class PlayerListener : StateMachineBehaviour
+    public class DeadListener : StateMachineBehaviour
     {
         public Action DieAction;
 

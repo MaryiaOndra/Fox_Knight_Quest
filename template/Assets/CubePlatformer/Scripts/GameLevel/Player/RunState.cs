@@ -7,6 +7,9 @@ namespace CubePlatformer
     public class RunState : BaseState
     {
         [SerializeField]
+        AudioClip steps;
+
+        [SerializeField]
         Transform cameraTr;
         [SerializeField]
         float playerSpeed = 2.0f;
@@ -14,6 +17,13 @@ namespace CubePlatformer
         float rotationSpeed = 500f;
 
         public override PlayerState PlayerState => PlayerState.Run;
+
+        public override void Activate()
+        {
+            base.Activate();
+
+            playerAudioSource.PlayOneShot(steps);
+        }
 
         private void FixedUpdate()
         {
@@ -36,14 +46,15 @@ namespace CubePlatformer
             {
                 if (Direction.x == 0 && Direction.z == 0)
                 {
+                    playerAudioSource.Stop();
                     NextStateAction.Invoke(PlayerState.Idle);
                 }
             }
-            else if (playerRB.velocity.y < -3f)
+            else if (playerRB.velocity.y < -4f)
             {
-
+                playerAudioSource.Stop();
                 NextStateAction.Invoke(PlayerState.Fall);
-            }            
+            }
         }
     }
 }
