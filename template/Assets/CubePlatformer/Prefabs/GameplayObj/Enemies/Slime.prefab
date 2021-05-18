@@ -414,9 +414,9 @@ GameObject:
   - component: {fileID: 5356644758250954153}
   - component: {fileID: 6504108401534945338}
   - component: {fileID: 5657926764256729032}
-  - component: {fileID: 8012049181694749406}
+  - component: {fileID: 209936334}
   m_Layer: 0
-  m_Name: Slime 1
+  m_Name: Slime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -429,7 +429,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5406097945606016583}
-  m_LocalRotation: {x: -0, y: -0.7051371, z: -0, w: 0.70907104}
+  m_LocalRotation: {x: 0, y: -0.7051356, z: 0, w: 0.7090726}
   m_LocalPosition: {x: 4.9272265, y: 0.42423058, z: 11.830786}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -481,9 +481,9 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.5408633
   m_Center: {x: 0, y: 0.5, z: 0}
---- !u!135 &8012049181694749406
+--- !u!135 &209936334
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -494,5 +494,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Radius: 1.47
+  m_Center: {x: 0, y: 0.32, z: 0}

@@ -10,6 +10,6 @@ namespace CubePlatformer
         public float MoveVertical { get;  set; }
         public float MoveHorizontal { get;  set; }
         public bool Attack { get;  set; }
-        public bool Defend { get;  set; }
+        public bool Defend { get;  set; }       
     }
 }

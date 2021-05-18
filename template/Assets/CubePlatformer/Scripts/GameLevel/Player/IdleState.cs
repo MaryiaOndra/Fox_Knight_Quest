@@ -14,7 +14,7 @@ namespace CubePlatformer
             {
                 NextStateAction.Invoke(PlayerState.Run);
             }
-            else if (VirtualInputManager.Instance.Attack)
+            else if (IsAttackFinished && VirtualInputManager.Instance.Attack)
             {
                 NextStateAction.Invoke(PlayerState.Attack);
             }
@@ -24,7 +24,7 @@ namespace CubePlatformer
             }
             else
             {
-                rigidbody.velocity = Vector3.zero;
+                playerRB.velocity = Vector3.zero;
             }
         }
     }

@@ -17,8 +17,9 @@ namespace CubePlatformer
 
         void PlayerDeath() 
         {
-            DeathStateAction.Invoke();
-            //gameObject.GetComponentInParent<PlayerController>().PlayerDeathAction.Invoke();
+            GetComponentInParent<PlayerController>().PlayerDeathAction.Invoke();
+
+            //DeathStateAction.Invoke();
         }
     }
 }

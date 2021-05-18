@@ -10,7 +10,7 @@ namespace CubePlatformer
 
         void Update()
         {
-            rigidbody.velocity += Physics.gravity * Time.deltaTime;
+            playerRB.velocity += Physics.gravity * Time.deltaTime;
 
             if (OnGrounded)
             {

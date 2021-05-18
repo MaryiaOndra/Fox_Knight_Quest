@@ -25,9 +25,9 @@ namespace CubePlatformer
             _camR = _camR.normalized;
 
             Vector3 _direction = (_camF * Direction.z + _camR * Direction.x).normalized;
-            rigidbody.MovePosition(rigidbody.position + Time.deltaTime * playerSpeed * _direction);
+            playerRB.MovePosition(playerRB.position + Time.deltaTime * playerSpeed * _direction);
             Quaternion _toRotation = Quaternion.LookRotation(_direction);
-            rigidbody.rotation = Quaternion.RotateTowards(rigidbody.rotation, _toRotation, Time.fixedDeltaTime * rotationSpeed);
+            playerRB.rotation = Quaternion.RotateTowards(playerRB.rotation, _toRotation, Time.fixedDeltaTime * rotationSpeed);
         }
 
         private void Update()
@@ -39,7 +39,7 @@ namespace CubePlatformer
                     NextStateAction.Invoke(PlayerState.Idle);
                 }
             }
-            else if (rigidbody.velocity.y < -3f)
+            else if (playerRB.velocity.y < -3f)
             {
 
                 NextStateAction.Invoke(PlayerState.Fall);
