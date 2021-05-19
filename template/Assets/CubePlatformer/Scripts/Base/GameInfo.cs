@@ -58,7 +58,7 @@ namespace CubePlatformer.Base
                 }
             }
 
-            PlayerPrefs.Save();
+            AppPrefs.Save();
         }
 
         public void ResetLevelResult() 

@@ -14,7 +14,8 @@ namespace CubePlatformer
         protected Collider playerCollider;
         protected Rigidbody playerRB;
         protected AudioSource playerAudioSource;
-        AttackListener attackListener;
+        protected AttackListener attackListener;
+        protected GetHitListener getHitListener;
 
         public abstract PlayerState PlayerState { get; }
         public Action<PlayerState> NextStateAction { get; set; }
@@ -37,7 +38,7 @@ namespace CubePlatformer
                 var _dir = new Vector3(_horAxes, 0f, _vertAxes);
                 return _dir;
             }
-        }
+        }             
 
         protected bool OnGrounded
         {
@@ -71,11 +72,11 @@ namespace CubePlatformer
             playerAudioSource = _audioSource;
 
             attackListener = playerAnimator.GetBehaviour<AttackListener>();
+            getHitListener = playerAnimator.GetBehaviour<GetHitListener>();
         }
 
         public virtual void Activate()
         {
-            Debug.Log(PlayerState);
             gameObject.SetActive(true);
             playerAnimator.SetInteger(INT_STATE, (int)PlayerState);
         }

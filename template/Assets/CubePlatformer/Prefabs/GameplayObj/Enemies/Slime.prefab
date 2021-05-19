@@ -471,9 +471,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slimeConfig: {fileID: 11400000, guid: 94f0faa984ae82a4fb79bd7e26733f98, type: 2}
-  getHit: {fileID: 8300000, guid: c2f7ceec0c6b0b246be25396c2e1ceef, type: 3}
   attack: {fileID: 8300000, guid: f2e797519623b37429c77b6e1ed847ff, type: 3}
-  death: {fileID: 8300000, guid: 8108b6279ca4c5e48ac4cfd5caf0bdfe, type: 3}
 --- !u!135 &5657926764256729032
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -498,8 +496,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.6328158
-  m_Center: {x: -0.16281582, y: 0.32000005, z: 2.6745738e-11}
+  m_Radius: 1.8177772
+  m_Center: {x: -0.16281581, y: 0.32000017, z: 0.18496132}
 --- !u!82 &6889086384377622443
 AudioSource:
   m_ObjectHideFlags: 0

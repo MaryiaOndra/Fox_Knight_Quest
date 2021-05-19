@@ -34,7 +34,10 @@ namespace CubePlatformer
         {
             base.Activate();
 
-            //playerAudioSource.PlayOneShot(emptyAttack);
+            if (!getHitListener.IsHitted)
+            {
+                playerAudioSource.PlayOneShot(emptyAttack);
+            }            
         }
 
         private void Update()

@@ -19,6 +19,7 @@ namespace CubePlatformer
 
         public Action<string> ActivateNameplate;
 
+        protected NameplatesConfigs Configs => nameplateConfigs; 
 
         protected virtual void InvokeNameplate(string _frase) 
         {

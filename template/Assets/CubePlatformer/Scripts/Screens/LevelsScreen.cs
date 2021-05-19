@@ -12,6 +12,8 @@ namespace CubePlatformer
     {
         [SerializeField]
         LevelGrid levelGrid;
+        [SerializeField]
+        TMP_Text LevelsScores;
 
         public const string Exit_Settings = "Exit_Settings";
         public const string Exit_Game = "Exit_Game";
@@ -39,6 +41,8 @@ namespace CubePlatformer
             }
 
             levelGrid.ShowLevels(GameInfo.Instance.EachLevelConfigs, _levelsStates);
+
+            LevelsScores.text = GameInfo.Instance.Scores.ToString();
         }
 
 
