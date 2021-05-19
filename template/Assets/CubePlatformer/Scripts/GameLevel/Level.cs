@@ -14,6 +14,13 @@ namespace CubePlatformer
         GameScreen gameScreen;
         List<Nameplate> nameplates;
 
+        private void OnEnable()
+        {
+            //Enemies.ForEach(_enemy => _enemy.AttackAction = PlayerCtrl.GetHit);
+            //Enemies.ForEach(_enemy => PlayerCtrl.PlayerAttack = _enemy.TakeDamage);
+            //nameplates.ForEach(_nameplate => _nameplate.ActivateNameplate = ShowPanelOnGameScreen);
+        }
+
         private void Awake()
         {
             Portal = FindObjectOfType<Portal>(true);
@@ -22,8 +29,12 @@ namespace CubePlatformer
             Enemies = new List<Enemy>(FindObjectsOfType<Enemy>(true));
             nameplates = new List<Nameplate>(FindObjectsOfType<Nameplate>(true));
 
+            Enemies.ForEach(_enemy => _enemy.AttackAction = PlayerCtrl.GetHit);
+            Enemies.ForEach(_enemy => PlayerCtrl.PlayerAttack = _enemy.TakeDamage);
             nameplates.ForEach(_nameplate => _nameplate.ActivateNameplate = ShowPanelOnGameScreen);
+
             gameScreen = FindObjectOfType<GameScreen>();
+            gameScreen.AddLevelData(this);
         }
 
 

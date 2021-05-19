@@ -12,7 +12,8 @@ namespace CubePlatformer
         protected override void InvokeNameplate(string _frase)
         {    
             int _coinsAmount = GameInfo.Instance.LevelConfig.CoinsAmount;
-            _frase += _coinsAmount + UNIT_COIN;
+            
+            _frase = Configs.Frase.Replace("#", _coinsAmount.ToString());
 
             base.InvokeNameplate(_frase);
         }

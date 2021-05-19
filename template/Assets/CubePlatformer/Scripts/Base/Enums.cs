@@ -26,12 +26,10 @@ namespace CubePlatformer
     {
         Idle = 0,
         Run = 1,
-        JumpNoNeedYet = 2,
         Fall = 3,
         Win = 4,
         Attack = 5,
         Die = 6,
-        Attacked = 7,
         Defend = 8
     }
 

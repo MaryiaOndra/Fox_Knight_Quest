@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,29 +6,35 @@ namespace CubePlatformer
 {
     public class PlayerController : MonoBehaviour
     {
-        public const int MAX_HEALTH = 3;
+        [SerializeField]
+        AudioClip getHit;
+
+        public const int MAX_HEALTH = 5;
         int actualHealth;
 
-        Animator playerAnimator;
         List<BaseState> states;
         BaseState currentState;
         StatesPanel statesPanel;
-        Rigidbody rigidbody;
+        Collider swordCollider;
+        AudioSource audioSource;
 
         public float PlatformAngle{get;set;}
         public Action PlayerDeathAction;
+        public Action<int> PlayerAttack;
 
         private void OnEnable()
         {
             PlayerDeathAction = currentState.DeathStateAction;
+            PlayerAttack = currentState.AttackStateAction;
         }
 
         private void Awake()
         {
             actualHealth = MAX_HEALTH;
 
-            playerAnimator = GetComponent<Animator>();
-            rigidbody = GetComponent<Rigidbody>();
+            Animator _playerAnimator = GetComponent<Animator>();
+            Rigidbody _rigidbody = GetComponent<Rigidbody>();
+            audioSource = GetComponent<AudioSource>();
 
             statesPanel = FindObjectOfType<StatesPanel>();
             statesPanel.ShowHealth(actualHealth);
@@ -38,11 +43,11 @@ namespace CubePlatformer
 
                 states.ForEach(_state =>
                 {
-                    _state.Setup( playerAnimator, rigidbody);
+                    _state.Setup( _playerAnimator, _rigidbody, audioSource);
                     _state.NextStateAction = OnNextStateRequest;
                 });
 
-            currentState = states.Find(_state => _state.PlayerState == PlayerState.Idle);
+            currentState = states.Find(_state => _state.PlayerState == PlayerState.Fall);
             currentState.Activate();
         }
           
@@ -53,12 +58,13 @@ namespace CubePlatformer
             currentState.Activate();
         }
 
-        public void Attacked(int _attackPower) 
+        public void GetHit(int _damage) 
         {
-            if (currentState.PlayerState != PlayerState.Defend)
+            if (currentState.PlayerState == PlayerState.Idle)
             {
-                currentState.NextStateAction.Invoke(PlayerState.Attacked);
-                actualHealth -= _attackPower;
+                audioSource.PlayOneShot(getHit);
+                currentState.GetHit();
+                actualHealth -= _damage;
                 statesPanel.ShowHealth(actualHealth);
             }
 
@@ -77,9 +83,7 @@ namespace CubePlatformer
         {
             if (_trigger.GetComponent<DeathLine>())
             {
-                PlayerDeathAction.Invoke();
-
-              //  currentState.NextStateAction.Invoke(PlayerState.Die);
+               PlayerDeathAction.Invoke();
             }
         }
     }

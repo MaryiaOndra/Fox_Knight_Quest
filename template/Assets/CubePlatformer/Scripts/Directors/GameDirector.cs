@@ -56,7 +56,8 @@ namespace CubePlatformer
                 }
                 else if (_exitCode == PauseScreen.Exit_Replay) 
                 {
-                    SetCurrentScreen<GameScreen>().RestartGame();
+                    SetCurrentScreen<GameScreen>().ShowAndStartGame();
+                    //SetCurrentScreen<GameScreen>().RestartGame();
                 }
                 else if (_exitCode == PauseScreen.Exit_Menu)
                 {
@@ -71,14 +72,16 @@ namespace CubePlatformer
             {
                 if (_exitCode == LooseScreen.Exit_Replay)
                 {
-                    SetCurrentScreen<GameScreen>().RestartGame();
+                    SetCurrentScreen<GameScreen>().ShowAndStartGame();
+                    //SetCurrentScreen<GameScreen>().RestartGame();
                 }
             }
             else if (_screenType == typeof(VictoryScreen))
             {
                 if (_exitCode == VictoryScreen.Exit_NextLvl)
                 {
-                    SetCurrentScreen<GameScreen>().LoadNextGameLevel();
+                    SetCurrentScreen<GameScreen>().ShowAndStartGame();
+                   // SetCurrentScreen<GameScreen>().LoadNextGameLevel();
                 }
             }
             else if (_screenType == typeof(SettingsScreen))
