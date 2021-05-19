@@ -21,8 +21,6 @@ namespace CubePlatformer
         PlayerController playerContr;
         Portal portal;
 
-        Level _level;
-
         int coinsCount = 0;
 
         public Action<Coin> CoinsAction;
@@ -60,14 +58,13 @@ namespace CubePlatformer
 
         public void AddLevelData(Level _level)
         {
-            playerContr = _level.PlayerCtrl;
+            playerContr = _level.PlayerController;
 
             portal = _level.Portal;
             portal.IsPortalAction = PortalPassing;
             playerContr.PlayerDeathAction = OnLoose;
 
             _level.Coins.ForEach(_coin => _coin.OnCoinColected = CheckCoinsAmount);
-            //_level.Enemies.ForEach(_enemy => _enemy.AttackAction = playerContr.GetHit);
         }
 
         void OnPause()
