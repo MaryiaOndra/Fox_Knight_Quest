@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UIAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 8
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: c303b7ce340b9154a958c7f33f465b39, type: 3}
+    totalSpriteSurfaceArea: 1434947
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 8152743793922979243, guid: bcebc051542c14746a6f3fb1a8a2eb4a, type: 3}
+  - {fileID: 21300000, guid: 37684a32b75cd67418ba54615980d7a9, type: 3}
+  - {fileID: 8637695691165455919, guid: 5198e553d8b4b0c45970deb40286e531, type: 3}
+  - {fileID: -5326800490009403163, guid: 1da4487316a34c14d8fc31ae4096e983, type: 3}
+  - {fileID: -8917346050633302867, guid: 3628409311a795a409288ebbf6bed79a, type: 3}
+  - {fileID: 3794728148565703664, guid: 3eb72b939b8900b48bd32304b2d05a67, type: 3}
+  - {fileID: -4869251287403402304, guid: e2f50df3eaf38334284c20da9ac1f309, type: 3}
+  - {fileID: 6672827987257851374, guid: b67a07684a4968d4aafdf68a8186a4e1, type: 3}
+  - {fileID: 21300000, guid: aa44ffd98bdf34444ae8dc6ca5eb89ce, type: 3}
+  - {fileID: 1944594620076283797, guid: 53d20e1ec6f661746bfc0e3d289ef9d1, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - WhiteFrame_70_0
+  - BTNShadow
+  - WhiteFrame_lock_0
+  - MAINTITLE 1_0
+  - WhiteFrame_0
+  - WhiteFrameWithStroke_70_0
+  - WhiteFrame_2_0
+  - lock_1
+  - BtnSliced
+  - Btn_0
+  m_RenderDataMap: {}
+  m_Tag: UIAtlas
+  m_IsVariant: 0
