@@ -11,6 +11,7 @@ namespace CubePlatformer
     {
         [SerializeField]
         NameplatesConfigs nameplateConfigs;
+
         [SerializeField]
         GameObject exlamation;
 
@@ -31,7 +32,7 @@ namespace CubePlatformer
             audioSource = GetComponent<AudioSource>();
         }
 
-        protected virtual void OnMouseDown()
+        void OnMouseDown()
         {
             if (firstTime)
             {
@@ -42,17 +43,5 @@ namespace CubePlatformer
             audioSource.PlayOneShot(audioSource.clip);
             InvokeNameplate(nameplateConfigs.Frase);
         }
-
-        //void OnTriggerEnter(Collider other)
-        //{
-        //    if (firstTime)
-        //    {
-        //        exlamation.SetActive(false);
-        //        audioSource.PlayOneShot(audioSource.clip);
-        //        ActivateNameplate.Invoke(nameplateConfigs.Frase);
-        //        firstTime = false;
-        //    }
-        //}
-
     }
 }

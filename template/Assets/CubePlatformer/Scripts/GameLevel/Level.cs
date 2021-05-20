@@ -23,7 +23,6 @@ namespace CubePlatformer
             nameplates = new List<Nameplate>(FindObjectsOfType<Nameplate>(true));
 
             Enemies.ForEach(_enemy => _enemy.AttackAction = PlayerController.GetHit);
-            Enemies.ForEach(_enemy => PlayerController.PlayerAttack = _enemy.TakeDamage);
             nameplates.ForEach(_nameplate => _nameplate.ActivateNameplate = ShowPanelOnGameScreen);
 
             gameScreen = FindObjectOfType<GameScreen>();

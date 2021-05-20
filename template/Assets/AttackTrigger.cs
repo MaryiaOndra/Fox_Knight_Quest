@@ -7,27 +7,16 @@ namespace CubePlatformer
 {
     public class AttackTrigger : MonoBehaviour
     {
-        int Damage => 1;
+        const int DAMAGE = 1;
 
-        //public bool IsTouchEnemy { get; private set; }
-
-        public Action<int> SwordAttack;
+        public Action AttackAction;
 
         private void OnTriggerEnter(Collider _collider)
         {
             if (!_collider.isTrigger && _collider.GetComponent<Enemy>())
             {
-                //IsTouchEnemy = true;
-
-                SwordAttack.Invoke(Damage);
-            }
-        }
-
-        private void OnTriggerExit(Collider _collider)
-        {
-            if (!_collider.isTrigger && _collider.GetComponent<Enemy>())
-            {
-                //IsTouchEnemy = false;
+                _collider.GetComponent<Enemy>().TakeDamage(DAMAGE);
+                AttackAction.Invoke();
             }
         }
     }
