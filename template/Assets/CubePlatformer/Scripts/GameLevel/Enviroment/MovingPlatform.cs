@@ -20,7 +20,7 @@ namespace CubePlatformer
             bridgeAnimator.SetInteger(INT_STATE, (int)moveState);
         }
 
-        private void OnTriggerEnter(Collider _collision)
+        private void OnTriggerStay(Collider _collision)
         {
             if (_collision.gameObject.GetComponent<PlayerController>())
             {
