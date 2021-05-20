@@ -67,6 +67,5 @@ namespace CubePlatformer
 
             Exit(Exit_Menu);
         }
-
     }
 }

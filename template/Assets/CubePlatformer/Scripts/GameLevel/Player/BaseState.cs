@@ -15,17 +15,34 @@ namespace CubePlatformer
         protected Rigidbody playerRB;
         protected AudioSource playerAudioSource;
         protected AttackListener attackListener;
-        protected GetHitListener getHitListener;
 
         public abstract PlayerState PlayerState { get; }
+
         public Action<PlayerState> NextStateAction { get; set; }
         public Action DeathStateAction;
-        public Action<int> AttackStateAction;
-
 
         public void GetHit() 
         {
             playerAnimator.SetTrigger(GET_HIT);
+        }
+
+        public void Setup(Animator _playerAniimator, Rigidbody _rigidbody, AudioSource _audioSource)
+        {
+            playerAnimator = _playerAniimator;
+            playerRB = _rigidbody;
+            playerAudioSource = _audioSource;
+            attackListener = playerAnimator.GetBehaviour<AttackListener>();
+        }
+
+        public virtual void Activate()
+        {
+            gameObject.SetActive(true);
+            playerAnimator.SetInteger(INT_STATE, (int)PlayerState);
+        }
+
+        public virtual void Diactivate()
+        {
+            gameObject.SetActive(false);
         }
 
         protected Vector3 Direction
@@ -34,7 +51,6 @@ namespace CubePlatformer
             {
                 float _horAxes = VirtualInputManager.Instance.MoveHorizontal;
                 float _vertAxes = VirtualInputManager.Instance.MoveVertical;
-
                 var _dir = new Vector3(_horAxes, 0f, _vertAxes);
                 return _dir;
             }
@@ -63,27 +79,6 @@ namespace CubePlatformer
                 _value = attackListener.IsAttackFinished;
                 return _value;            
             }        
-        }
-
-        public void Setup(Animator _playerAniimator, Rigidbody _rigidbody, AudioSource _audioSource)
-        {
-            playerAnimator = _playerAniimator;
-            playerRB = _rigidbody;
-            playerAudioSource = _audioSource;
-
-            attackListener = playerAnimator.GetBehaviour<AttackListener>();
-            getHitListener = playerAnimator.GetBehaviour<GetHitListener>();
-        }
-
-        public virtual void Activate()
-        {
-            gameObject.SetActive(true);
-            playerAnimator.SetInteger(INT_STATE, (int)PlayerState);
-        }
-
-        public virtual void Diactivate()
-        {
-            gameObject.SetActive(false);
         }
     }
 }

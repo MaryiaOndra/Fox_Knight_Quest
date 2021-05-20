@@ -15,17 +15,14 @@ namespace CubePlatformer
         List<BaseState> states;
         BaseState currentState;
         StatesPanel statesPanel;
-        Collider swordCollider;
         AudioSource audioSource;
 
         public float PlatformAngle{get;set;}
         public Action PlayerDeathAction;
-        public Action<int> PlayerAttack;
 
         private void OnEnable()
         {
             PlayerDeathAction = currentState.DeathStateAction;
-            PlayerAttack = currentState.AttackStateAction;
         }
 
         private void Awake()

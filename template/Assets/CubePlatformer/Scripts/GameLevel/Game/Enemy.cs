@@ -58,10 +58,8 @@ namespace CubePlatformer
         {
             if (_collision.gameObject.GetComponent<PlayerController>() && !IsDead)
             {
-                transform.LookAt(_collision.transform, Vector3.up);
-              
+                transform.LookAt(_collision.transform, Vector3.up);              
                 enemyAnimator.SetInteger(INT_STATE, (int)EnemyState.IdleBattle);
-
                 timePassed += Time.deltaTime;
 
                 if (timePassed > slimeConfig.AttackDelay)

@@ -8,36 +8,29 @@ namespace CubePlatformer
     {
         public override PlayerState PlayerState => PlayerState.Attack;
 
-        const int DAMAGE = 1;
-
         [SerializeField]
         AudioClip emptyAttack;     
+
         [SerializeField]
         AudioClip monsterAttack;
 
-        AttackTrigger sword;
-        Collider swordCollider;
+        AttackTrigger swordTrigger;
 
         private void Awake()
         {
-            sword = FindObjectOfType<AttackTrigger>();
-            sword.SwordAttack = Attack;
-        }
-
-        void Attack(int _damage) 
-        {
-            playerAudioSource.PlayOneShot(monsterAttack);
-            GetComponentInParent<PlayerController>().PlayerAttack.Invoke(_damage);
+            swordTrigger = FindObjectOfType<AttackTrigger>();
+            swordTrigger.AttackAction = AttackMonster;
         }
 
         public override void Activate()
         {
             base.Activate();
+            playerAudioSource.PlayOneShot(emptyAttack);
+        }
 
-            if (!getHitListener.IsHitted)
-            {
-                playerAudioSource.PlayOneShot(emptyAttack);
-            }            
+        void AttackMonster() 
+        {
+            playerAudioSource.PlayOneShot(monsterAttack);
         }
 
         private void Update()
@@ -45,6 +38,14 @@ namespace CubePlatformer
             if (!VirtualInputManager.Instance.Attack)
             {
                 NextStateAction.Invoke(PlayerState.Idle);
+            }
+            else if (Direction.x != 0 || Direction.z != 0)
+            {
+                NextStateAction.Invoke(PlayerState.Run);
+            }
+            else if (VirtualInputManager.Instance.Defend)
+            {
+                NextStateAction.Invoke(PlayerState.Defend);
             }
         }
     }

@@ -11,9 +11,10 @@ namespace CubePlatformer
 
         [SerializeField]
         float cloudsLenght = 45f;
-        public float Length => cloudsLenght;
 
         MeshRenderer[] cloudsMeshes;
+
+        public float Length => cloudsLenght;
 
         private void Awake()
         {

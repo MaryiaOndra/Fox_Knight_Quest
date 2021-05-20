@@ -16,7 +16,6 @@ namespace CubePlatformer
         private void Awake()
         {
             bridgeAnimator = GetComponent<Animator>();
-
             bridgeAnimator.SetInteger(INT_STATE, (int)moveState);
         }
 
