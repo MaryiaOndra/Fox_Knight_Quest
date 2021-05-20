@@ -9,11 +9,11 @@ namespace CubePlatformer
         [SerializeField]
         float speed = 1;
 
-        List<Cloud> clouds;
+        List<Clouds> clouds;
 
         private void Awake()
         {
-            clouds = new List<Cloud>(GetComponentsInChildren<Cloud>());
+            clouds = new List<Clouds>(GetComponentsInChildren<Clouds>());
         }
 
         void Update()

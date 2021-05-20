@@ -2015,10 +2015,10 @@ CapsuleCollider:
   m_Material: {fileID: 13400000, guid: abdf9f16a26243b479e155b193836dbb, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 0.4
   m_Height: 1.6896733
   m_Direction: 1
-  m_Center: {x: 0, y: 0.81898624, z: 0}
+  m_Center: {x: 0, y: 0.81898624, z: 0.09}
 --- !u!81 &7813425361980341843
 AudioListener:
   m_ObjectHideFlags: 0
