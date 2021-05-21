@@ -19,7 +19,6 @@ namespace CubePlatformer
 
         public void OnEndDrag(PointerEventData eventData)
         {
-
             DragDelta = 0;
         }
     }
