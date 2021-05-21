@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace CubePlatformer
 {
-#if UNITY_ANDROID       
+   
 
     public class AndroidInput : MonoBehaviour
     {
@@ -19,6 +19,8 @@ namespace CubePlatformer
             joystick = FindObjectOfType<Joystick>();
         }
 
+#if UNITY_ANDROID
+
         void Update()
         {
             VirtualInputManager.Instance.MoveVertical = joystick.Vertical;
@@ -27,6 +29,7 @@ namespace CubePlatformer
             VirtualInputManager.Instance.Attack = AttackState;
             VirtualInputManager.Instance.Defend = DefendState;
         }
+#endif
 
         public void DefendInput(bool _btnState)
         {
@@ -45,6 +48,4 @@ namespace CubePlatformer
             AttackState = false;
         }
     }
-
-#endif
 }
