@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6236a9c95b3a11944b7f7dd01b0806e2, type: 3}
   m_Name: Level_01_Condition
   m_EditorClassIdentifier: 
-  frase: Collect # coins to open the portal !
+  fraseForPC: Collect # coins to open the portal !
+  fraseForAndroid: Collect # coins to open the portal !

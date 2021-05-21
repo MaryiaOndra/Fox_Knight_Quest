@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6236a9c95b3a11944b7f7dd01b0806e2, type: 3}
   m_Name: Level_02_Enemy
   m_EditorClassIdentifier: 
-  levelID: 0
-  frase: To attack press 'F' , to defence press and hold 'C'
+  fraseForPC: To attack press 'F' , to defence press and hold 'C'
+  fraseForAndroid: To attack press sword icon , to defence press and hold shield
+    icon

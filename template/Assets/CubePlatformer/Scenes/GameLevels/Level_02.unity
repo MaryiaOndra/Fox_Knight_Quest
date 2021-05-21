@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 2ca5473d284e9db459bf6fb63560978d,
+  m_LightingDataAsset: {fileID: 112000000, guid: 945543af2da5fa049828d65ef1f41980,
     type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: cef70fb5af38b7b489425f6af86e934c,
     type: 2}
@@ -1462,6 +1462,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FlyingPlatform
+      objectReference: {fileID: 0}
+    - target: {fileID: 7378042967768323143, guid: 33b837a4da2dffb4eb585aa2726ea75a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33b837a4da2dffb4eb585aa2726ea75a, type: 3}
@@ -5496,7 +5501,7 @@ PrefabInstance:
     - target: {fileID: 6613996809399689016, guid: 5478c7759c8e77d43a515831524eefae,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.113
+      value: 3.378
       objectReference: {fileID: 0}
     - target: {fileID: 6613996809399689016, guid: 5478c7759c8e77d43a515831524eefae,
         type: 3}
@@ -6475,7 +6480,7 @@ PrefabInstance:
     - target: {fileID: 1607882561283571819, guid: 4faf1d729b46c7c4998a42929ec42fe5,
         type: 3}
       propertyPath: orthographic size
-      value: 3.5073683
+      value: 3.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4faf1d729b46c7c4998a42929ec42fe5, type: 3}

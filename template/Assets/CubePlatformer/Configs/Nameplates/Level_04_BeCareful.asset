@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6236a9c95b3a11944b7f7dd01b0806e2, type: 3}
   m_Name: Level_04_BeCareful
   m_EditorClassIdentifier: 
-  levelID: 0
-  frase: Be careful! Good luck!
+  fraseForPC: Be careful! Good luck!
+  fraseForAndroid: Be careful! Good luck!

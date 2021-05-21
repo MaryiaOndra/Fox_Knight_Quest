@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6236a9c95b3a11944b7f7dd01b0806e2, type: 3}
   m_Name: Level_01_Start
   m_EditorClassIdentifier: 
-  levelID: 0
-  frase: 'Use "WSAD" to control a character; to rotate: hold the right mouse button
-    and drag.'
+  fraseForPC: "Use \"WSAD\" to control a character; \nto rotate:\nhold the right
+    mouse button\r \nand drag."
+  fraseForAndroid: "Use joystick to control a character;\n to rotate:  hold and drag
+    the finger around screen to the left or right side;"

@@ -9,7 +9,7 @@ namespace CubePlatformer
         [SerializeField]
         AudioClip getHit;
 
-        public const int MAX_HEALTH = 5;
+        public const int MAX_HEALTH = 3;
         int actualHealth;
 
         List<BaseState> states;

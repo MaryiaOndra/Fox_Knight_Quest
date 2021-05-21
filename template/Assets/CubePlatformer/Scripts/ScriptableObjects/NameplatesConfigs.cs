@@ -9,8 +9,16 @@ namespace CubePlatformer
     {
         [TextArea(minLines: 2, maxLines: 5)]
         [SerializeField]
-        string frase;
+        string fraseForPC;
 
-        public string Frase => frase;
+        [TextArea(minLines: 2, maxLines: 5)]
+        [SerializeField]
+        string fraseForAndroid;
+
+#if UNITY_ANDROID
+        public string Frase => fraseForAndroid;
+#else
+        public string Frase => fraseForPC;
+#endif
     }
 }
