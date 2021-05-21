@@ -57,7 +57,6 @@ namespace CubePlatformer
                 else if (_exitCode == PauseScreen.Exit_Replay) 
                 {
                     SetCurrentScreen<GameScreen>().ShowAndStartGame();
-                    //SetCurrentScreen<GameScreen>().RestartGame();
                 }
                 else if (_exitCode == PauseScreen.Exit_Menu)
                 {
@@ -73,7 +72,6 @@ namespace CubePlatformer
                 if (_exitCode == LooseScreen.Exit_Replay)
                 {
                     SetCurrentScreen<GameScreen>().ShowAndStartGame();
-                    //SetCurrentScreen<GameScreen>().RestartGame();
                 }
             }
             else if (_screenType == typeof(VictoryScreen))
@@ -81,7 +79,6 @@ namespace CubePlatformer
                 if (_exitCode == VictoryScreen.Exit_NextLvl)
                 {
                     SetCurrentScreen<GameScreen>().ShowAndStartGame();
-                   // SetCurrentScreen<GameScreen>().LoadNextGameLevel();
                 }
             }
             else if (_screenType == typeof(SettingsScreen))

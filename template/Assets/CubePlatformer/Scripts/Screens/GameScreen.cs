@@ -10,6 +10,9 @@ namespace CubePlatformer
 {
     public class GameScreen : BaseScreen
     {
+        [SerializeField]
+        GameObject androidBtns;
+        
         public const string Exit_Pause = "Exit_Pause";
         public const string Exit_Loose = "Exit_Loose";
         public const string Exit_NextLvl = "Exit_NextLvl";
@@ -33,6 +36,14 @@ namespace CubePlatformer
 
             CoinsAction = CheckCoinsAmount;
             NotesAction = notesPanel.ShowPanel;
+
+#if UNITY_STANDALONE
+            androidBtns.SetActive(false);
+#endif
+
+#if UNITY_ANDROID
+            androidBtns.SetActive(true);
+#endif
         }
 
         public void ShowAndStartGame()

@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace CubePlatformer
 {
+#if UNITY_STANDALONE
     public class KeyboardInput : MonoBehaviour
     {
         void Update()
@@ -14,4 +15,5 @@ namespace CubePlatformer
             VirtualInputManager.Instance.Defend = Input.GetKey(KeyCode.C) ? true : false;
         }
     }
+#endif
 }

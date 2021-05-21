@@ -29,6 +29,14 @@ namespace CubePlatformer.Core
                     _screen.Init(OnScreenExit);
                 }
             }
+
+#if UNITY_STANDALONE
+            Cursor.visible = true;
+#endif
+
+#if UNITY_ANDROID
+            Cursor.visible = false;
+#endif
         }
 
         protected T SetCurrentScreen<T>() where T : BaseScreen 
