@@ -18,18 +18,15 @@ namespace CubePlatformer
         {
             joystick = FindObjectOfType<Joystick>();
         }
-
-#if UNITY_ANDROID
-
         void Update()
         {
             VirtualInputManager.Instance.MoveVertical = joystick.Vertical;
             VirtualInputManager.Instance.MoveHorizontal = joystick.Horizontal;
-
             VirtualInputManager.Instance.Attack = AttackState;
             VirtualInputManager.Instance.Defend = DefendState;
+
+            AttackState = false;
         }
-#endif
 
         public void DefendInput(bool _btnState)
         {
@@ -38,14 +35,7 @@ namespace CubePlatformer
 
         public void AttackInput() 
         {
-            StartCoroutine(AttackBool());
-        }
-
-        IEnumerator AttackBool ()
-        {
             AttackState = true;
-            yield return new WaitForEndOfFrame();
-            AttackState = false;
         }
     }
 }

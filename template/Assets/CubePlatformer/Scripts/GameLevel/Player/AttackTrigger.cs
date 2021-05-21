@@ -8,15 +8,20 @@ namespace CubePlatformer
     public class AttackTrigger : MonoBehaviour
     {
         const int DAMAGE = 1;
+        AudioSource audioSource;
 
-        public Action AttackAction;
+        private void Awake()
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
 
         private void OnTriggerEnter(Collider _collider)
         {
             if (!_collider.isTrigger && _collider.GetComponent<Enemy>())
             {
                 _collider.GetComponent<Enemy>().TakeDamage(DAMAGE);
-                AttackAction.Invoke();
+                audioSource.PlayOneShot(audioSource.clip);
+                
             }
         }
     }

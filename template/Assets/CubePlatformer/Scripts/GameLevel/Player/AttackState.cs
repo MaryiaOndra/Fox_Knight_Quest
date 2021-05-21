@@ -11,26 +11,10 @@ namespace CubePlatformer
         [SerializeField]
         AudioClip emptyAttack;     
 
-        [SerializeField]
-        AudioClip monsterAttack;
-
-        AttackTrigger swordTrigger;
-
-        private void Awake()
-        {
-            swordTrigger = FindObjectOfType<AttackTrigger>();
-            swordTrigger.AttackAction = AttackMonster;
-        }
-
         public override void Activate()
         {
             base.Activate();
             playerAudioSource.PlayOneShot(emptyAttack);
-        }
-
-        void AttackMonster() 
-        {
-            playerAudioSource.PlayOneShot(monsterAttack);
         }
 
         private void Update()
