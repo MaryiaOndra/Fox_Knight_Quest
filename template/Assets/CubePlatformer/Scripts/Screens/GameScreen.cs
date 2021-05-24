@@ -78,6 +78,12 @@ namespace CubePlatformer
             _level.Coins.ForEach(_coin => _coin.OnCoinColected = CheckCoinsAmount);
         }
 
+        public void ReturnAfterFall()
+        {
+            playerContr.ReturnToIdlePos();
+        }
+
+
         void OnPause()
         {
             Exit(Exit_Pause);
@@ -119,7 +125,7 @@ namespace CubePlatformer
             SceneManager.SetActiveScene(_scene);
         }
 
-        public void UnloadLevel(string _levelName)
+        void UnloadLevel(string _levelName)
         {
             SceneManager.UnloadSceneAsync(_levelName);
         }

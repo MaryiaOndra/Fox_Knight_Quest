@@ -73,6 +73,11 @@ namespace CubePlatformer
                 {
                     SetCurrentScreen<GameScreen>().ShowAndStartGame();
                 }
+                if (_exitCode == LooseScreen.Exit_Return)
+                {
+                    SetCurrentScreen<GameScreen>().ReturnAfterFall();
+                    SetCurrentScreen<GameScreen>().Show();
+                }
             }
             else if (_screenType == typeof(VictoryScreen))
             {

@@ -17,6 +17,7 @@ namespace CubePlatformer
         protected AttackListener attackListener;
 
         public abstract PlayerState PlayerState { get; }
+        public Vector3 LastIdlePosition { get; private set; }
 
         public Action<PlayerState> NextStateAction { get; set; }
         public Action DeathStateAction;
@@ -62,8 +63,12 @@ namespace CubePlatformer
             {
                 var _value = false;
                 float _distToGround = 0.1f;
-                if (Physics.Raycast(playerRB.transform.position, Vector3.down, _distToGround))
+                if (Physics.Raycast(playerRB.transform.position, Vector3.down, _distToGround)) 
+                {
                     _value = true;
+                    LastIdlePosition = playerRB.transform.position;
+                    Debug.Log("OnGrounded" + LastIdlePosition);
+                }
                 else
                     _value = false;
 
@@ -80,5 +85,6 @@ namespace CubePlatformer
                 return _value;            
             }        
         }
+
     }
 }

@@ -68,6 +68,15 @@ namespace CubePlatformer
             CheckHeath(actualHealth);
         }
 
+        public void ReturnToIdlePos()
+        {
+            Debug.Log("ReturnToIdlePos" + currentState.LastIdlePosition);
+            transform.position = currentState.LastIdlePosition;
+            actualHealth--;
+            statesPanel.ShowHealth(actualHealth);
+            //CheckHeath(actualHealth);
+        }
+
         void CheckHeath(int _actualHealth) 
         {
             if (_actualHealth <= 0)
@@ -76,11 +85,13 @@ namespace CubePlatformer
             }
         }
 
-        private void OnTriggerEnter(Collider _trigger)
+        void OnTriggerEnter(Collider _trigger)
         {
             if (_trigger.GetComponent<DeathLine>())
             {
-               PlayerDeathAction.Invoke();
+                Debug.Log("DeathLine" + currentState.LastIdlePosition);
+                              
+                PlayerDeathAction.Invoke();
             }
         }
     }

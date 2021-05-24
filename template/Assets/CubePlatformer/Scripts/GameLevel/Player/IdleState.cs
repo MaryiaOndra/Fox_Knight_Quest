@@ -10,6 +10,7 @@ namespace CubePlatformer
 
         void Update()
         {
+
             if (Direction.x != 0 || Direction.z != 0)
             {
                 NextStateAction.Invoke(PlayerState.Run);
