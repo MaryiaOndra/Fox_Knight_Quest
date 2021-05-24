@@ -12,6 +12,7 @@ namespace CubePlatformer
     public class LooseScreen : BaseScreen
     {
         public const string Exit_Replay = "Exit_Replay";
+        public const string Exit_Return = "Exit_Return";
        
         public override void Show()
         {
@@ -24,6 +25,12 @@ namespace CubePlatformer
         {
             Time.timeScale = 1;
             Exit(Exit_Replay);
+        }
+
+        public void OnReturnPressed()
+        {
+            Time.timeScale = 1;
+            Exit(Exit_Return);
         }
     }
 }

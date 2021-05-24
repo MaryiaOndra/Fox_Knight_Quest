@@ -22,6 +22,10 @@ namespace CubePlatformer
             {
                 NextStateAction.Invoke(PlayerState.Defend);
             }
+            else if (!OnGrounded)
+            {
+                NextStateAction.Invoke(PlayerState.Fall);
+            }
             else
             {
                 playerRB.velocity = Vector3.zero;
