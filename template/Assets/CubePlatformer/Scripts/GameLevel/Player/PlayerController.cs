@@ -17,13 +17,13 @@ namespace CubePlatformer
         StatesPanel statesPanel;
         AudioSource audioSource;
 
-        public float PlatformAngle{get;set;}
         public Action PlayerDeathAction;
+        public Action PlayerReturnAction;
 
-        private void OnEnable()
-        {
-            PlayerDeathAction = currentState.DeathStateAction;
-        }
+        //private void OnEnable()
+        //{
+        //    PlayerDeathAction = currentState.DeathStateAction;
+        //}
 
         private void Awake()
         {
@@ -68,13 +68,17 @@ namespace CubePlatformer
             CheckHeath(actualHealth);
         }
 
-        public void ReturnToIdlePos()
+        public void ReturnToStartPosMinusHealth(Vector3 _startPos)
         {
-            Debug.Log("ReturnToIdlePos" + currentState.LastIdlePosition);
-            transform.position = currentState.LastIdlePosition;
+            transform.position = _startPos;
             actualHealth--;
             statesPanel.ShowHealth(actualHealth);
-            //CheckHeath(actualHealth);
+            CheckHeath(actualHealth);
+        }     
+        
+        public void ReturnToStartPos(Vector3 _startPos)
+        {
+            transform.position = _startPos;
         }
 
         void CheckHeath(int _actualHealth) 
@@ -89,9 +93,15 @@ namespace CubePlatformer
         {
             if (_trigger.GetComponent<DeathLine>())
             {
-                Debug.Log("DeathLine" + currentState.LastIdlePosition);
-                              
-                PlayerDeathAction.Invoke();
+                if (actualHealth != 0)
+                {
+                    PlayerReturnAction.Invoke();
+                }
+                else
+                {
+                    Debug.Log("DeathLine" + currentState.LastIdlePosition);
+                    PlayerDeathAction.Invoke();
+                }       
             }
         }
     }

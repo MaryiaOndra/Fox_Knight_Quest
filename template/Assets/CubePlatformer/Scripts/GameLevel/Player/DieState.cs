@@ -10,8 +10,7 @@ namespace CubePlatformer
 
         public override void Activate()
         {
-            base.Activate();
-                        
+            base.Activate();                        
             playerAnimator.GetBehaviour<DeadListener>().DieAction = PlayerDeath;
         }
 

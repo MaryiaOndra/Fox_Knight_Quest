@@ -17,7 +17,7 @@ namespace CubePlatformer
         protected AttackListener attackListener;
 
         public abstract PlayerState PlayerState { get; }
-        public Vector3 LastIdlePosition { get; private set; }
+        public Vector3 LastIdlePosition { get; protected set; }
 
         public Action<PlayerState> NextStateAction { get; set; }
         public Action DeathStateAction;
@@ -67,7 +67,6 @@ namespace CubePlatformer
                 {
                     _value = true;
                     LastIdlePosition = playerRB.transform.position;
-                    Debug.Log("OnGrounded" + LastIdlePosition);
                 }
                 else
                     _value = false;

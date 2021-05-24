@@ -10,7 +10,6 @@ namespace CubePlatformer
 
         void Update()
         {
-
             if (Direction.x != 0 || Direction.z != 0)
             {
                 NextStateAction.Invoke(PlayerState.Run);
@@ -22,6 +21,10 @@ namespace CubePlatformer
             else if (VirtualInputManager.Instance.Defend)
             {
                 NextStateAction.Invoke(PlayerState.Defend);
+            }
+            else if (!OnGrounded)
+            {
+                NextStateAction.Invoke(PlayerState.Fall);
             }
             else
             {

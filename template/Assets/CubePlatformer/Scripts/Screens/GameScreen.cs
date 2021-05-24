@@ -12,6 +12,8 @@ namespace CubePlatformer
     {
         [SerializeField]
         GameObject androidBtns;
+        [SerializeField]
+        TryAgainPopup popup;
         
         public const string Exit_Pause = "Exit_Pause";
         public const string Exit_Loose = "Exit_Loose";
@@ -25,6 +27,7 @@ namespace CubePlatformer
         Portal portal;
 
         int coinsCount = 0;
+        Vector3 startPlayerPos;
 
         public Action<Coin> CoinsAction;
         public Action<string> NotesAction;
@@ -74,15 +77,28 @@ namespace CubePlatformer
             portal = _level.Portal;
             portal.IsPortalAction = PortalPassing;
             playerContr.PlayerDeathAction = OnLoose;
+            playerContr.PlayerReturnAction = OnTryAgain;
+            startPlayerPos = playerContr.transform.position;
 
             _level.Coins.ForEach(_coin => _coin.OnCoinColected = CheckCoinsAmount);
         }
 
         public void ReturnAfterFall()
         {
-            playerContr.ReturnToIdlePos();
+            playerContr.ReturnToStartPosMinusHealth(startPlayerPos);
+            Show();
         }
 
+        public void ReturnAfterAdvertisment()
+        {
+            playerContr.ReturnToStartPos(startPlayerPos);
+            Show();
+        }
+
+        void OnTryAgain() 
+        {
+            popup.Show();
+        }
 
         void OnPause()
         {
