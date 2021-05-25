@@ -28,10 +28,6 @@ namespace CubePlatformer
                 {
                     SetCurrentScreen<LevelsScreen>().Show();
                 }
-                else if (_exitCode == MenuScreen.Exit_Settings)
-                {
-                    SetCurrentScreen<SettingsScreen>().Show();
-                }
             }
             else if (_screenType == typeof(LevelsScreen))
             {
@@ -39,20 +35,9 @@ namespace CubePlatformer
                 {
                     ToBackScreen();
                 }
-                else if (_exitCode == LevelsScreen.Exit_Settings)
-                {
-                    SetCurrentScreen<SettingsScreen>().Show();
-                }
                 else if (_exitCode == LevelsScreen.Exit_Game)
                 {
                     SceneManager.LoadScene(ScenesIds.Game);
-                }
-            }
-            else if (_screenType == typeof(SettingsScreen))
-            {
-                if (_exitCode == SettingsScreen.Exit_Back)
-                {
-                    ToBackScreen();
                 }
             }
         }

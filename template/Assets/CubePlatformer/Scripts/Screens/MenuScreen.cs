@@ -12,12 +12,29 @@ namespace CubePlatformer
 
         public const string Exit_Game = "Exit_Game";
         public const string Exit_Levels = "Exit_Levels";
-        public const string Exit_Settings = "Exit_Settings";
+
+        List<BasePopup> popups;
+        BasePopup activePopup;
+
+        void Awake()
+        {
+            popups = new List<BasePopup>(GetComponentsInChildren<BasePopup>(true));
+
+            popups.ForEach(_popup =>
+            {
+                _popup.PopupShowAction = ActivatePopup;
+            });
+        }
+
+        void ActivatePopup(Popup _popup)
+        {
+            activePopup = popups.Find(_p => _p.ScreenPopup == _popup);
+            activePopup.Show();
+        }
 
         public void OnGamePressed()
         {
             SoundMgr.Instance.PlayBtnSound();
-
             Exit(Exit_Game);
         }
 
@@ -26,10 +43,11 @@ namespace CubePlatformer
             SoundMgr.Instance.PlayBtnSound();
             Exit(Exit_Levels);
         }
+
+
         public void OnSettingsPressed()
         {
-            SoundMgr.Instance.PlayBtnSound();
-            Exit(Exit_Settings);
+            ActivatePopup(Popup.Settings);
         }
     }
 }

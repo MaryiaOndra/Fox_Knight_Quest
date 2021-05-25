@@ -2737,18 +2737,6 @@ CapsuleCollider:
   m_Height: 1.330419
   m_Direction: 1
   m_Center: {x: -0.000000015178871, y: -0.49534017, z: 0.00000002269887}
---- !u!114 &787441578
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8192929998198126278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5748bf5531d203a48a02411e3efafb35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &1851362375361042679
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2846,6 +2834,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &787441578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8192929998198126278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5748bf5531d203a48a02411e3efafb35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9113255542697682192
 GameObject:
   m_ObjectHideFlags: 0
@@ -2890,7 +2890,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   emptyAttack: {fileID: 8300000, guid: 22865e0437cd8a74d81bff9e4274989e, type: 3}
-  monsterAttack: {fileID: 8300000, guid: ddddc07ad42802248b260e5dad627e13, type: 3}
 --- !u!1001 &7959718453532121337
 PrefabInstance:
   m_ObjectHideFlags: 0
