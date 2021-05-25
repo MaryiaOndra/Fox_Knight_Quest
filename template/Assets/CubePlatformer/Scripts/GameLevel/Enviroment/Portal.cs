@@ -18,7 +18,7 @@ namespace CubePlatformer
             IsPortalAction.Invoke();
         }
 
-        public void ActivatePortal() 
+        public void ActivateVictoryPortal() 
         {
             gameObject.SetActive(true);
             

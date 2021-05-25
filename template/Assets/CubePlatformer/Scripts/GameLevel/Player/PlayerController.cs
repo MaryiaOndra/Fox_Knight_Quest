@@ -57,7 +57,8 @@ namespace CubePlatformer
 
         public void GetHit(int _damage) 
         {
-            if (currentState.PlayerState == PlayerState.Idle)
+            if (currentState.PlayerState == PlayerState.Idle
+                || currentState.PlayerState == PlayerState.Fall)
             {
                 audioSource.PlayOneShot(getHit);
                 currentState.GetHit();

@@ -12,12 +12,10 @@ namespace CubePlatformer
     {
         [SerializeField]
         GameObject androidBtns;
-        [SerializeField]
-        TryAgainPopup popup;
-        
-        public const string Exit_Pause = "Exit_Pause";
-        public const string Exit_Loose = "Exit_Loose";
-        public const string Exit_NextLvl = "Exit_NextLvl";
+
+        public const string Exit_Menu = "Exit_Menu";
+        //public const string Exit_Loose = "Exit_Loose";
+        //public const string Exit_NextLvl = "Exit_NextLvl";
 
         StatesPanel statesPanel;
         NotesPanel notesPanel;
@@ -26,19 +24,29 @@ namespace CubePlatformer
         PlayerController playerContr;
         Portal portal;
 
+        List<BasePopup> popups;
+        BasePopup activePopup;
+
         int coinsCount = 0;
         Vector3 startPlayerPos;
 
         public Action<Coin> CoinsAction;
         public Action<string> NotesAction;
 
-        private void OnEnable()
+        private void Awake()
         {
             statesPanel = FindObjectOfType<StatesPanel>();
             notesPanel = FindObjectOfType<NotesPanel>();
 
             CoinsAction = CheckCoinsAmount;
             NotesAction = notesPanel.ShowPanel;
+
+            popups = new List<BasePopup>(GetComponentsInChildren<BasePopup>(true));
+
+            popups.ForEach(_popup =>
+            {
+                _popup.PopupShowAction = ActivatePopup;            
+            });
 
 #if UNITY_STANDALONE
             androidBtns.SetActive(false);
@@ -75,7 +83,7 @@ namespace CubePlatformer
             playerContr = _level.PlayerController;
 
             portal = _level.Portal;
-            portal.IsPortalAction = PortalPassing;
+            portal.IsPortalAction = ShowVictoryPopup;
             playerContr.PlayerDeathAction = OnLoose;
             playerContr.PlayerReturnAction = OnTryAgain;
             startPlayerPos = playerContr.transform.position;
@@ -83,37 +91,104 @@ namespace CubePlatformer
             _level.Coins.ForEach(_coin => _coin.OnCoinColected = CheckCoinsAmount);
         }
 
-        public void ReturnAfterFall()
+        public void OnPause() 
         {
-            playerContr.ReturnToStartPosMinusHealth(startPlayerPos);
-            Show();
+            ActivatePopup(Popup.Pause);
         }
 
-        public void ReturnAfterAdvertisment()
+        void ActivatePopup(Popup _popup) 
         {
-            playerContr.ReturnToStartPos(startPlayerPos);
-            Show();
+            activePopup = popups.Find(_p => _p.ScreenPopup == _popup);
+
+            switch(_popup) 
+            {
+                case Popup.TryAgain:
+                    var _popTr = activePopup.GetComponent<TryAgainPopup>();
+                    _popTr.ReturnAction = ReturnAfterAdvertisment;
+                    _popTr.ReturnMinusHealthAction = ReturnLoosingHealth;
+                    break;
+
+                case Popup.Victory:
+                    var _popV = activePopup.GetComponent<VictoryPopUp>();
+                    _popV.NextLevelAction = GoToNextLevel;
+                    break;
+
+                case Popup.Pause:
+                    var _popP = activePopup.GetComponent<PausePopup>();
+                    _popP.BackPressedAction = Return;
+                    _popP.MenuPressedAction = GoToMenu;
+                    _popP.ReplyPressedAction = Restart;
+                    _popP.SettingsPressedAction = ShowSettingsPopup;
+                    break;
+
+                case Popup.Loose:
+                    var _popL = activePopup.GetComponent<LoosePopup>();
+                    _popL.MenuPressedAction = GoToMenu;
+                    _popL.RestartAction = Restart;
+                    break;            
+            }
+
+            activePopup.Show();
         }
 
         void OnTryAgain() 
         {
-            popup.Show();
+            ActivatePopup(Popup.TryAgain);
         }
 
-        void OnPause()
+        void Return()
         {
-            Exit(Exit_Pause);
+            activePopup.Hide();
+            Show();
+        }
+
+        void Restart() 
+        {
+            activePopup.Hide();
+            ShowAndStartGame();
+        }
+        
+        void ReturnLoosingHealth()
+        {
+            playerContr.GetHit(1);
+            activePopup.Hide();
+            playerContr.ReturnToStartPos(startPlayerPos);
+            Show();
+        }
+
+        void ReturnAfterAdvertisment()
+        {
+            activePopup.Hide();
+            playerContr.ReturnToStartPos(startPlayerPos);
+            Show();
+        }
+
+        void GoToMenu()
+        {
+            Exit(Exit_Menu);
         }
 
         void OnLoose()
         {
-            Exit(Exit_Loose);
+            ActivatePopup(Popup.Loose);
         }
 
-        void PortalPassing()
+        void ShowSettingsPopup() 
+        {
+            activePopup.Hide();
+            ActivatePopup(Popup.Settings);        
+        }
+
+        void ShowVictoryPopup()
         {
             GameInfo.Instance.RegisterResult(coinsCount);
-            Exit(Exit_NextLvl);
+            ActivatePopup(Popup.Victory);
+        }
+
+        void GoToNextLevel() 
+        {
+            activePopup.Hide();
+            ShowAndStartGame();
         }
 
         void CheckCoinsAmount(Coin _coin)
@@ -126,7 +201,7 @@ namespace CubePlatformer
 
             if (coinsCount == levelConfigs.CoinsAmount)
             {
-                portal.ActivatePortal();
+                portal.ActivateVictoryPortal();
             }
         }
 
