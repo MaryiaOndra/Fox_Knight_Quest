@@ -5,23 +5,17 @@ using UnityEngine;
 
 namespace CubePlatformer
 {
-    public class AttackTrigger : MonoBehaviour
+    public class SwordTrigger : MonoBehaviour
     {
         const int DAMAGE = 1;
-        AudioSource audioSource;
 
-        private void Awake()
-        {
-            audioSource = GetComponent<AudioSource>();
-        }
+        public Action<Collider, int> SwordAttackAction;
 
         private void OnTriggerEnter(Collider _collider)
         {
             if (!_collider.isTrigger && _collider.GetComponent<Enemy>())
             {
-                _collider.GetComponent<Enemy>().TakeDamage(DAMAGE);
-                audioSource.PlayOneShot(audioSource.clip);
-                
+                SwordAttackAction.Invoke(_collider, DAMAGE);              
             }
         }
     }
