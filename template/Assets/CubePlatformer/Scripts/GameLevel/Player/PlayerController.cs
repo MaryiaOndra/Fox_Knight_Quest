@@ -20,11 +20,6 @@ namespace CubePlatformer
         public Action PlayerDeathAction;
         public Action PlayerReturnAction;
 
-        //private void OnEnable()
-        //{
-        //    PlayerDeathAction = currentState.DeathStateAction;
-        //}
-
         private void Awake()
         {
             actualHealth = MAX_HEALTH;
@@ -42,6 +37,7 @@ namespace CubePlatformer
                 {
                     _state.Setup( _playerAnimator, _rigidbody, audioSource);
                     _state.NextStateAction = OnNextStateRequest;
+                    _state.DeathStateAction = PlayerDeathAction;
                 });
 
             currentState = states.Find(_state => _state.PlayerState == PlayerState.Fall);
@@ -100,8 +96,8 @@ namespace CubePlatformer
                 }
                 else
                 {
-                    Debug.Log("DeathLine" + currentState.LastIdlePosition);
                     PlayerDeathAction.Invoke();
+                    currentState.DeathStateAction.Invoke();
                 }       
             }
         }

@@ -68,3 +68,5 @@ crashlytics-build.properties
 # Exceptions
 !*.dll
 !*.obj
+*.log
+template/Logs/shadercompiler-UnityShaderCompiler.exe0.log
