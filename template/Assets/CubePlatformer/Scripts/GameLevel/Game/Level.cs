@@ -1,3 +1,4 @@
+using CubePlatformer.Base;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,9 +11,12 @@ namespace CubePlatformer
         public List<Coin> Coins { get; private set; }
         public List<Enemy> Enemies { get; private set; }
         public Portal Portal { get; private set; }
+        public List<Nameplate> Nameplates { get; private set; }
 
-        GameScreen gameScreen;
-        List<Nameplate> nameplates;
+        private void OnEnable()
+        {
+            Enemies.ForEach(_enemy => _enemy.AttackAction = PlayerController.GetHit);
+        }
 
         private void Awake()
         {
@@ -20,19 +24,19 @@ namespace CubePlatformer
             PlayerController = FindObjectOfType<PlayerController>(true);
             Coins = new List<Coin>(FindObjectsOfType<Coin>(true));
             Enemies = new List<Enemy>(FindObjectsOfType<Enemy>(true));
-            nameplates = new List<Nameplate>(FindObjectsOfType<Nameplate>(true));
+            Nameplates = new List<Nameplate>(FindObjectsOfType<Nameplate>(true));
 
-            Enemies.ForEach(_enemy => _enemy.AttackAction = PlayerController.GetHit);
-            nameplates.ForEach(_nameplate => _nameplate.ActivateNameplate = ShowPanelOnGameScreen);
-
-            gameScreen = FindObjectOfType<GameScreen>();
-            gameScreen.AddLevelData(this);
+            CheckCoinsAmount(Coins.Count);
         }
 
-
-        void ShowPanelOnGameScreen(string _nameplateFrase) 
+        void CheckCoinsAmount(int _lvlCoins) 
         {
-            gameScreen.NotesAction.Invoke(_nameplateFrase);        
+            int _expectedCoins = GameInfo.Instance.LevelConfig.CoinsAmount;
+
+            if (_lvlCoins < _expectedCoins)
+            {
+                throw new System.Exception($"The mismatch in the number of coins. Actual number of coins: {_lvlCoins}, Expected number of coins:{_expectedCoins}");
+            }
         }
     }
 }

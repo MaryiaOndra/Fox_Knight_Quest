@@ -7,19 +7,28 @@ namespace CubePlatformer
 {
     public class TouchPanel : MonoBehaviour,  IDragHandler, IEndDragHandler
     {
-        public float DragDelta { get; private set; }
+        float dragDelta;
+
+        CameraRotator cameraRotator;
+
+        private void OnEnable()
+        {
+            cameraRotator = FindObjectOfType<CameraRotator>();
+        }
 
         public void OnDrag(PointerEventData eventData)
         {
             if (Input.GetMouseButton(1))
             {
-                DragDelta = eventData.delta.x;
+                dragDelta = eventData.delta.x;
+                cameraRotator.DragDelta = dragDelta;
             }
         }
 
         public void OnEndDrag(PointerEventData eventData)
         {
-            DragDelta = 0;
+            dragDelta = 0;
+            cameraRotator.DragDelta = dragDelta;
         }
     }
 }

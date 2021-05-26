@@ -13,22 +13,16 @@ namespace CubePlatformer
         [SerializeField]
         float speed;
 
-        TouchPanel touchPanel;
         Vector3 eulerAngles;
         float prevYPos = 0;
 
-        public Action changeCamLocationAction; 
-
-        private void OnEnable()
-        {
-            touchPanel = FindObjectOfType<TouchPanel>();
-        }
+        public float DragDelta { get; set; }
 
         void Update()
         {
             transform.position = targetTr.position;
 
-            float _yPos = touchPanel.DragDelta;
+            float _yPos = DragDelta;
 
             if (_yPos != prevYPos)
             {
