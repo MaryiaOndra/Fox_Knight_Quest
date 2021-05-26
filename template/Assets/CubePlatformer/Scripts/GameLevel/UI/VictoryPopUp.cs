@@ -23,10 +23,8 @@ namespace CubePlatformer
         {
             base.Show();
 
-            GameInfo.Instance.LevelIndex += 1;
             actualScore = GameInfo.Instance.LevelResultInfo.Scores;
             expectedScore = GameInfo.Instance.LevelConfig.CoinsAmount;
-
             WriteScore(actualScore, expectedScore);
         }
 

@@ -14,15 +14,14 @@ namespace CubePlatformer
         GameObject androidBtns;
 
         public const string Exit_Menu = "Exit_Menu";
-        //public const string Exit_Loose = "Exit_Loose";
-        //public const string Exit_NextLvl = "Exit_NextLvl";
+        public const string Exit_Loading = "Exit_Loading";
 
         StatesPanel statesPanel;
         NotesPanel notesPanel;
         EachLevelConfigs levelConfigs;
-        EachLevelConfigs loadedLevelConfigs;
         PlayerController playerContr;
         Portal portal;
+        Level activeLevel;
 
         List<BasePopup> popups;
         BasePopup activePopup;
@@ -60,36 +59,35 @@ namespace CubePlatformer
         public void ShowAndStartGame()
         {
             Show();
+
+            activeLevel = FindObjectOfType<Level>();
+            AddLevelData(activeLevel);
+
             Time.timeScale = 1;
-
             levelConfigs = GameInfo.Instance.LevelConfig;
-
-            if (loadedLevelConfigs != null)
-            {
-                UnloadLevel(loadedLevelConfigs.LevelName);
-            }
-
-            LoadLevel(levelConfigs.LevelName);
 
             GameInfo.Instance.ResetLevelResult();
             coinsCount = 0;
 
-            loadedLevelConfigs = levelConfigs;
             statesPanel.ShowScores(coinsCount);
+            statesPanel.ShowHealth(playerContr.PlayerHealth);
         }
 
         public void AddLevelData(Level _level)
         {
             playerContr = _level.PlayerController;
-
             portal = _level.Portal;
             portal.IsPortalAction = ShowVictoryPopup;
             playerContr.PlayerDeathAction = OnLoose;
             playerContr.PlayerReturnAction = OnTryAgain;
+            playerContr.ChangeHealthAction = statesPanel.ShowHealth;
             startPlayerPos = playerContr.transform.position;
 
             _level.Coins.ForEach(_coin => _coin.OnCoinColected = CheckCoinsAmount);
+            _level.Nameplates.ForEach(_nameplate => _nameplate.ActivateNameplate = notesPanel.ShowPanel);
         }
+
+        #region POPUPS
 
         public void OnPause() 
         {
@@ -145,7 +143,7 @@ namespace CubePlatformer
         void Restart() 
         {
             activePopup.Hide();
-            ShowAndStartGame();
+            LoadGame();
         }
         
         void ReturnLoosingHealth()
@@ -163,10 +161,6 @@ namespace CubePlatformer
             Show();
         }
 
-        void GoToMenu()
-        {
-            Exit(Exit_Menu);
-        }
 
         void OnLoose()
         {
@@ -183,12 +177,15 @@ namespace CubePlatformer
         {
             GameInfo.Instance.RegisterResult(coinsCount);
             ActivatePopup(Popup.Victory);
+            GameInfo.Instance.LevelIndex += 1;
         }
+
+        #endregion
 
         void GoToNextLevel() 
         {
             activePopup.Hide();
-            ShowAndStartGame();
+            LoadGame();
         }
 
         void CheckCoinsAmount(Coin _coin)
@@ -204,21 +201,15 @@ namespace CubePlatformer
                 portal.ActivateVictoryPortal();
             }
         }
-
-        void LoadLevel(string _levelName)
+        void LoadGame()
         {
-            SceneManager.LoadScene(_levelName, LoadSceneMode.Additive);
-            SceneManager.sceneLoaded += ActivateScene;
+            Exit(Exit_Loading);
         }
 
-        void ActivateScene(Scene _scene, LoadSceneMode arg1)
+        void GoToMenu()
         {
-            SceneManager.SetActiveScene(_scene);
+            Exit(Exit_Menu);
         }
 
-        void UnloadLevel(string _levelName)
-        {
-            SceneManager.UnloadSceneAsync(_levelName);
-        }
     }
 }

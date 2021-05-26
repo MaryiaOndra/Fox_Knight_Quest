@@ -4,7 +4,6 @@ using UnityEngine;
 
 namespace CubePlatformer
 {
-
     public class KeyboardInput : MonoBehaviour
     {
         void Update()

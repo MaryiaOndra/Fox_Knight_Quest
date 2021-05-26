@@ -17,8 +17,11 @@ namespace CubePlatformer
         StatesPanel statesPanel;
         AudioSource audioSource;
 
+        public int PlayerHealth => actualHealth;
+
         public Action PlayerDeathAction;
         public Action PlayerReturnAction;
+        public Action<int> ChangeHealthAction;
 
         private void Awake()
         {
@@ -28,8 +31,9 @@ namespace CubePlatformer
             Rigidbody _rigidbody = GetComponent<Rigidbody>();
             audioSource = GetComponent<AudioSource>();
 
-            statesPanel = FindObjectOfType<StatesPanel>();
-            statesPanel.ShowHealth(actualHealth);
+            /////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            //statesPanel = FindObjectOfType<StatesPanel>();
+            //statesPanel.ShowHealth(actualHealth);
 
             states = new List<BaseState>(GetComponentsInChildren<BaseState>(true));
 
@@ -59,18 +63,16 @@ namespace CubePlatformer
                 audioSource.PlayOneShot(getHit);
                 currentState.GetHit();
                 actualHealth -= _damage;
-                statesPanel.ShowHealth(actualHealth);
             }
 
-            CheckHeath(actualHealth);
+            CheckHealth(actualHealth);
         }
 
         public void ReturnToStartPosMinusHealth(Vector3 _startPos)
         {
             transform.position = _startPos;
             actualHealth--;
-            statesPanel.ShowHealth(actualHealth);
-            CheckHeath(actualHealth);
+            CheckHealth(actualHealth);
         }     
         
         public void ReturnToStartPos(Vector3 _startPos)
@@ -78,8 +80,10 @@ namespace CubePlatformer
             transform.position = _startPos;
         }
 
-        void CheckHeath(int _actualHealth) 
+        void CheckHealth(int _actualHealth) 
         {
+            ChangeHealthAction.Invoke(actualHealth);
+
             if (_actualHealth <= 0)
             {
                 currentState.NextStateAction.Invoke(PlayerState.Die);
