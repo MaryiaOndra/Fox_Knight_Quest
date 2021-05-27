@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using CubePlatformer.Base;
 using CubePlatformer.Core;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 namespace CubePlatformer
 {
@@ -28,6 +29,7 @@ namespace CubePlatformer
         BasePopup activePopup;
 
         int coinsCount = 0;
+        float timeToDisplay;
         Vector3 startPlayerPos;
 
         public Action<Coin> CoinsAction;
@@ -35,6 +37,13 @@ namespace CubePlatformer
 
         private void Awake()
         {
+            statesPanel = FindObjectOfType<StatesPanel>(true);
+            notesPanel = FindObjectOfType<NotesPanel>(true);
+            touchPanel = FindObjectOfType<TouchPanel>(true);
+
+            popups = new List<BasePopup>(GetComponentsInChildren<BasePopup>(true));
+            popups.ForEach(_popup =>_popup.PopupShowAction = ActivatePopup);
+
 #if UNITY_ANDROID
             androidBtns.SetActive(true);
             keyboardInput.SetActive(false);
@@ -44,35 +53,26 @@ namespace CubePlatformer
 #endif
         }
 
-        public void ShowAndStartGame()
+        public override void Show()
         {
-            Show();
+            base.Show();
 
             Time.timeScale = 1;
             levelConfigs = GameInfo.Instance.LevelConfig;
-
             GameInfo.Instance.ResetLevelResult();
             coinsCount = 0;
-
-            statesPanel.ShowScores(coinsCount);
-            statesPanel.ShowHealth(playerContr.PlayerHealth);
+            timeToDisplay = 0;
+            statesPanel.TimerOn();
         }
 
         private void OnEnable()
         {
-            statesPanel = FindObjectOfType<StatesPanel>(true);
-            notesPanel = FindObjectOfType<NotesPanel>(true);
-            touchPanel = FindObjectOfType<TouchPanel>(true);
-
-            popups = new List<BasePopup>(GetComponentsInChildren<BasePopup>(true));
-
-            popups.ForEach(_popup =>
-            {
-                _popup.PopupShowAction = ActivatePopup;
-            });
-
             activeLevel = FindObjectOfType<Level>(true);
             AddLevelData(activeLevel);
+
+            statesPanel.ShowScores(coinsCount);
+            statesPanel.ShowHealth(playerContr.PlayerHealth);
+            timeToDisplay = 0;
         }
 
         public void AddLevelData(Level _level)
@@ -157,6 +157,7 @@ namespace CubePlatformer
         {
             activePopup.Hide();
             LoadGame();
+            statesPanel.TimerOff();
         }
         
         void ReturnLoosingHealth()
@@ -178,6 +179,17 @@ namespace CubePlatformer
         void OnLoose()
         {
             ActivatePopup(Popup.Loose);
+            statesPanel.TimerOff();
+
+            var _params = new Dictionary<string, object>();
+            _params.Add("level", levelConfigs.LevelName);
+            _params.Add("time", timeToDisplay);
+            _params.Add("coins", coinsCount);
+
+            var _result = AnalyticsEvent.Custom("result", _params);
+            Debug.Log("AnalyticsEvent: " + _result);
+
+            statesPanel.TimerOff();
         }
 
         void ShowSettingsPopup() 
@@ -190,6 +202,16 @@ namespace CubePlatformer
         {
             GameInfo.Instance.RegisterResult(coinsCount);
             ActivatePopup(Popup.Victory);
+
+            var _params = new Dictionary<string, object>();
+
+            _params.Add("level", levelConfigs.LevelName);
+            _params.Add("time", timeToDisplay);
+
+            var _result = AnalyticsEvent.Custom("result", _params);
+            Debug.Log("AnalyticsEvent: " + _result);
+
+            timeToDisplay = 0;
             GameInfo.Instance.LevelIndex += 1;
         }
 

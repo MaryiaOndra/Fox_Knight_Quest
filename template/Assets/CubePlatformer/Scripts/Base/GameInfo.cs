@@ -35,8 +35,14 @@ namespace CubePlatformer.Base
 
         public int Scores
         {
-            get => PlayerPrefs.GetInt(PrefsKeys.Scores);
-            set => PlayerPrefs.SetInt(PrefsKeys.Scores, value);
+            get => AppPrefs.GetInt(PrefsKeys.Scores);
+            set => AppPrefs.SetInt(PrefsKeys.Scores, value);
+        }
+
+        public float Time
+        {
+            get => AppPrefs.GetFloat(PrefsKeys.Time);
+            set => AppPrefs.SetFloat(PrefsKeys.Time, value);
         }
 
         public void RegisterResult(int _collectedCoins) 
@@ -68,5 +74,6 @@ namespace CubePlatformer.Base
     public class LevelResultInfo 
     {
         public int Scores { get; set; }
+        public float Time { get; set; }
     }
 }
