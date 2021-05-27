@@ -9,7 +9,9 @@ namespace CubePlatformer
     public class GameScreen : BaseScreen
     {
         [SerializeField]
-        GameObject androidBtns;
+        GameObject androidBtns;    
+        [SerializeField]
+        GameObject keyboardInput;
 
         public const string Exit_Menu = "Exit_Menu";
         public const string Exit_Loading = "Exit_Loading";
@@ -33,13 +35,12 @@ namespace CubePlatformer
 
         private void Awake()
         {
-
-#if UNITY_STANDALONE
-            androidBtns.SetActive(false);
-#endif
-
 #if UNITY_ANDROID
             androidBtns.SetActive(true);
+            keyboardInput.SetActive(false);
+#elif UNITY_STANDALONE
+            androidBtns.SetActive(false);
+            keyboardInput.SetActive(true);
 #endif
         }
 

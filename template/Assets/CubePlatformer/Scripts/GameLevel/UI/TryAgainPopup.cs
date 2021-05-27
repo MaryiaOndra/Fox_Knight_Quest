@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using UnityEngine.Advertisements;
 
 namespace CubePlatformer
 {
@@ -17,8 +19,13 @@ namespace CubePlatformer
 
         public void Return() 
         {
+            if (Advertisement.IsReady("rewardedVideo"))
+            {
+                Advertisement.Show("rewardedVideo");
+            }
+
             ReturnAction.Invoke();
-            Hide();
+            Hide();    
         }
     }
 }
