@@ -8,7 +8,7 @@ namespace CubePlatformer
     public class Timer : MonoBehaviour
     {
         private TMP_Text timerText;
-        private float timeToDisplay;
+        private float timeToDisplay = 0;
 
         public bool isTimerActive;
 
@@ -22,6 +22,10 @@ namespace CubePlatformer
             if (isTimerActive)
             {
                 DisplayTime(timeToDisplay);
+            }
+            else
+            {
+                ReloadTimer();
             }
         }
 

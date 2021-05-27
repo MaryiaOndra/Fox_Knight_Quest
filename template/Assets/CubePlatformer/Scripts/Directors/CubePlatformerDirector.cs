@@ -7,17 +7,8 @@ namespace CubePlatformer.Base
 {
     public class CubePlatformerDirector : AppDirector
     {
-        //void Awake()
-        //{
-        //    GameInfo.Instance.Setup();
-        //    SceneManager.LoadScene("Menu");
-
-
-        //}
-
-        protected override void Awake()
-        {
-            base.Awake();
+        void Start()
+        {            
 
             string _adsId = string.Empty;
 
