@@ -31,10 +31,6 @@ namespace CubePlatformer
             Rigidbody _rigidbody = GetComponent<Rigidbody>();
             audioSource = GetComponent<AudioSource>();
 
-            /////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            //statesPanel = FindObjectOfType<StatesPanel>();
-            //statesPanel.ShowHealth(actualHealth);
-
             states = new List<BaseState>(GetComponentsInChildren<BaseState>(true));
 
                 states.ForEach(_state =>

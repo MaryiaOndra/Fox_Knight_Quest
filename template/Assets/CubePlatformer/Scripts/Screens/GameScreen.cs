@@ -22,6 +22,7 @@ namespace CubePlatformer
         PlayerController playerContr;
         Portal portal;
         Level activeLevel;
+        TouchPanel touchPanel;
 
         List<BasePopup> popups;
         BasePopup activePopup;
@@ -36,6 +37,7 @@ namespace CubePlatformer
         {
             statesPanel = FindObjectOfType<StatesPanel>();
             notesPanel = FindObjectOfType<NotesPanel>();
+            touchPanel = FindObjectOfType<TouchPanel>();
 
             CoinsAction = CheckCoinsAmount;
             NotesAction = notesPanel.ShowPanel;
@@ -60,9 +62,6 @@ namespace CubePlatformer
         {
             Show();
 
-            activeLevel = FindObjectOfType<Level>();
-            AddLevelData(activeLevel);
-
             Time.timeScale = 1;
             levelConfigs = GameInfo.Instance.LevelConfig;
 
@@ -71,6 +70,12 @@ namespace CubePlatformer
 
             statesPanel.ShowScores(coinsCount);
             statesPanel.ShowHealth(playerContr.PlayerHealth);
+        }
+
+        private void OnEnable()
+        {
+            activeLevel = FindObjectOfType<Level>();
+            AddLevelData(activeLevel);
         }
 
         public void AddLevelData(Level _level)
@@ -82,6 +87,7 @@ namespace CubePlatformer
             playerContr.PlayerReturnAction = OnTryAgain;
             playerContr.ChangeHealthAction = statesPanel.ShowHealth;
             startPlayerPos = playerContr.transform.position;
+            touchPanel.DragAction = _level.Rotator.DragDelta;
 
             _level.Coins.ForEach(_coin => _coin.OnCoinColected = CheckCoinsAmount);
             _level.Nameplates.ForEach(_nameplate => _nameplate.ActivateNameplate = notesPanel.ShowPanel);

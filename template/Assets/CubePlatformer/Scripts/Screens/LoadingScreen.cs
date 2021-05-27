@@ -32,11 +32,6 @@ namespace CubePlatformer
             loadedLevelConfigs = levelConfigs;
         }
 
-        void GoToGame() 
-        {
-            Exit(Exit_Game);
-        }
-
         void LoadLevel(string _levelName)
         {
             loadingScene = SceneManager.LoadSceneAsync(_levelName, LoadSceneMode.Additive);
@@ -51,6 +46,7 @@ namespace CubePlatformer
             }
 
             SceneManager.SetActiveScene(SceneManager.GetSceneByName(_levelName));
+
             Exit(Exit_Game);
         }
 

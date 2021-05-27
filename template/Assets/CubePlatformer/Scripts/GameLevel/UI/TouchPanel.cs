@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,26 +10,21 @@ namespace CubePlatformer
     {
         float dragDelta;
 
-        CameraRotator cameraRotator;
-
-        private void OnEnable()
-        {
-            cameraRotator = FindObjectOfType<CameraRotator>();
-        }
+        public Action<float> DragAction;
 
         public void OnDrag(PointerEventData eventData)
         {
             if (Input.GetMouseButton(1))
             {
                 dragDelta = eventData.delta.x;
-                cameraRotator.DragDelta = dragDelta;
+                DragAction.Invoke(dragDelta);
             }
         }
 
         public void OnEndDrag(PointerEventData eventData)
         {
             dragDelta = 0;
-            cameraRotator.DragDelta = dragDelta;
+            DragAction.Invoke(dragDelta);
         }
     }
 }

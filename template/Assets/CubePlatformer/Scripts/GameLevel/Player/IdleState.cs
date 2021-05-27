@@ -22,7 +22,7 @@ namespace CubePlatformer
             {
                 NextStateAction.Invoke(PlayerState.Defend);
             }
-            else if (!OnGrounded)
+            else if (!OnGrounded && playerRB.velocity.y < VELOCITY_TO_FALL)
             {
                 NextStateAction.Invoke(PlayerState.Fall);
             }

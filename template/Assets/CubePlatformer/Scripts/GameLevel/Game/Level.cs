@@ -12,6 +12,7 @@ namespace CubePlatformer
         public List<Enemy> Enemies { get; private set; }
         public Portal Portal { get; private set; }
         public List<Nameplate> Nameplates { get; private set; }
+        public CameraRotator Rotator { get; private set; }
 
         private void OnEnable()
         {
@@ -25,6 +26,7 @@ namespace CubePlatformer
             Coins = new List<Coin>(FindObjectsOfType<Coin>(true));
             Enemies = new List<Enemy>(FindObjectsOfType<Enemy>(true));
             Nameplates = new List<Nameplate>(FindObjectsOfType<Nameplate>(true));
+            Rotator = FindObjectOfType<CameraRotator>();
 
             CheckCoinsAmount(Coins.Count);
         }
