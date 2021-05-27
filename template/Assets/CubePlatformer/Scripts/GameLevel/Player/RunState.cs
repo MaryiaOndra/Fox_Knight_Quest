@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace CubePlatformer
@@ -11,8 +9,10 @@ namespace CubePlatformer
 
         [SerializeField]
         Transform cameraTr;
+
         [SerializeField]
         float playerSpeed = 2.0f;
+
         [SerializeField]
         float rotationSpeed = 500f;
 

@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using CubePlatformer.Base;
 using CubePlatformer.Core;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace CubePlatformer
 {

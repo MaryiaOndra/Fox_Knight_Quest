@@ -14,7 +14,6 @@ namespace CubePlatformer
 
         List<BaseState> states;
         BaseState currentState;
-        StatesPanel statesPanel;
         AudioSource audioSource;
 
         public int PlayerHealth => actualHealth;

@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using CubePlatformer.Base;
 using CubePlatformer.Core;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace CubePlatformer
 {
@@ -35,19 +33,6 @@ namespace CubePlatformer
 
         private void Awake()
         {
-            //statesPanel = FindObjectOfType<StatesPanel>(true);
-            //notesPanel = FindObjectOfType<NotesPanel>(true);
-            //touchPanel = FindObjectOfType<TouchPanel>(true);
-
-            //CoinsAction = CheckCoinsAmount;
-            //NotesAction = notesPanel.ShowPanel;
-
-            //popups = new List<BasePopup>(GetComponentsInChildren<BasePopup>(true));
-
-            //popups.ForEach(_popup =>
-            //{
-            //    _popup.PopupShowAction = ActivatePopup;            
-            //});
 
 #if UNITY_STANDALONE
             androidBtns.SetActive(false);
@@ -85,7 +70,7 @@ namespace CubePlatformer
                 _popup.PopupShowAction = ActivatePopup;
             });
 
-            activeLevel = FindObjectOfType<Level>();
+            activeLevel = FindObjectOfType<Level>(true);
             AddLevelData(activeLevel);
         }
 
@@ -96,7 +81,7 @@ namespace CubePlatformer
             portal.IsPortalAction = ShowVictoryPopup;
             playerContr.PlayerDeathAction = OnLoose;
             playerContr.PlayerReturnAction = OnTryAgain;
-            playerContr.ChangeHealthAction = statesPanel.ShowHealth;
+            playerContr.ChangeHealthAction = ShowHealth;
             startPlayerPos = playerContr.transform.position;
             touchPanel.DragAction = _level.Rotator.DragDelta;
 
@@ -107,6 +92,11 @@ namespace CubePlatformer
         void ShowNotesPanel(string _frase)
         {
             notesPanel.ShowPanel.Invoke(_frase);
+        }
+
+        void ShowHealth(int _health) 
+        {
+            statesPanel.ShowHealth(_health);
         }
 
         #region POPUPS
