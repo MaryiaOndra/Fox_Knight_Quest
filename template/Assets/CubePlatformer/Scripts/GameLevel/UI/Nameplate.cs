@@ -1,3 +1,4 @@
+using CubePlatformer.Base;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,6 +10,8 @@ namespace CubePlatformer
     [RequireComponent(typeof(AudioSource))]
     public class Nameplate : MonoBehaviour
     {
+        protected static readonly string SIGHT_TO_REPLACE = "#";
+
         [SerializeField]
         NameplatesConfigs nameplateConfigs;
 
@@ -34,6 +37,8 @@ namespace CubePlatformer
 
         void OnMouseDown()
         {
+            string _frase = nameplateConfigs.Frase;
+
             if (firstTime)
             {
                 exlamation.SetActive(false);
@@ -42,7 +47,13 @@ namespace CubePlatformer
 
             audioSource.PlayOneShot(audioSource.clip);
 
-            InvokeNameplate(nameplateConfigs.Frase);
+            if (_frase.Contains(SIGHT_TO_REPLACE))
+            {
+                int _coinsAmount = GameInfo.Instance.LevelConfig.CoinsAmount;
+                _frase = Configs.Frase.Replace(SIGHT_TO_REPLACE, _coinsAmount.ToString());
+            }
+
+            InvokeNameplate(_frase);
         }
     }
 }

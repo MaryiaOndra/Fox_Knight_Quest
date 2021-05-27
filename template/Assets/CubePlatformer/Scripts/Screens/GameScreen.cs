@@ -35,19 +35,19 @@ namespace CubePlatformer
 
         private void Awake()
         {
-            statesPanel = FindObjectOfType<StatesPanel>();
-            notesPanel = FindObjectOfType<NotesPanel>();
-            touchPanel = FindObjectOfType<TouchPanel>();
+            //statesPanel = FindObjectOfType<StatesPanel>(true);
+            //notesPanel = FindObjectOfType<NotesPanel>(true);
+            //touchPanel = FindObjectOfType<TouchPanel>(true);
 
-            CoinsAction = CheckCoinsAmount;
-            NotesAction = notesPanel.ShowPanel;
+            //CoinsAction = CheckCoinsAmount;
+            //NotesAction = notesPanel.ShowPanel;
 
-            popups = new List<BasePopup>(GetComponentsInChildren<BasePopup>(true));
+            //popups = new List<BasePopup>(GetComponentsInChildren<BasePopup>(true));
 
-            popups.ForEach(_popup =>
-            {
-                _popup.PopupShowAction = ActivatePopup;            
-            });
+            //popups.ForEach(_popup =>
+            //{
+            //    _popup.PopupShowAction = ActivatePopup;            
+            //});
 
 #if UNITY_STANDALONE
             androidBtns.SetActive(false);
@@ -74,6 +74,17 @@ namespace CubePlatformer
 
         private void OnEnable()
         {
+            statesPanel = FindObjectOfType<StatesPanel>(true);
+            notesPanel = FindObjectOfType<NotesPanel>(true);
+            touchPanel = FindObjectOfType<TouchPanel>(true);
+
+            popups = new List<BasePopup>(GetComponentsInChildren<BasePopup>(true));
+
+            popups.ForEach(_popup =>
+            {
+                _popup.PopupShowAction = ActivatePopup;
+            });
+
             activeLevel = FindObjectOfType<Level>();
             AddLevelData(activeLevel);
         }
@@ -90,7 +101,12 @@ namespace CubePlatformer
             touchPanel.DragAction = _level.Rotator.DragDelta;
 
             _level.Coins.ForEach(_coin => _coin.OnCoinColected = CheckCoinsAmount);
-            _level.Nameplates.ForEach(_nameplate => _nameplate.ActivateNameplate = notesPanel.ShowPanel);
+            _level.Nameplates.ForEach(_nameplate => _nameplate.ActivateNameplate = ShowNotesPanel);
+        }
+
+        void ShowNotesPanel(string _frase)
+        {
+            notesPanel.ShowPanel.Invoke(_frase);
         }
 
         #region POPUPS

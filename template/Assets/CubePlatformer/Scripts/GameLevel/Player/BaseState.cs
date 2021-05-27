@@ -10,6 +10,7 @@ namespace CubePlatformer
         protected static readonly int INT_STATE = Animator.StringToHash("State");
         protected static readonly int GET_HIT = Animator.StringToHash("GetHit");
         protected static readonly int VELOCITY_TO_FALL = -4;
+        protected static readonly string GROUND_LAYER = "Ground";
 
         protected Animator playerAnimator;
         protected Collider playerCollider;
@@ -64,7 +65,10 @@ namespace CubePlatformer
             {
                 var _value = false;
                 float _distToGround = 0.1f;
-                if (Physics.Raycast(playerRB.transform.position, Vector3.down, _distToGround)) 
+
+                LayerMask _mask = LayerMask.GetMask(GROUND_LAYER);
+
+                if (Physics.Raycast(playerRB.transform.position, Vector3.down, _distToGround, _mask)) 
                 {
                     _value = true;
                     LastIdlePosition = playerRB.transform.position;

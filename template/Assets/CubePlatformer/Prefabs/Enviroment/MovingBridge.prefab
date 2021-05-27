@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5774520344791554886}
   - component: {fileID: 5774520344791554885}
   - component: {fileID: 5774520344791554887}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MovingBridge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 674235031643444556}
   - component: {fileID: 1071581608150793317}
   - component: {fileID: 1339934612867130087}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BridgeModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}

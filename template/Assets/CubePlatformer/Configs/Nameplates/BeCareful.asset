@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6236a9c95b3a11944b7f7dd01b0806e2, type: 3}
-  m_Name: Level_04_BeCareful
+  m_Name: BeCareful
   m_EditorClassIdentifier: 
   fraseForPC: Be careful! Good luck!
   fraseForAndroid: Be careful! Good luck!

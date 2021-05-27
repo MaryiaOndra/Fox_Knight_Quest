@@ -6911,11 +6911,6 @@ PrefabInstance:
       propertyPath: targetTr
       value: 
       objectReference: {fileID: 787441576}
-    - target: {fileID: 1607882561283571819, guid: 4faf1d729b46c7c4998a42929ec42fe5,
-        type: 3}
-      propertyPath: orthographic size
-      value: 3.2075639
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4faf1d729b46c7c4998a42929ec42fe5, type: 3}
 --- !u!4 &1273195396 stripped
@@ -11377,6 +11372,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Sky
+      objectReference: {fileID: 0}
+    - target: {fileID: 3982390787461629656, guid: fe372ed29851f78468199f287c123699,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6252709639242156705, guid: fe372ed29851f78468199f287c123699,
         type: 3}

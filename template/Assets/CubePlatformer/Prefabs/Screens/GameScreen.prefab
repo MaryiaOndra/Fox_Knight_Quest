@@ -1620,6 +1620,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: NotesPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 3792608267155180059, guid: 12279c50b015e0043bb6cdfb21fb9607,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4957725466913523142, guid: 12279c50b015e0043bb6cdfb21fb9607,
         type: 3}
       propertyPath: m_text
