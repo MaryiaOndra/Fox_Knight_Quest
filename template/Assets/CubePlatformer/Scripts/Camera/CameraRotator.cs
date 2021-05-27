@@ -16,13 +16,21 @@ namespace CubePlatformer
         Vector3 eulerAngles;
         float prevYPos = 0;
 
-        public float DragDelta { get; set; }
+        public Action<float> DragDelta;
+
+        private void OnEnable()
+        {
+            DragDelta = RotateCamera;
+        }
 
         void Update()
         {
             transform.position = targetTr.position;
+        }
 
-            float _yPos = DragDelta;
+        void RotateCamera(float _dragDelta) 
+        {
+            float _yPos = _dragDelta;
 
             if (_yPos != prevYPos)
             {

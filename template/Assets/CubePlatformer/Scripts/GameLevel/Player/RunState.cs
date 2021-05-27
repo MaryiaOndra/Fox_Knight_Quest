@@ -50,7 +50,7 @@ namespace CubePlatformer
                     NextStateAction.Invoke(PlayerState.Idle);
                 }
             }
-            else if (playerRB.velocity.y < -4f)
+            else if (playerRB.velocity.y < VELOCITY_TO_FALL)
             {
                 playerAudioSource.Stop();
                 NextStateAction.Invoke(PlayerState.Fall);

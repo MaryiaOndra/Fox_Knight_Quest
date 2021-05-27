@@ -9,6 +9,7 @@ namespace CubePlatformer
     {
         protected static readonly int INT_STATE = Animator.StringToHash("State");
         protected static readonly int GET_HIT = Animator.StringToHash("GetHit");
+        protected static readonly int VELOCITY_TO_FALL = -4;
 
         protected Animator playerAnimator;
         protected Collider playerCollider;
