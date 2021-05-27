@@ -1,5 +1,4 @@
 using CubePlatformer.Base;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,18 +15,14 @@ namespace CubePlatformer
 
         private void OnEnable()
         {
-            Enemies.ForEach(_enemy => _enemy.AttackAction = PlayerController.GetHit);
-        }
-
-        private void Awake()
-        {
             Portal = FindObjectOfType<Portal>(true);
             PlayerController = FindObjectOfType<PlayerController>(true);
             Coins = new List<Coin>(FindObjectsOfType<Coin>(true));
             Enemies = new List<Enemy>(FindObjectsOfType<Enemy>(true));
             Nameplates = new List<Nameplate>(FindObjectsOfType<Nameplate>(true));
-            Rotator = FindObjectOfType<CameraRotator>();
+            Rotator = FindObjectOfType<CameraRotator>(true);
 
+            Enemies.ForEach(_enemy => _enemy.AttackAction = PlayerController.GetHit);
             CheckCoinsAmount(Coins.Count);
         }
 

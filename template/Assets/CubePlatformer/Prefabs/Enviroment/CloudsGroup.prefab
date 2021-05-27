@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5834569574342550278}
   - component: {fileID: 2298157787164251252}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CloudsGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,6 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d23f490d40a25047afa16ad4ff851c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skyMesh: {fileID: 0}
   cloudsLenght: 45
 --- !u!1001 &895126902243380763
 PrefabInstance:
@@ -78,6 +79,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 2df72ec125264584faa40cb1beef0481, type: 3}
       propertyPath: m_Name
       value: Cloud_03 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 2df72ec125264584faa40cb1beef0481, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2df72ec125264584faa40cb1beef0481, type: 3}
       propertyPath: m_RootOrder
@@ -162,6 +167,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cloud_05 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: c37b1ccfbc7ed274eb99f9d40e72c4e6, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c37b1ccfbc7ed274eb99f9d40e72c4e6, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -244,6 +253,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 2df72ec125264584faa40cb1beef0481, type: 3}
       propertyPath: m_Name
       value: Cloud_03 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 2df72ec125264584faa40cb1beef0481, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2df72ec125264584faa40cb1beef0481, type: 3}
       propertyPath: m_RootOrder
@@ -328,6 +341,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cloud_06
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: c2391e8a6bdf5424194b61e41952a40a, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c2391e8a6bdf5424194b61e41952a40a, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -410,6 +427,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: c2391e8a6bdf5424194b61e41952a40a, type: 3}
       propertyPath: m_Name
       value: Cloud_06
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: c2391e8a6bdf5424194b61e41952a40a, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c2391e8a6bdf5424194b61e41952a40a, type: 3}
       propertyPath: m_RootOrder
@@ -494,6 +515,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cloud_03
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 2df72ec125264584faa40cb1beef0481, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2df72ec125264584faa40cb1beef0481, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -576,6 +601,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 2df72ec125264584faa40cb1beef0481, type: 3}
       propertyPath: m_Name
       value: Cloud_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 2df72ec125264584faa40cb1beef0481, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2df72ec125264584faa40cb1beef0481, type: 3}
       propertyPath: m_RootOrder
@@ -660,6 +689,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cloud_06
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: c2391e8a6bdf5424194b61e41952a40a, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c2391e8a6bdf5424194b61e41952a40a, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -742,6 +775,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: c37b1ccfbc7ed274eb99f9d40e72c4e6, type: 3}
       propertyPath: m_Name
       value: Cloud_05
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: c37b1ccfbc7ed274eb99f9d40e72c4e6, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c37b1ccfbc7ed274eb99f9d40e72c4e6, type: 3}
       propertyPath: m_RootOrder
@@ -826,6 +863,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cloud_03
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 2df72ec125264584faa40cb1beef0481, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2df72ec125264584faa40cb1beef0481, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -908,6 +949,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: c37b1ccfbc7ed274eb99f9d40e72c4e6, type: 3}
       propertyPath: m_Name
       value: Cloud_05
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: c37b1ccfbc7ed274eb99f9d40e72c4e6, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c37b1ccfbc7ed274eb99f9d40e72c4e6, type: 3}
       propertyPath: m_RootOrder
@@ -992,6 +1037,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cloud_04
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 420bde364644a314396dc8ed24ee99d6, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 420bde364644a314396dc8ed24ee99d6, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -1074,6 +1123,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 09062dc0008857b46aaacdb7206f1453, type: 3}
       propertyPath: m_Name
       value: Cloud_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 09062dc0008857b46aaacdb7206f1453, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 09062dc0008857b46aaacdb7206f1453, type: 3}
       propertyPath: m_RootOrder
@@ -1158,6 +1211,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cloud_06
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: c2391e8a6bdf5424194b61e41952a40a, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c2391e8a6bdf5424194b61e41952a40a, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1240,6 +1297,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 73ef0b63ffe19f94ab35e4475b345d70, type: 3}
       propertyPath: m_Name
       value: Cloud_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 73ef0b63ffe19f94ab35e4475b345d70, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 73ef0b63ffe19f94ab35e4475b345d70, type: 3}
       propertyPath: m_RootOrder
@@ -1324,6 +1385,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cloud_05
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: c37b1ccfbc7ed274eb99f9d40e72c4e6, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c37b1ccfbc7ed274eb99f9d40e72c4e6, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -1406,6 +1471,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: c37b1ccfbc7ed274eb99f9d40e72c4e6, type: 3}
       propertyPath: m_Name
       value: Cloud_05
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: c37b1ccfbc7ed274eb99f9d40e72c4e6, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c37b1ccfbc7ed274eb99f9d40e72c4e6, type: 3}
       propertyPath: m_RootOrder
@@ -1490,6 +1559,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cloud_02
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 73ef0b63ffe19f94ab35e4475b345d70, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 73ef0b63ffe19f94ab35e4475b345d70, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1572,6 +1645,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 2df72ec125264584faa40cb1beef0481, type: 3}
       propertyPath: m_Name
       value: Cloud_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 2df72ec125264584faa40cb1beef0481, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2df72ec125264584faa40cb1beef0481, type: 3}
       propertyPath: m_RootOrder
@@ -1656,6 +1733,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cloud_06
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: c2391e8a6bdf5424194b61e41952a40a, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c2391e8a6bdf5424194b61e41952a40a, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1738,6 +1819,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: c37b1ccfbc7ed274eb99f9d40e72c4e6, type: 3}
       propertyPath: m_Name
       value: Cloud_05 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: c37b1ccfbc7ed274eb99f9d40e72c4e6, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c37b1ccfbc7ed274eb99f9d40e72c4e6, type: 3}
       propertyPath: m_RootOrder
@@ -1822,6 +1907,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cloud_05 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: c37b1ccfbc7ed274eb99f9d40e72c4e6, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c37b1ccfbc7ed274eb99f9d40e72c4e6, type: 3}
       propertyPath: m_RootOrder
       value: 23
@@ -1905,6 +1994,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cloud_06 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: c2391e8a6bdf5424194b61e41952a40a, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c2391e8a6bdf5424194b61e41952a40a, type: 3}
       propertyPath: m_RootOrder
       value: 18
@@ -1987,6 +2080,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 420bde364644a314396dc8ed24ee99d6, type: 3}
       propertyPath: m_Name
       value: Cloud_04 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 420bde364644a314396dc8ed24ee99d6, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 420bde364644a314396dc8ed24ee99d6, type: 3}
       propertyPath: m_RootOrder

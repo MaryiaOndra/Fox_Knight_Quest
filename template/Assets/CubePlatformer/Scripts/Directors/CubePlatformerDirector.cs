@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using CubePlatformer.Core;
-using UnityEngine;
+﻿using CubePlatformer.Core;
 using UnityEngine.SceneManagement;
 
 namespace CubePlatformer.Base

@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using CubePlatformer.Base;
 using CubePlatformer.Core;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace CubePlatformer
 {
@@ -35,19 +33,6 @@ namespace CubePlatformer
 
         private void Awake()
         {
-            statesPanel = FindObjectOfType<StatesPanel>();
-            notesPanel = FindObjectOfType<NotesPanel>();
-            touchPanel = FindObjectOfType<TouchPanel>();
-
-            CoinsAction = CheckCoinsAmount;
-            NotesAction = notesPanel.ShowPanel;
-
-            popups = new List<BasePopup>(GetComponentsInChildren<BasePopup>(true));
-
-            popups.ForEach(_popup =>
-            {
-                _popup.PopupShowAction = ActivatePopup;            
-            });
 
 #if UNITY_STANDALONE
             androidBtns.SetActive(false);
@@ -74,7 +59,18 @@ namespace CubePlatformer
 
         private void OnEnable()
         {
-            activeLevel = FindObjectOfType<Level>();
+            statesPanel = FindObjectOfType<StatesPanel>(true);
+            notesPanel = FindObjectOfType<NotesPanel>(true);
+            touchPanel = FindObjectOfType<TouchPanel>(true);
+
+            popups = new List<BasePopup>(GetComponentsInChildren<BasePopup>(true));
+
+            popups.ForEach(_popup =>
+            {
+                _popup.PopupShowAction = ActivatePopup;
+            });
+
+            activeLevel = FindObjectOfType<Level>(true);
             AddLevelData(activeLevel);
         }
 
@@ -85,12 +81,22 @@ namespace CubePlatformer
             portal.IsPortalAction = ShowVictoryPopup;
             playerContr.PlayerDeathAction = OnLoose;
             playerContr.PlayerReturnAction = OnTryAgain;
-            playerContr.ChangeHealthAction = statesPanel.ShowHealth;
+            playerContr.ChangeHealthAction = ShowHealth;
             startPlayerPos = playerContr.transform.position;
             touchPanel.DragAction = _level.Rotator.DragDelta;
 
             _level.Coins.ForEach(_coin => _coin.OnCoinColected = CheckCoinsAmount);
-            _level.Nameplates.ForEach(_nameplate => _nameplate.ActivateNameplate = notesPanel.ShowPanel);
+            _level.Nameplates.ForEach(_nameplate => _nameplate.ActivateNameplate = ShowNotesPanel);
+        }
+
+        void ShowNotesPanel(string _frase)
+        {
+            notesPanel.ShowPanel.Invoke(_frase);
+        }
+
+        void ShowHealth(int _health) 
+        {
+            statesPanel.ShowHealth(_health);
         }
 
         #region POPUPS

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6934243681054774402}
   - component: {fileID: 3445677147733376449}
   - component: {fileID: 4443105738567013397}
-  - component: {fileID: 2292755321826202373}
+  - component: {fileID: 5828583561620628842}
   m_Layer: 0
   m_Name: 'PortalNameplate '
   m_TagString: Untagged
@@ -195,7 +195,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &2292755321826202373
+--- !u!114 &5828583561620628842
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -204,10 +204,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 641049419268107243}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d20317a67a3f2794d82005d356b22b49, type: 3}
+  m_Script: {fileID: 11500000, guid: e52acf4859523504ba7ccc7fe2c73d43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameplateConfigs: {fileID: 11400000, guid: cf46d3ee99620e848b8ed6ddc0f025e1, type: 2}
+  nameplateConfigs: {fileID: 11400000, guid: b6790d1216d6d414da579af2bcebe6fa, type: 2}
   exlamation: {fileID: 7863368726604165226}
 --- !u!95 &7614158311011533292
 Animator:

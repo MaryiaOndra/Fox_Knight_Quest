@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2496775575800497772}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DoublePlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,6 +43,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tile Bot 1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092910722396494324, guid: 162d2f8f57192a14ab9278fc56faf57e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2253974617658314293, guid: 162d2f8f57192a14ab9278fc56faf57e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3907522310404650416, guid: 162d2f8f57192a14ab9278fc56faf57e,
         type: 3}

@@ -1,9 +1,5 @@
-using CubePlatformer.Base;
 using CubePlatformer.Core;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
 
 namespace CubePlatformer
 {

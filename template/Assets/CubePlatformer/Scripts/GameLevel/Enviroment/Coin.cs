@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace CubePlatformer
@@ -16,10 +14,12 @@ namespace CubePlatformer
             CoinClip = GetComponent<AudioSource>().clip;
         }
 
-        private void OnTriggerEnter(Collider other)
+        private void OnTriggerEnter(Collider _collider)
         {
-           // gameObject.SetActive(false);
-            OnCoinColected.Invoke(this);
+            if (_collider.GetComponent<PlayerController>())
+            {
+                OnCoinColected.Invoke(this);
+            }
         }
 
         public void Deactivate() 

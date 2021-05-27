@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3659001759862534973}
   - component: {fileID: 7551191789737880984}
   - component: {fileID: 7255172800733284231}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tile Decor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 8429450641368821296}
   - component: {fileID: 6871935858732009807}
   - component: {fileID: 855500820313638252}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tile Bot 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,8 +199,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6867769360859292036}
-  m_Layer: 0
-  m_Name: Tile Mat 0 (43)
+  m_Layer: 8
+  m_Name: PlatformCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -235,7 +235,7 @@ GameObject:
   - component: {fileID: 6145267940510616327}
   - component: {fileID: 7397607360947684533}
   - component: {fileID: 953530320243922996}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tile Top 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9057312782605013300}
   - component: {fileID: 859140326530516735}
   - component: {fileID: 5899748261318498394}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tile Decor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 4119427127470311690}
   - component: {fileID: 4119427127470311703}
   - component: {fileID: 4119427127470311688}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tile Decor (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 4119427129049285055}
   - component: {fileID: 4119427129049285052}
   - component: {fileID: 4119427129049285053}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tile Decor (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -253,7 +253,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6496894558863899470}
   - component: {fileID: 6461936834091398946}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Decor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -308,7 +308,7 @@ GameObject:
   - component: {fileID: 7025921215328534745}
   - component: {fileID: 1508469597757922329}
   - component: {fileID: 5399509022402327835}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FlyingPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -388,7 +388,7 @@ GameObject:
   - component: {fileID: 4568406320317578572}
   - component: {fileID: 3455720326417306327}
   - component: {fileID: 1277072004513140710}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tile Top 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

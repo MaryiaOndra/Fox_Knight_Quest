@@ -1,8 +1,5 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using CubePlatformer.Core;
-using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace CubePlatformer
@@ -14,7 +11,6 @@ namespace CubePlatformer
             base.Start();
 
             SetCurrentScreen<LoadingScreen>().Show();
-            //SetCurrentScreen<GameScreen>().ShowAndStartGame();
         }
 
         protected override void OnScreenExit(Type _screenType, string _exitCode)
