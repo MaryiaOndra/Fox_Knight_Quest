@@ -229,6 +229,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 945b46f0cb931384089222e304a2cccc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  adsBtn: {fileID: 1328968520541653545}
+  returndBtn: {fileID: 4187647491521044846}
 --- !u!1 &3094525392217461769
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,19 +351,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2783219823448134065}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5373573130240362077}
-        m_TargetAssemblyTypeName: CubePlatformer.TryAgainPopup, Assembly-CSharp
-        m_MethodName: ReturnMinusHealth
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &5343498170865115288
 GameObject:
   m_ObjectHideFlags: 0
@@ -557,19 +547,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 9135515336998865334}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5373573130240362077}
-        m_TargetAssemblyTypeName: CubePlatformer.TryAgainPopup, Assembly-CSharp
-        m_MethodName: Return
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &8191592248791109347
 GameObject:
   m_ObjectHideFlags: 0

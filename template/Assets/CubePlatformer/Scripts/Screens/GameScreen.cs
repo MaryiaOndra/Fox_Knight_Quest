@@ -117,7 +117,7 @@ namespace CubePlatformer
             {
                 case Popup.TryAgain:
                     var _popTr = activePopup.GetComponent<TryAgainPopup>();
-                    _popTr.ReturnAction = ReturnAfterAdvertisment;
+                    _popTr.ReturnAction = ReturnLoosingHealth;
                     _popTr.ReturnMinusHealthAction = ReturnLoosingHealth;
                     break;
 
@@ -151,32 +151,21 @@ namespace CubePlatformer
 
         void Return()
         {
-            activePopup.Hide();
             Show();
         }
 
         void Restart() 
         {
-            activePopup.Hide();
             LoadGame();
             statesPanel.TimerOff();
         }
         
-        void ReturnLoosingHealth()
+        void ReturnLoosingHealth(int _damage)
         {
-            playerContr.GetHit(1);
-            activePopup.Hide();
+            playerContr.AddHealth(_damage);
             playerContr.ReturnToStartPos(startPlayerPos);
             Show();
         }
-
-        void ReturnAfterAdvertisment()
-        {
-            activePopup.Hide();
-            playerContr.ReturnToStartPos(startPlayerPos);
-            Show();
-        }
-
 
         void OnLoose()
         {
@@ -196,7 +185,6 @@ namespace CubePlatformer
 
         void ShowSettingsPopup() 
         {
-            activePopup.Hide();
             ActivatePopup(Popup.Settings);        
         }
 

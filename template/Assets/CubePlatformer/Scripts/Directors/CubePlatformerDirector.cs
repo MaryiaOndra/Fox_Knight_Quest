@@ -9,16 +9,6 @@ namespace CubePlatformer.Base
     {
         void Start()
         {            
-
-            string _adsId = string.Empty;
-
-#if UNITY_IOS
-            _adsId = "4145553";
-#elif UNITY_ANDROID
-            _adsId = "4145552";
-#endif
-            Advertisement.Initialize(_adsId);
-
             GameInfo.Instance.Setup();
             SceneManager.LoadScene("Menu");
         }

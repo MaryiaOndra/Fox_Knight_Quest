@@ -1,30 +1,49 @@
 using System;
 using System.Collections;
+using UnityEngine;
 using UnityEngine.Advertisements;
+using UnityEngine.UI;
 
 namespace CubePlatformer
 {
     public class TryAgainPopup : BasePopup
     {
+        const int HEALTH_DAMAGE = -1;
+        const int HEALTH_BUFF = 1;
+
+        [SerializeField]
+        Button adsBtn;        
+        
+        [SerializeField]
+        Button returndBtn;
+
         public override Popup ScreenPopup => Popup.TryAgain;
 
-        public Action ReturnMinusHealthAction;
-        public Action ReturnAction;
+        public Action<int> ReturnMinusHealthAction;
+        public Action<int> ReturnAction;
+
+        private void OnEnable()
+        {
+            returndBtn.onClick.AddListener(ReturnMinusHealth);
+            adsBtn.onClick.AddListener(AdsMgr.Instance.ShowRewardedVideoAds);
+            AdsMgr.Instance.AdsDidFinish = ReturnWithAds;
+        }
+
+        private void OnDisable()
+        {
+            returndBtn.onClick.RemoveListener(ReturnMinusHealth);
+            adsBtn.onClick.RemoveListener(AdsMgr.Instance.ShowRewardedVideoAds);
+        }
 
         public void ReturnMinusHealth() 
         {
-            ReturnMinusHealthAction.Invoke();
+            ReturnMinusHealthAction.Invoke(HEALTH_DAMAGE);
             Hide();
         }
 
-        public void Return() 
+        public void ReturnWithAds() 
         {
-            if (Advertisement.IsReady("rewardedVideo"))
-            {
-                Advertisement.Show("rewardedVideo");
-            }
-
-            ReturnAction.Invoke();
+            ReturnAction.Invoke(HEALTH_BUFF);
             Hide();    
         }
     }
