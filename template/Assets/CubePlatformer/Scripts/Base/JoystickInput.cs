@@ -1,10 +1,9 @@
 using UnityEngine;
 
 namespace CubePlatformer
-{
-   
+{  
 
-    public class AndroidInput : MonoBehaviour
+    public class JoystickInput : MonoBehaviour
     {
         Joystick joystick;
 

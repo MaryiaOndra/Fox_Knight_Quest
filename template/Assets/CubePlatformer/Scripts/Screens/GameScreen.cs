@@ -77,6 +77,8 @@ namespace CubePlatformer
 
         public void AddLevelData(Level _level)
         {
+            Debug.Log("AddLevelData: " + _level.LevelName);
+
             playerContr = _level.PlayerController;
             portal = _level.Portal;
             portal.IsPortalAction = ShowVictoryPopup;
