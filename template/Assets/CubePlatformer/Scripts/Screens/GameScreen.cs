@@ -53,25 +53,22 @@ namespace CubePlatformer
 #endif
         }
 
-        public override void Show()
+        public void ShowAndLoadGame()
         {
-            base.Show();
+            Show();
 
-            Time.timeScale = 1;
             levelConfigs = GameInfo.Instance.LevelConfig;
             GameInfo.Instance.ResetLevelResult();
-            coinsCount = 0;
-            timeToDisplay = 0;
-            statesPanel.TimerOn();
-        }
 
-        private void OnEnable()
-        {
             activeLevel = FindObjectOfType<Level>(true);
             AddLevelData(activeLevel);
 
+            statesPanel.TimerOn();
             statesPanel.ShowScores(coinsCount);
             statesPanel.ShowHealth(playerContr.PlayerHealth);
+
+            Time.timeScale = 1;
+            coinsCount = 0;
             timeToDisplay = 0;
         }
 
@@ -87,7 +84,6 @@ namespace CubePlatformer
             playerContr.ChangeHealthAction = ShowHealth;
             startPlayerPos = playerContr.transform.position;
             touchPanel.DragAction = _level.Rotator.DragDelta;
-
             _level.Coins.ForEach(_coin => _coin.OnCoinColected = CheckCoinsAmount);
             _level.Nameplates.ForEach(_nameplate => _nameplate.ActivateNameplate = ShowNotesPanel);
         }

@@ -707,7 +707,7 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
-  m_UseSpriteMesh: 0
+  m_UseSpriteMesh: 1
   m_PixelsPerUnitMultiplier: 1
 --- !u!114 &8763821329768044355
 MonoBehaviour:
@@ -1055,7 +1055,7 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
-  m_UseSpriteMesh: 0
+  m_UseSpriteMesh: 1
   m_PixelsPerUnitMultiplier: 1
 --- !u!1 &8085999706534662802
 GameObject:
@@ -2511,6 +2511,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7001573538509491709}
     m_Modifications:
+    - target: {fileID: 25773717785081690, guid: 5abd2b4664c28064db0f626596440b7c,
+        type: 3}
+      propertyPath: m_UseSpriteMesh
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 868539655275410828, guid: 5abd2b4664c28064db0f626596440b7c,
+        type: 3}
+      propertyPath: m_UseSpriteMesh
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1113186114140063215, guid: 5abd2b4664c28064db0f626596440b7c,
+        type: 3}
+      propertyPath: m_UseSpriteMesh
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2590022712179727946, guid: 5abd2b4664c28064db0f626596440b7c,
+        type: 3}
+      propertyPath: m_UseSpriteMesh
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2797207663027716132, guid: 5abd2b4664c28064db0f626596440b7c,
+        type: 3}
+      propertyPath: m_UseSpriteMesh
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2875243504441004405, guid: 5abd2b4664c28064db0f626596440b7c,
+        type: 3}
+      propertyPath: m_UseSpriteMesh
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4533940459886924001, guid: 5abd2b4664c28064db0f626596440b7c,
         type: 3}
       propertyPath: m_Pivot.x
@@ -2616,10 +2646,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6295062328127498331, guid: 5abd2b4664c28064db0f626596440b7c,
+        type: 3}
+      propertyPath: m_UseSpriteMesh
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7143075421266889576, guid: 5abd2b4664c28064db0f626596440b7c,
+        type: 3}
+      propertyPath: m_UseSpriteMesh
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7143075423195172718, guid: 5abd2b4664c28064db0f626596440b7c,
+        type: 3}
+      propertyPath: m_UseSpriteMesh
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7156843561458139087, guid: 5abd2b4664c28064db0f626596440b7c,
+        type: 3}
+      propertyPath: m_UseSpriteMesh
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7416394704681220671, guid: 5abd2b4664c28064db0f626596440b7c,
+        type: 3}
+      propertyPath: m_UseSpriteMesh
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7685493613726463756, guid: 5abd2b4664c28064db0f626596440b7c,
         type: 3}
       propertyPath: m_Name
       value: ButtonsInput
+      objectReference: {fileID: 0}
+    - target: {fileID: 8367577085864303428, guid: 5abd2b4664c28064db0f626596440b7c,
+        type: 3}
+      propertyPath: m_UseSpriteMesh
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8733705521236535096, guid: 5abd2b4664c28064db0f626596440b7c,
+        type: 3}
+      propertyPath: m_UseSpriteMesh
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5abd2b4664c28064db0f626596440b7c, type: 3}

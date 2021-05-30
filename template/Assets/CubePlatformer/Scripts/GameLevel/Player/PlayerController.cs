@@ -63,7 +63,6 @@ namespace CubePlatformer
         public void AddHealth(int _value) 
         {
             actualHealth += _value;
-            Debug.Log("actualHealth: " + actualHealth + ":   _value:" + _value);
             if (actualHealth > MAX_HEALTH) actualHealth = MAX_HEALTH;
 
             CheckHealth(actualHealth);

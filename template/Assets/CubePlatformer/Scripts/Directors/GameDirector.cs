@@ -19,7 +19,7 @@ namespace CubePlatformer
             {
                 if (_exitCode == LoadingScreen.Exit_Game)
                 {
-                    SetCurrentScreen<GameScreen>().Show();
+                    SetCurrentScreen<GameScreen>().ShowAndLoadGame();
                 }
             }
             else if (_screenType == typeof(GameScreen))

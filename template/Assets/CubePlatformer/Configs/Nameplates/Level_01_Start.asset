@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fraseForPC: "Use \"WSAD\" to control a character; \nto rotate:\nhold the right
     mouse button\r \nand drag."
-  fraseForAndroid: "Use joystick to control a character;\n to rotate:  hold and drag
-    the finger around screen to the left or right side;"
+  fraseForAndroid: "Use panel with arrows to control a character;\n to rotate:  hold
+    and drag the finger around screen to the left or right side;"
