@@ -6,9 +6,6 @@ namespace CubePlatformer
 {
     public class PlayerController : MonoBehaviour
     {
-        [SerializeField]
-        AudioClip getHit;
-
         public const int MAX_HEALTH = 3;
         int actualHealth;
 
@@ -55,10 +52,18 @@ namespace CubePlatformer
             if (currentState.PlayerState == PlayerState.Idle
                 || currentState.PlayerState == PlayerState.Fall)
             {
-                audioSource.PlayOneShot(getHit);
+                audioSource.PlayOneShot(audioSource.clip);
                 currentState.GetHit();
                 actualHealth -= _damage;
             }
+
+            CheckHealth(actualHealth);
+        }
+
+        public void AddHealth(int _value) 
+        {
+            actualHealth += _value;
+            if (actualHealth > MAX_HEALTH) actualHealth = MAX_HEALTH;
 
             CheckHealth(actualHealth);
         }

@@ -6,6 +6,8 @@ namespace CubePlatformer
 {
     public class Level : MonoBehaviour
     {
+        public string LevelName { get => GameInfo.Instance.LevelConfig.LevelName; }
+
         public PlayerController PlayerController { get; private set; }
         public List<Coin> Coins { get; private set; }
         public List<Enemy> Enemies { get; private set; }
@@ -24,6 +26,7 @@ namespace CubePlatformer
 
             Enemies.ForEach(_enemy => _enemy.AttackAction = PlayerController.GetHit);
             CheckCoinsAmount(Coins.Count);
+
         }
 
         void CheckCoinsAmount(int _lvlCoins) 

@@ -36,8 +36,12 @@ namespace CubePlatformer
 
             Vector3 _direction = (_camF * Direction.z + _camR * Direction.x).normalized;
             playerRB.MovePosition(playerRB.position + Time.deltaTime * playerSpeed * _direction);
-            Quaternion _toRotation = Quaternion.LookRotation(_direction);
-            playerRB.rotation = Quaternion.RotateTowards(playerRB.rotation, _toRotation, Time.fixedDeltaTime * rotationSpeed);
+
+            if (!_direction.Equals(Vector3.zero))
+            {
+                Quaternion _toRotation = Quaternion.LookRotation(_direction);
+                playerRB.rotation = Quaternion.RotateTowards(playerRB.rotation, _toRotation, Time.fixedDeltaTime * rotationSpeed);
+            }
         }
 
         private void Update()

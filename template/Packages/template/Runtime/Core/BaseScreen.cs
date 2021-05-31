@@ -19,6 +19,7 @@ namespace CubePlatformer.Core
         public virtual void Show() 
         {
             gameObject.SetActive(true);
+            Debug.Log("SCREEN: " + gameObject.name);
         }
 
 

@@ -53,30 +53,29 @@ namespace CubePlatformer
 #endif
         }
 
-        public override void Show()
+        public void ShowAndLoadGame()
         {
-            base.Show();
+            Show();
 
-            Time.timeScale = 1;
             levelConfigs = GameInfo.Instance.LevelConfig;
             GameInfo.Instance.ResetLevelResult();
-            coinsCount = 0;
-            timeToDisplay = 0;
-            statesPanel.TimerOn();
-        }
 
-        private void OnEnable()
-        {
             activeLevel = FindObjectOfType<Level>(true);
             AddLevelData(activeLevel);
 
+            statesPanel.TimerOn();
             statesPanel.ShowScores(coinsCount);
             statesPanel.ShowHealth(playerContr.PlayerHealth);
+
+            Time.timeScale = 1;
+            coinsCount = 0;
             timeToDisplay = 0;
         }
 
         public void AddLevelData(Level _level)
         {
+            Debug.Log("AddLevelData: " + _level.LevelName);
+
             playerContr = _level.PlayerController;
             portal = _level.Portal;
             portal.IsPortalAction = ShowVictoryPopup;
@@ -85,7 +84,6 @@ namespace CubePlatformer
             playerContr.ChangeHealthAction = ShowHealth;
             startPlayerPos = playerContr.transform.position;
             touchPanel.DragAction = _level.Rotator.DragDelta;
-
             _level.Coins.ForEach(_coin => _coin.OnCoinColected = CheckCoinsAmount);
             _level.Nameplates.ForEach(_nameplate => _nameplate.ActivateNameplate = ShowNotesPanel);
         }
@@ -115,7 +113,7 @@ namespace CubePlatformer
             {
                 case Popup.TryAgain:
                     var _popTr = activePopup.GetComponent<TryAgainPopup>();
-                    _popTr.ReturnAction = ReturnAfterAdvertisment;
+                    _popTr.ReturnAction = ReturnLoosingHealth;
                     _popTr.ReturnMinusHealthAction = ReturnLoosingHealth;
                     break;
 
@@ -149,32 +147,21 @@ namespace CubePlatformer
 
         void Return()
         {
-            activePopup.Hide();
             Show();
         }
 
         void Restart() 
         {
-            activePopup.Hide();
             LoadGame();
             statesPanel.TimerOff();
         }
         
-        void ReturnLoosingHealth()
+        void ReturnLoosingHealth(int _damage)
         {
-            playerContr.GetHit(1);
-            activePopup.Hide();
+            playerContr.AddHealth(_damage);
             playerContr.ReturnToStartPos(startPlayerPos);
             Show();
         }
-
-        void ReturnAfterAdvertisment()
-        {
-            activePopup.Hide();
-            playerContr.ReturnToStartPos(startPlayerPos);
-            Show();
-        }
-
 
         void OnLoose()
         {
@@ -194,7 +181,6 @@ namespace CubePlatformer
 
         void ShowSettingsPopup() 
         {
-            activePopup.Hide();
             ActivatePopup(Popup.Settings);        
         }
 
