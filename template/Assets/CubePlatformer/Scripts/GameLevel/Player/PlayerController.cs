@@ -13,7 +13,7 @@ namespace CubePlatformer
         BaseState currentState;
         AudioSource audioSource;
 
-        public int PlayerHealth => actualHealth;
+        //public int PlayerHealth => actualHealth;
 
         public Action PlayerDeathAction;
         public Action PlayerReturnAction;
@@ -38,6 +38,11 @@ namespace CubePlatformer
 
             currentState = states.Find(_state => _state.PlayerState == PlayerState.Fall);
             currentState.Activate();
+        }
+
+        public int GetHealth() 
+        {
+            return actualHealth;
         }
           
         public void OnNextStateRequest(PlayerState _state) 

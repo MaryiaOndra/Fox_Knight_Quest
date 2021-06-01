@@ -7,7 +7,7 @@ using UnityEngine.Advertisements;
 
 namespace CubePlatformer
 {
-    public class AdsMgr : BaseManager<AdsMgr>, IUnityAdsShowListener
+    public class AdsMgr : BaseManager<AdsMgr>
     {
         public const string REWARDED_PLACEMENT_ID = "rewardedVideo";
 
@@ -63,26 +63,6 @@ namespace CubePlatformer
                     Debug.LogError("The ad failed to be shown.");
                     break;
             }
-        }
-
-        public void OnUnityAdsShowFailure(string placementId, UnityAdsShowError error, string message)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void OnUnityAdsShowStart(string placementId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void OnUnityAdsShowClick(string placementId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void OnUnityAdsShowComplete(string placementId, UnityAdsShowCompletionState showCompletionState)
-        {
-            throw new NotImplementedException();
         }
     }
 }

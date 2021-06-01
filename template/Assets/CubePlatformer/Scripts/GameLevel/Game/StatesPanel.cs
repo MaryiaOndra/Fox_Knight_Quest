@@ -21,7 +21,7 @@ namespace CubePlatformer
         void Awake() 
         {
             timer = GetComponentInChildren<Timer>(true);
-
+            ShowHealth(0);
         }
 
         public void TimerOn() 

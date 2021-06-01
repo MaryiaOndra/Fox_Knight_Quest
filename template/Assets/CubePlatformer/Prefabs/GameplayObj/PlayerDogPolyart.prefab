@@ -1988,7 +1988,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43704a99977be974393a3551f67592ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  getHit: {fileID: 8300000, guid: c2f7ceec0c6b0b246be25396c2e1ceef, type: 3}
 --- !u!54 &4022869924540001336
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2003,7 +2002,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 2
 --- !u!136 &4584719332935508536
 CapsuleCollider:

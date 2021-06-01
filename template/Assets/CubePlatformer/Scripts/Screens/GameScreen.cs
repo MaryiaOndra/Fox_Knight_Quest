@@ -28,6 +28,7 @@ namespace CubePlatformer
         List<BasePopup> popups;
         BasePopup activePopup;
 
+        int health;
         int coinsCount = 0;
         float timeToDisplay;
         Vector3 startPlayerPos;
@@ -65,7 +66,7 @@ namespace CubePlatformer
 
             statesPanel.TimerOn();
             statesPanel.ShowScores(coinsCount);
-            statesPanel.ShowHealth(playerContr.PlayerHealth);
+            statesPanel.ShowHealth(health);
 
             Time.timeScale = 1;
             coinsCount = 0;
@@ -82,6 +83,7 @@ namespace CubePlatformer
             playerContr.PlayerDeathAction = OnLoose;
             playerContr.PlayerReturnAction = OnTryAgain;
             playerContr.ChangeHealthAction = ShowHealth;
+            health = playerContr.GetHealth();
             startPlayerPos = playerContr.transform.position;
             touchPanel.DragAction = _level.Rotator.DragDelta;
             _level.Coins.ForEach(_coin => _coin.OnCoinColected = CheckCoinsAmount);
@@ -95,6 +97,7 @@ namespace CubePlatformer
 
         void ShowHealth(int _health) 
         {
+            Debug.Log("ShowHealth: " + _health);
             statesPanel.ShowHealth(_health);
         }
 

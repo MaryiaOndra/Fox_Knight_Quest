@@ -15,7 +15,7 @@ namespace CubePlatformer
         public List<Nameplate> Nameplates { get; private set; }
         public CameraRotator Rotator { get; private set; }
 
-        private void OnEnable()
+        private void Awake()
         {
             Portal = FindObjectOfType<Portal>(true);
             PlayerController = FindObjectOfType<PlayerController>(true);
