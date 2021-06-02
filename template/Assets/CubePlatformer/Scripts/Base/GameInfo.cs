@@ -45,11 +45,12 @@ namespace CubePlatformer.Base
             set => AppPrefs.SetFloat(PrefsKeys.Time, value);
         }
 
-        public void RegisterResult(int _collectedCoins) 
+        public void RegisterResult(int _collectedCoins, float _time) 
         {
             LevelResultInfo = new LevelResultInfo();
             Scores = _collectedCoins;
             LevelResultInfo.Scores = _collectedCoins;
+            LevelResultInfo.Time = _time;
 
             if (LevelConfig.CoinsAmount == _collectedCoins)
             {

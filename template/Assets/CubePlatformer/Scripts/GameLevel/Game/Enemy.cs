@@ -23,7 +23,6 @@ namespace CubePlatformer
 
         public Action<int> AttackAction;
 
-
         void Awake()
         {
             enemyAnimator = GetComponent<Animator>();

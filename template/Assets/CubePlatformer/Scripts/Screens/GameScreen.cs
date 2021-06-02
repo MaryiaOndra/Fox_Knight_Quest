@@ -14,9 +14,6 @@ namespace CubePlatformer
         GameObject androidBtns;    
         [SerializeField]
         GameObject keyboardInput;
-        [SerializeField]
-        TMP_Text healthTxt;
-
 
         public const string Exit_Menu = "Exit_Menu";
         public const string Exit_Loading = "Exit_Loading";
@@ -70,6 +67,7 @@ namespace CubePlatformer
             activeLevel.GetLevelData();
             ConnectWithLevel(activeLevel);
 
+            statesPanel.TimerOff();
             statesPanel.TimerOn();
             statesPanel.ShowScores(coinsCount);
             statesPanel.ShowHealth(health);
@@ -81,8 +79,6 @@ namespace CubePlatformer
 
         public void ConnectWithLevel(Level _level)
         {
-            healthTxt.text = "\n AddLevelData: " + _level.LevelName;
-
             playerContr = _level.PlayerContr;
             portal = _level.Portal;
             portal.IsPortalAction = ShowVictoryPopup;
@@ -103,8 +99,6 @@ namespace CubePlatformer
 
         void ShowHealth(int _health) 
         {
-            healthTxt.text += "\n ShowHealth: " + _health;
-            Debug.Log("ShowHealth: " + _health);
             statesPanel.ShowHealth(_health);
         }
 
@@ -118,7 +112,6 @@ namespace CubePlatformer
         void ActivatePopup(Popup _popup) 
         {
             activePopup = popups.Find(_p => _p.ScreenPopup == _popup);
-            healthTxt.text += "\n _popup: " + _popup;
 
             switch (_popup) 
             {
@@ -197,9 +190,12 @@ namespace CubePlatformer
 
         void ShowVictoryPopup()
         {
-            GameInfo.Instance.RegisterResult(coinsCount);
+            Debug.Log("GameInfo.Instance.Time: " + GameInfo.Instance.Time);
+            GameInfo.Instance.RegisterResult(coinsCount, GameInfo.Instance.Time);
             ActivatePopup(Popup.Victory);
 
+
+            ///
             var _params = new Dictionary<string, object>();
 
             _params.Add("level", levelConfigs.LevelName);
