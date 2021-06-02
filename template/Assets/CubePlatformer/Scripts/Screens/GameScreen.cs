@@ -31,7 +31,6 @@ namespace CubePlatformer
 
         int health;
         int coinsCount = 0;
-        float timeToDisplay;
         Vector3 startPlayerPos;
 
         public Action<Coin> CoinsAction;
@@ -74,7 +73,6 @@ namespace CubePlatformer
 
             Time.timeScale = 1;
             coinsCount = 0;
-            timeToDisplay = 0;
         }
 
         public void ConnectWithLevel(Level _level)
@@ -171,15 +169,6 @@ namespace CubePlatformer
         {
             ActivatePopup(Popup.Loose);
             statesPanel.TimerOff();
-
-            var _params = new Dictionary<string, object>();
-            _params.Add("level", levelConfigs.LevelName);
-            _params.Add("time", timeToDisplay);
-            _params.Add("coins", coinsCount);
-
-            var _result = AnalyticsEvent.Custom("result", _params);
-            Debug.Log("AnalyticsEvent: " + _result);
-
             statesPanel.TimerOff();
         }
 
@@ -199,12 +188,11 @@ namespace CubePlatformer
             var _params = new Dictionary<string, object>();
 
             _params.Add("level", levelConfigs.LevelName);
-            _params.Add("time", timeToDisplay);
+            _params.Add("time", GameInfo.Instance.Time);
 
             var _result = AnalyticsEvent.Custom("result", _params);
             Debug.Log("AnalyticsEvent: " + _result);
 
-            timeToDisplay = 0;
             GameInfo.Instance.LevelIndex += 1;
         }
 

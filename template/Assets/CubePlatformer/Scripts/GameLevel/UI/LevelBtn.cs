@@ -1,3 +1,4 @@
+using CubePlatformer.Base;
 using System;
 using TMPro;
 using UnityEngine;
@@ -8,7 +9,10 @@ namespace CubePlatformer
     public class LevelBtn : MonoBehaviour
     {
         [SerializeField]
-        TextMeshProUGUI levelText;
+        TextMeshProUGUI levelText;     
+        
+        [SerializeField]
+        TextMeshProUGUI timeText;
 
         Button levelBtn;
         int levelIndex;
@@ -24,10 +28,7 @@ namespace CubePlatformer
         {
             levelBtn.interactable = _levelState == LevelState.Unlocked;
             levelIndex = _levelIndex;
-
             levelText.text = levelBtn.interactable ? (_levelIndex + 1).ToString() : string.Empty;
-
-           // levelText.text = (_levelIndex + 1).ToString();
         }
 
         public void OnBtnPressed()

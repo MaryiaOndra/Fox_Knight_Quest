@@ -45,6 +45,13 @@ namespace CubePlatformer.Base
             set => AppPrefs.SetFloat(PrefsKeys.Time, value);
         }
 
+        public string ConvertTime(float _time) 
+        {
+            float minutes = Mathf.FloorToInt(_time / 60);
+            float seconds = Mathf.FloorToInt(_time % 60);
+            return string.Format("{0:00}:{1:00}", minutes, seconds);
+        }
+
         public void RegisterResult(int _collectedCoins, float _time) 
         {
             LevelResultInfo = new LevelResultInfo();
