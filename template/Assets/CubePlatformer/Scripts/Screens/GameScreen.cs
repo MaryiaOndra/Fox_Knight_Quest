@@ -118,8 +118,9 @@ namespace CubePlatformer
         void ActivatePopup(Popup _popup) 
         {
             activePopup = popups.Find(_p => _p.ScreenPopup == _popup);
+            healthTxt.text += "\n _popup: " + _popup;
 
-            switch(_popup) 
+            switch (_popup) 
             {
                 case Popup.TryAgain:
                     var _popTr = activePopup.GetComponent<TryAgainPopup>();
