@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using CubePlatformer.Base;
 using CubePlatformer.Core;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Analytics;
 
@@ -13,6 +14,9 @@ namespace CubePlatformer
         GameObject androidBtns;    
         [SerializeField]
         GameObject keyboardInput;
+        [SerializeField]
+        TMP_Text healthTxt;
+
 
         public const string Exit_Menu = "Exit_Menu";
         public const string Exit_Loading = "Exit_Loading";
@@ -39,6 +43,7 @@ namespace CubePlatformer
         private void Awake()
         {
             statesPanel = FindObjectOfType<StatesPanel>(true);
+            Debug.Log("statesPanel:   " + statesPanel);
             notesPanel = FindObjectOfType<NotesPanel>(true);
             touchPanel = FindObjectOfType<TouchPanel>(true);
 
@@ -62,7 +67,8 @@ namespace CubePlatformer
             GameInfo.Instance.ResetLevelResult();
 
             activeLevel = FindObjectOfType<Level>(true);
-            AddLevelData(activeLevel);
+            activeLevel.GetLevelData();
+            ConnectWithLevel(activeLevel);
 
             statesPanel.TimerOn();
             statesPanel.ShowScores(coinsCount);
@@ -73,11 +79,11 @@ namespace CubePlatformer
             timeToDisplay = 0;
         }
 
-        public void AddLevelData(Level _level)
+        public void ConnectWithLevel(Level _level)
         {
-            Debug.Log("AddLevelData: " + _level.LevelName);
+            healthTxt.text = "\n AddLevelData: " + _level.LevelName;
 
-            playerContr = _level.PlayerController;
+            playerContr = _level.PlayerContr;
             portal = _level.Portal;
             portal.IsPortalAction = ShowVictoryPopup;
             playerContr.PlayerDeathAction = OnLoose;
@@ -97,6 +103,7 @@ namespace CubePlatformer
 
         void ShowHealth(int _health) 
         {
+            healthTxt.text += "\n ShowHealth: " + _health;
             Debug.Log("ShowHealth: " + _health);
             statesPanel.ShowHealth(_health);
         }
@@ -116,8 +123,8 @@ namespace CubePlatformer
             {
                 case Popup.TryAgain:
                     var _popTr = activePopup.GetComponent<TryAgainPopup>();
-                    _popTr.ReturnAction = ReturnLoosingHealth;
-                    _popTr.ReturnMinusHealthAction = ReturnLoosingHealth;
+                    _popTr.ReturnAction = ReturnChangeHealth;
+                    _popTr.ReturnMinusHealthAction = ReturnChangeHealth;
                     break;
 
                 case Popup.Victory:
@@ -159,9 +166,9 @@ namespace CubePlatformer
             statesPanel.TimerOff();
         }
         
-        void ReturnLoosingHealth(int _damage)
+        void ReturnChangeHealth(int _value)
         {
-            playerContr.AddHealth(_damage);
+            playerContr.AddHealth(_value);
             playerContr.ReturnToStartPos(startPlayerPos);
             Show();
         }

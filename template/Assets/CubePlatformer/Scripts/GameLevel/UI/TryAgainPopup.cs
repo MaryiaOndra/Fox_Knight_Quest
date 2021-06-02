@@ -37,14 +37,14 @@ namespace CubePlatformer
 
         public void ReturnMinusHealth() 
         {
-            ReturnMinusHealthAction.Invoke(HEALTH_DAMAGE);
             Hide();
+            ReturnMinusHealthAction.Invoke(HEALTH_DAMAGE);
         }
 
         public void ReturnWithAds() 
         {
-            ReturnAction.Invoke(HEALTH_BUFF);
-            Hide();    
+            Hide();
+            ReturnAction.Invoke(HEALTH_BUFF);    
         }
     }
 }

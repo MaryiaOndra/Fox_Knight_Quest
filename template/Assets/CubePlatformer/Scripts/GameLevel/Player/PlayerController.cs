@@ -13,8 +13,6 @@ namespace CubePlatformer
         BaseState currentState;
         AudioSource audioSource;
 
-        //public int PlayerHealth => actualHealth;
-
         public Action PlayerDeathAction;
         public Action PlayerReturnAction;
         public Action<int> ChangeHealthAction;
@@ -73,12 +71,12 @@ namespace CubePlatformer
             CheckHealth(actualHealth);
         }
 
-        public void ReturnToStartPosMinusHealth(Vector3 _startPos)
-        {
-            transform.position = _startPos;
-            actualHealth--;
-            CheckHealth(actualHealth);
-        }     
+        //public void ReturnToStartPosMinusHealth(Vector3 _startPos)
+        //{
+        //    transform.position = _startPos;
+        //    actualHealth--;
+        //    CheckHealth(actualHealth);
+        //}     
         
         public void ReturnToStartPos(Vector3 _startPos)
         {
