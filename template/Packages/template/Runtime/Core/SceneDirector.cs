@@ -30,13 +30,12 @@ namespace CubePlatformer.Core
                 }
             }
 
-#if UNITY_STANDALONE
+#if UNITY_ANDROID
+            Cursor.visible = false;
+#elif UNITY_STANDALONE
             Cursor.visible = true;
 #endif
 
-#if UNITY_ANDROID
-            Cursor.visible = false;
-#endif
         }
 
         protected T SetCurrentScreen<T>() where T : BaseScreen 

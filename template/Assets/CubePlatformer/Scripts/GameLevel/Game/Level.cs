@@ -8,23 +8,23 @@ namespace CubePlatformer
     {
         public string LevelName { get => GameInfo.Instance.LevelConfig.LevelName; }
 
-        public PlayerController PlayerController { get; private set; }
+        public PlayerController PlayerContr { get; private set; }
         public List<Coin> Coins { get; private set; }
         public List<Enemy> Enemies { get; private set; }
         public Portal Portal { get; private set; }
         public List<Nameplate> Nameplates { get; private set; }
         public CameraRotator Rotator { get; private set; }
 
-        private void OnEnable()
+        public void GetLevelData()
         {
             Portal = FindObjectOfType<Portal>(true);
-            PlayerController = FindObjectOfType<PlayerController>(true);
+            PlayerContr = FindObjectOfType<PlayerController>(true);
             Coins = new List<Coin>(FindObjectsOfType<Coin>(true));
             Enemies = new List<Enemy>(FindObjectsOfType<Enemy>(true));
             Nameplates = new List<Nameplate>(FindObjectsOfType<Nameplate>(true));
             Rotator = FindObjectOfType<CameraRotator>(true);
 
-            Enemies.ForEach(_enemy => _enemy.AttackAction = PlayerController.GetHit);
+            Enemies.ForEach(_enemy => _enemy.AttackAction = PlayerContr.GetHit);
             CheckCoinsAmount(Coins.Count);
 
         }

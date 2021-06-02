@@ -4620,11 +4620,6 @@ PrefabInstance:
       propertyPath: cameraTr
       value: 
       objectReference: {fileID: 1273195396}
-    - target: {fileID: 4022869924540001336, guid: 5478c7759c8e77d43a515831524eefae,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 112
-      objectReference: {fileID: 0}
     - target: {fileID: 6613996809399452504, guid: 5478c7759c8e77d43a515831524eefae,
         type: 3}
       propertyPath: m_Name

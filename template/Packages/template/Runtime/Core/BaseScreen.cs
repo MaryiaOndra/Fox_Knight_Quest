@@ -22,8 +22,6 @@ namespace CubePlatformer.Core
             Debug.Log("SCREEN: " + gameObject.name);
         }
 
-
-
         public virtual void Hide() 
         {
             gameObject.SetActive(false);

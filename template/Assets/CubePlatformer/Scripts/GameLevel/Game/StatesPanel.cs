@@ -20,8 +20,8 @@ namespace CubePlatformer
 
         void Awake() 
         {
+            Debug.Log("Awake: " + name);
             timer = GetComponentInChildren<Timer>(true);
-
         }
 
         public void TimerOn() 
@@ -41,6 +41,7 @@ namespace CubePlatformer
 
         public void ShowHealth(int _health) 
         {
+            Debug.Log("ShowHealth: " + _health);
             healthTxt.text = "x " + _health.ToString();
         }
     }

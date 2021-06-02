@@ -1140,3 +1140,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d149619adfa0364cb26ca82bb863b3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SoundToggle: {fileID: 322174255286132193}
+  MusicToggle: {fileID: 8061774942232096381}
