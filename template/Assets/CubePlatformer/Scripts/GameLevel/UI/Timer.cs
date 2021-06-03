@@ -1,3 +1,4 @@
+using CubePlatformer.Base;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -7,41 +8,32 @@ namespace CubePlatformer
 {
     public class Timer : MonoBehaviour
     {
-        private TMP_Text timerText;
-        private float timeToDisplay = 0;
+        TMP_Text timerText;
+        float timeToDisplay;
 
         public bool isTimerActive;
 
         private void OnEnable()
         {
             timerText = GetComponentInChildren<TMP_Text>(true);
+            timeToDisplay = -0.1f;
         }
 
         private void Update()
         {
-            if (isTimerActive)
-            {
-                DisplayTime(timeToDisplay);
-            }
-            else
-            {
-                ReloadTimer();
-            }
+            timeToDisplay += Time.deltaTime;
+            DisplayTime(timeToDisplay);
+            GameInfo.Instance.Time = timeToDisplay;
         }
 
-        void DisplayTime(float timeToDisplay)
+        void DisplayTime(float _timeToDisplay)
         {
-            timeToDisplay += 1;
+            _timeToDisplay += 1;
 
-            float minutes = Mathf.FloorToInt(timeToDisplay / 60);
-            float seconds = Mathf.FloorToInt(timeToDisplay % 60);
+            float minutes = Mathf.FloorToInt(_timeToDisplay / 60);
+            float seconds = Mathf.FloorToInt(_timeToDisplay % 60);
 
             timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
-        }
-
-        void ReloadTimer() 
-        {
-            DisplayTime(0);
         }
     }
 }

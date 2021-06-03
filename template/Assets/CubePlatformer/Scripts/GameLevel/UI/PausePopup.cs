@@ -33,7 +33,7 @@ namespace CubePlatformer
         public void OnSettingsPressed()
         {
             SettingsPressedAction.Invoke();
-            Hide();
+            //Hide();
         }
     }
 }

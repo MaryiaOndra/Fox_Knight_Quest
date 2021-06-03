@@ -10,7 +10,7 @@ namespace CubePlatformer
         {
             base.Start();
 
-            SetCurrentScreen<MenuScreen>().Show();
+            SetCurrentScreen<MenuScreen>().ShowScreen();
         }
 
         protected override void OnScreenExit(Type _screenType, string _exitCode)
@@ -23,7 +23,7 @@ namespace CubePlatformer
                 }
                 else if (_exitCode == MenuScreen.Exit_Levels)
                 {
-                    SetCurrentScreen<LevelsScreen>().Show();
+                    SetCurrentScreen<LevelsScreen>().ShowScreen();
                 }
             }
             else if (_screenType == typeof(LevelsScreen))

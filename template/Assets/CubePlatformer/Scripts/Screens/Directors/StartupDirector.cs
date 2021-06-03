@@ -10,7 +10,7 @@ namespace CubePlatformer
         {
             base.Start();
 
-            SetCurrentScreen<MenuScreen>().Show();
+            SetCurrentScreen<MenuScreen>().ShowScreen();
         }
 
         protected override void OnScreenExit(Type _screenType, string _exitCode)

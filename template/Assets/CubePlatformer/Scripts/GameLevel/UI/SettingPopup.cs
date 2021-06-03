@@ -24,6 +24,7 @@ namespace CubePlatformer
         public void OnBackPressed()
         {
             Hide();
+            Time.timeScale = 0;
         }
 
         public void OnMusicToggle(bool _value)

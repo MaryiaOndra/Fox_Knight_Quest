@@ -14,9 +14,6 @@ namespace CubePlatformer
         GameObject androidBtns;    
         [SerializeField]
         GameObject keyboardInput;
-        [SerializeField]
-        TMP_Text healthTxt;
-
 
         public const string Exit_Menu = "Exit_Menu";
         public const string Exit_Loading = "Exit_Loading";
@@ -34,7 +31,6 @@ namespace CubePlatformer
 
         int health;
         int coinsCount = 0;
-        float timeToDisplay;
         Vector3 startPlayerPos;
 
         public Action<Coin> CoinsAction;
@@ -61,7 +57,7 @@ namespace CubePlatformer
 
         public void ShowAndLoadGame()
         {
-            Show();
+            ShowScreen();
 
             levelConfigs = GameInfo.Instance.LevelConfig;
             GameInfo.Instance.ResetLevelResult();
@@ -70,19 +66,17 @@ namespace CubePlatformer
             activeLevel.GetLevelData();
             ConnectWithLevel(activeLevel);
 
+            statesPanel.TimerOff();
             statesPanel.TimerOn();
             statesPanel.ShowScores(coinsCount);
             statesPanel.ShowHealth(health);
 
             Time.timeScale = 1;
             coinsCount = 0;
-            timeToDisplay = 0;
         }
 
         public void ConnectWithLevel(Level _level)
         {
-            healthTxt.text = "\n AddLevelData: " + _level.LevelName;
-
             playerContr = _level.PlayerContr;
             portal = _level.Portal;
             portal.IsPortalAction = ShowVictoryPopup;
@@ -103,8 +97,6 @@ namespace CubePlatformer
 
         void ShowHealth(int _health) 
         {
-            healthTxt.text += "\n ShowHealth: " + _health;
-            Debug.Log("ShowHealth: " + _health);
             statesPanel.ShowHealth(_health);
         }
 
@@ -118,7 +110,6 @@ namespace CubePlatformer
         void ActivatePopup(Popup _popup) 
         {
             activePopup = popups.Find(_p => _p.ScreenPopup == _popup);
-            healthTxt.text += "\n _popup: " + _popup;
 
             switch (_popup) 
             {
@@ -158,7 +149,7 @@ namespace CubePlatformer
 
         void Return()
         {
-            Show();
+            ShowScreen();
         }
 
         void Restart() 
@@ -171,22 +162,13 @@ namespace CubePlatformer
         {
             playerContr.AddHealth(_value);
             playerContr.ReturnToStartPos(startPlayerPos);
-            Show();
+            ShowScreen();
         }
 
         void OnLoose()
         {
             ActivatePopup(Popup.Loose);
             statesPanel.TimerOff();
-
-            var _params = new Dictionary<string, object>();
-            _params.Add("level", levelConfigs.LevelName);
-            _params.Add("time", timeToDisplay);
-            _params.Add("coins", coinsCount);
-
-            var _result = AnalyticsEvent.Custom("result", _params);
-            Debug.Log("AnalyticsEvent: " + _result);
-
             statesPanel.TimerOff();
         }
 
@@ -197,19 +179,14 @@ namespace CubePlatformer
 
         void ShowVictoryPopup()
         {
-            GameInfo.Instance.RegisterResult(coinsCount);
+            var _resultTime = GameInfo.Instance.Time;
+            GameInfo.Instance.RegisterResult(coinsCount, _resultTime);
             ActivatePopup(Popup.Victory);
-
-            var _params = new Dictionary<string, object>();
-
-            _params.Add("level", levelConfigs.LevelName);
-            _params.Add("time", timeToDisplay);
-
-            var _result = AnalyticsEvent.Custom("result", _params);
-            Debug.Log("AnalyticsEvent: " + _result);
-
-            timeToDisplay = 0;
             GameInfo.Instance.LevelIndex += 1;
+
+            AnaliticsMgr.Instance.AddResultParams(ParamsNames.Time, _resultTime);
+            AnaliticsMgr.Instance.AddResultParams(ParamsNames.Level, levelConfigs.LevelName);
+            AnaliticsMgr.Instance.AddResultAnalitics();
         }
 
         #endregion

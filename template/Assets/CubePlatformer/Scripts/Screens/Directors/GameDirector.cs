@@ -10,7 +10,7 @@ namespace CubePlatformer
         {
             base.Start();
 
-            SetCurrentScreen<LoadingScreen>().Show();
+            SetCurrentScreen<LoadingScreen>().ShowScreen();
         }
 
         protected override void OnScreenExit(Type _screenType, string _exitCode)
@@ -30,7 +30,7 @@ namespace CubePlatformer
                 }
                 else if (_exitCode == GameScreen.Exit_Loading)
                 {
-                    SetCurrentScreen<LoadingScreen>().Show();
+                    SetCurrentScreen<LoadingScreen>().ShowScreen();
                 }
             }
         }

@@ -15,9 +15,9 @@ namespace CubePlatformer
 
         AsyncOperation loadingScene;
 
-        public override void Show()
+        public override void ShowScreen()
         {
-            base.Show();
+            base.ShowScreen();
 
             levelConfigs = GameInfo.Instance.LevelConfig;
 

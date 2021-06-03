@@ -15,9 +15,6 @@ namespace CubePlatformer
 
         Timer timer;
 
-        public Action<float> StartTimer;
-        public Action<float> StopTimer;
-
         void Awake() 
         {
             Debug.Log("Awake: " + name);
@@ -26,12 +23,14 @@ namespace CubePlatformer
 
         public void TimerOn() 
         {
-            timer.isTimerActive = true;
+            Debug.Log("TimerON");
+            timer.gameObject.SetActive(true);
         }
 
         public void TimerOff() 
         {
-            timer.isTimerActive = false;
+            Debug.Log("TimerOFF");
+            timer.gameObject.SetActive(false);
         }
 
         public void ShowScores(int _score) 

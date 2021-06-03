@@ -70,13 +70,7 @@ namespace CubePlatformer
 
             CheckHealth(actualHealth);
         }
-
-        //public void ReturnToStartPosMinusHealth(Vector3 _startPos)
-        //{
-        //    transform.position = _startPos;
-        //    actualHealth--;
-        //    CheckHealth(actualHealth);
-        //}     
+ 
         
         public void ReturnToStartPos(Vector3 _startPos)
         {
