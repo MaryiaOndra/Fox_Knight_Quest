@@ -57,7 +57,7 @@ namespace CubePlatformer
 
         public void ShowAndLoadGame()
         {
-            Show();
+            ShowScreen();
 
             levelConfigs = GameInfo.Instance.LevelConfig;
             GameInfo.Instance.ResetLevelResult();
@@ -149,7 +149,7 @@ namespace CubePlatformer
 
         void Return()
         {
-            Show();
+            ShowScreen();
         }
 
         void Restart() 
@@ -162,7 +162,7 @@ namespace CubePlatformer
         {
             playerContr.AddHealth(_value);
             playerContr.ReturnToStartPos(startPlayerPos);
-            Show();
+            ShowScreen();
         }
 
         void OnLoose()
