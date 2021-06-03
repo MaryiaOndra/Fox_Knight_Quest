@@ -179,21 +179,14 @@ namespace CubePlatformer
 
         void ShowVictoryPopup()
         {
-            Debug.Log("GameInfo.Instance.Time: " + GameInfo.Instance.Time);
-            GameInfo.Instance.RegisterResult(coinsCount, GameInfo.Instance.Time);
+            var _resultTime = GameInfo.Instance.Time;
+            GameInfo.Instance.RegisterResult(coinsCount, _resultTime);
             ActivatePopup(Popup.Victory);
-
-
-            ///
-            var _params = new Dictionary<string, object>();
-
-            _params.Add("level", levelConfigs.LevelName);
-            _params.Add("time", GameInfo.Instance.Time);
-
-            var _result = AnalyticsEvent.Custom("result", _params);
-            Debug.Log("AnalyticsEvent: " + _result);
-
             GameInfo.Instance.LevelIndex += 1;
+
+            AnaliticsMgr.Instance.AddResultParams(ParamsNames.Time, _resultTime);
+            AnaliticsMgr.Instance.AddResultParams(ParamsNames.Level, levelConfigs.LevelName);
+            AnaliticsMgr.Instance.AddResultAnalitics();
         }
 
         #endregion
