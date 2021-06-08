@@ -25,8 +25,15 @@ namespace CubePlatformer
         private void OnEnable()
         {
             returndBtn.onClick.AddListener(ReturnMinusHealth);
-            adsBtn.onClick.AddListener(AdsMgr.Instance.ShowRewardedVideoAds);
-            AdsMgr.Instance.AdsDidFinish = ReturnWithAds;
+#if UNITY_IOS
+         adsBtn.onClick.AddListener(AdsMgr.Instance.ShowRewardedVideoAds);
+#elif UNITY_ANDROID
+          adsBtn.onClick.AddListener(AdsMgr.Instance.ShowRewardedVideoAds);
+#elif UNITY_STANDALONE
+            adsBtn.onClick.AddListener(ReturnWithAds);
+#endif
+
+         AdsMgr.Instance.AdsDidFinish = ReturnWithAds;
         }
 
         private void OnDisable()
