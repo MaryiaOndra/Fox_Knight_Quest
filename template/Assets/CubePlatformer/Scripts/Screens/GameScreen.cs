@@ -39,17 +39,16 @@ namespace CubePlatformer
         private void Awake()
         {
             statesPanel = FindObjectOfType<StatesPanel>(true);
-            Debug.Log("statesPanel:   " + statesPanel);
             notesPanel = FindObjectOfType<NotesPanel>(true);
             touchPanel = FindObjectOfType<TouchPanel>(true);
 
             popups = new List<BasePopup>(GetComponentsInChildren<BasePopup>(true));
             popups.ForEach(_popup =>_popup.PopupShowAction = ActivatePopup);
 
-#if UNITY_ANDROID
+#if UNITY_ANDROID || UNITY_IOS
             androidBtns.SetActive(true);
             keyboardInput.SetActive(false);
-#elif UNITY_STANDALONE
+#elif UNITY_STANDALONE 
             androidBtns.SetActive(false);
             keyboardInput.SetActive(true);
 #endif
