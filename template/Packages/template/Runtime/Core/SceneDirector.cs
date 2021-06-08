@@ -33,7 +33,7 @@ namespace CubePlatformer.Core
                 }
             }
 
-#if UNITY_ANDROID
+#if UNITY_ANDROID || UNITY_IOS
             Cursor.visible = false;
 #elif UNITY_STANDALONE
             Cursor.visible = true;

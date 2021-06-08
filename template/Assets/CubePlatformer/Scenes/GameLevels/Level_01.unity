@@ -4620,6 +4620,11 @@ PrefabInstance:
       propertyPath: cameraTr
       value: 
       objectReference: {fileID: 1273195396}
+    - target: {fileID: 1470613277929587656, guid: 5478c7759c8e77d43a515831524eefae,
+        type: 3}
+      propertyPath: playerSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6613996809399452504, guid: 5478c7759c8e77d43a515831524eefae,
         type: 3}
       propertyPath: m_Name
@@ -7209,7 +7214,7 @@ PrefabInstance:
     - target: {fileID: 1607882561283571819, guid: 4faf1d729b46c7c4998a42929ec42fe5,
         type: 3}
       propertyPath: orthographic size
-      value: 3.5
+      value: 5.252207
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4faf1d729b46c7c4998a42929ec42fe5, type: 3}

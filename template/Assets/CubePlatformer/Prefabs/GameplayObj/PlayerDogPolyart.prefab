@@ -212,7 +212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   steps: {fileID: 8300000, guid: b37a64089c665524e8f1a554b1ca81a8, type: 3}
   cameraTr: {fileID: 0}
-  playerSpeed: 7
+  playerSpeed: 5
   rotationSpeed: 700
 --- !u!1 &6613996809399452288
 GameObject:

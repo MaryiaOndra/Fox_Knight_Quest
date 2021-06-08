@@ -914,20 +914,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   androidBtns: {fileID: 426476674218707461}
   keyboardInput: {fileID: 4972032065060757292}
---- !u!114 &2650196820333693022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5905305143317382888}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5be1382ac795c04fbcca2ea7b72e868, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreTxt: {fileID: 7749092175317592157}
-  healthTxt: {fileID: 0}
 --- !u!1 &7623841990256232434
 GameObject:
   m_ObjectHideFlags: 0
@@ -2310,12 +2296,6 @@ GameObject:
 --- !u!224 &7001573538509491709 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 466846970819723627, guid: 4475544d945fa9c4b846237a5ff48774,
-    type: 3}
-  m_PrefabInstance: {fileID: 7444455480737352854}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &5905305143317382888 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3937236155379419774, guid: 4475544d945fa9c4b846237a5ff48774,
     type: 3}
   m_PrefabInstance: {fileID: 7444455480737352854}
   m_PrefabAsset: {fileID: 0}

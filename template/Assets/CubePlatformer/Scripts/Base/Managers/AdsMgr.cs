@@ -12,13 +12,14 @@ namespace CubePlatformer
         public const string REWARDED_PLACEMENT_ID = "rewardedVideo";
 
         bool isReady;
+        string adsId;
 
         public Action AdsDidFinish;
 
 #if UNITY_IOS
-            string adsId = "4145553";
+         adsId = "4145553";
 #elif UNITY_ANDROID
-        string adsId = "4145552";
+         adsId = "4145552";
 #endif
         private void OnEnable()
         {
