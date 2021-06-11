@@ -1,8 +1,9 @@
-# Fox Knight Quest
+# Fox-Knight Quest
 
 3D platformer on Unity.
 This is the story of a fox knight who strangely appears on a heavenly platform and tries to leave it, collecting coins and killing monsters.
 
+### Features:
 * Each level contains a certain amount of coins that you need to collect in order to open the portal to the next level;
 * Platforms moving in different directions create additional difficulties for the passage of the game;
 * Anemies trying to kill when you try to pass by;
