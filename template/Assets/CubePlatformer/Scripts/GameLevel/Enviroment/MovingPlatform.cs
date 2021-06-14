@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace CubePlatformer
@@ -16,11 +14,10 @@ namespace CubePlatformer
         private void Awake()
         {
             bridgeAnimator = GetComponent<Animator>();
-
             bridgeAnimator.SetInteger(INT_STATE, (int)moveState);
         }
 
-        private void OnTriggerEnter(Collider _collision)
+        private void OnTriggerStay(Collider _collision)
         {
             if (_collision.gameObject.GetComponent<PlayerController>())
             {

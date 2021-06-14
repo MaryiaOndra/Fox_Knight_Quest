@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using CubePlatformer.Core;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace CubePlatformer.Base
 {
@@ -19,7 +16,6 @@ namespace CubePlatformer.Base
 
         public void Setup() 
         {
-            AppPrefs.DeleteAll();
             if (GetLevelState(0) == LevelState.Locked)
             {
                 SetLevelState(0, LevelState.Unlocked);                            
@@ -37,18 +33,31 @@ namespace CubePlatformer.Base
             AppPrefs.SetInt(PrefsKeys.Level_ + _levelIndex, (int)_levelState);
         }
 
-       // public int Scores { get;set; }
         public int Scores
         {
-            get => PlayerPrefs.GetInt(PrefsKeys.Scores);
-            set => PlayerPrefs.SetInt(PrefsKeys.Scores, value);
+            get => AppPrefs.GetInt(PrefsKeys.Scores);
+            set => AppPrefs.SetInt(PrefsKeys.Scores, value);
         }
 
-        public void RegisterResult(int _collectedCoins) 
+        public float Time
+        {
+            get => AppPrefs.GetFloat(PrefsKeys.Time);
+            set => AppPrefs.SetFloat(PrefsKeys.Time, value);
+        }
+
+        public string ConvertTime(float _time) 
+        {
+            float minutes = Mathf.FloorToInt(_time / 60);
+            float seconds = Mathf.FloorToInt(_time % 60);
+            return string.Format("{0:00}:{1:00}", minutes, seconds);
+        }
+
+        public void RegisterResult(int _collectedCoins, float _time) 
         {
             LevelResultInfo = new LevelResultInfo();
             Scores = _collectedCoins;
             LevelResultInfo.Scores = _collectedCoins;
+            LevelResultInfo.Time = _time;
 
             if (LevelConfig.CoinsAmount == _collectedCoins)
             {
@@ -60,7 +69,7 @@ namespace CubePlatformer.Base
                 }
             }
 
-            PlayerPrefs.Save();
+            AppPrefs.Save();
         }
 
         public void ResetLevelResult() 
@@ -73,5 +82,6 @@ namespace CubePlatformer.Base
     public class LevelResultInfo 
     {
         public int Scores { get; set; }
+        public float Time { get; set; }
     }
 }

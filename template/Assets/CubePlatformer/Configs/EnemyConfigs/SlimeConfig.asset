@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SlimeConfig
   m_EditorClassIdentifier: 
   enemyType: 0
-  maxHealth: 2
+  maxHealth: 3
   attackPower: 1
   attackDelay: 2

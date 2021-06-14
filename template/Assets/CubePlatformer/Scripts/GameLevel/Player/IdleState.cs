@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace CubePlatformer
@@ -14,7 +12,7 @@ namespace CubePlatformer
             {
                 NextStateAction.Invoke(PlayerState.Run);
             }
-            else if (VirtualInputManager.Instance.Attack)
+            else if (IsAttackFinished && VirtualInputManager.Instance.Attack)
             {
                 NextStateAction.Invoke(PlayerState.Attack);
             }
@@ -22,9 +20,13 @@ namespace CubePlatformer
             {
                 NextStateAction.Invoke(PlayerState.Defend);
             }
+            else if (!OnGrounded && playerRB.velocity.y < VELOCITY_TO_FALL)
+            {
+                NextStateAction.Invoke(PlayerState.Fall);
+            }
             else
             {
-                rigidbody.velocity = Vector3.zero;
+                playerRB.velocity = Vector3.zero;
             }
         }
     }

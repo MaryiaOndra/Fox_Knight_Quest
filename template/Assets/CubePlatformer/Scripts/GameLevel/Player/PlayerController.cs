@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,40 +9,38 @@ namespace CubePlatformer
         public const int MAX_HEALTH = 3;
         int actualHealth;
 
-        Animator playerAnimator;
         List<BaseState> states;
         BaseState currentState;
-        StatesPanel statesPanel;
-        Rigidbody rigidbody;
+        AudioSource audioSource;
 
-        public float PlatformAngle{get;set;}
         public Action PlayerDeathAction;
-
-        private void OnEnable()
-        {
-            PlayerDeathAction = currentState.DeathStateAction;
-        }
+        public Action PlayerReturnAction;
+        public Action<int> ChangeHealthAction;
 
         private void Awake()
         {
             actualHealth = MAX_HEALTH;
 
-            playerAnimator = GetComponent<Animator>();
-            rigidbody = GetComponent<Rigidbody>();
-
-            statesPanel = FindObjectOfType<StatesPanel>();
-            statesPanel.ShowHealth(actualHealth);
+            Animator _playerAnimator = GetComponent<Animator>();
+            Rigidbody _rigidbody = GetComponent<Rigidbody>();
+            audioSource = GetComponent<AudioSource>();
 
             states = new List<BaseState>(GetComponentsInChildren<BaseState>(true));
 
                 states.ForEach(_state =>
                 {
-                    _state.Setup( playerAnimator, rigidbody);
+                    _state.Setup( _playerAnimator, _rigidbody, audioSource);
                     _state.NextStateAction = OnNextStateRequest;
+                    _state.DeathStateAction = PlayerDeathAction;
                 });
 
-            currentState = states.Find(_state => _state.PlayerState == PlayerState.Idle);
+            currentState = states.Find(_state => _state.PlayerState == PlayerState.Fall);
             currentState.Activate();
+        }
+
+        public int GetHealth() 
+        {
+            return actualHealth;
         }
           
         public void OnNextStateRequest(PlayerState _state) 
@@ -53,33 +50,56 @@ namespace CubePlatformer
             currentState.Activate();
         }
 
-        public void Attacked(int _attackPower) 
+        public void GetHit(int _damage) 
         {
-            if (currentState.PlayerState != PlayerState.Defend)
+            if (currentState.PlayerState == PlayerState.Idle
+                || currentState.PlayerState == PlayerState.Fall)
             {
-                currentState.NextStateAction.Invoke(PlayerState.Attacked);
-                actualHealth -= _attackPower;
-                statesPanel.ShowHealth(actualHealth);
+                audioSource.PlayOneShot(audioSource.clip);
+                currentState.GetHit();
+                actualHealth -= _damage;
             }
 
-            CheckHeath(actualHealth);
+            CheckHealth(actualHealth);
         }
 
-        void CheckHeath(int _actualHealth) 
+        public void AddHealth(int _value) 
         {
+            actualHealth += _value;
+            if (actualHealth > MAX_HEALTH) actualHealth = MAX_HEALTH;
+
+            CheckHealth(actualHealth);
+        }
+ 
+        
+        public void ReturnToStartPos(Vector3 _startPos)
+        {
+            transform.position = _startPos;
+        }
+
+        void CheckHealth(int _actualHealth) 
+        {
+            ChangeHealthAction.Invoke(actualHealth);
+
             if (_actualHealth <= 0)
             {
                 currentState.NextStateAction.Invoke(PlayerState.Die);
             }
         }
 
-        private void OnTriggerEnter(Collider _trigger)
+        void OnTriggerEnter(Collider _trigger)
         {
             if (_trigger.GetComponent<DeathLine>())
             {
-                PlayerDeathAction.Invoke();
-
-              //  currentState.NextStateAction.Invoke(PlayerState.Die);
+                if (actualHealth != 0)
+                {
+                    PlayerReturnAction.Invoke();
+                }
+                else
+                {
+                    PlayerDeathAction.Invoke();
+                    currentState.DeathStateAction.Invoke();
+                }       
             }
         }
     }

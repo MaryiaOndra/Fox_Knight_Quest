@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 namespace CubePlatformer
 {
@@ -10,14 +7,13 @@ namespace CubePlatformer
 
         public override void Activate()
         {
-            base.Activate();
-
-            playerAnimator.GetBehaviour<PlayerListener>().DieAction = PlayerDeath;
+            base.Activate();                        
+            playerAnimator.GetBehaviour<DeadListener>().DieAction = PlayerDeath;
         }
 
         void PlayerDeath() 
         {
-            gameObject.GetComponentInParent<PlayerController>().PlayerDeathAction.Invoke();
+            GetComponentInParent<PlayerController>().PlayerDeathAction.Invoke();
         }
     }
 }

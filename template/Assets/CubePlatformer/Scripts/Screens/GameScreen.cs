@@ -1,140 +1,223 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using CubePlatformer.Base;
 using CubePlatformer.Core;
+using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.Analytics;
 
 namespace CubePlatformer
 {
     public class GameScreen : BaseScreen
     {
-        public const string Exit_Pause = "Exit_Pause";
-        public const string Exit_Loose = "Exit_Loose";
-        public const string Exit_NextLvl = "Exit_NextLvl";
+        [SerializeField]
+        GameObject androidBtns;    
+        [SerializeField]
+        GameObject keyboardInput;
+
+        public const string Exit_Menu = "Exit_Menu";
+        public const string Exit_Loading = "Exit_Loading";
 
         StatesPanel statesPanel;
         NotesPanel notesPanel;
         EachLevelConfigs levelConfigs;
         PlayerController playerContr;
         Portal portal;
+        Level activeLevel;
+        TouchPanel touchPanel;
 
+        List<BasePopup> popups;
+        BasePopup activePopup;
+
+        int health;
         int coinsCount = 0;
+        Vector3 startPlayerPos;
 
         public Action<Coin> CoinsAction;
         public Action<string> NotesAction;
 
-        private void OnEnable()
+        private void Awake()
         {
-            statesPanel = FindObjectOfType<StatesPanel>();
-            notesPanel = FindObjectOfType<NotesPanel>();
+            statesPanel = FindObjectOfType<StatesPanel>(true);
+            notesPanel = FindObjectOfType<NotesPanel>(true);
+            touchPanel = FindObjectOfType<TouchPanel>(true);
 
-            CoinsAction = CheckCoinsAmount;
-            NotesAction = notesPanel.ShowPanel;
+            popups = new List<BasePopup>(GetComponentsInChildren<BasePopup>(true));
+            popups.ForEach(_popup =>_popup.PopupShowAction = ActivatePopup);
+
+#if UNITY_ANDROID || UNITY_IOS
+            androidBtns.SetActive(true);
+            keyboardInput.SetActive(false);
+#elif UNITY_STANDALONE 
+            androidBtns.SetActive(false);
+            keyboardInput.SetActive(true);
+#endif
         }
 
-        public void ShowAndStartGame()
+        public void ShowAndLoadGame()
         {
-            Show();
-            Time.timeScale = 1;
-            
+            ShowScreen();
+
             levelConfigs = GameInfo.Instance.LevelConfig;
-            LoadLevel(levelConfigs.LevelName);
-
-            //GameInfo.Instance.ResetLevelResult();
-            //coinsCount = 0;
-
-            statesPanel.ShowScores(coinsCount);
-        }
-
-        public void RestartGame() 
-        {
-            Show();
-            Time.timeScale = 1;
-
-
-            UnloadLevel(levelConfigs.LevelName);
-            LoadLevel(levelConfigs.LevelName);
-
             GameInfo.Instance.ResetLevelResult();
-            coinsCount = 0;
+
+            activeLevel = FindObjectOfType<Level>(true);
+            activeLevel.GetLevelData();
+            ConnectWithLevel(activeLevel);
+
+            statesPanel.TimerOff();
+            statesPanel.TimerOn();
             statesPanel.ShowScores(coinsCount);
+            statesPanel.ShowHealth(health);
+
+            Time.timeScale = 1;
+            coinsCount = 0;
         }
 
-        public void AddLevelData(Level _level) 
+        public void ConnectWithLevel(Level _level)
         {
-            playerContr = _level.PlayerCtrl;
-
+            playerContr = _level.PlayerContr;
             portal = _level.Portal;
-            portal.IsPortalAction = PortalPassing;
+            portal.IsPortalAction = ShowVictoryPopup;
             playerContr.PlayerDeathAction = OnLoose;
-
+            playerContr.PlayerReturnAction = OnTryAgain;
+            playerContr.ChangeHealthAction = ShowHealth;
+            health = playerContr.GetHealth();
+            startPlayerPos = playerContr.transform.position;
+            touchPanel.DragAction = _level.Rotator.DragDelta;
             _level.Coins.ForEach(_coin => _coin.OnCoinColected = CheckCoinsAmount);
-            _level.Enemies.ForEach(_enemy => _enemy.AttackAction = playerContr.Attacked);
+            _level.Nameplates.ForEach(_nameplate => _nameplate.ActivateNameplate = ShowNotesPanel);
         }
 
-        void OnPause()
+        void ShowNotesPanel(string _frase)
         {
-            Exit(Exit_Pause);
+            notesPanel.ShowPanel.Invoke(_frase);
+        }
+
+        void ShowHealth(int _health) 
+        {
+            statesPanel.ShowHealth(_health);
+        }
+
+        #region POPUPS
+
+        public void OnPause() 
+        {
+            ActivatePopup(Popup.Pause);
+        }
+
+        void ActivatePopup(Popup _popup) 
+        {
+            activePopup = popups.Find(_p => _p.ScreenPopup == _popup);
+
+            switch (_popup) 
+            {
+                case Popup.TryAgain:
+                    var _popTr = activePopup.GetComponent<TryAgainPopup>();
+                    _popTr.ReturnAction = ReturnChangeHealth;
+                    _popTr.ReturnMinusHealthAction = ReturnChangeHealth;
+                    break;
+
+                case Popup.Victory:
+                    var _popV = activePopup.GetComponent<VictoryPopUp>();
+                    _popV.NextLevelAction = GoToNextLevel;
+                    break;
+
+                case Popup.Pause:
+                    var _popP = activePopup.GetComponent<PausePopup>();
+                    _popP.BackPressedAction = Return;
+                    _popP.MenuPressedAction = GoToMenu;
+                    _popP.ReplyPressedAction = Restart;
+                    _popP.SettingsPressedAction = ShowSettingsPopup;
+                    break;
+
+                case Popup.Loose:
+                    var _popL = activePopup.GetComponent<LoosePopup>();
+                    _popL.MenuPressedAction = GoToMenu;
+                    _popL.RestartAction = Restart;
+                    break;            
+            }
+
+            activePopup.Show();
+        }
+
+        void OnTryAgain() 
+        {
+            ActivatePopup(Popup.TryAgain);
+        }
+
+        void Return()
+        {
+            ShowScreen();
+        }
+
+        void Restart() 
+        {
+            LoadGame();
+            statesPanel.TimerOff();
+        }
+        
+        void ReturnChangeHealth(int _value)
+        {
+            playerContr.AddHealth(_value);
+            playerContr.ReturnToStartPos(startPlayerPos);
+            ShowScreen();
         }
 
         void OnLoose()
         {
-            Exit(Exit_Loose);          
+            ActivatePopup(Popup.Loose);
+            statesPanel.TimerOff();
+            statesPanel.TimerOff();
         }
 
-        void PortalPassing() 
+        void ShowSettingsPopup() 
         {
-            GameInfo.Instance.RegisterResult(coinsCount);
-            Exit(Exit_NextLvl);
+            ActivatePopup(Popup.Settings);        
+        }
+
+        void ShowVictoryPopup()
+        {
+            var _resultTime = GameInfo.Instance.Time;
+            GameInfo.Instance.RegisterResult(coinsCount, _resultTime);
+            ActivatePopup(Popup.Victory);
+            GameInfo.Instance.LevelIndex += 1;
+
+            AnaliticsMgr.Instance.AddResultParams(ParamsNames.Time, _resultTime);
+            AnaliticsMgr.Instance.AddResultParams(ParamsNames.Level, levelConfigs.LevelName);
+            AnaliticsMgr.Instance.AddResultAnalitics();
+        }
+
+        #endregion
+
+        void GoToNextLevel() 
+        {
+            activePopup.Hide();
+            LoadGame();
         }
 
         void CheckCoinsAmount(Coin _coin)
         {
             SoundMgr.Instance.PlaySound(_coin.CoinClip);
+            _coin.Deactivate();
 
             coinsCount += 1;
             statesPanel.ShowScores(coinsCount);
 
             if (coinsCount == levelConfigs.CoinsAmount)
             {
-                portal.ActivatePortal();               
+                portal.ActivateVictoryPortal();
             }
         }
-
-        public void LoadNextGameLevel()
+        void LoadGame()
         {
-            Show();
-            Time.timeScale = 1;
-
-
-            GameInfo.Instance.ResetLevelResult();
-            coinsCount = 0;
-            statesPanel.ShowScores(coinsCount);
-
-            EachLevelConfigs _nextLevelConfigs = GameInfo.Instance.LevelConfig;
-
-            UnloadLevel(levelConfigs.LevelName);
-            LoadLevel(_nextLevelConfigs.LevelName);
-
-            levelConfigs = _nextLevelConfigs;
+            Exit(Exit_Loading);
         }
 
-        public void LoadNextLevel(EachLevelConfigs _prevLevelConfigs, EachLevelConfigs _nextLevelConfigs)
+        void GoToMenu()
         {
-            UnloadLevel(_prevLevelConfigs.LevelName);
-            LoadLevel(_nextLevelConfigs.LevelName);
+            Exit(Exit_Menu);
         }
 
-        void LoadLevel(string _levelName)
-        {
-            SceneManager.LoadScene(_levelName, LoadSceneMode.Additive);
-        }
-
-        public void UnloadLevel(string _levelName)
-        {
-            SceneManager.UnloadSceneAsync(_levelName);
-        }
     }
 }

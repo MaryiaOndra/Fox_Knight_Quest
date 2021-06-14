@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace CubePlatformer
@@ -13,22 +11,24 @@ namespace CubePlatformer
         [SerializeField]
         float speed;
 
-        TouchPanel touchPanel;
         Vector3 eulerAngles;
         float prevYPos = 0;
 
-        public Action changeCamLocationAction; 
+        public Action<float> DragDelta;
 
         private void OnEnable()
         {
-            touchPanel = FindObjectOfType<TouchPanel>();
+            DragDelta = RotateCamera;
         }
 
         void Update()
         {
             transform.position = targetTr.position;
+        }
 
-            float _yPos = touchPanel.DragDelta;
+        void RotateCamera(float _dragDelta) 
+        {
+            float _yPos = _dragDelta;
 
             if (_yPos != prevYPos)
             {

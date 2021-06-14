@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace CubePlatformer
@@ -7,13 +5,25 @@ namespace CubePlatformer
     public class RunState : BaseState
     {
         [SerializeField]
+        AudioClip steps;
+
+        [SerializeField]
         Transform cameraTr;
+
         [SerializeField]
         float playerSpeed = 2.0f;
+
         [SerializeField]
         float rotationSpeed = 500f;
 
         public override PlayerState PlayerState => PlayerState.Run;
+
+        public override void Activate()
+        {
+            base.Activate();
+
+            playerAudioSource.PlayOneShot(steps);
+        }
 
         private void FixedUpdate()
         {
@@ -25,9 +35,13 @@ namespace CubePlatformer
             _camR = _camR.normalized;
 
             Vector3 _direction = (_camF * Direction.z + _camR * Direction.x).normalized;
-            rigidbody.MovePosition(rigidbody.position + Time.deltaTime * playerSpeed * _direction);
-            Quaternion _toRotation = Quaternion.LookRotation(_direction);
-            rigidbody.rotation = Quaternion.RotateTowards(rigidbody.rotation, _toRotation, Time.fixedDeltaTime * rotationSpeed);
+            playerRB.MovePosition(playerRB.position + Time.deltaTime * playerSpeed * _direction);
+
+            if (!_direction.Equals(Vector3.zero))
+            {
+                Quaternion _toRotation = Quaternion.LookRotation(_direction);
+                playerRB.rotation = Quaternion.RotateTowards(playerRB.rotation, _toRotation, Time.fixedDeltaTime * rotationSpeed);
+            }
         }
 
         private void Update()
@@ -36,14 +50,15 @@ namespace CubePlatformer
             {
                 if (Direction.x == 0 && Direction.z == 0)
                 {
+                    playerAudioSource.Stop();
                     NextStateAction.Invoke(PlayerState.Idle);
                 }
             }
-            else if (rigidbody.velocity.y < -3f)
+            else if (playerRB.velocity.y < VELOCITY_TO_FALL)
             {
-
+                playerAudioSource.Stop();
                 NextStateAction.Invoke(PlayerState.Fall);
-            }            
+            }
         }
     }
 }

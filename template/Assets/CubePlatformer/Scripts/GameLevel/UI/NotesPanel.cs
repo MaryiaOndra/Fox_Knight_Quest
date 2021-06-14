@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -9,8 +8,15 @@ namespace CubePlatformer
     {
         static readonly int IS_ACTIVE = Animator.StringToHash("IsActive");
 
+        public Action<string> ShowPanel;
+
         TMP_Text noteText;
         Animator animator;
+
+        private void OnEnable()
+        {
+            ShowPanel = AddTextToPanel;
+        }
 
         private void Awake()
         {
@@ -18,7 +24,7 @@ namespace CubePlatformer
             animator = GetComponent<Animator>();
         }
 
-        public void ShowPanel(string _text) 
+        void AddTextToPanel(string _text) 
         {
             Time.timeScale = 0;
             noteText.text = _text;

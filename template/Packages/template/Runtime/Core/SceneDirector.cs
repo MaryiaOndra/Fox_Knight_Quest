@@ -7,8 +7,10 @@ namespace CubePlatformer.Core
 {
     public abstract class SceneDirector : MonoBehaviour
     {
-        Dictionary<Type, BaseScreen> screensDict;
+        protected Dictionary<Type, BaseScreen> screensDict;
         Stack<BaseScreen> screenStack;
+        protected BaseScreen CurrentScreen { get; private set; }
+        protected BaseScreen BackScreen => screenStack.Count > 0 ? screenStack.Peek() : null;
 
         protected abstract void OnScreenExit(Type _screenType, string _exitCode);
 
@@ -20,6 +22,7 @@ namespace CubePlatformer.Core
             for (int i = 0; i < transform.childCount; i++)
             {
                 var _screen = transform.GetChild(i).GetComponent<BaseScreen>();
+
                 if (_screen) 
                 {
                     if (_screen.IsShow)
@@ -29,14 +32,23 @@ namespace CubePlatformer.Core
                     _screen.Init(OnScreenExit);
                 }
             }
+
+#if UNITY_ANDROID || UNITY_IOS
+            Cursor.visible = false;
+#elif UNITY_STANDALONE
+            Cursor.visible = true;
+#endif
+
         }
 
         protected T SetCurrentScreen<T>() where T : BaseScreen 
         {
             BaseScreen _nextscreen = screensDict[typeof(T)];
+
             if (CurrentScreen)
             {
-                CurrentScreen.Hide();
+                CurrentScreen.HideScreen();
+
                 if (BackScreen == _nextscreen)
                     screenStack.Pop();
                 else
@@ -52,12 +64,9 @@ namespace CubePlatformer.Core
         {
             var _nextScreen = screenStack.Pop();
 
-            CurrentScreen.Hide();
+            CurrentScreen.HideScreen();
             CurrentScreen = _nextScreen;
-            CurrentScreen.Show();   
-        }
-
-        protected BaseScreen CurrentScreen { get; private set; }
-        protected BaseScreen BackScreen => screenStack.Count > 0 ? screenStack.Peek() : null;
+            CurrentScreen.ShowScreen();   
+        }       
     }
 }
